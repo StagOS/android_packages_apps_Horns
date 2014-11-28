@@ -25,9 +25,13 @@
             android:defaultValue="true" />
 
         <!-- Keyboard -->
-        <Preference
-            android:key="inputmethod_settings"
-            android:title="@string/keyboard_ime_title"
-            android:fragment="com.stag.horns.fragments.InputMethodsSettings" />
+        <PreferenceCategory
+            android:key="input_settings"
+            android:title="@string/keyboard_ime_title"/>
+
+            <Preference
+                android:key="inputmethod_settings"
+                android:title="@string/keyboard_ime_title"
+                android:fragment="com.stag.horns.fragments.InputMethodsSettings" />
 
 </PreferenceScreen>
