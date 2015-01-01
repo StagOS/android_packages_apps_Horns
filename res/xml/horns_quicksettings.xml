@@ -26,6 +26,13 @@
         android:entryValues="@array/qs_battery_mode_values"
         android:defaultValue="1" />
 
+     <!-- QS Tile Haptic -->
+     <com.stag.horns.preferences.SecureSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false"/>
+
      <!-- QS Tile Visibility -->
      <com.stag.horns.preferences.SystemSettingSwitchPreference
          android:key="qs_tile_title_visibility"
