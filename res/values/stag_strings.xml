@@ -691,4 +691,8 @@
     <string name="brightness_side_buttons_title">Brightness control buttons</string>
     <string name="brightness_side_buttons_summary">Show buttons to increase or decrease the brightness</string>
 
+    <!-- Power menu on lockscreen -->
+    <string name="lockscreen_power_menu_disabled_title">Disable power menu on lock screen</string>
+    <string name="lockscreen_power_menu_disabled_summary">This will only disable the power menu on secure lock screens</string>
+
 </resources>
