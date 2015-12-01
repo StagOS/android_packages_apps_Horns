@@ -10,7 +10,7 @@
     <bool name="has_qs_category">false</bool>
 
     <!-- Whether to display buttons tab -->
-    <bool name="has_buttons_category">false</bool>
+    <bool name="has_buttons_category">true</bool>
 
     <!-- Whether to display navbar tab -->
     <bool name="has_navbar_category">false</bool>
