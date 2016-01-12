@@ -1012,4 +1012,9 @@
     <string name="qstile_oos">Oxygen</string>
     <string name="qstile_triangles">Triangle</string>
     <string name="qstile_circle_trim">Circle with trim</string>
+
+    <!-- Show QS on lockscreen -->
+    <string name="show_qs_on_secure_keyguard_title">Quick settings</string>
+    <string name="show_qs_on_secure_keyguard_summary">Show quick settings on secure lockscreen</string>
+
 </resources>
