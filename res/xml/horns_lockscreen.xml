@@ -37,11 +37,17 @@
         android:summary="@string/hide_lockicon_summary"
         android:defaultValue="false" />
 
-    <SwitchPreference
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="fingerprint_success_vib"
         android:title="@string/fprint_sucess_vib_title"
         android:summary="@string/fprint_sucess_vib_summary"
-        android:persistent="false" />
+        android:persistent="true" />
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="fingerprint_error_vib"
+        android:title="@string/fprint_error_vib_title"
+        android:summary="@string/fprint_error_vib_summary"
+        android:defaultValue="true" />
 
    <com.stag.horns.preferences.GlobalSettingSwitchPreference
        android:key="lockscreen_enable_power_menu"
