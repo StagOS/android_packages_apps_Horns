@@ -53,6 +53,7 @@ import com.android.settings.wrapper.OverlayManagerWrapper.OverlayInfo;
 import com.stag.horns.preferences.CustomSeekBarPreference;
 import com.stag.horns.preferences.SecureSettingSwitchPreference;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
+import com.stag.horns.utils.TelephonyUtils;
 
 import com.stag.horns.R;
 
@@ -68,6 +69,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "System";
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     private Handler mHandler;
 
@@ -97,6 +99,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         if (!enableSmartPixels){
             prefSet.removePreference(SmartPixels);
+        }
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+                prefSet.removePreference(incallVibCategory);
         }
     }
 
