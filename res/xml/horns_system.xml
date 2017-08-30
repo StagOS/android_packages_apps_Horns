@@ -54,6 +54,23 @@
         android:title="@string/pulse_on_new_tracks_title"
         android:summary="@string/pulse_on_new_tracks_summary" />
 
+    <PreferenceCategory
+        android:title="@string/keys_action_omniswitch_short">
+
+        <ListPreference
+            android:key="navbar_recents_style"
+            android:title="@string/navbar_recents_style_title"
+            android:entries="@array/navbar_recents_style_entries"
+            android:entryValues="@array/navbar_recents_style_values"
+            android:persistent="false"/>
+
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/recents_style_info_title" />
+
+    </PreferenceCategory>
+
     <!-- Animations -->
     <PreferenceCategory
         android:key="quick_settings_animations"
