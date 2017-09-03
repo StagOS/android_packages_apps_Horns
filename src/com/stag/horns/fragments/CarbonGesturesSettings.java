@@ -49,6 +49,7 @@ public class CarbonGesturesSettings extends SettingsPreferenceFragment
     private ListPreference mCarbonGestureUp;
     private ListPreference mCarbonGestureDown;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
