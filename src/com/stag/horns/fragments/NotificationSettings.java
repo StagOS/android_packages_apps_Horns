@@ -52,6 +52,8 @@ import com.stag.horns.preferences.Utils;
 public class NotificationSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -59,6 +61,10 @@ public class NotificationSettings extends SettingsPreferenceFragment
 	ContentResolver resolver = getActivity().getContentResolver();
 	final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!Utils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
+        }
     }
 
     @Override
