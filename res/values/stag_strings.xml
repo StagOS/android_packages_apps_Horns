@@ -93,6 +93,10 @@
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
 
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Invert layout</string>
+    <string name="navbar_visibility">Allow navigation bar</string>
+
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">In-call vibration options</string>
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
@@ -187,5 +191,8 @@
     <!-- StatusBar Double tap to sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
+
+    <!-- Navbar tuner -->
+    <string name="navbar_tuner_title">Navbar buttons</string>
 
 </resources>
