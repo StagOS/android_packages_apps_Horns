@@ -55,6 +55,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+    
+    private static final String KEY_BATTERY_CHARGING_LIGHT = "battery_charging_light";
+
+    private Preference mBatteryLightPref;
+    private SystemSettingSwitchPreference mLowBatteryBlinking; 
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -72,11 +77,33 @@ public class NotificationSettings extends SettingsPreferenceFragment
                  com.android.internal.R.bool.config_hasAlertSlider);
          if (!alertSliderAvailable)
              getPreferenceScreen().removePreference(findPreference(ALERT_SLIDER_PREF));
+
+        mBatteryLightPref = (Preference) findPreference(KEY_BATTERY_CHARGING_LIGHT);
+        if (!getResources()
+                .getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed))
+        {
+                prefScreen.removePreference(mBatteryLightPref);
+        }
+        mLowBatteryBlinking = (SystemSettingSwitchPreference)prefScreen.findPreference("battery_light_low_blinking");
+        if (getResources().getBoolean(
+                        com.android.internal.R.bool.config_ledCanPulse)) {
+            mLowBatteryBlinking.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                            Settings.System.BATTERY_LIGHT_LOW_BLINKING, 0, UserHandle.USER_CURRENT) == 1);
+            mLowBatteryBlinking.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(mLowBatteryBlinking);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-	ContentResolver resolver = getActivity().getContentResolver();
+	if (preference == mLowBatteryBlinking) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.BATTERY_LIGHT_LOW_BLINKING, value ? 1 : 0,
+                    UserHandle.USER_CURRENT);
+            mLowBatteryBlinking.setChecked(value);
+        }
         return false;
     }
 

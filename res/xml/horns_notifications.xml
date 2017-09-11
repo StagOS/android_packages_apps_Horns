@@ -61,4 +61,34 @@
             android:title="@string/incall_vibrate_disconnect_title"
             android:defaultValue="false" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="battery_light_options"
+        android:title="@string/battery_light_category_title" >
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="battery_light_enabled"
+            android:order="23"
+            android:title="@string/battery_light_enable"
+            android:defaultValue="true"/>
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="battery_full_light_enabled"
+            android:order="24"
+            android:title="@string/battery_full_light_enabled"
+            android:defaultValue="true" />
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="battery_light_allow_on_dnd"
+            android:order="25"
+            android:title="@string/battery_light_allow_on_dnd_title"
+            android:dependency="battery_light_enabled"
+            android:defaultValue="false" />
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="battery_light_low_blinking"
+            android:order="26"
+            android:title="@string/battery_light_low_blinking_title"
+            android:dependency="battery_light_enabled"
+            android:defaultValue="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
