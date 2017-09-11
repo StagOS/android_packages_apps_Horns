@@ -43,4 +43,10 @@
             android:persistent="false"
             android:title="@string/backlight_timeout_title" />
      </PreferenceCategory>
+
+    <com.stag.settings.preferences.SystemSettingSwitchPreference
+        android:key="allow_incall_home"
+        android:title="@string/allow_incall_home_title"
+        android:summary="@string/allow_incall_home_summary"
+        android:defaultValue="true" />
 </PreferenceScreen>
