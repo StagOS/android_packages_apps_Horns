@@ -25,4 +25,9 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
     </Preference>
+
+    <Preference
+            android:key="traffic"
+            android:fragment="com.stag.settings.fragments.Traffic"
+            android:title="@string/traffic_title" />
 </PreferenceScreen>
