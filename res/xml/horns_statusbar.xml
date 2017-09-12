@@ -52,6 +52,11 @@
 
     </PreferenceCategory>
 
+    <Preference
+        android:key="traffic"
+        android:fragment="com.stag.horns.fragments.Traffic"
+        android:title="@string/traffic_title" />
+
     <!-- Rounded Corners -->
     <PreferenceScreen
          android:key="rounded_corners"
