@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 KCUF Project
+<!-- Copyright (C) 2018 The KCUF Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,14 +13,18 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/statusbar_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <Preference
-            android:key="traffic"
-            android:fragment="com.stag.horns.fragments.Traffic"
-            android:title="@string/traffic_title" />
+   <!-- Network Traffic Type -->
+    <string-array name="show_network_traffic_type_entries" translatable="false">
+        <item>@string/show_network_traffic_all</item>
+        <item>@string/show_network_traffic_up</item>
+        <item>@string/show_network_traffic_down</item>
+    </string-array>
 
-</PreferenceScreen>
+    <string-array name="show_network_traffic_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
