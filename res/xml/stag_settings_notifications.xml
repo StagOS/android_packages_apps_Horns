@@ -28,6 +28,11 @@
             android:value="com.android.settings.Settings$NotificationAppListActivity" />
     </Preference>
 
+    <Preference
+        android:key="charging_light"
+        android:fragment="com.stag.settings.BatteryLightSettings"
+        android:title="@string/battery_light_settings" />
+
     <!-- Heads up -->
     <Preference
         android:key="heads_up_notifications"
