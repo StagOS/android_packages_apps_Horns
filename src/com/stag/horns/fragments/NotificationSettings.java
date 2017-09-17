@@ -54,6 +54,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String KEY_BATT_LIGHT = "battery_light_enabled";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
     private static final String KEY_CHARGING_LIGHT = "charging_light";
     private static final String LED_CATEGORY = "led";
@@ -69,6 +70,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
     private ListPreference mColorMode;
     private SystemSettingSwitchPreference mAmbientPref;
     private SystemSettingSwitchPreference mNotificationHeader;
+    private SystemSettingMasterSwitchPreference mBatteryLight;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -134,6 +136,12 @@ public class NotificationSettings extends SettingsPreferenceFragment
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
         }
         mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
+        mBatteryLight = (SystemSettingMasterSwitchPreference)
+                findPreference(KEY_BATT_LIGHT);
+        boolean enabled = Settings.System.getInt(resolver,
+                KEY_BATT_LIGHT, 1) == 1;
+        mBatteryLight.setChecked(enabled);
+        mBatteryLight.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -183,6 +191,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
             }
             return true;
 	}
+                if (preference == mBatteryLight) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, KEY_BATT_LIGHT, value ? 1 : 0);
+            return true;
+     }
         return false;
     }
 

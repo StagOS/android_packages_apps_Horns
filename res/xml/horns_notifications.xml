@@ -136,4 +136,12 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory>
+        android:title="@string/notification_led_pref">
+        <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
+            android:key="battery_light_enabled"
+            android:title="@string/battery_light_settings"
+            android:fragment="com.stag.horns.fragments.BatteryLightSettings"
+            android:defaultValue="true" />
+    </PreferenceCategory>
 </PreferenceScreen>
