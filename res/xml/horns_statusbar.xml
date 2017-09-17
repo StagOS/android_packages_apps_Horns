@@ -19,6 +19,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
 
+        <Preference
+        android:key="traffic"
+        android:fragment="com.stag.horns.fragments.Traffic"
+        android:title="@string/traffic_title" />
+
         <com.stag.horns.preferences.SystemSettingSwitchPreference
             android:key="show_fourg"
             android:title="@string/show_fourg_title"
