@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Whether to display system tab -->
-    <bool name="has_system_category">false</bool>
+    <bool name="has_system_category">true</bool>
 
     <!-- Whether to display statusbar tab -->
-    <bool name="has_statusbar_category">false</bool>
+    <bool name="has_statusbar_category">true</bool>
 
     <!-- Whether to display qs tab -->
-    <bool name="has_qs_category">false</bool>
-
-    <!-- Whether to display buttons tab -->
-    <bool name="has_buttons_category">false</bool>
+    <bool name="has_qs_category">true</bool>
 
     <!-- Whether to display navbar tab -->
-    <bool name="has_navbar_category">false</bool>
+    <bool name="has_navbar_category">true</bool>
 
     <!-- Whether to display animations tab -->
-    <bool name="has_animations_category">false</bool>
+    <bool name="has_animations_category">true</bool>
 
     <!-- Whether to display gestures tab -->
-    <bool name="has_gestures_category">false</bool>
+    <bool name="has_gestures_category">true</bool>
 
     <!-- Whether to display lockscreen tab -->
-    <bool name="has_lockscreen_category">false</bool>
+    <bool name="has_lockscreen_category">true</bool>
 
     <!-- Whether to display powermenu tab -->
-    <bool name="has_powermenu_category">false</bool>
+    <bool name="has_powermenu_category">true</bool>
 
     <!-- Whether to display notifications tab -->
-    <bool name="has_notifications_category">false</bool>
+    <bool name="has_notifications_category">true</bool>
 
     <!-- Whether to display misc tab -->
-    <bool name="has_misc_category">false</bool>
+    <bool name="has_misc_category">true</bool>
 
 </resources>
