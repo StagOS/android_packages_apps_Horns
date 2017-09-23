@@ -43,7 +43,6 @@ import com.stag.horns.preferences.SecureSettingMasterSwitchPreference;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
@@ -61,6 +60,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         int visualizerEnabled = Settings.Secure.getInt(resolver,
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

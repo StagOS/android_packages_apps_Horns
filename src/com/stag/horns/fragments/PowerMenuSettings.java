@@ -44,6 +44,7 @@ import java.util.List;
 public class PowerMenuSettings extends SettingsPreferenceFragment
                 implements Preference.OnPreferenceChangeListener {
 
+    private SwitchPreference mPowermenuTorch;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -61,6 +62,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
 
         return false;
     }
+
 
     @Override
     public int getMetricsCategory() {
