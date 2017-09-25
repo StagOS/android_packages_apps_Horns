@@ -28,4 +28,10 @@
             android:value="com.android.settings.Settings$NotificationAppListActivity" />
     </Preference>
 
+    <!-- Heads up -->
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:fragment="com.stag.settings.fragments.HeadsUpSettings" />
+
 </PreferenceScreen>
