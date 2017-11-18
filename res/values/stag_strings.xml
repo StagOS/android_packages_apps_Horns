@@ -21,6 +21,7 @@
     <!-- Categories -->
     <string name="animation_title">Animations</string>
     <string name="button_title">Buttons</string>
+    <string name="device_part_title">Device features</string>
     <string name="gestures_title">Gestures</string>
     <string name="lockscreen_title">Lock Screen</string>
     <string name="misc_title">Miscellaneous</string>
