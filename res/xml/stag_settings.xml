@@ -95,4 +95,15 @@
             android:title="@string/misc_title"
             android:fragment="com.stag.settings.fragments.MiscSettings"
             android:icon="@drawable/ic_settings_misc"/>
+
+        <!-- Device Part -->
+        <com.stag.settings.preferences.CardviewPreference
+            android:key="device_part"
+            android:persistent="false"
+            android:title="@string/device_part_title"
+            android:icon="@drawable/ic_settings_device">
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="org.omnirom.device"
+                 android:targetClass="org.omnirom.device.DeviceSettings"/>
+        </com.kcuf.settings.preferences.CardviewPreference>
 </PreferenceScreen>
