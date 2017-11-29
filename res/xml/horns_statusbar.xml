@@ -18,10 +18,21 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="use_old_mobiletype"
-        android:title="@string/use_old_mobiletype_title"
-        android:summary="@string/use_old_mobiletype_summary"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:key="misc_icons_category"
+        android:title="@string/icons_category">
+
+         <com.stag.horns.preferences.SystemSettingSwitchPreference
+             android:key="show_fourg_icon"
+             android:title="@string/show_fourg_icon_title"
+             android:summary="@string/show_fourg_icon_summary"
+             android:defaultValue="false"/>
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="use_old_mobiletype"
+            android:title="@string/use_old_mobiletype_title"
+            android:summary="@string/use_old_mobiletype_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
