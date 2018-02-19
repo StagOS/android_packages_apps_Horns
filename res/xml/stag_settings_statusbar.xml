@@ -35,4 +35,11 @@
             android:key="battery_settings"
             android:title="@string/battery_style_category_title"
             android:fragment="com.stag.settings.fragments.StatusBarBattery" />
+
+    <PreferenceScreen
+            android:key="battery_bar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.stag.settings.fragments.BatteryBar"
+            settings:allowDividerAbove="false" />
 </PreferenceScreen>
