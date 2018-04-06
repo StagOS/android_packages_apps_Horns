@@ -106,6 +106,18 @@
         android:defaultValue="false"
         android:dependency="qs_show_brightness"/>
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="qs_footer_show_settings"
+        android:title="@string/qs_footer_settings_title"
+        android:summary="@string/qs_footer_settings_summary"
+        android:defaultValue="true" />
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="qs_footer_show_services"
+        android:title="@string/qs_footer_services_title"
+        android:summary="@string/qs_footer_services_summary"
+        android:defaultValue="false" />
+
     <Preference
         android:key="qs_tile_style"
         android:title="@string/qs_tile_style_title"
