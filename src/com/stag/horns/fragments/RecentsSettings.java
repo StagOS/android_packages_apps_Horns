@@ -48,12 +48,16 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
-    private static final String IMMERSIVE_RECENTS = "immersive_recents";
+    private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
+    private static final String RECENTS_DATE = "recents_full_screen_date"; 
+    private static final String RECENTS_CLOCK = "recents_full_screen_clock";
 
     private ListPreference mRecentsClearAllLocation;
     private ListPreference mRecentsComponentType;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mImmersiveRecents;
+    private SwitchPreference mClock;
+    private SwitchPreference mDate;
 
     private SharedPreferences mPreferences;
     private Context mContext;
@@ -81,12 +85,16 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         mRecentsComponentType.setValue(String.valueOf(type));
         mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
         mRecentsComponentType.setOnPreferenceChangeListener(this);
-
+       // immersive recents
         mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
         mImmersiveRecents.setValue(String.valueOf(Settings.System.getIntForUser(
                 resolver, Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT)));
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
         mImmersiveRecents.setOnPreferenceChangeListener(this);
+
+        mClock = (SwitchPreference) findPreference(RECENTS_CLOCK);
+        mDate = (SwitchPreference) findPreference(RECENTS_DATE);
+        updateDisablestate(mode);
     }
 
 
@@ -116,6 +124,15 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
                 }).show();
     }
 
+    public void updateDisablestate(int mode) { 
+        if (mode == 0 || mode == 2) { 
+           mClock.setEnabled(false); 
+           mDate.setEnabled(false); 
+        } else { 
+           mClock.setEnabled(true); 
+           mDate.setEnabled(true); 
+        } 
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mRecentsClearAllLocation) {
             int value = Integer.parseInt((String) newValue);
@@ -137,10 +154,12 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
             StagUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mImmersiveRecents) {
-            Settings.System.putIntForUser(resolver, Settings.System.IMMERSIVE_RECENTS,
-                    Integer.parseInt((String) newValue), UserHandle.USER_CURRENT);
+                   int mode = Integer.valueOf((String) newValue); 
+            Settings.System.putIntForUser(getActivity().getContentResolver(), Settings.System.IMMERSIVE_RECENTS,
+                    Integer.parseInt((String) objValue), UserHandle.USER_CURRENT);
             mImmersiveRecents.setValue((String) newValue);
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+            updateDisablestate(mode);
             mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
             if (!mPreferences.getBoolean("first_info_shown", false) && newValue != null) {
                 getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
