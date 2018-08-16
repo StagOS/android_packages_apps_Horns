@@ -47,4 +47,9 @@
         android:title="@string/lockscreen_visualizer_enable"
         android:summary="@string/lockscreen_visualizer_enable_summary" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
 </PreferenceScreen>
