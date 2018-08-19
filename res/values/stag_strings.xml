@@ -163,4 +163,9 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
+    <!-- global acions config -->
+    <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
+    <string name="global_actions_advanced_reboot_summary">Show more options in restart menu</string>
+    <string name="global_actions_advanced_reboot_summary_new">Show more options in restart menu if not locked</string>
+
 </resources>
