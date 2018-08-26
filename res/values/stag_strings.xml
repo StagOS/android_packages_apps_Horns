@@ -673,4 +673,8 @@
     <string name="qstile_shishuink">Shishu Ink</string>
     <string name="qstile_attemptmountain">An attempt of a mountain</string>
 
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+
 </resources>
