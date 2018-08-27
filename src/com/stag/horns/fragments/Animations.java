@@ -17,14 +17,13 @@
 
 package com.stag.horns.fragments;
 
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -32,64 +31,63 @@ import android.view.View;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.stag.horns.preferences.CustomSeekBarPreference;
-
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
-@SearchIndexable
-public class Animations extends SettingsPreferenceFragment
-        implements OnPreferenceChangeListener, Indexable {
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class Animations extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.horns_animations);
-        ContentResolver resolver = getActivity().getContentResolver();
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        return false;
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.HORNS;
+        return MetricsEvent.HORNS;
     }
 
-	public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-		new BaseSearchIndexProvider() {
-			@Override
-			public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-					boolean enabled) {
-				ArrayList<SearchIndexableResource> result =
-						new ArrayList<SearchIndexableResource>();
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
+    }
 
-				SearchIndexableResource sir = new SearchIndexableResource(context);
-				sir.xmlResId = R.xml.horns_animations;
-				result.add(sir);
-				return result;
-			}
+    /**
+     * For Search.
+     */
 
-			@Override
-			public List<String> getNonIndexableKeys(Context context) {
-				List<String> keys = super.getNonIndexableKeys(context);
-				return keys;
-			}
-		};
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.horns_animations;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }
