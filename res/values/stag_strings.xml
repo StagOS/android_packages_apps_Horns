@@ -176,4 +176,8 @@
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon (Needs a SystemUI restart to take effect)</string>
 
+    <!-- QuickSettings Panel Transparency -->
+    <string name="qs_panel_alpha_title">Quick Settings opacity</string>
+    <string name="qs_panel_alpha_summary">Configure opacity of background</string>
+
 </resources>
