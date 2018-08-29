@@ -19,4 +19,13 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="notification_light"
+        android:fragment="com.android.settings.applications.manageapplications.ManageApplications"
+        android:title="@string/notification_light_settings" >
+        <extra
+            android:name="classname"
+            android:value="com.android.settings.Settings$NotificationAppListActivity" />
+    </Preference>
+
 </PreferenceScreen>
