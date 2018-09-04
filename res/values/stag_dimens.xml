@@ -16,12 +16,12 @@
 -->
 <resources>
     <!-- Cardview Preference -->
-    <dimen name="card_elevation">2dp</dimen>
-    <dimen name="card_corner_radius">12dp</dimen>
-    <dimen name="card_margin_top">2dp</dimen>
-    <dimen name="card_margin_bottom">2dp</dimen>
-    <dimen name="card_margin_right">2dp</dimen>
-    <dimen name="card_margin_left">2dp</dimen>
+    <dimen name="card_elevation">3dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_margin_top">3dp</dimen>
+    <dimen name="card_margin_bottom">3dp</dimen>
+    <dimen name="card_margin_right">3dp</dimen>
+    <dimen name="card_margin_left">3dp</dimen>
 
     <!-- Color Picker -->
     <dimen name="picker_circle_preview_size">26dp</dimen>
