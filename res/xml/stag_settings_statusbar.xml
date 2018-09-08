@@ -36,6 +36,12 @@
             android:title="@string/battery_style_category_title"
             android:fragment="com.stag.settings.fragments.StatusBarBattery" />
 
+    <Preference
+            android:key="clock_settings"
+            android:title="@string/clock_style_category_title"
+            android:summary="@string/clock_style_category_summary"
+            android:fragment="com.stag.settings.fragments.ClockSettings" />
+
     <PreferenceScreen
             android:key="battery_bar"
             android:title="@string/battery_bar_title"
