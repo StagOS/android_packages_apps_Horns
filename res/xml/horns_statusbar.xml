@@ -48,4 +48,11 @@
             android:summary="@string/use_old_mobiletype_summary"
             android:defaultValue="false" />
 
+    <Preference
+            android:key="clock_settings"
+            android:title="@string/clock_style_category_title"
+            android:summary="@string/clock_style_category_summary"
+            android:fragment="com.stag.horns.fragments.ClockSettings" />
+     </Preference>
+
 </PreferenceScreen>
