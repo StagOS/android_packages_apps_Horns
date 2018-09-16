@@ -1,6 +1,7 @@
-Hazard
+Horns
+This is where everything you don't need, But you want goes (Customisatons)
 ==============================
-![Hazard](http://i.imgur.com/MIpJb1z.jpg)
+![Stag](https://i.imgur.com/U66C5wW.jpg)
 ==============================
 ## Based on DU-Tweaks
 

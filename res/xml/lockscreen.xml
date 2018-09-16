@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 ToxycOS Project
+     Copyright (C) 2018 StagOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,9 +16,17 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/lockscreen_category"
+    android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="lockscreen_clock_date_style"
+        android:layout="@layout/preference_lockscreen_clock_date_style"
+        android:fragment="com.stag.horns.fragments.LockscreenSettings" />
+
+    <PreferenceScreen
+        android:key="misc_lockscreen"
+        android:layout="@layout/preference_misc_lockscreen"
+        android:fragment="com.stag.horns.fragments.LockscreenMisc" />
 
 </PreferenceScreen>
-

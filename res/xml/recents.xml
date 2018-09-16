@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 ToxycOS Project
+     Copyright (C) 2018 StagOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,9 +15,19 @@
      limitations under the License.
 -->
 <PreferenceScreen
+    android:key="recents"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/recents_category"
+    android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="recents_clear_all"
+        android:layout="@layout/preference_recents_clear_all"
+        android:fragment="com.stag.horns.fragments.RecentsSettings" />
+
+    <PreferenceScreen
+        android:key="recents_layout"
+        android:layout="@layout/preference_recents_layout"
+        android:fragment="com.stag.horns.fragments.RecentsLayout" />
 
 </PreferenceScreen>

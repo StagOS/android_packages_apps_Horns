@@ -14,37 +14,38 @@
      limitations under the License.
 -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/statusbar"
         android:icon="@drawable/main_statusbar"
-        android:title="@string/status_bar_category"
+        android:title="@string/statusbar_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
         android:id="@+id/recents"
         android:icon="@drawable/main_recents"
-        android:title="@string/recents_category"
+        android:title="@string/recents_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
         android:id="@+id/lockscreen"
         android:icon="@drawable/main_lockscreen"
-        android:title="@string/lockscreen_category"
-        app:showAsAction="ifRoom|withText"/>
-
-    <item
-        android:id="@+id/navigation"
-        android:icon="@drawable/main_navigation"
-        android:title="@string/navigation_category"
+        android:title="@string/lockscreen_title"
         app:showAsAction="ifRoom|withText"/>
 
     <item
         android:id="@+id/system"
         android:icon="@drawable/main_system"
-        android:title="@string/system_category"
+        android:title="@string/system_title"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/main_about"
+        android:title="@string/about_title"
         app:showAsAction="ifRoom|withText"/>
 
 </menu>

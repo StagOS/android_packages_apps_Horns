@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 StagOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/statusbar_category"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceScreen
+        android:key="status_bar_quicksettings"
+        android:layout="@layout/preference_status_bar_quicksettings"
+        android:fragment="com.stag.horns.fragments.QuickSettings" />
+
+    <PreferenceScreen
+        android:key="battery_settings"
+        android:layout="@layout/preference_battery_settings"
+        android:fragment="com.stag.horns.fragments.BatterysSettings" />
+
+    <PreferenceScreen
+        android:key="status_bar_clock_date_settings"
+        android:layout="@layout/preference_status_bar_clock_date_settings"
+        android:fragment="com.stag.horns.fragments.ClockDateSettings" />
+
+    <PreferenceScreen
+        android:key="carrier_label_category"
+        android:layout="@layout/preference_carrier_label_category"
+        android:fragment="com.stag.horns.fragments.CarrierLabel" />
+
+    <PreferenceScreen
+        android:key="ticker_settings"
+        android:layout="@layout/preference_ticker_settings"
+        android:fragment="com.stag.horns.fragments.TickerSettings" />
+
+    <PreferenceScreen
+        android:key="network_traffic"
+        android:layout="@layout/preference_network_traffic"
+        android:fragment="com.stag.horns.fragments.NetworkTraffic" />
+
+    <PreferenceScreen
+        android:key="statusbar_misc"
+        android:layout="@layout/preference_statusbar_misc"
+        android:fragment="com.stag.horns.fragments.StatusBarMisc" />
+
+</PreferenceScreen>
