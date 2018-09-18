@@ -18,6 +18,7 @@
 package com.stag.horns.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import android.app.Activity;
 import android.content.Context;
@@ -47,6 +48,7 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
     private static final String DATE_FONT_SIZE  = "lockdate_font_size";
     private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
     private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
+    private static final String LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR = "lock_screen_visualizer_custom_color";
 
     ListPreference mLockClockFonts;
     ListPreference mLockDateFonts;
@@ -54,6 +56,7 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
     private CustomSeekBarPreference mOwnerInfoFontSize;
+    private ColorPickerPreference mVisualizerColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -102,6 +105,16 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
         mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKOWNER_FONT_SIZE,21));
         mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
+
+        // Visualizer custom color
+        mVisualizerColor = (ColorPickerPreference) findPreference(LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR);
+        int visColor = Settings.System.getInt(resolver,
+                Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, 0xff1976D2);
+        String visColorHex = String.format("#%08x", (0xff1976D2 & visColor));
+        mVisualizerColor.setSummary(visColorHex);
+        mVisualizerColor.setNewPreviewColor(visColor);
+        mVisualizerColor.setAlphaSliderEnabled(true);
+        mVisualizerColor.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -139,6 +152,14 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
             int top = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKOWNER_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mVisualizerColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.LOCK_SCREEN_VISUALIZER_CUSTOM_COLOR, intHex);
+            preference.setSummary(hex);
             return true;
         }
         return false;

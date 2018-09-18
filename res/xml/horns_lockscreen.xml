@@ -45,12 +45,6 @@
         android:summary="@string/lockscreen_info_summary"
         android:defaultValue="true" />
 
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
-            android:key="lockscreen_visualizer_enabled"
-            android:title="@string/lockscreen_visualizer_enable"
-            android:summary="@string/lockscreen_visualizer_enable_summary"
-            android:defaultValue="false" />
-
     <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="lockscreen_power_menu_disabled"
         android:title="@string/lockscreen_power_menu_disabled_title"
