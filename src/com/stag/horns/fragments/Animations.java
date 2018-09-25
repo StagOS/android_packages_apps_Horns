@@ -52,6 +52,8 @@ import java.util.List;
 public class Animations extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
@@ -60,6 +62,8 @@ public class Animations extends SettingsPreferenceFragment implements
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "2";
 
+    private ListPreference mListViewAnimation;
+    private ListPreference mListViewInterpolator;
     private ListPreference mScrollingCachePref;
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
@@ -109,6 +113,22 @@ public class Animations extends SettingsPreferenceFragment implements
         mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
         mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
         mToastAnimation.setOnPreferenceChangeListener(this);
+
+        mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
+        int listviewanimation = Settings.Global.getInt(resolver,
+                Settings.Global.LISTVIEW_ANIMATION, 0);
+        mListViewAnimation.setValue(String.valueOf(listviewanimation));
+        mListViewAnimation.setSummary(mListViewAnimation.getEntry());
+        mListViewAnimation.setOnPreferenceChangeListener(this);
+
+        mListViewInterpolator = (ListPreference) findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        int listviewinterpolator = Settings.Global.getInt(resolver,
+                Settings.Global.LISTVIEW_INTERPOLATOR, 0);
+        mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
+        mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
+        mListViewInterpolator.setEnabled(listviewanimation > 0);
+        mListViewInterpolator.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -148,6 +168,21 @@ public class Animations extends SettingsPreferenceFragment implements
             Settings.Global.putString(getContentResolver(), Settings.Global.TOAST_ANIMATION, (String) newValue);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(mSysUiContext, "Toast Test", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (preference == mListViewAnimation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewAnimation.findIndexOfValue((String) newValue);
+            Settings.Global.putInt(resolver,
+                    Settings.Global.LISTVIEW_ANIMATION, value);
+            mListViewAnimation.setSummary(mListViewAnimation.getEntries()[index]);
+            mListViewInterpolator.setEnabled(value > 0);
+            return true;
+        } else if (preference == mListViewInterpolator) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewInterpolator.findIndexOfValue((String) newValue);
+            Settings.Global.putInt(resolver,
+                    Settings.Global.LISTVIEW_INTERPOLATOR, value);
+            mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true;
         }
         return false;
