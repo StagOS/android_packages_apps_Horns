@@ -45,7 +45,7 @@
         android:summary="@string/lockscreen_info_summary"
         android:defaultValue="true" />
 
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="lockscreen_power_menu_disabled"
         android:title="@string/lockscreen_power_menu_disabled_title"
         android:summary="@string/lockscreen_power_menu_disabled_summary"
