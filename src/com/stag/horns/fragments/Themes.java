@@ -58,6 +58,9 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import android.util.Log;
 
+import com.stag.horns.R;
+import com.stag.horns.fragments.QsTileStylePreferenceController;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -102,6 +105,7 @@ public class Themes extends DashboardFragment  implements
                 "android.theme.customization.font"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.adaptive_icon_shape"));
+        controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 
