@@ -61,6 +61,8 @@ import android.util.Log;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.stag.horns.fragments.AccentPickerPreferenceController;
+import com.stag.horns.R;
+import com.stag.horns.fragments.QsTileStylePreferenceController;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -124,6 +126,7 @@ public class Themes extends DashboardFragment  implements
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack"));
+        controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 
