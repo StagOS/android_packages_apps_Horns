@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="stag_settings_title">Horns</string>>
+   <string name="stag_settings_title">Horns</string>
 
     <!-- Categories -->
     <string name="animation_title">Animations</string>
