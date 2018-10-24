@@ -15,6 +15,12 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+    	android:key="lockscreen_colors"
+       	android:title="@string/lockscreen_colors"
+        android:summary="@string/lockscreen_colors_summary"
+       	android:fragment="com.colt.settings.fragments.LockColors" />
+
     <ListPreference
         android:key="lock_clock_fonts"
         android:title="@string/lock_clock_font_title"
