@@ -28,9 +28,9 @@ import com.android.internal.util.hwkeys.Config;
 import com.android.internal.util.hwkeys.Config.ActionConfig;
 import com.android.internal.util.hwkeys.Config.ButtonConfig;
 
-import com.xtended.preferences.ShortcutPickHelper;
-import com.xtended.preferences.ActionPreference;
-import com.xtended.preferences.CustomActionListAdapter;
+import com.stag.horns.preferences.ShortcutPickHelper;
+import com.stag.horns.preferences.ActionPreference;
+import com.stag.horns.preferences.CustomActionListAdapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

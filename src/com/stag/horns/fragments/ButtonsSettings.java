@@ -31,6 +31,7 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.internal.util.hwkeys.ActionConstants;
@@ -182,6 +183,7 @@ public class ButtonsSettings extends ActionFragment implements
         }
 
         addPreferencesFromResource(R.xml.horns_buttons);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
         final ContentResolver resolver = getActivity().getContentResolver();
 
         for (int i = 0; i < 5; i++) {
