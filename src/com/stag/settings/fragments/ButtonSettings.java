@@ -38,10 +38,8 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.hwkeys.ActionConstants;
 import com.android.internal.util.hwkeys.ActionUtils;
 
-import com.stag.settings.R;
 
 import com.stag.settings.preferences.CustomSeekBarPreference;
-
 import com.stag.settings.preferences.ActionFragment;
 
 public class ButtonSettings extends ActionFragment implements OnPreferenceChangeListener {
@@ -78,13 +76,9 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private SwitchPreference mHwKeyDisable;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.stag_settings_button);
-        ContentResolver resolver = getActivity().getContentResolver();
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.kcuf_settings_button);
+        addPreferencesFromResource(R.xml.stag_settings_button);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -171,10 +165,6 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             prefScreen.removePreference(backCategory);
         }
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.STAG_SETTINGS;
-    }
         // home key
         if (!hasHomeKey) {
             prefScreen.removePreference(homeCategory);
@@ -241,7 +231,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KCUF_SETTINGS;
+        return MetricsProto.MetricsEvent.STAG_SETTINGS;
     }
 
 }

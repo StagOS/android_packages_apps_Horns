@@ -105,5 +105,5 @@
             <intent android:action="android.intent.action.MAIN"
                  android:targetPackage="org.omnirom.device"
                  android:targetClass="org.omnirom.device.DeviceSettings"/>
-        </com.kcuf.settings.preferences.CardviewPreference>
+        </com.stag.settings.preferences.CardviewPreference>
 </PreferenceScreen>
