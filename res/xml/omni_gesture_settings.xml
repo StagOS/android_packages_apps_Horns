@@ -18,7 +18,7 @@
         android:key="gesture_settings"
         android:title="@string/gesture_settings_title" >
 
-        <com.kcuf.settings.preferences.SystemSettingSwitchPreference
+        <com.stag.settings.preferences.SystemSettingSwitchPreference
             android:key="use_bottom_gesture_navigation"
             android:title="@string/use_bottom_gesture_title"
             android:defaultValue="false" />
