@@ -376,4 +376,6 @@
     <string name="lock_clock_font_black">Black</string>
     <string name="lock_clock_font_black_italic">Black Italic</string> 
 
+
+    <string name="qs_styles_dialog_title">Select a QS tile style</string>
 </resources>
