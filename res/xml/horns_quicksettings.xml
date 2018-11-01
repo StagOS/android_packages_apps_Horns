@@ -32,11 +32,10 @@
         android:defaultValue="false"
         android:dependency="qs_show_brightness" />
 
-    <ListPreference
+    <Preference
         android:key="qs_tile_style"
         android:title="@string/qs_tile_style_title"
-        android:persistent="false"
-        android:entries="@array/qs_selector_entries"
-        android:entryValues="@array/qs_selector_values" />
+        android:summary="@string/qs_styles_dialog_title"
+        android:persistent="false" />
 
 </PreferenceScreen>

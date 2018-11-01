@@ -39,10 +39,15 @@ import com.stag.horns.R;
 
 import com.stag.horns.preferences.CustomSeekBarPreference;
 
+import com.stag.horns.external.QsTileStyles;
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private ListPreference mQSTileStyle;
+    private Preference mQSTileStyle;
     private static final String QS_TILE_STYLE = "qs_tile_style";
 
     @Override
@@ -53,13 +58,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         // set qs tile style
-        mQSTileStyle = (ListPreference) findPreference(QS_TILE_STYLE);
-        int style = Settings.System.getInt(resolver,
-                Settings.System.QS_TILE_STYLE, 0);
-        mQSTileStyle.setValue(String.valueOf(style));
-        mQSTileStyle.setSummary(mQSTileStyle.getEntry());
-        mQSTileStyle.setOnPreferenceChangeListener(this);
-    }
+        mQSTileStyle = (Preference) findPreference(QS_TILE_STYLE);
+        }
 
     @Override
     public int getMetricsCategory() {
@@ -77,14 +77,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mQSTileStyle) {
-            int style = Integer.valueOf((String) newValue);
-            int index = mQSTileStyle.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.QS_TILE_STYLE, style);
-            mQSTileStyle.setSummary(mQSTileStyle.getEntries()[index]);
+                QsTileStyles.show(this);
             return true;
         }
-        return false;
+        return super.onPreferenceTreeClick(preference);
     }
 }
