@@ -61,7 +61,6 @@ import android.util.Log;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.stag.horns.fragments.AccentPickerPreferenceController;
-import com.stag.horns.R;
 import com.stag.horns.fragments.QsTileStylePreferenceController;
 
 import java.util.List;
