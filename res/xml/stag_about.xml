@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright (C) 2017 StagOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:title="@string/about_stag">
+        <!-- StagOS Github -->
+        <PreferenceScreen
+            android:key="stag_source"
+            android:title="@string/stag_source_title"
+            android:summary="@string/stag_source_summary" />
+        <!-- Maintainers -->
+        <PreferenceScreen
+            android:key="stag_maintainers"
+            android:title="@string/maintainers_stag_title"
+            android:fragment="com.stag.horns.fragments.Maintainers" />
+	
+<!-- Stag Team -->
+
+<PreferenceCategory
+	    android:key="team_stag"
+	    android:title="@string/dev_stag_title">
+            
+        <PreferenceScreen
+            android:key="1"
+            android:title="@string/phenom_title"
+            android:summary="@string/phenom_summary" />
+
+        <PreferenceScreen
+            android:key="2"
+            android:title="@string/vjs_title"
+            android:summary="@string/vjs_summary" />
+
+        <PreferenceScreen
+            android:key="3"
+            android:title="@string/pritish_title"
+            android:summary="@string/pritish_summary" />
+
+        <PreferenceScreen
+            android:key="4"
+            android:title="@string/rakesh_title"
+            android:summary="@string/rakesh_summary" />
+
+        <PreferenceScreen
+            android:key="5"
+            android:title="@string/vinoth_title"
+            android:summary="@string/vinoth_summary" />
+
+        <PreferenceScreen
+            android:key="6"
+            android:title="@string/abhi_title"
+            android:summary="@string/abhi_summary" />
+
+</PreferenceCategory>
+
+</PreferenceScreen>

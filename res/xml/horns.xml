@@ -96,6 +96,13 @@
             android:fragment="com.stag.horns.fragments.MiscSettings"
             android:icon="@drawable/ic_settings_misc"/>
 
+
+	<!-- About StagOS -->
+	<PreferenceScreen
+            android:key="about"
+            android:title="@string/about_stag"
+            android:fragment="com.stag.horns.fragments.About"/>
+
         <!-- Device Part -->
         <com.stag.horns.preferences.CardviewPreference
             android:key="device_part"
