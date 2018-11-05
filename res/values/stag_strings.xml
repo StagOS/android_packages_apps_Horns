@@ -314,4 +314,36 @@
     <string name="clock_date_format">Date format</string>
     <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Enter string</string>
+   
+<!-- About StagOS -->
+    <string name="about_stag">About StagOS</string>
+     <!-- Share StagOS -->
+    <string name="share_stag_title">Share the Stag</string>
+    <string name="share_stag_summary">Spread The Elegance</string>
+    <string name="share_message">Check out Our StagOS</string>
+    <string name="share_chooser_title">Share StagOS</string>
+     <!-- Sites StagOS -->
+    <string name="stag_source_title">Github</string>
+    <string name="stag_source_summary">Where all the things are</string>
+    <string name="stag_google_plus_title">Google+</string>
+    <string name="stag_google_plus_summary">Visit our G+ page for support and news</string>
+     <!-- Maintainers -->
+    <string name="maintainers_stag_title">StagOS Maintainers</string>
+    <string name="maintainers_stag_error">Unable to load maintainers list</string>
+     <!-- StagOS Team -->
+    <string name="dev_stag_title">Stag Team</string>
+    <string name="dev_title">Dev Tag</string>
+    <string name="phenom_title">Phenomenal1</string>
+    <string name="vjs_title">VJS Pranavasri</string>
+    <string name="pritish_title">Pritish Joshi</string>
+    <string name="rakesh_title">Rakesh Rakhi Samuel</string>
+    <string name="vinoth_title">Vinoth Raja</string>
+    <string name="abhi_title">Abhimanyu Shekhawat</string>
+    <string name="phenom_summary"> Founder \n Project leader \n Head Developer \n Maintainer</string>
+    <string name="vjs_summary"> Founder \n Project leader \n Head Developer \n Maintainer</string>
+    <string name="pritish_summary"> Project Contributor \n UX designer  \n Tester</string>
+    <string name="rakesh_summary"> Project Contributor \n Developer</string>
+    <string name="abhi_summary"> Project Contributor  \n Developer</string>
+    <string name="vinoth_summary"> Project Contributor  \n Developer</string>
+
 </resources>

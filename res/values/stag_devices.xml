@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2017 StagOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+ <!-- Device Brands -->
+    <string name="device_category_oneplus_title">ONEPLUS</string>
+    <string name="device_category_yu_title">YU</string>
+
+    <!-- YU -->
+    <string name="device_yu_tomato">Yu Yureka</string>
+    <string name="device_yu_tomato_summary">tomato\nMaintainer - Phenomenal1</string>
+    
+    <string name="device_yu_garlic">Yu Yureka Black</string>
+    <string name="device_yu_garlic_summary">garlic\nMaintainer - vjspranav</string>
+
+    <!-- OnePlus -->
+    <string name="device_oneplus_enchilada">OnePlus 6</string>
+    <string name="device_oneplus_enchilada_summary">enchilada\nMaintainer - vjspranav</string>
+</resources>
