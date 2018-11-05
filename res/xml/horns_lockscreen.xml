@@ -37,6 +37,12 @@
         android:summary="@string/hide_lockicon_summary"
         android:defaultValue="false" />
 
+   <com.stag.horns.preferences.GlobalSettingSwitchPreference
+       android:key="lockscreen_enable_power_menu"
+       android:title="@string/lockscreen_enable_power_menu_title"
+       android:summary="@string/lockscreen_enable_power_menu_summary"
+       android:defaultValue="true"/>
+
     <Preference
             android:title="@string/lockscreen_tuner_title" >
             <intent android:action="android.intent.action.MAIN"
