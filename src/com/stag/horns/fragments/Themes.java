@@ -58,7 +58,6 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import android.util.Log;
 
-import com.stag.horns.R;
 import com.stag.horns.fragments.QsTileStylePreferenceController;
 
 import java.util.List;
