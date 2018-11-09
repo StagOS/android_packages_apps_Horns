@@ -29,7 +29,7 @@
         android:key="carbon_gestures"
         android:title="@string/carbon_gestures_title"
         android:summary="@string/carbon_gestures_summary"
-        android:fragment="com.stag.settings.fragments.CarbonGesturesSettings" />
+        android:fragment="com.stag.horns.fragments.CarbonGesturesSettings" />
 
     <Preference
         android:key="omni_gestures"
