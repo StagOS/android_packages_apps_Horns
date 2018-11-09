@@ -346,4 +346,8 @@
     <string name="abhi_summary"> Project Contributor  \n Developer</string>
     <string name="vinoth_summary"> Project Contributor  \n Developer</string>
 
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+
 </resources>
