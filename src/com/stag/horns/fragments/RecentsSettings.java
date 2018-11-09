@@ -27,6 +27,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.os.UserHandle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,12 +37,16 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.stag.horns.R;
+import com.android.internal.util.stag.StagUtils;
 
 public class RecentsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+
     private ListPreference mRecentsClearAllLocation;
+    private ListPreference mRecentsComponentType;
     private SwitchPreference mRecentsClearAll;
 
     @Override
@@ -59,20 +64,16 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
+        // recents component type
+        mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
+        int type = Settings.System.getInt(resolver,
+                Settings.System.RECENTS_COMPONENT, 0);
+        mRecentsComponentType.setValue(String.valueOf(type));
+        mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
+        mRecentsComponentType.setOnPreferenceChangeListener(this);
+
     }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mRecentsClearAllLocation) {
-            int location = Integer.valueOf((String) objValue);
-            int index = mRecentsClearAllLocation.findIndexOfValue((String) objValue);
-            Settings.System.putIntForUser(getActivity().getContentResolver(),
-                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
-            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
-        return true;
-        }
-    return false;
-     }
 
 
     @Override
@@ -91,6 +92,26 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+        return true;
+ } else if (preference == mRecentsComponentType) {
+            int type = Integer.valueOf((String) newValue);
+            int index = mRecentsComponentType.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_COMPONENT, type);
+            mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
+            if (type == 1) { // Disable swipe up gesture, if oreo type selected
+               Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
+            }
+            StagUtils.showSystemUiRestartDialog(getContext());
+            return true;
+    }
         return false;
     }
 }

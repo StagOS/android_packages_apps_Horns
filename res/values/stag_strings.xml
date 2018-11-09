@@ -325,4 +325,10 @@
      <string name="recents_clear_all_location_bottom_left">Bottom left</string>
      <string name="recents_clear_all_location_bottom_center">Bottom center</string>
 
+   <!-- AOSP Recents component Style -->
+    <string name="recents_component_type_title">Recents Style</string>
+    <string name="recents_pie">Pie</string>
+    <string name="recents_oreo">Oreo</string>
+
+
 </resources>
