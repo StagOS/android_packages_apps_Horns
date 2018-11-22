@@ -97,13 +97,7 @@
             android:icon="@drawable/ic_settings_misc"/>
 
 
-	<!-- About StagOS -->
-	<PreferenceScreen
-            android:key="about"
-            android:title="@string/about_stag"
-            android:fragment="com.stag.horns.fragments.About"/>
-
-        <!-- Device Part -->
+       <!-- Device Part -->
         <com.stag.horns.preferences.CardviewPreference
             android:key="device_part"
             android:persistent="false"
@@ -113,4 +107,11 @@
                  android:targetPackage="org.omnirom.device"
                  android:targetClass="org.omnirom.device.DeviceSettings"/>
         </com.stag.horns.preferences.CardviewPreference>
+
+        <!-- About StagOS -->
+        <PreferenceScreen
+            android:key="about"
+            android:title="@string/about_stag"
+            android:fragment="com.stag.horns.fragments.About"/>
+
 </PreferenceScreen>
