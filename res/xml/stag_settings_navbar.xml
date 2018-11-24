@@ -19,6 +19,12 @@
     android:title="@string/navbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+        android:key="navbar_visibility"
+        android:title="@string/enable_navigation_bar_title"
+        android:summary="@string/enable_navigation_bar_summary"
+        android:defaultValue="true" />
+
     <Preference
             android:title="@string/navbar_tuner_title">
             <intent android:action="android.intent.action.MAIN"
@@ -26,16 +32,11 @@
                 android:targetClass="com.android.systemui.tuner.NavBarActivity" />
     </Preference>
 
-    <SwitchPreference
-        android:key="navbar_visibility"
-        android:title="@string/enable_navigation_bar_title"
-        android:summary="@string/enable_navigation_bar_summary"
-        android:defaultValue="true" />
+    <!-- Smart Nav Bar -->
+    <Preference
+        android:key="navigationbar_settings"
+        android:title="@string/navigationbar_settings_title"
+        android:summary="@string/navigationbar_settings_summary"
+        android:fragment="com.android.settings.smartnav.NavigationBarSettings" />
 
-    <com.stag.settings.preferences.SystemSettingSwitchPreference
-        android:key="pixel_nav_animation"
-        android:title="@string/pixel_navbar_anim_title"
-        android:summary="@string/pixel_navbar_anim_summary"
-        android:dependency="navbar_visibility"
-        android:defaultValue="true" />
 </PreferenceScreen>
