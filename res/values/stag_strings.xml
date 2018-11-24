@@ -78,13 +78,12 @@
     <string name="powermenu_torch">Flashlight</string>
     <string name="powermenu_screenrecord">Screenrecord</string>
 
-    <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel navbar animation</string>
-    <string name="pixel_navbar_anim_summary">Enable/Disable Pixel animation</string>
-
     <!-- Navbar Settings -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
     <string name="enable_navigation_bar_summary">Option to enable or disable the navigation bar</string>
+    <!-- SmartNavBar Settings -->
+    <string name="navigationbar_settings_title">SmartNav Bar</string>
+    <string name="navigationbar_settings_summary">Smart Nav Bar Customizations</string>
 
     <!-- Network traffic -->
     <string name="traffic_title">Traffic indicators</string>
