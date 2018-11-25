@@ -18,6 +18,17 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="notifications_general_category"
+        android:title="@string/general_title">
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+           android:key="notification_guts_kill_app_button"
+           android:title="@string/notification_guts_kill_app_button_title"
+           android:summary="@string/notification_guts_kill_app_button_summary"
+           android:defaultValue="false" />
+
+    </PreferenceCategory>
 
     <!-- Heads up -->
     <Preference
