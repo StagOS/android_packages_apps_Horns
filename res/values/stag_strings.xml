@@ -342,8 +342,12 @@
 
     <!-- AOSP Recents component Style -->
     <string name="recents_component_type_title">Recents Style</string>
-    <string name="recents_pie">Pie</string>
-    <string name="recents_oreo">Oreo</string>
+    <string name="recents_quickstep">Quickstep</string>
+    <string name="recents_stock">Stock</string>
+    <string name="recents_grid">Grid</string>
+    <string name="recents_go">Android Go</string>
+    <string name="stock_recents_title" >Stock recents</string>
+    <string name="hide_apps_title" >Hide apps</string>
 
     <!-- Custom carrier label and position -->
     <string name="carrier_label_category_title">Carrier Label</string>

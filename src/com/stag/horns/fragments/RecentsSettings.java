@@ -47,14 +47,14 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
-    private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+    private static final String RECENTS_LAYOUT_STYLE_PREF = "recents_layout_style";
     private static final String IMMERSIVE_RECENTS = "immersive_recents"; 
     private static final String RECENTS_DATE = "recents_full_screen_date"; 
     private static final String RECENTS_CLOCK = "recents_full_screen_clock";
 
     private ListPreference mRecentsClearAllLocation;
-    private ListPreference mRecentsComponentType;
     private SwitchPreference mRecentsClearAll;
+    private ListPreference mRecentsLayoutStylePref;
     private ListPreference mImmersiveRecents;
     private SwitchPreference mClock;
     private SwitchPreference mDate;
@@ -78,17 +78,19 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
-        // recents component type
-        mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
+        // recents layout style
+        mRecentsLayoutStylePref = (ListPreference) findPreference(RECENTS_LAYOUT_STYLE_PREF);
         int type = Settings.System.getInt(resolver,
-                Settings.System.RECENTS_COMPONENT, 0);
-        mRecentsComponentType.setValue(String.valueOf(type));
-        mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
-        mRecentsComponentType.setOnPreferenceChangeListener(this);
-       // immersive recents
+                Settings.System.RECENTS_LAYOUT_STYLE, 0);
+        mRecentsLayoutStylePref.setValue(String.valueOf(type));
+        mRecentsLayoutStylePref.setSummary(mRecentsLayoutStylePref.getEntry());
+        mRecentsLayoutStylePref.setOnPreferenceChangeListener(this);
+
+        // immersive recents
         mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
-        mImmersiveRecents.setValue(String.valueOf(Settings.System.getIntForUser(
-                resolver, Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT)));
+        int mode = Settings.System.getInt(getContentResolver(),
+        Settings.System.IMMERSIVE_RECENTS, 0);
+            mImmersiveRecents.setValue(String.valueOf(mode));
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
         mImmersiveRecents.setOnPreferenceChangeListener(this);
 
@@ -114,8 +116,8 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    private void openAOSPFirstTimeWarning() { 
-        new AlertDialog.Builder(getActivity()) 
+    private void openAOSPFirstTimeWarning() {
+        new AlertDialog.Builder(getActivity())
                 .setTitle(getResources().getString(R.string.aosp_first_time_title))
                 .setMessage(getResources().getString(R.string.aosp_first_time_message))
                 .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -124,14 +126,15 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
                 }).show();
     }
 
-    public void updateDisablestate(int mode) { 
-        if (mode == 0 || mode == 2) { 
-           mClock.setEnabled(false); 
-           mDate.setEnabled(false); 
-        } else { 
-           mClock.setEnabled(true); 
-           mDate.setEnabled(true); 
-        } 
+    public void updateDisablestate(int mode) {
+        if (mode == 0 || mode == 2) {
+           mClock.setEnabled(false);
+           mDate.setEnabled(false);
+        } else {
+           mClock.setEnabled(true);
+           mDate.setEnabled(true);
+        }
+}
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mRecentsClearAllLocation) {
@@ -140,15 +143,15 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
-        return true;
- } else if (preference == mRecentsComponentType) {
+            return true;
+        } else if (preference == mRecentsLayoutStylePref) {
             int type = Integer.valueOf((String) newValue);
-            int index = mRecentsComponentType.findIndexOfValue((String) newValue);
+            int index = mRecentsLayoutStylePref.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.RECENTS_COMPONENT, type);
-            mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
-            if (type == 1) { // Disable swipe up gesture, if oreo type selected
-               Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_LAYOUT_STYLE, type);
+            mRecentsLayoutStylePref.setSummary(mRecentsLayoutStylePref.getEntries()[index]);
+            if (type != 0) { // Disable swipe up gesture, if oreo type selected
+                Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
             }
             StagUtils.showSystemUiRestartDialog(getContext());
@@ -156,7 +159,7 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         } else if (preference == mImmersiveRecents) {
                    int mode = Integer.valueOf((String) newValue); 
             Settings.System.putIntForUser(getActivity().getContentResolver(), Settings.System.IMMERSIVE_RECENTS,
-                    Integer.parseInt((String) objValue), UserHandle.USER_CURRENT);
+                    Integer.parseInt((String) newValue), UserHandle.USER_CURRENT);
             mImmersiveRecents.setValue((String) newValue);
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
             updateDisablestate(mode);

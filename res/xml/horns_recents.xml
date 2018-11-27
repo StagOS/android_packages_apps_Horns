@@ -19,13 +19,17 @@
     android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="stock_recents"
+        android:title="@string/stock_recents_title" >
+
     <ListPreference
-        android:key="recents_component"
+        android:key="recents_layout_style"
         android:title="@string/recents_component_type_title"
         android:dialogTitle="@string/recents_component_type_title"
-        android:entries="@array/recents_component_type_title_entries"
+        android:entries="@array/recents_type_title_entries"
         android:defaultValue="0"
-        android:entryValues="@array/recents_component_type_title_values"/>
+        android:entryValues="@array/recents_type_title_values"/>
 
      <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="show_clear_all_recents"
@@ -53,6 +57,8 @@
             android:summary="@string/recent_styles_summary"
             android:fragment="com.stag.horns.fragments.RecentsStyles" />
 
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="immersive"
         android:title="@string/immersive_recents_title" >
@@ -78,7 +84,11 @@
             android:summary="@string/recents_full_screen_date_summary" 
             android:defaultValue="false" /> 
 
-     </PreferenceCategory>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="hide_apps"
+        android:title="@string/hide_apps_title" >
 
     <Preference
         android:key="hide_app_from_recents"
@@ -88,5 +98,7 @@
             android:targetPackage="com.android.settings"
             android:targetClass="com.stag.horns.recents.HAFRAppListActivity" />
     </Preference>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
