@@ -292,16 +292,6 @@
          <item>5</item>
      </string-array>
 
-  <!-- Pie and Oreo recents -->
-    <string-array name="recents_component_type_title_entries">
-        <item>@string/recents_pie</item>
-        <item>@string/recents_oreo</item>
-    </string-array>
-     <string-array name="recents_component_type_title_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
     <!-- Carrier Label -->
     <string-array name="carrier_label_entries" translatable="false">
         <item>@string/show_carrier_disabled</item>
@@ -585,6 +575,36 @@
         <item>1001</item>
     </string-array>
 
+    <!-- Pie and Oreo recents -->
+    <string-array name="recents_type_title_entries">
+        <item>@string/recents_quickstep</item>
+        <item>@string/recents_stock</item>
+        <item>@string/recents_grid</item>
+        <item>@string/recents_go</item>
+    </string-array>
+
+    <string-array name="recents_type_title_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Immersive recents -->
+    <string-array name="immersive_recents_entries">
+        <item>@string/immersive_recents_default</item>
+        <item>@string/immersive_recents_fullscreen</item>
+        <item>@string/immersive_recents_statusbar</item>
+        <item>@string/immersive_recents_navbar</item>
+    </string-array>
+
+    <string-array name="immersive_recents_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Recents styles -->
     <string-array name="recents_button_style" translatable="false">
     	<item>@string/button1</item>
@@ -688,7 +708,7 @@
         <item>15</item>
     </string-array>
 
-    <!-- Immersive recents -->
+    <!-- Immersive recents 
     <string-array name="immersive_recents_entries">
         <item>@string/immersive_recents_default</item>
         <item>@string/immersive_recents_fullscreen</item>
@@ -701,6 +721,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </string-array>
+    </string-array> -->
 
 </resources>
