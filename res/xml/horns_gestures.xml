@@ -37,6 +37,12 @@
         android:summary="@string/gesture_settings_summary"
         android:fragment="com.stag.horns.fragments.OmniGestureSettings" />
 
+    <Preference
+        android:key="edge_gestures"
+        android:title="@string/edge_gestures_title"
+        android:summary="@string/edge_gestures_summary"
+        android:fragment="com.stag.horns.external.EdgeGesturesSettings"/>
+
    <com.stag.horns.preferences.SystemSettingSwitchPreference 
             android:key="three_finger_gesture" 
             android:title="@string/three_finger_gesture" 
