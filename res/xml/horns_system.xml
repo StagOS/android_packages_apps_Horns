@@ -22,4 +22,17 @@
             android:defaultValue="0xffffff"
             android:persistent="false" />
 
+    <PreferenceCategory 
+            android:key="dashboard_category" 
+            android:title="@string/dashboard_category">
+
+	<com.stag.horns.preferencess.SystemSettingIntListPreference
+            android:key="theming_settings_dashboard_icons"
+            android:title="@string/theming_settings_dashboard_icons_title"
+            android:entries="@array/theming_settings_dashboard_icons_entries"
+            android:entryValues="@array/theming_settings_dashboard_icons_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
