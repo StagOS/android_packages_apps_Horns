@@ -24,6 +24,7 @@
     <string name="button_title">Buttons</string>
     <string name="device_part_title">Device features</string>
     <string name="gestures_title">Gestures</string>
+    <string name="interfaces_title">Interfaces</string>
     <string name="lockscreen_title">Lock Screen</string>
     <string name="misc_title">Miscellaneous</string>
     <string name="navbar_title">Navigation Bar</string>
@@ -911,4 +912,15 @@
     <string name="lockscreen_date_selection_str_gradient">Gradient</string>
     <string name="lockscreen_date_selection_str_border_accent">Dark with accented borders</string>
     <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
+
+
+	<!-- Dashboard conditions--> 
+    <string name="dashboard_category">Settings Dashboard</string> 
+
+	<!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Dashboard icons</string>
+    <string name="theming_settings_dashboard_icons_default">Round</string>
+    <string name="theming_settings_dashboard_icons_default_accent">Round (Accent)</string>
+    <string name="theming_settings_dashboard_icons_plain">Oreo</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Oreo (Accent)</string>
 </resources>

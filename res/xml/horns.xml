@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/stag_settings_title" >
 
-        <!-- Status Bar -->
+        <!-- System -->
         <com.stag.horns.preferences.CardviewPreference
             android:key="system_category"
             android:title="@string/system_title"
