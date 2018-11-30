@@ -549,4 +549,14 @@
     <string name="qstile_oos">Oxygen</string>
     <string name="qstile_triangles">Triangle</string>
     <string name="qstile_circle_trim">Circle with trim</string>
+
+    <!-- Dashboard conditions--> 
+    <string name="dashboard_category">Settings Dashboard</string>
+
+    <!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Dashboard icons</string>
+    <string name="theming_settings_dashboard_icons_default">Round</string>
+    <string name="theming_settings_dashboard_icons_default_accent">Round (Accent)</string>
+    <string name="theming_settings_dashboard_icons_plain">Oreo</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Oreo (Accent)</string>
 </resources>
