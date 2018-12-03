@@ -374,6 +374,10 @@
     <string name="lock_clock_font_medium_normal">Medium</string>
     <string name="lock_clock_font_medium_italic">Medium Italic</string>
     <string name="lock_clock_font_black">Black</string>
-    <string name="lock_clock_font_black_italic">Black Italic</string> 
+    <string name="lock_clock_font_black_italic">Black Italic</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
 
 </resources>
