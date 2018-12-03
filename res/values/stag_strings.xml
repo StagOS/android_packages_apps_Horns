@@ -425,5 +425,11 @@
     <string name="lock_clock_font_black_italic">Black Italic</string> 
 
 
+    <!-- Qs Styles -->
     <string name="qs_styles_dialog_title">Select a QS tile style</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+
 </resources>
