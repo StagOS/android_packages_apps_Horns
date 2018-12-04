@@ -20,6 +20,7 @@
 
     <!-- Categories -->
     <string name="animation_title">Animations</string>
+    <string name="animation_summary">Control many different types of system animations</string>
     <string name="button_title">Buttons</string>
     <string name="device_part_title">Device features</string>
     <string name="gestures_title">Gestures</string>
@@ -31,6 +32,12 @@
     <string name="recents_title">Recents Apps</string>
     <string name="statusbar_title">Status Bar</string>
     <string name="notifications_title">Notifications</string>
+
+    <!-- Category strings -->
+    <string name="listview_animation_title">Listview</string>
+    <string name="misc_animation_title">Miscellaneous</string>
+    <string name="system_animation_title">System</string>
+    <string name="tiles_animation_title">Tiles</string>
 
     <!-- General strings -->
     <string name="ok">OK</string>
@@ -379,5 +386,12 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+
+    <!-- Screen off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_fade">Simple fade</string>
+    <string name="screen_off_animation_color">Color fade</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
 
 </resources>
