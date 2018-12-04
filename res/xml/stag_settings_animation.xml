@@ -19,4 +19,36 @@
     android:title="@string/animation_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="system_animation"
+        android:title="@string/system_animation_title" >
+ 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="listview_animation"
+        android:title="@string/listview_animation_title" >
+ 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc_animation"
+        android:title="@string/misc_animation_title" >
+ 
+
+       <ListPreference 
+            android:key="screen_off_animation" 
+            android:title="@string/screen_off_animation_title" 
+            android:entries="@array/screen_off_animation_entries" 
+            android:entryValues="@array/screen_off_animation_values"
+            android:defaultValue="0" />
+     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:key="tiles_animation"
+        android:title="@string/tiles_animation_title" >
+ 
+    </PreferenceCategory>
+
 </PreferenceScreen>
+

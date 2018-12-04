@@ -16,8 +16,11 @@
 
 package com.stag.settings.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v14.preference.SwitchPreference;
@@ -40,12 +43,27 @@ import com.stag.settings.R;
 public class AnimationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    public static final String TAG = "AnimationSettings";
+
+    private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
+
+    private ListPreference mScreenOffAnimation;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.stag_settings_animation);
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+
+        // Screen uff animation
+        mScreenOffAnimation = (ListPreference) findPreference(SCREEN_OFF_ANIMATION);
+        int screenOffStyle = Settings.System.getInt(resolver,
+                 Settings.System.SCREEN_OFF_ANIMATION, 0);
+        mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
+        mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
+        mScreenOffAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -63,7 +81,22 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putInt(resolver,
+                Settings.System.SCREEN_OFF_ANIMATION, 0);
+         Animations.reset(mContext);
+    }
+
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mScreenOffAnimation) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
+            int valueIndex = mScreenOffAnimation.findIndexOfValue((String) newValue); 
+            mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]); 
+            return true;
+        }
         return false;
     }
 }
