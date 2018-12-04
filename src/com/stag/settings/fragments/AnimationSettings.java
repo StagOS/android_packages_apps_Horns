@@ -17,28 +17,39 @@
 package com.stag.settings.fragments;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.SystemProperties;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.stag.settings.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AnimationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -46,8 +57,13 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     public static final String TAG = "AnimationSettings";
 
     private static final String SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
 
     private ListPreference mScreenOffAnimation;
+    private ListPreference mToastAnimation;
+
+    Toast mToast;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +80,18 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         mScreenOffAnimation.setValue(String.valueOf(screenOffStyle));
         mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntry());
         mScreenOffAnimation.setOnPreferenceChangeListener(this);
+
+        // Toast animation
+        mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        int toastanimation = Settings.System.getInt(resolver,
+                Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValue(String.valueOf(toastanimation));
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        mToastAnimation.setOnPreferenceChangeListener(this);
+         if (mToast != null) {
+            mToast.cancel();
+            mToast = null;
+        }
     }
 
     @Override
@@ -81,13 +109,6 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putInt(resolver,
-                Settings.System.SCREEN_OFF_ANIMATION, 0);
-         Animations.reset(mContext);
-    }
-
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mScreenOffAnimation) {
@@ -95,6 +116,19 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
                     Settings.System.SCREEN_OFF_ANIMATION, Integer.valueOf((String) newValue)); 
             int valueIndex = mScreenOffAnimation.findIndexOfValue((String) newValue); 
             mScreenOffAnimation.setSummary(mScreenOffAnimation.getEntries()[valueIndex]); 
+            return true;
+        } else if (preference == mToastAnimation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.TOAST_ANIMATION, value);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            if (mToast != null) {
+                mToast.cancel();
+            }
+            mToast = Toast.makeText(getActivity(), "Toast Test",
+                    Toast.LENGTH_SHORT);
+            mToast.show();
             return true;
         }
         return false;
