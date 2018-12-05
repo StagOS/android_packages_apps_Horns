@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.stag.settings.recents;
+package com.stag.horns.recents;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import com.stag.settings.recents.HAFRAppChooserAdapter.AppItem;
+import com.stag.horns.recents.HAFRAppChooserAdapter.AppItem;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

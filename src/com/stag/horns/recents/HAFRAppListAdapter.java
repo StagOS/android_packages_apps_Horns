@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.stag.settings.recents;
+package com.stag.horns.recents;
 
 import java.util.LinkedList;
 import java.util.Map;
