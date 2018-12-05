@@ -346,4 +346,64 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         return mAnimationsStrings[mNum];
     }
 
+    private int getProperIndex(Preference preference) {
+        String mString = "";
+        if (preference == mActivityOpenPref) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[0];
+        } else if (preference == mActivityClosePref) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[1];
+        } else if (preference == mTaskOpenPref) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[2];
+        } else if (preference == mTaskClosePref) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[3];
+        } else if (preference == mTaskMoveToFrontPref) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[4];
+        } else if (preference == mTaskMoveToBackPref) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[5];
+        } else if (preference == mWallpaperOpen) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[6];
+        } else if (preference == mWallpaperClose) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[7];
+        } else if (preference == mWallpaperIntraOpen) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[8];
+        } else if (preference == mWallpaperIntraClose) {
+            mString = Settings.System.ACTIVITY_ANIMATION_CONTROLS[9];
+        }
+        int mNum = Settings.System.getInt(getActivity().getContentResolver(),
+                    mString, 0);
+        return mNum;
+     }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putInt(resolver,
+                Settings.System.SCREEN_OFF_ANIMATION, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.TOAST_ANIMATION, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.ANIMATION_CONTROLS_DURATION, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[0], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[1], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[2], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[3], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[4], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[5], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[6], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[7], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[8], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[9], 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ACTIVITY_ANIMATION_CONTROLS[10], 0);
+        AnimationSettings.reset(mContext);
+    }
 }

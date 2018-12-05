@@ -25,12 +25,6 @@
         android:key="system_animations"
         android:title="@string/system_animations_title" >
 
-        <com.stag.settings.preferences.SystemSettingSwitchPreference
-            android:key="disable_transition_animations"
-            android:title="@string/disable_transition_animations_title"
-            android:summary="@string/disable_transition_animations_summary"
-            android:defaultValue="false" />
-
         <com.stag.horns.preferences.SystemSettingSeekBarPreference
             android:key="animation_controls_duration"
             android:title="@string/animation_duration_title"
