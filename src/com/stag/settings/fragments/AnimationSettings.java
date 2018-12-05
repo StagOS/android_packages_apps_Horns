@@ -70,9 +70,13 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
     private ListPreference mScreenOffAnimation;
     private ListPreference mToastAnimation;
+    private ListPreference mListViewAnimation;
+    private ListPreference mListViewInterpolator;
     private SystemSettingSeekBarPreference mAnimDuration;
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
@@ -116,6 +120,22 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
         mToastAnimation.setValue(String.valueOf(toastanimation));
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         mToastAnimation.setOnPreferenceChangeListener(this);
+
+        // Listview animation
+        mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
+        int listviewanimation = Settings.System.getInt(resolver,
+                Settings.System.LISTVIEW_ANIMATION, 0);
+        mListViewAnimation.setValue(String.valueOf(listviewanimation));
+        mListViewAnimation.setSummary(mListViewAnimation.getEntry());
+        mListViewAnimation.setOnPreferenceChangeListener(this);
+         // Listview interpolator
+        mListViewInterpolator = (ListPreference) findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        int listviewinterpolator = Settings.System.getInt(resolver,
+                Settings.System.LISTVIEW_INTERPOLATOR, 0);
+        mListViewInterpolator.setValue(String.valueOf(listviewinterpolator));
+        mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
+        mListViewInterpolator.setEnabled(listviewanimation > 0);
+        mListViewInterpolator.setOnPreferenceChangeListener(this);
 
         mAnimDuration = (SystemSettingSeekBarPreference) findPreference(ANIMATION_DURATION);
         int animdef = Settings.System.getInt(resolver,
@@ -240,6 +260,21 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
             mToast = Toast.makeText(getActivity(), "Toast Test",
                     Toast.LENGTH_SHORT);
             mToast.show();
+            return true;
+        } else if (preference == mListViewAnimation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.LISTVIEW_ANIMATION, value);
+            mListViewAnimation.setSummary(mListViewAnimation.getEntries()[index]);
+            mListViewInterpolator.setEnabled(value > 0);
+            return true;
+        } else if (preference == mListViewInterpolator) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewInterpolator.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.LISTVIEW_INTERPOLATOR, value);
+            mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true;
         } else if (preference == mAnimDuration) {
             int value = (Integer) newValue;
@@ -380,6 +415,10 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
                 Settings.System.SCREEN_OFF_ANIMATION, 0);
         Settings.System.putInt(resolver,
                 Settings.System.TOAST_ANIMATION, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.LISTVIEW_ANIMATION, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.LISTVIEW_INTERPOLATOR, 0);
         Settings.System.putInt(resolver,
                 Settings.System.ANIMATION_CONTROLS_DURATION, 0);
         Settings.System.putInt(resolver,
