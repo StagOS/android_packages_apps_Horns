@@ -588,4 +588,8 @@
     <string name="carbon_gesture_customapp">Launch application</string>
     <string name="carbon_gesture_launch">Launch</string>
 
+    <!-- Recents Membar -->
+    <string name="systemui_recents_mem_display_title">Show memory bar</string> 
+    <string name="systemui_recents_mem_display_summary">Enable or disable ram bar in recent app view</string> 
+
 </resources>
