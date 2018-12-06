@@ -16,8 +16,11 @@
 
 package com.stag.settings.fragments;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v14.preference.SwitchPreference;
@@ -28,6 +31,7 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 import android.os.UserHandle;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,16 +48,22 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
 
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+    private static final String IMMERSIVE_RECENTS = "immersive_recents";
 
     private ListPreference mRecentsClearAllLocation;
     private ListPreference mRecentsComponentType;
     private SwitchPreference mRecentsClearAll;
+    private ListPreference mImmersiveRecents;
+
+    private SharedPreferences mPreferences;
+    private Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.stag_settings_recents);
         ContentResolver resolver = getActivity().getContentResolver();
+        mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         // clear all recents
@@ -72,6 +82,11 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
         mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
         mRecentsComponentType.setOnPreferenceChangeListener(this);
 
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+        mImmersiveRecents.setValue(String.valueOf(Settings.System.getIntForUser(
+                resolver, Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT)));
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+        mImmersiveRecents.setOnPreferenceChangeListener(this);
     }
 
 
@@ -89,6 +104,16 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    private void openAOSPFirstTimeWarning() { 
+        new AlertDialog.Builder(getActivity()) 
+                .setTitle(getResources().getString(R.string.aosp_first_time_title))
+                .setMessage(getResources().getString(R.string.aosp_first_time_message))
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        }
+                }).show();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -110,6 +135,20 @@ public class RecentsSettings extends SettingsPreferenceFragment implements
                     Settings.Secure.SWIPE_UP_TO_SWITCH_APPS_ENABLED, 0);
             }
             StagUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        } else if (preference == mImmersiveRecents) {
+            Settings.System.putIntForUser(resolver, Settings.System.IMMERSIVE_RECENTS,
+                    Integer.parseInt((String) newValue), UserHandle.USER_CURRENT);
+            mImmersiveRecents.setValue((String) newValue);
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+            mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
+            if (!mPreferences.getBoolean("first_info_shown", false) && newValue != null) {
+                getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("first_info_shown", true)
+                        .commit();
+                openAOSPFirstTimeWarning();
+            }
             return true;
     }
         return false;
