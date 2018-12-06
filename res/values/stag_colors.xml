@@ -22,4 +22,6 @@
     <color name="qs_tile_icon_active">#FFFFFFFF</color>
     <color name="qs_tile_icon_inactive">#FF656565</color>
 
+    <color name="switchBarBackgroundActivatedColor">@*android:color/accent_device_default_light</color>
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
 </resources>

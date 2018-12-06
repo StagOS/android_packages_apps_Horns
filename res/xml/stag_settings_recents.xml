@@ -47,6 +47,12 @@
             android:summary="@string/systemui_recents_mem_display_summary" 
             android:defaultValue="false" /> 
 
+        <Preference
+            android:key="recents_styles"
+            android:title="@string/recent_styles"
+            android:summary="@string/recent_styles_summary"
+            android:fragment="com.stag.settings.fragments.RecentsStyles" />
+
     <Preference
         android:key="hide_app_from_recents"
         android:title="@string/hide_apps_from_recents_title"
