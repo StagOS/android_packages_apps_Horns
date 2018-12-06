@@ -80,7 +80,7 @@
 
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel navbar animation</string>
-    <string name="pixel_navbar_anim_summary">Requires a config change(display size, navbar position, reboot) themes may overwrite</string>
+    <string name="pixel_navbar_anim_summary">Enable/Disable Pixel animation</string>
 
     <!-- Navbar Settings -->
     <string name="enable_navigation_bar_title">Enable navigation bar</string>
