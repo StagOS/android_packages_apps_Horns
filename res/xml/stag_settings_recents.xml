@@ -19,10 +19,6 @@
     android:title="@string/recents_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory
-        android:key="stock_recents"
-        android:title="@string/stock_recents_title" >
-
     <ListPreference
         android:key="recents_layout_style"
         android:title="@string/recents_component_type_title"
@@ -30,6 +26,11 @@
         android:entries="@array/recents_type_title_entries"
         android:defaultValue="0"
         android:entryValues="@array/recents_type_title_values"/>
+
+
+    <PreferenceCategory
+        android:key="stock_recents"
+        android:title="@string/stock_recents_title" >
 
      <com.stag.settings.preferences.SystemSettingSwitchPreference
         android:key="show_clear_all_recents"
@@ -87,7 +88,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="hide_apps"
+        android:key="hafr"
         android:title="@string/hide_apps_title" >
 
     <Preference
