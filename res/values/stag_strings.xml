@@ -552,4 +552,8 @@
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon</string>
 
+    <!-- Recents Membar -->
+    <string name="systemui_recents_mem_display_title">Show memory bar</string> 
+    <string name="systemui_recents_mem_display_summary">Enable or disable ram bar in recent app view</string> 
+
 </resources>
