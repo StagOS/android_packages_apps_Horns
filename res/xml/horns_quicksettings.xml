@@ -38,6 +38,20 @@
         android:defaultValue="false"
         android:dependency="qs_show_brightness" />
 
+     <com.stag.horns.preferences.SecureSettingSwitchPreference
+        android:key="qs_show_auto_brightness_button"
+        android:title="@string/brightness_icon_title"
+        android:summary="@string/brightness_icon_summary"
+        android:defaultValue="false"
+        android:dependency="qs_show_brightness"/>
+
+     <com.stag.horns.preferences.SecureSettingSwitchPreference
+        android:key="qs_show_brightness_side_buttons"
+        android:title="@string/brightness_side_buttons_title"
+        android:summary="@string/brightness_side_buttons_summary"
+        android:defaultValue="false"
+        android:dependency="qs_show_brightness"/>
+
     <Preference
         android:key="qs_tile_style"
         android:title="@string/qs_tile_style_title"
