@@ -1,4 +1,9 @@
-Dirty Tweaks
+Horns
+This is where everything you don't need, But you want goes (Customisations)
+==============================
+![Stag](https://i.imgur.com/U66C5wW.jpg)
+==============
+Taken from Dirty Tweaks
 ==============
 
 A flexible, easy to use, all in one tweaks app for AOSP!

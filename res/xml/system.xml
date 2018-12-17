@@ -16,7 +16,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.dirtyunicorns.tweaks.preferences.CategoryPreference
+    <com.stag.horns.preferences.CategoryPreference
         android:key="device_extras_category"
         android:icon="@drawable/dt_device_extras"
         android:title="@string/device_extras_title"
@@ -24,27 +24,27 @@
         <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
             android:targetPackage="com.dirtyunicorns.settings.device"
             android:targetClass="com.dirtyunicorns.settings.device.TouchscreenGestureSettings" />
-    </com.dirtyunicorns.tweaks.preferences.CategoryPreference>
+    </com.stag.horns.preferences.CategoryPreference>
 
-    <com.dirtyunicorns.tweaks.preferences.CategoryPreference
+    <com.stag.horns.preferences.CategoryPreference
         android:key="expanded_desktop_category"
         android:icon="@drawable/dt_expanded_desktop"
         android:title="@string/expanded_desktop_title"
         android:summary="@string/expanded_desktop_summary"
-        android:fragment="com.dirtyunicorns.tweaks.fragments.ExpandedDesktop" />
+        android:fragment="com.stag.horns.fragments.ExpandedDesktop" />
 
-    <com.dirtyunicorns.tweaks.preferences.CategoryPreference
+    <com.stag.horns.preferences.CategoryPreference
         android:key="miscellaneous_category"
         android:icon="@drawable/dt_miscellaneous"
         android:title="@string/miscellaneous_title"
         android:summary="@string/miscellaneous_summary"
-        android:fragment="com.dirtyunicorns.tweaks.fragments.Miscellaneous" />
+        android:fragment="com.stag.horns.fragments.Miscellaneous" />
 
-    <com.dirtyunicorns.tweaks.preferences.CategoryPreference
+    <com.stag.horns.preferences.CategoryPreference
         android:key="powermenu_category"
         android:icon="@drawable/dt_powermenu"
         android:title="@string/powermenu_title"
         android:summary="@string/powermenu_summary"
-        android:fragment="com.dirtyunicorns.tweaks.fragments.PowerMenu" />
+        android:fragment="com.stag.horns.fragments.PowerMenu" />
 
 </PreferenceScreen>

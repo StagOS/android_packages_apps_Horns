@@ -22,7 +22,7 @@
     android:layout_marginEnd="40dp"
     android:orientation="vertical">
 
-    <ScrollView
+<!--    <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -221,5 +221,5 @@
         android:layout_marginStart="23dp"
         android:layout_marginTop="20dp"
         android:textSize="14sp"
-        android:text="@string/accent_picker_dialog_title" />
+        android:text="@string/accent_picker_dialog_title" /> -->
 </LinearLayout>
