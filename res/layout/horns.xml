@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/navigation"/>
 
-    <com.stag.horns.navigation.BottomNavigationViewCustom
+<!--    <com.stag.horns.navigation.BottomNavigationViewCustom
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,6 +37,6 @@
         android:layout_alignParentBottom="true"
         app:itemIconTint="@drawable/icon_selector"
         app:itemTextColor="@drawable/icon_selector"
-        app:menu="@menu/main" />
+        app:menu="@menu/main" /> -->
 
 </RelativeLayout>

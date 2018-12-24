@@ -319,7 +319,26 @@
     <string name="status_bar_clock_font_size_title">Font size</string>
     <string name="status_bar_clock_color_title">Font color</string>
 
-     <!-- Recents panel settings -->
+    <!-- about categorie -->
+    <string name="about_category">About</string>
+    <string name="about_title">About</string>
+    <string name="about_category_summary">A little (Coz who\'d read this anyway) info abt our team :P</string>
+    <string name="about_stag">StagOS</string>
+    <string name="about_stag_description">Stag??? \nWe are the StagOS(P.S. Team), we aim at elegance, Material Design being at our core. \nTo start up Pure AOSP was the best option cause what\'s more better than android straight from google. \nNext we need those teensy weensy bits of customisations, \nLike the clock could be to the right instead \nWhat\'s the download speed... and such. So why leave those feelings empty. \nWith Stag we aim at giving a pure andriod experience fulfilling those small itches in the mind. \nDon\'t forget, You need to grow your own Horns, Just kidding enjoy. \nSic Parvis Magna</string>
+    <string name="phenom_name">Phenomenal1</string>
+    <string name="phenom_description">Founder | Lead Developer | Maintainer</string>
+    <string name="vjs_name">VJS Pranavasri</string>
+    <string name="vjs_description">Founder | Lead Developer | Maintainer</string>
+    <string name="pritish_name">Pritish Joshi</string>
+    <string name="pritish_description">Designer | UX | Tester</string>
+    <string name="rakesh_name">Rakesh Rakhi Samuel</string>
+    <string name="rakesh_description">Website Creator/Maintainer | Contributor</string>
+    <string name="abhimanyu_name">Abhimanyu Shekhawat</string>
+    <string name="abhimanyu_description">Team Member | Contributor</string>
+    <string name="vinoth_name">Vinoth Raja</string>
+    <string name="vinoth_description">Team Member | Contributor</string>
+
+   <!-- Recents panel settings -->
      <string name="show_clear_all_recents_button_title">Clear all button</string>
      <string name="show_clear_all_recents_button_summary">Show clear all button</string>
      <string name="recents_clear_all_location_title">Clear all location</string>
@@ -380,7 +399,7 @@
     <string name="qs_styles_dialog_title">Select a QS tile style</string>
    
 <!-- About StagOS -->
-    <string name="about_stag">About StagOS</string>
+<!--    <string name="about_stag">About StagOS</string> -->
      <!-- Share StagOS -->
     <string name="share_stag_title">Share the Stag</string>
     <string name="share_stag_summary">Spread The Elegance</string>
@@ -409,4 +428,10 @@
     <string name="rakesh_summary"> Project Contributor \n Developer</string>
     <string name="abhi_summary"> Project Contributor  \n Developer</string>
     <string name="vinoth_summary"> Project Contributor  \n Developer</string>
+
+    <string name="ticker_mode_title">Statusbar notification ticker</string>
+    <string name="ticker_mode_title_summary">Quickly show song title and notification in status bar</string>
+    <string name="battery_light_settings_summary">Enable and configure how the LED should work</string>
+    <string name="battery_style_title">Battery style</string>
+    <string name="battery_style_summary">Change the look of the icon in the statusbar</string>
 </resources>
