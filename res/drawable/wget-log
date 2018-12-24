@@ -1,0 +1,13 @@
+Will not apply HSTS. The HSTS database must be a regular and non-world-writable file.
+ERROR: could not open HSTS store at '/home/vjspranav/.wget-hsts'. HSTS will be disabled.
+--2018-12-12 20:37:13--  https://avatars2.githubusercontent.com/u/17949836?s=460
+Resolving avatars2.githubusercontent.com (avatars2.githubusercontent.com)... 151.101.12.133
+Connecting to avatars2.githubusercontent.com (avatars2.githubusercontent.com)|151.101.12.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 27669 (27K) [image/png]
+Saving to: ‘17949836?s=460’
+
+17949836?s=460        0%[                    ]       0  --.-KB/s               17949836?s=460      100%[===================>]  27.02K  --.-KB/s    in 0.006s  
+
+2018-12-12 20:37:13 (4.73 MB/s) - ‘17949836?s=460’ saved [27669/27669]
+
