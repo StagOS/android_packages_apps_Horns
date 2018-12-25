@@ -34,20 +34,36 @@ import android.view.ViewGroup;
 import com.stag.horns.preferences.SecureSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
-
+import android.content.pm.PackageManager.NameNotFoundException;
+import com.stag.horns.preferences.CustomSeekBarPreference;
+import android.util.Log;
 import com.stag.horns.R;
 
 public class StatusbarSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
+    private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
+    private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private SecureSettingSwitchPreference mRoundedFwvals;
+    private CustomSeekBarPreference mCornerRadius;
+    private CustomSeekBarPreference mContentPadding;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.horns_statusbar);
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        Resources res = null;
+        Context mContext = getContext();
+          try {
+            res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        float displayDensity = getResources().getDisplayMetrics().density;
         setupCornerPrefs();
+      
     }
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
