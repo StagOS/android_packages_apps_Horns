@@ -32,6 +32,12 @@
                 android:targetClass="com.android.systemui.tuner.NavBarActivity" />
     </Preference>
 
+    <Preference
+        android:key="gesture_swipe_up_input_summary"
+        android:title="@string/swipe_up_to_switch_apps_title"
+        android:fragment="com.android.settings.gestures.SwipeUpGestureSettings"
+        settings:controller="com.android.settings.gestures.SwipeUpPreferenceController" />
+
     <!-- Smart Nav Bar -->
     <Preference
         android:key="navigationbar_settings"
