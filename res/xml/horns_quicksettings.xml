@@ -118,6 +118,12 @@
         android:summary="@string/qs_footer_services_summary"
         android:defaultValue="false" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="qs_edit_toggle"
+        android:title="@string/qs_edit_title"
+        android:summary="@string/qs_edit_summary"
+        android:defaultValue="true" />
+
     <Preference
         android:key="qs_tile_style"
         android:title="@string/qs_tile_style_title"
