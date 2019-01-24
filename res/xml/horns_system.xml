@@ -68,4 +68,10 @@
 
     </PreferenceCategory>
 
+    <Preference
+            android:key="gaming_mode"
+            android:fragment="com.stag.horns.fragments.GamingMode"
+            android:icon="@drawable/ic_gaming_mode"
+            android:title="@string/gaming_mode_title" />
+
 </PreferenceScreen>
