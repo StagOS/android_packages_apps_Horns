@@ -719,4 +719,11 @@
     <string name="lockscreen_clock_selection_sammy_accent">Sammy with accent</string>
     <string name="lockscreen_clock_selection_sammy_accent_alt">Sammy with accent (Alt)</string>
 
+    <!-- Rounded corners -->
+    <string name="corners_category">Corners</string>
+    <string name="corner_radius">Rounded corner radius</string>
+    <string name="content_padding">Corner content padding</string>
+    <string name="corner_fwvals">Use framework values</string>
+    <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
+
 </resources>
