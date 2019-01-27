@@ -99,9 +99,7 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
-    }
+   
 
        private void setupCornerPrefs() {
         Resources res = null;
