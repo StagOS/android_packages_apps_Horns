@@ -77,6 +77,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
+    private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
 
     private Handler mHandler;
 
@@ -99,6 +100,16 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 	mHandler = new Handler();
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        Preference ActiveEdge = findPreference(ACTIVE_EDGE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_active_edge)) {
+            getPreferenceScreen().removePreference(ActiveEdge);
+        } else {
+            if (!getContext().getPackageManager().hasSystemFeature(
+                    "android.hardware.sensor.assist")) {
+                getPreferenceScreen().removePreference(ActiveEdge);
+            }
+        }
 
         mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
         mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
