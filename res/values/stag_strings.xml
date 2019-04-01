@@ -853,4 +853,10 @@
     <string name="lockscreen_lavalamp_summary">Use a smooth lava lamp style color blend animation</string>
     <string name="lockscreen_lavalamp_speed_title">Color blend interval</string>
 
+    <!-- Lockscreen cover art filter -->
+    <string name="lockscreen_cover_filter_title">Media cover art filter</string>
+    <string name="lockscreen_cover_filter_none">None</string>
+    <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
+    <string name="lockscreen_cover_filter_blur">Blur</string>
+
 </resources>
