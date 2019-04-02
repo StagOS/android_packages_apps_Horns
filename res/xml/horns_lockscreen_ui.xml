@@ -19,7 +19,7 @@
     	android:key="lockscreen_colors"
        	android:title="@string/lockscreen_colors"
         android:summary="@string/lockscreen_colors_summary"
-       	android:fragment="com.colt.settings.fragments.LockColors" />
+       	android:fragment="com.stag.horns.fragments.LockColors" />
 
     <ListPreference
         android:key="lock_clock_fonts"
@@ -66,7 +66,7 @@
         android:defaultValue="14"
         android:persistent="false" />
 
-    <com.colt.settings.preferences.CustomSeekBarPreference
+    <com.stag.horns.preferences.CustomSeekBarPreference
         android:key="lockowner_font_size"
         android:title="@string/lockowner_font_size_title"
         android:max="25"

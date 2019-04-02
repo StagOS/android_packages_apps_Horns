@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2018 ColtOS ROM
+ *  Copyright (C) 2018 StagOS ROM
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,6 +32,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
+import com.stag.horns.preferences.CustomSeekBarPreference;
 
 import android.provider.Settings;
 import com.android.settings.R;
@@ -57,7 +58,7 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.colt_lockscreen_ui);
+        addPreferencesFromResource(R.xml.horns_lockscreen_ui);
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
