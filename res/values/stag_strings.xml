@@ -705,6 +705,7 @@
     <string name="lockscreen_clock_selection_spidey">Analog (Spidey)</string>
     <string name="lockscreen_clock_selection_spectrum">Analog (Spectrum)</string>
     <string name="lockscreen_clock_selection_sneeky">Analog (Sneeky)</string>
+    <string name="lockscreen_clock_selection_text">Android Q Text Clock</string>
 
     <!-- Rounded corners -->
     <string name="corners_category">Corners</string>
