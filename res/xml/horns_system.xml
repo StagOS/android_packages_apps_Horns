@@ -23,7 +23,7 @@
             android:persistent="false" />
 
     <PreferenceCategory
-        android:title="@string/display_options_category"/>
+        android:title="@string/display_options_category">
 
         <Preference
             android:key="smart_pixels"
