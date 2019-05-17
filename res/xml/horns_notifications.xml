@@ -36,6 +36,12 @@
         android:title="@string/heads_up_notifications"
         android:fragment="com.stag.horns.fragments.HeadsUpSettings" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="less_boring_heads_up"
+        android:title="@string/less_boring_heads_up_title"
+        android:summary="@string/less_boring_heads_up_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
