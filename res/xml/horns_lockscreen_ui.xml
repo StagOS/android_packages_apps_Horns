@@ -85,14 +85,21 @@
             android:summary="@string/lockscreen_visualizer_enable_summary"
             android:defaultValue="false" />
 
-     <com.stag.horns.preferences.SystemSettingSwitchPreference
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
+            android:key="ambient_visualizer"
+            android:title="@string/ambient_visualizer_title"
+            android:summary="@string/ambient_visualizer_summary"
+            android:dependency="lockscreen_visualizer_enabled"
+            android:defaultValue="false" />
+
+   <com.stag.horns.preferences.SystemSettingSwitchPreference
             android:key="lock_screen_visualizer_use_custom_color"
             android:title="@string/lockscreen_visualizer_enable_custom"
             android:summary="@string/lockscreen_visualizer_enable_custom_summary"
             android:dependency="lockscreen_visualizer_enabled"
             android:defaultValue="false" />
-
-      <net.margaritov.preference.colorpicker.ColorPickerPreference
+ 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="lock_screen_visualizer_custom_color"
             android:title="@string/lockscreen_visualizer_custom_color"
             android:dependency="lock_screen_visualizer_use_custom_color"

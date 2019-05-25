@@ -837,4 +837,8 @@
     <string name="lockscreen_visualizer_enable_custom_summary">Use a preset color instead of the generated color</string>
     <string name="lockscreen_visualizer_custom_color">Visualizer Color</string>
 
+    <!-- Ambient visualizer -->
+    <string name="ambient_visualizer_title">Ambient visualizer</string>
+    <string name="ambient_visualizer_summary">Shows white visualization bars on ambient display unless custom color is selected</string>
+
 </resources>
