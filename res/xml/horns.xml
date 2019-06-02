@@ -21,6 +21,13 @@
 
         <!-- Status Bar -->
         <com.stag.horns.preferences.CardviewPreference
+            android:key="system_category"
+            android:title="@string/system_title"
+            android:fragment="com.stag.horns.fragments.SystemSettings"
+            android:icon="@drawable/ic_settings_system"/>
+
+        <!-- Status Bar -->
+        <com.stag.horns.preferences.CardviewPreference
             android:key="statusbar_category"
             android:title="@string/statusbar_title"
             android:fragment="com.stag.horns.fragments.StatusbarSettings"

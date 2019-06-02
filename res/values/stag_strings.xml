@@ -31,6 +31,7 @@
     <string name="quicksettings_title">Quick Settings</string>
     <string name="recents_title">Recents Apps</string>
     <string name="statusbar_title">Status Bar</string>
+    <string name="system_title">System</string>
     <string name="notifications_title">Notifications</string>
     <string name="power_menu_title" >Power menu</string>
 
@@ -788,6 +789,13 @@
     <string name="lock_clock_font_themeable">Themeable (or VCR OSD Mono)</string>
     <string name="lock_clock_font_samsung">Shamshung</string>
 
+    <!-- Accent picker -->
+    <string name="theme_category_title">System theme</string>
+    <string name="systemui_theme_style_title">Background color</string>
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
 
     <!-- Lock Date Fonts -->
     <string name="lock_date_font_title">Date font options</string>
