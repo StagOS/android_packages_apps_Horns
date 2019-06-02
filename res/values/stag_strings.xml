@@ -22,9 +22,10 @@
     <string name="navbar_title">Navigation bar</string>
     <string name="powermenu_title">Power menu</string>
     <string name="quicksettings_title">Quick Settings</string>
-    <string name="recents_title">Recents apps</string>
+    <string name="recents_title">Recents</string>
     <string name="statusbar_title">Status bar</string>
     <string name="volume_title">Volume rockers</string>
+    <string name="system_title">System</string>
     <string name="notifications_title">Notifications</string>
 
     <!-- General strings -->
@@ -52,5 +53,13 @@
     <string name="show_network_traffic_all">Outgoing and Incoming</string>
     <string name="network_traffic_state_title">Show net activity in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+
+    <!-- Accent picker -->
+    <string name="theme_category_title">System theme</string>
+    <string name="systemui_theme_style_title">Background color</string>
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
 
 </resources>
