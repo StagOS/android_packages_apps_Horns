@@ -85,9 +85,19 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         mPackageManager = getActivity().getPackageManager();
 	mHandler = new Handler();
         ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
+
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         setupAccentPref();
+
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+
+        if (!enableSmartPixels){
+            prefSet.removePreference(SmartPixels);
+        }
     }
 
     @Override
