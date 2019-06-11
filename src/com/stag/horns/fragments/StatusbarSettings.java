@@ -46,6 +46,8 @@ import com.stag.horns.R;
 public class StatusbarSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String PREF_KEY_CUTOUT = "cutout_settings";
+
     private static final String SYSUI_ROUNDED_SIZE = "sysui_rounded_size";
     private static final String SYSUI_ROUNDED_CONTENT_PADDING = "sysui_rounded_content_padding";
     private static final String SYSUI_ROUNDED_FWVALS = "sysui_rounded_fwvals";
@@ -72,6 +74,16 @@ public class StatusbarSettings extends SettingsPreferenceFragment implements
         float displayDensity = getResources().getDisplayMetrics().density;
 
         setupCornerPrefs();
+
+        Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
+        if (!hasPhysicalDisplayCutout(getContext())) {
+            getPreferenceScreen().removePreference(mCutoutPref);
+        }
+    }
+
+    private static boolean hasPhysicalDisplayCutout(Context context) {
+        return context.getResources().getBoolean(
+                com.android.internal.R.bool.config_physicalDisplayCutout);
     }
 
     private void setupCornerPrefs() {

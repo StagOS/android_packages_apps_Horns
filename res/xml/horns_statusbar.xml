@@ -19,6 +19,19 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <PreferenceCategory
+        android:key="cutout_settings"
+        android:title="@string/cutout_main" >
+
+    <Preference
+        android:key="cutout_settings"
+        android:title="@string/cutout_main"
+        android:summary="@string/cutout_main_summary"
+        android:fragment="com.stag.horns.fragments.CutoutFragment" />
+
+    </PreferenceCategory>
+
     <Preference
         android:title="@string/statusbar_items_title">
         <intent android:action="android.intent.action.MAIN"
