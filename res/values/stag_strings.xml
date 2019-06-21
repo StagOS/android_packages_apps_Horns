@@ -884,4 +884,8 @@
     <string name="aggressive_standby_summary">Restrict apps from running the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver </string>
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
+
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lockscreen</string>
 </resources>
