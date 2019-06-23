@@ -652,6 +652,11 @@
     <string name="qstile_dottedcircle">Dotted Circle</string>
     <string name="qstile_shishuink">Shishu Ink</string>
     <string name="qstile_attemptmountain">An attempt of a mountain</string>
+    <string name="qstile_roundedrect">Rounded Rectangle</string>
+    <string name="qstile_square">Square</string>
+    <string name="qstile_squircle">Squircle</string>
+    <string name="qstile_teardrop">Teardrop</string>
+
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
