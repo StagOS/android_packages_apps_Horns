@@ -18,12 +18,31 @@
 
 package com.stag.horns.fragments;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.res.Resources;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.os.UserHandle;
 import android.os.Vibrator;
+import android.text.TextUtils;
+
+import java.io.FileDescriptor;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -49,6 +68,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private static final String KEY_BUTTON_BRIGHTNESS_SW = "button_brightness_sw";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
+    private static final String FINGERPRINT_CUSTOM_ICON = "custom_fingerprint_icon";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -70,10 +90,13 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
+    private static final int GET_CUSTOM_FP_ICON = 69;
+
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
     private SwitchPreference mHwKeyDisable;
+    private Preference mFilePicker;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -83,6 +106,33 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mFilePicker = (Preference) findPreference(FINGERPRINT_CUSTOM_ICON);
+
+        boolean isFODDevice = getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView);
+        if (!isFODDevice){
+            removePreference(FINGERPRINT_CUSTOM_ICON);
+        } else {
+            final String customIconURI = Settings.System.getString(resolver,
+                Settings.System.OMNI_CUSTOM_FP_ICON);
+
+            if (!TextUtils.isEmpty(customIconURI)) {
+                setPickerIcon(customIconURI);
+                mFilePicker.setSummary(customIconURI);
+            }
+
+            mFilePicker.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent(Intent.ACTION_PICK);
+                    intent.setType("image/png");
+
+                    startActivityForResult(intent, GET_CUSTOM_FP_ICON);
+
+                    return true;
+                }
+            });
+        }
 
         final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
         final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
@@ -227,6 +277,38 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     @Override
     protected boolean usesExtendedActionsList() {
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,
+        Intent resultData) {
+        if (requestCode == GET_CUSTOM_FP_ICON && resultCode == Activity.RESULT_OK) {
+            Uri uri = null;
+            if (resultData != null) {
+                uri = resultData.getData();
+                mFilePicker.setSummary(uri.toString());
+                setPickerIcon(uri.toString());
+                Settings.System.putString(getContentResolver(), Settings.System.OMNI_CUSTOM_FP_ICON,
+                    uri.toString());
+            }
+        } else if (requestCode == GET_CUSTOM_FP_ICON && resultCode == Activity.RESULT_CANCELED) {
+            mFilePicker.setSummary("");
+            mFilePicker.setIcon(new ColorDrawable(Color.TRANSPARENT));
+            Settings.System.putString(getContentResolver(), Settings.System.OMNI_CUSTOM_FP_ICON, "");
+        }
+    }
+
+    private void setPickerIcon(String uri) {
+        try {
+                ParcelFileDescriptor parcelFileDescriptor =
+                    getContext().getContentResolver().openFileDescriptor(Uri.parse(uri), "r");
+                FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
+                Bitmap image = BitmapFactory.decodeFileDescriptor(fileDescriptor);
+                parcelFileDescriptor.close();
+                Drawable d = new BitmapDrawable(getResources(), image);
+                mFilePicker.setIcon(d);
+            }
+            catch (Exception e) {}
     }
 
     @Override
