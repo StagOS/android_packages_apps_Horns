@@ -925,6 +925,8 @@
         <item>@string/lockscreen_date_selection_str_gradient</item>
         <item>@string/lockscreen_date_selection_str_border_accent</item>
         <item>@string/lockscreen_date_selection_str_border_gradient</item>
+        <item>@string/lockscreen_date_selection_str_half_gradient</item>
+        <item>@string/lockscreen_date_selection_str_half_accent</item>
     </string-array>
 
     <string-array name="lockscreen_date_selection_values" translatable="false">
@@ -939,6 +941,8 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
+	<item>11</item>
+        <item>12</item>
     </string-array>
 
     <!-- Settings dashboard icon style -->
