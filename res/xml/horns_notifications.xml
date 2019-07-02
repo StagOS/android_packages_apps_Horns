@@ -33,6 +33,13 @@
         android:fragment="com.stag.horns.fragments.BatteryLightSettings"
         android:title="@string/battery_light_settings" />
 
+    <!-- Notification guts kill app button -->
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:title="@string/notification_guts_kill_app_button_title"
+        android:summary="@string/notification_guts_kill_app_button_summary"
+        android:defaultValue="false" />
+
     <!-- Heads up -->
     <Preference
         android:key="heads_up_notifications"
