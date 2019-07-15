@@ -43,6 +43,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.stag.horns.preferences.SystemSettingSeekBarPreference;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
+import com.stag.horns.preferences.CustomSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
@@ -52,9 +53,11 @@ public class OmniGestureSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "OmniGestureSettings";
     private static final String KEY_SWIPE_LENGTH = "gesture_swipe_length";
     private static final String KEY_SWIPE_TIMEOUT = "gesture_swipe_timeout";
+    private static final String KEY_FEEDBACK_DURATION = "gesture_feedback_duration";
 
-    private SystemSettingSeekBarPreference mSwipeTriggerLength;
-    private SystemSettingSeekBarPreference mSwipeTriggerTimeout;
+    private CustomSeekBarPreference mSwipeTriggerLength;
+    private CustomSeekBarPreference mSwipeTriggerTimeout;
+    private CustomSeekBarPreference mFeedbackDuration;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,17 +65,23 @@ public class OmniGestureSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.gesture_settings_info);
-        mSwipeTriggerLength = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
+        mSwipeTriggerLength = (CustomSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
         int triggerLength = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT,
                 getSwipeLengthInPixel(getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_min_length)));
         mSwipeTriggerLength.setValue(triggerLength);
         mSwipeTriggerLength.setOnPreferenceChangeListener(this);
 
-        mSwipeTriggerTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
+        mSwipeTriggerTimeout = (CustomSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
         int triggerTimeout = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT,
                 getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_timout));
         mSwipeTriggerTimeout.setValue(triggerTimeout);
         mSwipeTriggerTimeout.setOnPreferenceChangeListener(this);
+
+        mFeedbackDuration = (CustomSeekBarPreference) findPreference(KEY_FEEDBACK_DURATION);
+        int feedbackDuration = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_FEEDBACK_DURATION, 50);
+        mFeedbackDuration.setValue(feedbackDuration);
+        mFeedbackDuration.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -91,6 +100,11 @@ public class OmniGestureSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putInt(resolver,
                     Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
+            return true;
+        } else if (preference == mFeedbackDuration) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.BOTTOM_GESTURE_FEEDBACK_DURATION, value);
             return true;
         }
         return false;
