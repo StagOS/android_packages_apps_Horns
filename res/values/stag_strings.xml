@@ -849,4 +849,11 @@
     <string name="lockscreen_ownerinfo_title">Owner info options</string>
     <string name="lockscreen_ownerinfo_summary">Customize the font style/size of the Owner information</string>
 
+    <!-- Lockscreen Date styles -->
+    <string name="lockscreen_date_selection_title">Date style</string>
+    <string name="lockscreen_date_dialog_title">Select date style</string>
+    <string name="lockscreen_date_selection_default">Default</string>
+    <string name="lockscreen_date_selection_str_box">Semi-transparent box</string>
+    <string name="lockscreen_date_selection_str_round">Semi-transparent box (round)</string>
+
 </resources>
