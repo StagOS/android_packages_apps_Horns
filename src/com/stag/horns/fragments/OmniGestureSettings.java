@@ -24,29 +24,86 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.os.UserHandle;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.util.Log;
+import android.util.TypedValue;
+import android.util.DisplayMetrics;
+import android.view.WindowManagerGlobal;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.stag.horns.preferences.SystemSettingSeekBarPreference;
+import com.stag.horns.preferences.SystemSettingSwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
-public class OmniGestureSettings extends SettingsPreferenceFragment {
-    private static final String TAG = "OmniGestureSettings";
+public class OmniGestureSettings extends SettingsPreferenceFragment implements
+	OnPreferenceChangeListener {
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.HORNS;
-    }
+    private static final String TAG = "OmniGestureSettings";
+    private static final String KEY_SWIPE_LENGTH = "gesture_swipe_length";
+    private static final String KEY_SWIPE_TIMEOUT = "gesture_swipe_timeout";
+
+    private SystemSettingSeekBarPreference mSwipeTriggerLength;
+    private SystemSettingSeekBarPreference mSwipeTriggerTimeout;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.omni_gesture_settings);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.gesture_settings_info);
+        mSwipeTriggerLength = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_LENGTH);
+        int triggerLength = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT,
+                getSwipeLengthInPixel(getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_min_length)));
+        mSwipeTriggerLength.setValue(triggerLength);
+        mSwipeTriggerLength.setOnPreferenceChangeListener(this);
+
+        mSwipeTriggerTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_SWIPE_TIMEOUT);
+        int triggerTimeout = Settings.System.getInt(resolver, Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT,
+                getResources().getInteger(com.android.internal.R.integer.nav_gesture_swipe_timout));
+        mSwipeTriggerTimeout.setValue(triggerTimeout);
+        mSwipeTriggerTimeout.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         return super.onPreferenceTreeClick(preference);
     }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+	if (preference == mSwipeTriggerLength) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.BOTTOM_GESTURE_SWIPE_LIMIT, value);
+            return true;
+        } else if (preference == mSwipeTriggerTimeout) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.BOTTOM_GESTURE_TRIGGER_TIMEOUT, value);
+            return true;
+        }
+        return false;
+    }
+
+    private int getSwipeLengthInPixel(int value) {
+        return Math.round(value * getResources().getDisplayMetrics().density);
+    }
+
+    @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.HORNS;
+    }
 }
+
 
