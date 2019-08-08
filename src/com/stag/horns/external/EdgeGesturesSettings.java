@@ -8,7 +8,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference; 
  
 import com.android.internal.logging.nano.MetricsProto; 
-import com.android.internal.utils.ActionUtils; 
+import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment; 
 import com.stag.horns.preferences.SecureSettingSeekBarPreference; 
@@ -28,7 +28,7 @@ public class EdgeGesturesSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState); 
  
-        addPreferencesFromResource(R.xml.bootleg_external_edge_gestures); 
+        addPreferencesFromResource(R.xml.edge_gestures); 
  
         enabledPreference = (SwitchPreference) findPreference(EDGE_GESTURES_ENABLED); 
         /*enabledPreference.setChecked((Settings.System.getInt(getContentResolver(), 
