@@ -103,6 +103,8 @@
     <string name="show_network_traffic_all">Outgoing and Incoming</string>
     <string name="network_traffic_state_title">Show net activity in statusbar</string>
     <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
+    <!--Double Tap to Sleep Statusbar-->
+    <string name="double_tap_sleep_gesture_title">Double tap to sleep on status bar</string>
 
     <string name="gesture_preference_stag">AOSP gestures</string>
 

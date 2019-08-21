@@ -135,6 +135,11 @@
           android:summary="@string/volte_icon_summary"
           android:defaultValue="true"/>
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+          android:key="double_tap_sleep_gesture"
+          android:title="@string/double_tap_sleep_gesture_title"
+          android:defaultValue="true" />
+
     <Preference
             android:key="aggressive_battery"
             android:title="@string/aggressive_battery_title"
