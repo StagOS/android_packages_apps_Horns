@@ -20,10 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <Preference
-        android:title="@string/custom_fod_icon_title"
-        android:key="custom_fingerprint_icon" />
-
-    <Preference
         android:key="volume_key"
         android:fragment="com.stag.horns.fragments.VolumeRockerSettings"
         android:title="@string/volume_title" />
