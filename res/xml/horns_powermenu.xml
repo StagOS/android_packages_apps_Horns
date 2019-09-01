@@ -40,11 +40,6 @@
             android:defaultValue="false" />
 
          <com.stag.horns.preferences.SystemSettingSwitchPreference
-            android:key="powermenu_screenrecord"
-            android:title="@string/powermenu_screenrecord"
-            android:defaultValue="false" />
-
-         <com.stag.horns.preferences.SystemSettingSwitchPreference
             android:key="powermenu_torch"
             android:title="@string/powermenu_torch"
             android:persistent="false" />
