@@ -57,6 +57,10 @@ public class GestureSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        boolean DoubleTapPowerGesture = Settings.Secure.getInt(resolver,
+                Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0) == 0;
+        boolean DoubleTapPowerGestureAvailable = getResources().getBoolean(
+                com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
            if (preference == mTorchPowerButton) {
             int mTorchPowerButtonValue = Integer.valueOf((String) objValue);
             int index = mTorchPowerButton.findIndexOfValue((String) objValue);

@@ -15,7 +15,7 @@
     <string name="horns_title">Horns</string>
 
     <!-- Categories -->
-    <string name="button_title">Buttons</string>
+    <string name="buttons_title">Buttons</string>
     <string name="gestures_title">Gestures</string>
     <string name="interfaces_title">Interfaces</string>
     <string name="lockscreen_title">Lock Screen</string>

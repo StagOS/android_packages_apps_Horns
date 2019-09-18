@@ -30,6 +30,11 @@
             android:summary="@string/show_cpu_summary"
             android:defaultValue="false" />
 
+    <PreferenceScreen
+        android:key="volume_key"
+        android:fragment="com.stag.horns.fragments.VolumeRockerSettings"
+        android:title="@string/volume_title" />
+
         <!-- Keyboard -->
         <PreferenceCategory
             android:key="input_settings"
