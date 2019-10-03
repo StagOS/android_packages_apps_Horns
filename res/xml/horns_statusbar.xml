@@ -65,9 +65,10 @@
         android:fragment="com.stag.horns.fragments.CarrierLabel" />
 
     <Preference
-        android:key="traffic"
-        android:fragment="com.stag.horns.fragments.Traffic"
-        android:title="@string/traffic_title" />
+        android:key="traffic_category"
+        android:fragment="com.stag.horns.fragments.NetworkTraffic"
+        android:title="@string/trafficat"
+        android:summary="@string/trafficat_summary" />
 
     <!-- Rounded Corners -->
     <PreferenceScreen
