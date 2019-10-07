@@ -79,4 +79,11 @@
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
 
+    <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
+        android:key="smart_pixels_enable"
+        android:fragment="com.stag.horns.fragments.SmartPixels"
+        android:title="@string/smart_pixels_title"
+        android:summary="@string/smart_pixels_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

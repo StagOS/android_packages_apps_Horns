@@ -25,21 +25,33 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 import com.android.settings.SettingsPreferenceFragment;
+import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 
 public class MiscSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
+
+    private static final String SMART_PIXELS_ENABLED = "smart_pixels_enable";
+
+    private SystemSettingMasterSwitchPreference mSmartPixelsEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.horns_misc);
+        ContentResolver resolver = getActivity().getContentResolver();
 
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+        if (!enableSmartPixels){
+            getPreferenceScreen().removePreference(SmartPixels);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-
+        ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 
