@@ -58,12 +58,15 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
+import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
+
 @SearchIndexable
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+	private static final String KEY_NETWORK_TRAFFIC = "network_traffic_state";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -73,6 +76,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
     private int mBatteryPercentValue;
+    private SystemSettingMasterSwitchPreference mNetworkTraffic;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -97,6 +101,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         mBatteryPercent.setEnabled(
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+
+		mNetworkTraffic = (SystemSettingMasterSwitchPreference)
+                findPreference(KEY_NETWORK_TRAFFIC);
+        boolean enabled = Settings.System.getIntForUser(resolver,
+                KEY_NETWORK_TRAFFIC, 0, UserHandle.USER_CURRENT) == 1;
+        mNetworkTraffic.setChecked(enabled);
+        mNetworkTraffic.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -119,6 +130,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     UserHandle.USER_CURRENT);
             int index = mBatteryPercent.findIndexOfValue((String) newValue);
             mBatteryPercent.setSummary(mBatteryPercent.getEntries()[index]);
+            return true;
+        } else if (preference == mNetworkTraffic) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver, KEY_NETWORK_TRAFFIC,
+                    value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
