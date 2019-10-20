@@ -25,6 +25,14 @@
         android:summary="@string/clocksettings_summary"
         android:fragment="com.stag.horns.fragments.ClockSettings" />
 
+    <!-- Network Traffic -->
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="network_traffic_state"
+        android:title="@string/network_traffic_state_title"
+        android:summary="@string/network_traffic_state_summary"
+        android:fragment="com.stag.horns.fragments.NetworkTraffic"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="battery_style_category"
         android:title="@string/battery_style_category_title" >
