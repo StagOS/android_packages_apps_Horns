@@ -189,4 +189,7 @@
     <string name="show_cpu_title">Show CPU info</string>
     <string name="show_cpu_summary">Screen overlay showing current CPU info</string>
 
+    <!-- Old MobileType Toggle -->
+    <string name="use_old_mobiletype_title">Use old mobile type style</string>
+    <string name="use_old_mobiletype_summary">Merge signal and type icons</string>
 </resources>
