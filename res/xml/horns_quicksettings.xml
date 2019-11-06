@@ -17,6 +17,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    
+    <!-- Battery mode -->
+    <com.stag.horns.preferences.SystemSettingListPreference
+         android:key="qs_battery_mode"
+        android:title="@string/battery_percentage_title"
+        android:entries="@array/qs_battery_mode_entries"
+        android:entryValues="@array/qs_battery_mode_values"
+        android:defaultValue="1" />
 
 </PreferenceScreen>
 
