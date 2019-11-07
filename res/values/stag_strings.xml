@@ -977,4 +977,9 @@
     <string name="wake_screen_aware_disabled_info_dialog_content">Reach to check phone and other Motion Sense features are not supported in this country</string>
     <string name="wake_screen_aware_off_dialog_content">To use Reach to check phone, turn on Motion Sense</string>
     <string name="wake_screen_aware_off_dialog_title">Reach to check phone is off</string>
+
+    <!-- Wireless charging animation -->
+    <string name="wireless_charging_animation_title">Charging animation</string>
+    <string name="wireless_charging_animation_summary">Display an animation when the device is plugged in</string>
+
 </resources>

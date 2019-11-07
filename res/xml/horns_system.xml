@@ -72,6 +72,12 @@
 
     </PreferenceCategory>
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="wireless_charging_animation"
+        android:title="@string/wireless_charging_animation_title"
+        android:summary="@string/wireless_charging_animation_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
             android:key="active_edge_category"
             android:title="@string/active_edge_title">
