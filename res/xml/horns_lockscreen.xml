@@ -18,8 +18,9 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
+    <com.stag.horns.preferences.SecureSettingMasterSwitchPreference
         android:key="lockscreen_visualizer_enabled"
+        android:fragment="com.stag.horns.fragments.Visualizer"
         android:title="@string/lockscreen_visualizer_enable"
         android:summary="@string/lockscreen_visualizer_enable_summary"
         android:defaultValue="false" />
