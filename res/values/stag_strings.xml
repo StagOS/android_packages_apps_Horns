@@ -302,4 +302,8 @@
     <string name="battery_light_reallyfull_color">Full battery</string>
     <string name="default_string">Default</string>
 
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_enable">Music Visualizer</string>
+    <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
+
 </resources>
