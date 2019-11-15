@@ -41,6 +41,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
+    private static final String FOOTER_TEXT_STRING = "footer_text_string";
+
     private SystemSettingEditTextPreference mFooterString;
     private CustomSeekBarPreference mQsPanelAlpha;
     private SystemSettingMasterSwitchPreference mCustomHeader;
@@ -94,36 +96,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 	} else if (preference == mFooterString) {
             String value = (String) newValue;
             if (TextUtils.isEmpty(value) || value == null) {
-                mFooterString.setText("#LetsAIMify");
+                mFooterString.setText("#LetsStagify");
                 Settings.System.putString(getActivity().getContentResolver(),
-                        Settings.System.FOOTER_TEXT_STRING, "#LetsAIMify");
-	}
-        return false;
-    }
-
-    private void updateTileAnimationStyleSummary(int tileAnimationStyle) {
-        String prefix = (String) mTileAnimationStyle.getEntries()[mTileAnimationStyle.findIndexOfValue(String
-                .valueOf(tileAnimationStyle))];
-        mTileAnimationStyle.setSummary(getResources().getString(R.string.qs_set_animation_style, prefix));
-    }
-
-    private void updateTileAnimationDurationSummary(int tileAnimationDuration) {
-        String prefix = (String) mTileAnimationDuration.getEntries()[mTileAnimationDuration.findIndexOfValue(String
-                .valueOf(tileAnimationDuration))];
-        mTileAnimationDuration.setSummary(getResources().getString(R.string.qs_set_animation_duration, prefix));
-    }
-
-    private void updateTileAnimationInterpolatorSummary(int tileAnimationInterpolator) {
-        String prefix = (String) mTileAnimationInterpolator.getEntries()[mTileAnimationInterpolator.findIndexOfValue(String
-                .valueOf(tileAnimationInterpolator))];
-        mTileAnimationInterpolator.setSummary(getResources().getString(R.string.qs_set_animation_interpolator, prefix));
-    }
-
-    private void updateAnimTileStyle(int tileAnimationStyle) {
-        if (mTileAnimationDuration != null) {
-            if (tileAnimationStyle == 0) {
-                mTileAnimationDuration.setSelectable(false);
-                mTileAnimationInterpolator.setSelectable(false);
+                        Settings.System.FOOTER_TEXT_STRING, "#LetsStagify");
             } else {
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.FOOTER_TEXT_STRING, value);
