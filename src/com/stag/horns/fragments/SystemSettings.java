@@ -53,6 +53,7 @@ import android.content.om.OverlayInfo;
 import com.stag.horns.preferences.CustomSeekBarPreference;
 import com.stag.horns.preferences.SecureSettingSwitchPreference;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
+import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 
 import com.stag.horns.R;
 
@@ -68,6 +69,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String TAG = "System";
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
 
     private Handler mHandler;
 
@@ -75,6 +77,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 //    private Fragment mCurrentFragment = this;
     private IOverlayManager mOverlayService;
     private PackageManager mPackageManager;
+    private SystemSettingMasterSwitchPreference mGamingMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +88,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 	mHandler = new Handler();
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
+        mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.GAMING_MODE_ENABLED, 0) == 1));
+        mGamingMode.setOnPreferenceChangeListener(this);
 
         setupAccentPref();
     }
@@ -126,6 +134,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 	    }catch(Exception ex){
             }
        return true;
+        } else if (preference == mGamingMode) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
+            return true;
 	}
        return false;
     }

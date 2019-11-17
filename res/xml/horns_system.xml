@@ -35,4 +35,11 @@
 
     </PreferenceCategory>
 
+    <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
+        android:key="gaming_mode_enabled"
+        android:fragment="com.stag.horns.fragments.GamingMode"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
