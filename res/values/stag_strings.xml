@@ -982,4 +982,11 @@
     <string name="wireless_charging_animation_title">Charging animation</string>
     <string name="wireless_charging_animation_summary">Display an animation when the device is plugged in</string>
 
+    <!-- Custom lockscreen notifications count -->
+    <string name="lockscreen_notifications_category">Lockscreen Notifications</string>
+    <string name="lock_screen_custom_notif_title">Custom notifications count</string>
+    <string name="lock_screen_custom_notif_summary">Toggle to enable setting max notifications count on lockscreen</string>
+    <string name="lockscreen_max_notif_config_title">Maximum number of notifications</string>
+    <string name="lockscreen_max_notif_config_summary">Control the maximum number of expanded notifications to show on lockscreen</string>
+
 </resources>
