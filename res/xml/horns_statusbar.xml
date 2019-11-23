@@ -42,6 +42,13 @@
             android:summary="@string/carrier_label_category_summary"
             android:fragment="com.stag.horns.fragments.CarrierLabelSettings" />
 
+    <!-- Rounded Corners -->
+    <PreferenceScreen
+         android:key="rounded_corners"
+         android:title="@string/corners_title"
+         android:summary="@string/corners_summary"
+         android:fragment="com.stag.horns.fragments.RoundedCornersSettings" />
+
     <SwitchPreference
             android:key="show_lte_fourgee"
             android:title="@string/show_lte_fourgee_title"
