@@ -36,6 +36,12 @@
             android:summary="@string/clock_style_category_summary"
             android:fragment="com.stag.horns.fragments.ClockSettings" />
 
+     <Preference
+            android:key="carrier_label_settings"
+            android:title="@string/carrier_label_category_title"
+            android:summary="@string/carrier_label_category_summary"
+            android:fragment="com.stag.horns.fragments.CarrierLabelSettings" />
+
     <SwitchPreference
             android:key="show_lte_fourgee"
             android:title="@string/show_lte_fourgee_title"
