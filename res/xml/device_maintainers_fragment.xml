@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Stag-OS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/device_maintainers_title" >
+
+    <PreferenceCategory
+        android:id="@+id/device_category_asus"
+        android:title="@string/device_category_asus_title" >
+
+        <Preference
+            android:id="@+id/device_X000T"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_X000T_summary"
+            android:title="@string/device_X000T" >
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_X01BD"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_X01BD_summary"
+            android:title="@string/device_X01BD" >
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_lenovo"
+        android:title="@string/device_category_lenovo_title" >
+
+        <Preference
+            android:id="@+id/device_z2plus"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_z2plus_summary"
+            android:title="@string/device_z2plus" >
+        </Preference>
+     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:id="@+id/device_category_lyf"
+        android:title="@string/device_category_lyf_title" >
+
+        <Preference
+            android:id="@+id/device_mobee01a"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_mobee01a_summary"
+            android:title="@string/device_mobee01a" >
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_oneplus"
+        android:title="@string/device_category_oneplus_title" >
+
+        <Preference
+            android:id="@+id/device_enchilada"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_enchilada_summary"
+            android:title="@string/device_enchilada" >
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_fajita"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_fajita_summary"
+            android:title="@string/device_fajita" >
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_xiaomi"
+        android:title="@string/device_category_xiaomi_title" >        
+
+        <Preference
+            android:id="@+id/device_chiron"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_chiron_summary"
+            android:title="@string/device_chiron" >
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_mido"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_mido_summary"
+            android:title="@string/device_mido" > 
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_whyred"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_whyred_summary"
+            android:title="@string/device_whyred" >
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:id="@+id/device_category_yu"
+        android:title="@string/device_category_yu_title" >        
+
+        <Preference
+            android:id="@+id/device_tomato"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_tomato_summary"
+            android:title="@string/device_tomato" >
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_garlic"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_garlic_summary"
+            android:title="@string/device_garlic" >
+        </Preference>            
+    </PreferenceCategory>
+</PreferenceScreen>

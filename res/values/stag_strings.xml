@@ -19,6 +19,7 @@
     <string name="gestures_title">Gestures</string>
     <string name="lockscreen_title">Lock screen</string>
     <string name="misc_title">Miscellaneous</string>
+    <string name="about_title">About</string>
     <string name="navbar_title">Navigation bar</string>
     <string name="powermenu_title">Power menu</string>
     <string name="quicksettings_title">Quick Settings</string>
@@ -337,6 +338,25 @@
     <string name="corner_fwvals">Use framework values</string>
     <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
     <string name="unit_pixels">dp</string>
+    
+    <!-- About categorie -->
+    <string name="about_category">About</string>
+    <string name="about_category_summary">A little (Coz who\'d read this anyway) info abt our team :P</string>
+    <string name="about_stag">StagOS</string>
+    <string name="about_stag_description">Stag??? \nWe are the StagOS(P.S. Team), we aim at elegance, Material Design being at our core. \nTo start up Pure AOSP was the best option cause what\'s more better than android straight from google. \nNext we need those teensy weensy bits of customisations, \nLike the clock could be to the right instead \nWhat\'s the download speed... and such. So why leave those feelings empty. \nWith Stag we aim at giving a pure andriod experience fulfilling those small itches in the mind. \nDon\'t forget, You need to grow your own Horns, Just kidding enjoy. \nSic Parvis Magna</string>
+    <string name="device_maintainers_title">Maintainers</string>
+    <string name="phenom_name">Phenomenal1</string>
+    <string name="phenom_description">Founder | Lead Developer | Maintainer</string>
+    <string name="vjs_name">VJS Pranavasri</string>
+    <string name="vjs_description">Founder | Lead Developer | Maintainer</string>
+    <string name="pritish_name">Pritish Joshi</string>
+    <string name="pritish_description">Designer | UX | Tester</string>
+    <string name="shekhawat_name">Anand Shekhawat</string>
+    <string name="shekhawat_description">Contributor</string>
+    <string name="abhimanyu_name">Abhimanyu Shekhawat</string>
+    <string name="abhimanyu_description">Team Member | Contributor</string>
+    <string name="vinoth_name">Vinoth Raja</string>
+    <string name="vinoth_description">Team Member | Contributor</string>
 
     <!-- Ambient edge lighting -->
     <string name="notification_screen_title">Screen</string>
