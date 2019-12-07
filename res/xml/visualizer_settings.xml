@@ -25,7 +25,14 @@
        android:key="lockscreen_visualizer_autocolor"
         android:title="@string/lockscreen_autocolor_title"
         android:summary="@string/lockscreen_autocolor_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true"
+        android:disableDependentsState="true" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="lockscreen_visualizer_color"
+        android:title="@string/lockscreen_visualizer_color_title"
+        settings:defaultColorValue="0xffffffff"
+        android:dependency="lockscreen_visualizer_autocolor" />
 
     <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="lockscreen_lavalamp_enabled"
