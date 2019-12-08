@@ -157,11 +157,6 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
-    <!-- global acions config -->
-    <string name="global_actions_advanced_reboot_title">Enable advanced restart</string>
-    <string name="global_actions_advanced_reboot_summary">Show more options in restart menu</string>
-    <string name="global_actions_advanced_reboot_summary_new">Show more options in restart menu if not locked</string>
-
     <!-- Show LTE/4G switch -->
     <string name="show_lte_fourgee_title">4G/LTE network icon</string>
     <string name="show_lte_fourgee_summary">Display the 4G or LTE network icon when available in the statusbar</string>
