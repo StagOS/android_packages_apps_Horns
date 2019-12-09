@@ -37,14 +37,17 @@ import androidx.preference.PreferenceScreen;
 import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.stag.horns.preferences.SystemSettingListPreference;
 
 import com.stag.horns.preferences.SecureSettingMasterSwitchPreference;
 
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
 
+    private SystemSettingListPreference mArtFilter;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
 
     @Override
@@ -61,6 +64,10 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
 
+        mArtFilter = (SystemSettingListPreference) findPreference(LOCKSCREEN_ALBUM_ART_FILTER);
+        mArtFilter.setOnPreferenceChangeListener(this);
+        int artFilter = Settings.System.getInt(resolver,
+                LOCKSCREEN_ALBUM_ART_FILTER, 0);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -69,6 +76,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(),
 		            LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mArtFilter) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
             return true;
         }
         return false;
