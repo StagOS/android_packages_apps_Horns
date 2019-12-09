@@ -38,12 +38,16 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.stag.horns.preferences.SystemSettingListPreference;
-
+import com.stag.horns.preferences.Utils;
+import com.stag.horns.preferences.SecureSettingMasterSwitchPreference;
+import com.stag.horns.preferences.SystemSettingSwitchPreference;
+import com.stag.horns.preferences.SystemSettingSeekBarPreference;
 import com.stag.horns.preferences.SecureSettingMasterSwitchPreference;
 
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
@@ -51,6 +55,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mArtFilter;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private SystemSettingSeekBarPreference mBlurSeekbar;
+    private SystemSettingSwitchPreference mFpKeystore;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -73,6 +78,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
 
         mBlurSeekbar = (SystemSettingSeekBarPreference) findPreference(LOCKSCREEN_MEDIA_BLUR);
         mBlurSeekbar.setEnabled(artFilter > 2);
+
+        mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+        mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
+        mFpKeystore.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -87,6 +97,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_ALBUM_ART_FILTER, value);
             mBlurSeekbar.setEnabled(value > 2);
+            return true;
+        } else if (preference == mFpKeystore) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FP_UNLOCK_KEYSTORE, value ? 1 : 0);
             return true;
         }
         return false;
