@@ -32,6 +32,16 @@
             android:dependency="lockscreen_media_metadata"
             android:defaultValue="5" />
 
+        <com.stag.horns.preferences.SystemSettingSeekBarPreference
+            android:key="lockscreen_media_blur"
+            android:title="@string/lockscreen_media_blur_title"
+            android:max="100"
+            settings:min="5"
+            settings:units="%"
+            settings:interval="5"
+            android:defaultValue="100"
+            android:dependency="lockscreen_media_metadata" />
+
     <com.stag.horns.preferences.SecureSettingMasterSwitchPreference
         android:key="lockscreen_visualizer_enabled"
         android:fragment="com.stag.horns.fragments.Visualizer"
