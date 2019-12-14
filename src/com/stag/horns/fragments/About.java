@@ -18,6 +18,7 @@ package com.stag.horns.fragments;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -42,6 +43,7 @@ import com.android.settings.Utils;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.stag.horns.about.CircularImageView;
 import com.stag.horns.about.FancyAboutPage;
 
 public class About extends SettingsPreferenceFragment implements
@@ -60,8 +62,20 @@ public class About extends SettingsPreferenceFragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.about, container, false);
         FancyAboutPage fancyAboutPage = (FancyAboutPage)view.findViewById(R.id.fancyaboutpage);
+	CircularImageView circularImageView = view.findViewById(R.id.circularImageView);
 
-        fancyAboutPage.setCover(R.drawable.coverimg);
+        int currentNightMode = getActivity().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_NO:
+		circularImageView.setImageResource(R.drawable.logo_white);
+                fancyAboutPage.setCover(R.drawable.banner_white);
+                break;
+            case Configuration.UI_MODE_NIGHT_YES:
+		circularImageView.setImageResource(R.drawable.logo_dark);
+                fancyAboutPage.setCover(R.drawable.banner_dark);
+                break;
+        }
+
         fancyAboutPage.addTwitterLink("https://twitter.com/");
         fancyAboutPage.addGoogleLink("https://plus.google.com/");
         fancyAboutPage.addTelegramLink("https://t.me/HornsOfficial");
