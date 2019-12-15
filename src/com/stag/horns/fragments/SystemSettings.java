@@ -39,6 +39,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.util.stag.udfps.UdfpsUtils;
 
+import com.stag.horns.fragments.DozeSettings;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.stag.horns.preferences.HornsUtils;
 
@@ -67,6 +68,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        DozeSettings.reset(mContext);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,

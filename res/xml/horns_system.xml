@@ -116,4 +116,10 @@
              android:fragment="com.stag.horns.fragments.PulseSettings" />
      </PreferenceCategory>
 
+     <!-- Ambient Display -->
+     <PreferenceScreen
+         android:key="doze_fragment"
+         android:title="@string/doze_display_title"
+         android:summary="@string/doze_display_summary"
+         android:fragment="com.stag.horns.fragments.DozeSettings" />
 </PreferenceScreen>
