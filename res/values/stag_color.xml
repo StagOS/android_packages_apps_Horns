@@ -20,4 +20,5 @@
     <color name="about_civ_border_color">#40FFFFFF</color>
     <color name="preference_background_color">@*android:color/accent_device_default_light</color>
 
+    <color name="fod_item_background_stroke_color">#d6d6d6</color>
 </resources>

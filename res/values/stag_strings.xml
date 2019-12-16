@@ -784,5 +784,9 @@
     <string name="omniswitch_title">Recents style</string>
     <string name="recents_style_info_title">Only valid if 3-button navigation mode is used.</string>
 
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_title">FOD icon picker</string>
+    <string name="fod_icon_picker_summary">Pick your favourite fingerprint icon</string>
+    <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
 </resources>
 
