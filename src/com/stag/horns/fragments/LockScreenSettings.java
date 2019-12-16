@@ -58,6 +58,10 @@ import java.util.List;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
+
+    private Preference mFODIconPicker;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);

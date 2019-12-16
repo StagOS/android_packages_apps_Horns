@@ -52,6 +52,14 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.horns_system);
         ContentResolver resolver = getActivity().getContentResolver();
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mFODIconPicker = (Preference) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPicker != null
+                && !getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
+            prefScreen.removePreference(mFODIconPicker);
+        }
     }
 
     @Override

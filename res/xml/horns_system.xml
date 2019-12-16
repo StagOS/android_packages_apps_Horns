@@ -22,6 +22,13 @@
        android:title="@string/stag_themes_title"
        android:fragment="com.stag.horns.fragments.Themes" />
 
+    <!-- FOD icon picker -->
+    <Preference
+        android:key="fod_icon_picker_category"
+        android:title="@string/fod_icon_picker_title"
+        android:summary="@string/fod_icon_picker_summary"
+        android:fragment="com.stag.horns.fragments.FODIconPickerFragment" />
+
     <!-- FOD recognizing animation -->
     <com.stag.horns.preferences.SystemSettingSwitchPreference
        android:key="fod_recognizing_animation"
