@@ -32,6 +32,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Process;
 import android.os.ServiceManager;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.SystemProperties;
 import android.provider.SearchIndexableResource;
@@ -70,6 +71,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "System";
+    private static final String AWARE_CATEGORY = "aware_settings";
     private static final String ACCENT_COLOR = "accent_color";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
@@ -149,6 +151,16 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         mNavbarRecentsStyle.setSummary(mNavbarRecentsStyle.getEntry());
         mNavbarRecentsStyle.setOnPreferenceChangeListener(this);
 
+	// Motion Sense
+        Preference Aware = findPreference(AWARE_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_aware)) {
+            getPreferenceScreen().removePreference(Aware);
+        } else {
+            if (!SystemProperties.getBoolean(
+                    "ro.vendor.aware_available", false)) {
+                getPreferenceScreen().removePreference(Aware);
+            }
+        }
     }
 
     @Override
