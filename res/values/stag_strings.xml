@@ -348,6 +348,11 @@
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_light_auto_color_title">Automatic color</string>
+    <string name="pulse_ambient_light_auto_color_summary">Sync color with wallpaper</string>
+    <string name="pulse_ambient_light_duration">Edge light pulse duration</string>
+    <string name="edgelight_left">Left Edge</string>
+    <string name="edgelight_right">Right Edge</string>
 
     <!-- Quick settings brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider position</string>
