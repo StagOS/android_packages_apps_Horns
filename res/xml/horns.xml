@@ -57,7 +57,7 @@
             android:key="gestures_category"
             android:title="@string/gestures_title" 
             android:fragment="com.stag.horns.fragments.GestureSettings"
-            android:icon="@drawable/ic_settings_gestures"
+            android:icon="@drawable/ic_horns_gesture"
 	    settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
         <!-- Lock Screen -->
