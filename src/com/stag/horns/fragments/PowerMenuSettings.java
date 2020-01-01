@@ -41,7 +41,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
-import com.stag.horns.preferences.Utils;
+import com.stag.horns.preferences.HornsUtils;
 
 import java.util.Arrays;
 import java.util.ArrayList;

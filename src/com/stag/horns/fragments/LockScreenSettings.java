@@ -42,7 +42,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.stag.horns.preferences.SystemSettingListPreference;
-import com.stag.horns.preferences.Utils;
+import com.stag.horns.preferences.HornsUtils;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
 import com.stag.horns.preferences.SystemSettingSeekBarPreference;
 

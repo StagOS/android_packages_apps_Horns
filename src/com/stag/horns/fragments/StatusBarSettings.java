@@ -52,6 +52,9 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.stag.horns.preferences.SystemSettingSeekBarPreference;
+import com.stag.horns.preferences.HornsUtils;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -64,6 +67,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -73,6 +77,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
     private int mBatteryPercentValue;
+    private SystemSettingSeekBarPreference mVolteIconStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -97,6 +102,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         mBatteryPercent.setEnabled(
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+                
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
+
+        if (!HornsUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mVolteIconStyle);
+        }          
     }
 
     @Override
@@ -123,6 +136,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         }
         return false;
     }
+    
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
+    }
 
     @Override
     public int getMetricsCategory() {
@@ -146,6 +165,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 			@Override
 			public List<String> getNonIndexableKeys(Context context) {
 				List<String> keys = super.getNonIndexableKeys(context);
+                                if (!HornsUtils.isVoiceCapable(context)) {
+                                keys.add(KEY_VOLTE_ICON_STYLE);
+                            }
 				return keys;
 			}
 		};

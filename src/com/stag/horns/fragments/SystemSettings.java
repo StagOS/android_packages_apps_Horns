@@ -39,7 +39,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.internal.util.stag.udfps.UdfpsUtils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.stag.horns.preferences.Utils;
+import com.stag.horns.preferences.HornsUtils;
 
 import java.util.ArrayList;
 import java.util.List;

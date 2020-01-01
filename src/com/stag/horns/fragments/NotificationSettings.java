@@ -43,7 +43,7 @@ import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
-import com.stag.horns.preferences.Utils;
+import com.stag.horns.preferences.HornsUtils;
 import com.stag.horns.preferences.CustomSeekBarPreference;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
 
@@ -52,8 +52,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.stag.horns.preferences.Utils;
 
 @SearchIndexable
 public class NotificationSettings extends SettingsPreferenceFragment
@@ -172,7 +170,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
 	final PreferenceScreen prefScreen = getPreferenceScreen();
 
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!Utils.isVoiceCapable(getActivity())) {
+        if (!HornsUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
 
