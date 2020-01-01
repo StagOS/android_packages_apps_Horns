@@ -29,6 +29,14 @@
             android:max="100"
             settings:min="0"
             android:persistent="false" />
+
+        <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
+            android:key="status_bar_custom_header"
+            android:fragment="com.stag.horns.fragments.QsHeader"
+            android:title="@string/status_bar_custom_header_title"
+            android:summary="@string/status_bar_custom_header_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <com.stag.horns.preferences.SecureSettingSwitchPreference
