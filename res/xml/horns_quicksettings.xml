@@ -61,7 +61,19 @@
             android:key="qs_footer_show_settings"
             android:title="@string/qs_footer_settings_title"
             android:summary="@string/qs_footer_settings_summary"
-            android:defaultValue="true"/>
+            android:defaultValue="true"/
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="qs_blur"
+            android:title="@string/blur_quicksettings"
+            android:summary="@string/blur_quicksettings_subtitle"
+            android:defaultValue="true" />
+
+	 <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="qs_datausage"
+            android:title="@string/qs_datausage_title"
+            android:summary="@string/qs_datausage_subtitle"
+            android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="brightness_slider"

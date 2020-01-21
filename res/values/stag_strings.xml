@@ -866,9 +866,7 @@
     <string name="lockscreen_date_selection_str_border_accent">Dark with accented borders</string>
     <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
 
-    <!-- QS blur --> 
-    <string name="blur_quicksettings_title">Blur behind quick settings</string>
-    <string name="blur_quicksettings_summary">Blurs the darkened background behind quick settings</string>
+    <!-- QS blur -->
 
     <!-- Smart replies --> 
     <string name="hide_smart_replies_title">Hide smart replies</string>
@@ -877,4 +875,8 @@
     <string name="qs_bg_use_new_tint">Qs tile colors</string>
     <string name="qs_bg_use_new_tint_summary">Use accent color for qs tile icons and background</string>
 
+    <string name="blur_quicksettings">Blur behind quick settings</string>
+    <string name="blur_quicksettings_subtitle">blurs darkened background behind quick settings</string>
+    <string name="qs_datausage_title">Show data usage in qs header</string>
+    <string name="qs_datausage_subtitle">Shows data usage in quick settings header of sim used for data</string>
 </resources>
