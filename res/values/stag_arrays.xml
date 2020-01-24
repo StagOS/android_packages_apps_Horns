@@ -15,19 +15,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-   <!-- Network Traffic Type -->
-    <string-array name="show_network_traffic_type_entries" translatable="false">
-        <item>@string/show_network_traffic_all</item>
-        <item>@string/show_network_traffic_up</item>
-        <item>@string/show_network_traffic_down</item>
-    </string-array>
-
-    <string-array name="show_network_traffic_type_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <!--- Volume key cursor control -->
     <string-array name="volume_key_cursor_control_entries">
         <item>@string/volume_key_cursor_control_off</item>
@@ -282,7 +269,12 @@
         <item>@string/status_bar_battery_style_hidden</item>
     </string-array>
     <string-array name="status_bar_battery_style_values" translatable="false">
-
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
     <string-array name="status_bar_battery_percentage_entries" translatable="false">
         <item>@string/battery_percentage_off</item>
         <item>@string/battery_percentage_on</item>
@@ -307,7 +299,6 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-
 
     <!-- QS header image -->
     <string-array name="custom_header_provider_entries" translatable="false">
