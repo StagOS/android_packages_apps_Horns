@@ -52,6 +52,13 @@
 
     </PreferenceCategory>
 
+    <com.stag.horns.preferences.CategoryPreference
+        android:key="carrier_label_category"
+        android:icon="@drawable/dt_carrier_label"
+        android:title="@string/carrier_label_title"
+        android:summary="@string/carrier_label_summary"
+        android:fragment="com.stag.horns.fragments.CarrierLabel" />
+
     <Preference
         android:key="traffic"
         android:fragment="com.stag.horns.fragments.Traffic"
