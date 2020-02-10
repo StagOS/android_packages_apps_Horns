@@ -450,6 +450,9 @@
     <string name="show_carrier_keyguard">Lockscreen</string>
     <string name="show_carrier_statusbar">Status bar</string>
     <string name="show_carrier_enabled">Both</string>
+    <string name="status_bar_carrier_color">Carrier label color</string>
+    <string name="status_bar_carrier_size">Carrier label size</string>
+    <string name="status_bar_carrier_font_style_title">Carrier label font</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery Bar</string>
