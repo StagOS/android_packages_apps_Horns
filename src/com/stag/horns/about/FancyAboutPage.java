@@ -35,9 +35,9 @@ import com.stag.horns.about.DiagonalView;
 import com.android.settings.R;
 
 public class FancyAboutPage extends RelativeLayout {
-    private TextView l1,l2,phenomname,vjsname,pritishname,shekhawatname,abhimanyuname,vinothname,debjitname,phenomdescription,vjsdescription,pritishdescription,shekhawatdescription,abhimanyudescription,vinothdescription,debjitdescription;
+    private TextView l1,l2,phenomname,vjsname,raviname,pritishname,shekhawatname,abhimanyuname,vinothname,debjitname,phenomdescription,vjsdescription,pritishdescription,shekhawatdescription,abhimanyudescription,vinothdescription,debjitdescription,ravidescription;
     DiagonalView diagonalView;
-    ImageView phenom,vjs,pritish,shekhawat,abhimanyu,vinoth,debjit,gg,tl,tw,git;
+    ImageView phenom,vjs,ravi,pritish,shekhawat,abhimanyu,vinoth,debjit,gg,tl,tw,git;
     String twitterurl,ggurl,tlurl,githuburl;
     private void init(Context context) {
         //do stuff that was in your original constructor...
@@ -48,6 +48,7 @@ public class FancyAboutPage extends RelativeLayout {
         l2=(TextView) findViewById(R.id.description);
         phenomname=(TextView) findViewById(R.id.phenomname);
         vjsname=(TextView) findViewById(R.id.vjsname);
+        raviname=(TextView) findViewById(R.id.raviname);
         pritishname=(TextView) findViewById(R.id.pritishname);
         shekhawatname=(TextView) findViewById(R.id.shekhawatname);
         abhimanyuname=(TextView) findViewById(R.id.abhimanyuname);
@@ -55,6 +56,7 @@ public class FancyAboutPage extends RelativeLayout {
         debjitname=(TextView) findViewById(R.id.debjitname);
 	phenomdescription=(TextView) findViewById(R.id.phenomdescription);
         vjsdescription=(TextView) findViewById(R.id.vjsdescription);
+        ravidescription=(TextView) findViewById(R.id.ravidescription);
         pritishdescription=(TextView) findViewById(R.id.pritishdescription);
         shekhawatdescription=(TextView) findViewById(R.id.shekhawatdescription);
         abhimanyudescription=(TextView) findViewById(R.id.abhimanyudescription);
@@ -62,6 +64,7 @@ public class FancyAboutPage extends RelativeLayout {
         debjitdescription=(TextView) findViewById(R.id.debjitdescription);
         phenom=(ImageView) findViewById(R.id.phenom);
         vjs=(ImageView) findViewById(R.id.vjs);
+	ravi=(ImageView) findViewById(R.id.ravi);
         pritish=(ImageView) findViewById(R.id.pritish);
         shekhawat=(ImageView) findViewById(R.id.shekhawat);
         abhimanyu=(ImageView) findViewById(R.id.abhimanyu);
@@ -158,6 +161,7 @@ public class FancyAboutPage extends RelativeLayout {
     public void setAppIcon(int Icon){
        phenom.setImageResource(Icon);
        vjs.setImageResource(Icon);
+       ravi.setImageResource(Icon);
        pritish.setImageResource(Icon);
        shekhawat.setImageResource(Icon);
        abhimanyu.setImageResource(Icon);
@@ -167,6 +171,7 @@ public class FancyAboutPage extends RelativeLayout {
     public void setAppName(String AppName){
        phenomname.setText(AppName);
        vjsname.setText(AppName);
+       raviname.setText(AppName);
        pritishname.setText(AppName);
        shekhawatname.setText(AppName);
        abhimanyuname.setText(AppName);
@@ -176,6 +181,7 @@ public class FancyAboutPage extends RelativeLayout {
     public void setAppDescription(String AppDescription){
         phenomdescription.setText(AppDescription);
         vjsdescription.setText(AppDescription);
+        ravidescription.setText(AppDescription);
         pritishdescription.setText(AppDescription);
         shekhawatdescription.setText(AppDescription);
         abhimanyudescription.setText(AppDescription);
