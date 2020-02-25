@@ -26,6 +26,13 @@
         android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
+    <SwitchPreference
+        android:key="enable_nav_bar"
+        android:title="@string/enable_navbar_title"
+        android:summary="@string/enable_navbar_summary"
+        android:defaultValue="true"
+        android:persistent="false" />
+
     <com.stag.horns.preferences.SecureSettingSwitchPreference
             android:key="sysui_nav_bar_inverse"
             android:title="@string/navbar_invert_layout_title"

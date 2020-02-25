@@ -715,4 +715,10 @@
     <string name="anbi_title">Accidental touch</string>
     <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
 
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Enable on-screen nav bar</string>
+    <string name="disable_navkeys_summary">Enable on-screen navigation bar</string>
+
+    <string name="enable_navbar_title">Enable</string>
+    <string name="enable_navbar_summary">Controls whether the navigation bar is displayed</string>
 </resources>
