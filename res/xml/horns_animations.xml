@@ -74,4 +74,13 @@
             android:key="wallpaper_intra_close"
             android:title="@string/wallpaper_intra_close_title" />
     </PreferenceCategory>
+
+    <ListPreference
+        android:key="screen_off_animation"
+        android:title="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:persistent="false"
+        android:defaultValue="0" />
+
 </PreferenceScreen>
