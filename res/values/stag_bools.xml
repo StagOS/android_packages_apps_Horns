@@ -31,6 +31,6 @@
     <bool name="has_notifications_category">false</bool>
 
     <!-- Whether to display misc tab -->
-    <bool name="has_misc_category">false</bool>
+    <bool name="has_misc_category">true</bool>
 
 </resources>
