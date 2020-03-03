@@ -38,7 +38,6 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.util.hwkeys.ActionUtils;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -46,44 +45,17 @@ import com.android.settings.R;
 public class NavbarSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
-    private static final String ENABLE_NAV_BAR = "enable_nav_bar";
-    private static final String PREF_HW_BUTTONS = "hw_buttons";
     private static final String NAV_BAR_LAYOUT = "nav_bar_layout";
     private static final String SYSUI_NAV_BAR = "sysui_nav_bar";
 
     private ListPreference mNavBarLayout;
-    private SwitchPreference mEnableNavigationBar;
-    private boolean mIsNavSwitchingMode = false;
     private ContentResolver mResolver;
-    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_navigation);
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.recents_style_info_title);
         mResolver = getActivity().getContentResolver();
-
-        final boolean needsNavbar = ActionUtils.hasNavbarByDefault(getActivity());
-        // bits for hardware keys present on device
-        final int deviceKeys = getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys);
-        if (needsNavbar && deviceKeys == 0) {
-            getPreferenceScreen().removePreference(findPreference(PREF_HW_BUTTONS));
-        }
-
-        // Navigation bar related options
-        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAV_BAR);
-
-        // Only visible on devices that have a navigation bar already
-        if (ActionUtils.hasNavbarByDefault(getActivity())) {
-            mEnableNavigationBar.setOnPreferenceChangeListener(this);
-            mHandler = new Handler();
-            updateNavBarOption();
-        } else {
-            prefScreen.removePreference(mEnableNavigationBar);
-        }
 
         mNavBarLayout = (ListPreference) findPreference(NAV_BAR_LAYOUT);
         mNavBarLayout.setOnPreferenceChangeListener(this);
@@ -97,39 +69,11 @@ public class NavbarSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mEnableNavigationBar) {
-            if (mIsNavSwitchingMode) {
-                return false;
-            }
-            mIsNavSwitchingMode = true;
-            boolean isNavBarChecked = ((Boolean) newValue);
-            mEnableNavigationBar.setEnabled(false);
-            writeNavBarOption(isNavBarChecked);
-            updateNavBarOption();
-            mEnableNavigationBar.setEnabled(true);
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mIsNavSwitchingMode = false;
-                }
-            }, 1000);
-            return true;
-        } else if (preference == mNavBarLayout) {
+        if (preference == mNavBarLayout) {
             Settings.Secure.putString(mResolver, SYSUI_NAV_BAR, (String) newValue);
             return true;
         }
         return false;
-    }
-
-    private void writeNavBarOption(boolean enabled) {
-        Settings.System.putIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
-    }
-    private void updateNavBarOption() {
-        boolean enabled = Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.FORCE_SHOW_NAVBAR, 1, UserHandle.USER_CURRENT) != 0;
-        mEnableNavigationBar.setChecked(enabled);
     }
 
     @Override

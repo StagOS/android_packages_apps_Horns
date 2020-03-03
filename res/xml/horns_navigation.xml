@@ -26,13 +26,6 @@
         android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
-    <SwitchPreference
-        android:key="enable_nav_bar"
-        android:title="@string/enable_navbar_title"
-        android:summary="@string/enable_navbar_summary"
-        android:defaultValue="true"
-        android:persistent="false" />
-
     <ListPreference
         android:key="nav_bar_layout"
         android:title="@string/nav_bar_layout"
