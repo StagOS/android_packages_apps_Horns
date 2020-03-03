@@ -35,17 +35,10 @@
         android:fragment="com.stag.horns.fragments.VolumeRockerSettings"
         android:title="@string/volume_title" />
 
-        <!-- Keyboard -->
-        <PreferenceCategory
-            android:key="input_settings"
-            android:title="@string/keyboard_ime_title"/>
-
-            <Preference
+            <PreferenceScreen
                 android:key="inputmethod_settings"
                 android:title="@string/keyboard_ime_title"
                 android:fragment="com.stag.horns.fragments.InputMethodsSettings" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="aggressive_battery"
