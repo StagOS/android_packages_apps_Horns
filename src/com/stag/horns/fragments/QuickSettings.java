@@ -33,6 +33,8 @@ import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.stag.horns.preferences.SystemSettingEditTextPreference;
+
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
@@ -43,7 +45,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
     private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String PREF_COLUMNS_QUICKBAR = "qs_columns_quickbar";
+    private static final String FOOTER_TEXT_STRING = "footer_text_string";
 
+    private SystemSettingEditTextPreference mFooterString;
     private CustomSeekBarPreference mQsPanelAlpha;
     private SystemSettingMasterSwitchPreference mCustomHeader;
     private SystemSettingSeekBarPreference mRowsPortrait;
@@ -101,6 +105,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mQsColumnsLandscape.setValue(columnsLandscape);
         mQsColumnsLandscape.setOnPreferenceChangeListener(this);
 
+        mFooterString = (SystemSettingEditTextPreference) findPreference(FOOTER_TEXT_STRING);
+        mFooterString.setOnPreferenceChangeListener(this);
+        String footerString = Settings.System.getString(getContentResolver(),
+                FOOTER_TEXT_STRING);
+        if (TextUtils.isEmpty(footerString) || footerString == null) {
+            mFooterString.setText("#LetsAIMify");
+            Settings.System.putString(getActivity().getContentResolver(),
+                    Settings.System.FOOTER_TEXT_STRING, "#LetsAIMify");
+        } else {
+            mFooterString.setText(footerString);
+        }
     }
 
     @Override
@@ -142,7 +157,18 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             Settings.System.putIntForUser(resolver,
                     Settings.System.OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE, value, UserHandle.USER_CURRENT);
             return true;
-	}
+	} else if (preference == mFooterString) {
+            String value = (String) newValue;
+            if (TextUtils.isEmpty(value) || value == null) {
+                mFooterString.setText("#LetsAIMify");
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.FOOTER_TEXT_STRING, "#LetsAIMify");
+            } else {
+                Settings.System.putString(getActivity().getContentResolver(),
+                        Settings.System.FOOTER_TEXT_STRING, value);
+            }
+            return true;
+        }
         return false;
     }
 

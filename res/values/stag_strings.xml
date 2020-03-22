@@ -754,4 +754,8 @@
     <string name="smart_pixels_percent">Percent of pixels to disable</string>
     <string name="smart_pixels_shift">Burn-in protection interval</string>
 
+    <!-- QS Footer Text -->
+    <string name="footer_text_show_title">Footer text</string>
+    <string name="footer_text_show_summary">Show text in expanded qs footer</string>
+    <string name="footer_text_string_title">Customize footer text</string>
 </resources>
