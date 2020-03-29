@@ -758,4 +758,8 @@
     <string name="footer_text_show_title">Footer text</string>
     <string name="footer_text_show_summary">Show text in expanded qs footer</string>
     <string name="footer_text_string_title">Customize footer text</string>
+
+    <!-- Heads up options -->
+    <string name="less_boring_heads_up_title">Make heads up less annoying</string>
+    <string name="less_boring_heads_up_summary">Show heads up only for dialer or messaging app if they are not in foreground</string>
 </resources>
