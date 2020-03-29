@@ -49,6 +49,11 @@
 
     </PreferenceCategory>
 
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
+        android:key="pulse_on_new_tracks"
+        android:title="@string/pulse_on_new_tracks_title"
+        android:summary="@string/pulse_on_new_tracks_summary" />
+
     <!-- Animations -->
     <PreferenceCategory
         android:key="quick_settings_animations"

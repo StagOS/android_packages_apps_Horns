@@ -35,7 +35,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.ion.AwesomeAnimationHelper;
+import com.android.internal.util.stag.AwesomeAnimationHelper;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.stag.horns.preferences.CustomSeekBarPreference;
