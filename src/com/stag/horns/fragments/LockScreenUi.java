@@ -40,6 +40,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.stag.horns.preferences.CustomSeekBarPreference;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
+import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -52,6 +53,8 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
     private static final String DATE_FONT_SIZE  = "lockdate_font_size";
     private static final String LOCK_OWNERINFO_FONTS = "lock_ownerinfo_fonts";
     private static final String LOCKOWNER_FONT_SIZE = "lockowner_font_size";
+    private static final String LOCKSCREEN_CLOCK = "lockscreen_clock";
+    private static final String LOCKSCREEN_INFO = "lockscreen_info";
 
     private ListPreference mLockClockFonts;
     private ListPreference mLockDateFonts;
@@ -59,6 +62,8 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
     private CustomSeekBarPreference mOwnerInfoFontSize;
+    private SystemSettingMasterSwitchPreference mClockEnabled;
+    private SystemSettingMasterSwitchPreference mInfoEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -107,6 +112,20 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
         mOwnerInfoFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.LOCKOWNER_FONT_SIZE,18));
         mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
+
+	// Lock/Clock Hide
+        mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
+        mClockEnabled.setOnPreferenceChangeListener(this);
+        int clockEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_CLOCK, 1);
+        mClockEnabled.setChecked(clockEnabled != 0);
+
+        mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
+        mInfoEnabled.setOnPreferenceChangeListener(this);
+        int infoEnabled = Settings.System.getInt(resolver,
+                LOCKSCREEN_INFO, 1);
+        mInfoEnabled.setChecked(infoEnabled != 0);
+        mInfoEnabled.setEnabled(clockEnabled != 0);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -144,6 +163,17 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
             int top = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKOWNER_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mClockEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    LOCKSCREEN_CLOCK, value ? 1 : 0);
+            mInfoEnabled.setEnabled(value);
+            return true;
+        } else if (preference == mInfoEnabled) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    LOCKSCREEN_INFO, value ? 1 : 0);
             return true;
         }
         return false;

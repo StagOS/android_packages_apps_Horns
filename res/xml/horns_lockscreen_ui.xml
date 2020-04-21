@@ -80,4 +80,17 @@
         android:defaultValue="18"
         android:persistent="false" />
 
+    <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_options_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:defaultValue="true" />
+
+    <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
+        android:key="lockscreen_info"
+        android:title="@string/lockscreen_info_title"
+        android:summary="@string/lockscreen_info_summary"
+        android:dependency="lockscreen_clock"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

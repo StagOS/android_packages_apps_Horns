@@ -839,4 +839,14 @@
     <string name="lockscreen_clock_sammy_accent_hour">Sammy (accent hour)</string>
     <string name="lockscreen_clock_sammy_accent_min">Sammy (accent minute)</string>
 
+    <!-- Lockscreen Clock, Date & Owner Info -->
+    <string name="lockscreen_clock_options_title">Clock widget options</string>
+    <string name="lockscreen_clock_summary">Modify the style/font/size of the clock widget</string>
+    <string name="lockscreen_date_title">Date options</string>
+    <string name="lockscreen_date_summary">Change the font style/size of the dateview</string>
+    <string name="lockscreen_info_title">Date widget</string>
+    <string name="lockscreen_info_summary">Show the date, weather, alarms and zen on the lockscreen</string>
+    <string name="lockscreen_ownerinfo_title">Owner info options</string>
+    <string name="lockscreen_ownerinfo_summary">Customize the font style/size of the Owner information</string>
+
 </resources>
