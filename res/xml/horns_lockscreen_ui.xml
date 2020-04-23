@@ -15,12 +15,26 @@
     android:title="@string/lockscreen_ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_clock"
+        android:title="@string/lockscreen_clock_options_title"
+        android:summary="@string/lockscreen_clock_summary"
+        android:defaultValue="true" />
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_info"
+        android:title="@string/lockscreen_info_title"
+        android:summary="@string/lockscreen_info_summary"
+        android:dependency="lockscreen_clock"
+        android:defaultValue="true" />
+
     <com.stag.horns.preferences.SecureSettingListPreference
         android:key="lockscreen_clock_selection"
         android:title="@string/lockscreen_clock_title"
         android:dialogTitle="@string/lockscreen_clock_dialog_title"
         android:entries="@array/lockscreen_clock_titles"
         android:entryValues="@array/lockscreen_clock_values"
+        android:dependency="lockscreen_clock"
         android:defaultValue="2" />
 
     <ListPreference
@@ -30,6 +44,7 @@
         android:entries="@array/lock_clock_fonts_entries"
         android:entryValues="@array/lock_clock_fonts_values"
         android:summary="%s"
+        android:dependency="lockscreen_clock"
         android:defaultValue="28"
         android:persistent="false" />
 
@@ -40,6 +55,7 @@
         settings:min="10"
         settings:units="dp"
         android:persistent="false"
+        android:dependency="lockscreen_clock"
         android:defaultValue="54" />
 
     <com.stag.horns.preferences.SecureSettingListPreference
@@ -48,6 +64,7 @@
         android:dialogTitle="@string/lockscreen_date_dialog_title"
         android:entries="@array/lockscreen_date_selection_entries"
         android:entryValues="@array/lockscreen_date_selection_values"
+        android:dependency="lockscreen_info"
         android:defaultValue="0" />
 
     <ListPreference
@@ -57,6 +74,7 @@
         android:entries="@array/lock_clock_fonts_entries"
         android:entryValues="@array/lock_clock_fonts_values"
         android:summary="%s"
+        android:dependency="lockscreen_info"
         android:defaultValue="28"
         android:persistent="false" />
 
@@ -66,6 +84,7 @@
         android:max="40"
         settings:min="10"
         settings:units="dp"
+        android:dependency="lockscreen_info"
         android:defaultValue="18"
         android:persistent="false" />
 
@@ -76,6 +95,7 @@
         android:entries="@array/lock_clock_fonts_entries"
         android:entryValues="@array/lock_clock_fonts_values"
         android:summary="%s"
+        android:dependency="lockscreen_info"
         android:defaultValue="28"
         android:persistent="false" />
 
@@ -85,20 +105,8 @@
         android:max="25"
         settings:min="10"
         settings:units="sp"
+        android:dependency="lockscreen_info"
         android:defaultValue="18"
         android:persistent="false" />
-
-    <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
-        android:key="lockscreen_clock"
-        android:title="@string/lockscreen_clock_options_title"
-        android:summary="@string/lockscreen_clock_summary"
-        android:defaultValue="true" />
-
-    <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
-        android:key="lockscreen_info"
-        android:title="@string/lockscreen_info_title"
-        android:summary="@string/lockscreen_info_summary"
-        android:dependency="lockscreen_clock"
-        android:defaultValue="true" />
 
 </PreferenceScreen>

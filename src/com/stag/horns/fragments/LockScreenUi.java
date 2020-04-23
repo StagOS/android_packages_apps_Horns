@@ -62,8 +62,8 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mClockFontSize;
     private CustomSeekBarPreference mDateFontSize;
     private CustomSeekBarPreference mOwnerInfoFontSize;
-    private SystemSettingMasterSwitchPreference mClockEnabled;
-    private SystemSettingMasterSwitchPreference mInfoEnabled;
+    private SystemSettingSwitchPreference mClockEnabled;
+    private SystemSettingSwitchPreference mInfoEnabled;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -114,13 +114,13 @@ public class LockScreenUi extends SettingsPreferenceFragment implements
         mOwnerInfoFontSize.setOnPreferenceChangeListener(this);
 
 	// Lock/Clock Hide
-        mClockEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
+        mClockEnabled = (SystemSettingSwitchPreference) findPreference(LOCKSCREEN_CLOCK);
         mClockEnabled.setOnPreferenceChangeListener(this);
         int clockEnabled = Settings.System.getInt(resolver,
                 LOCKSCREEN_CLOCK, 1);
         mClockEnabled.setChecked(clockEnabled != 0);
 
-        mInfoEnabled = (SystemSettingMasterSwitchPreference) findPreference(LOCKSCREEN_INFO);
+        mInfoEnabled = (SystemSettingSwitchPreference) findPreference(LOCKSCREEN_INFO);
         mInfoEnabled.setOnPreferenceChangeListener(this);
         int infoEnabled = Settings.System.getInt(resolver,
                 LOCKSCREEN_INFO, 1);
