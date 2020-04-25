@@ -51,11 +51,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_ALBUM_ART_FILTER = "lockscreen_album_art_filter";
     private static final String LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
 
     private SystemSettingListPreference mArtFilter;
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private SystemSettingSeekBarPreference mBlurSeekbar;
     private SystemSettingSwitchPreference mFpKeystore;
+    private PreferenceCategory mFODIconPickerCategory;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -63,7 +65,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.horns_lockscreen);
 
         ContentResolver resolver = getActivity().getContentResolver();
-
+        PreferenceScreen prefSet = getPreferenceScreen();
+        Context mContext = getContext();
         Resources resources = getResources();
         mVisualizerEnabled = (SecureSettingMasterSwitchPreference) findPreference(LOCKSCREEN_VISUALIZER_ENABLED);
         mVisualizerEnabled.setOnPreferenceChangeListener(this);
@@ -83,6 +86,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
         mFpKeystore.setOnPreferenceChangeListener(this);
+
+        boolean hasFod = mContext.getResources().getBoolean(com.android.internal.R.bool.config_needCustomFODView);
+
+        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null && !hasFod) {
+            prefSet.removePreference(mFODIconPickerCategory);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
