@@ -30,9 +30,12 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.stag.horns.preferences.CustomSeekBarPreference;
 import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
+import com.stag.horns.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.android.internal.util.stag.StagUtils;
 
 import com.stag.horns.preferences.SystemSettingEditTextPreference;
 
@@ -42,10 +45,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_PANEL_ALPHA = "qs_panel_alpha";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String FOOTER_TEXT_STRING = "footer_text_string";
+    private static final String PREF_QSBG_NEW_TINT = "qs_panel_bg_use_new_tint";
 
     private SystemSettingEditTextPreference mFooterString;
     private CustomSeekBarPreference mQsPanelAlpha;
     private SystemSettingMasterSwitchPreference mCustomHeader;
+    private SystemSettingSwitchPreference mQsBgNewTint;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -77,6 +82,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else {
             mFooterString.setText(footerString);
         }
+
+        mQsBgNewTint = (SystemSettingSwitchPreference) findPreference(PREF_QSBG_NEW_TINT);
+        mQsBgNewTint.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 1) == 1));
+        mQsBgNewTint.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -103,6 +113,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.putString(getActivity().getContentResolver(),
                         Settings.System.FOOTER_TEXT_STRING, value);
             }
+            return true;
+        } else if (preference == mQsBgNewTint) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_PANEL_BG_USE_NEW_TINT, value ? 1 : 0);
+            StagUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;

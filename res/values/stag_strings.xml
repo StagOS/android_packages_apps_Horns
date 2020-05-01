@@ -874,4 +874,7 @@
     <string name="hide_smart_replies_title">Hide smart replies</string>
     <string name="hide_smart_replies_summary">Hide smart replies to save screen space with peeking notifications</string>
 
+    <string name="qs_bg_use_new_tint">Qs tile colors</string>
+    <string name="qs_bg_use_new_tint_summary">Use accent color for qs tile icons and background</string>
+
 </resources>
