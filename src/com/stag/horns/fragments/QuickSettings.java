@@ -54,6 +54,8 @@ import com.stag.horns.preferences.SystemSettingSwitchPreference;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.internal.util.stag.StagUtils;
+
 import com.stag.horns.preferences.SystemSettingEditTextPreference;
 
 @SearchIndexable
@@ -61,8 +63,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String SHOW_QS_MEDIA_PLAYER ="quick_settings_media_player";
+    private static final String PREF_QSBG_NEW_TINT = "qs_panel_bg_use_new_tint";
 
     private SwitchPreference mShowQSMediaPlayer;
+    private SystemSettingSwitchPreference mQsBgNewTint;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,6 +78,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mShowQSMediaPlayer.setChecked((Settings.Global.getInt(resolver,
   	      Settings.Global.SHOW_MEDIA_ON_QUICK_SETTINGS, 1) == 1));
         mShowQSMediaPlayer.setOnPreferenceChangeListener(this);
+
+        mQsBgNewTint = (SystemSettingSwitchPreference) findPreference(PREF_QSBG_NEW_TINT);
+        mQsBgNewTint.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 1) == 1));
+        mQsBgNewTint.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -84,7 +93,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 	        Settings.Global.putInt(getActivity().getContentResolver(),
 			Settings.Global.SHOW_MEDIA_ON_QUICK_SETTINGS, isEnabled ? 1 : 0);
 	        return true;
-	}
+        } else if (preference == mQsBgNewTint) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_PANEL_BG_USE_NEW_TINT, value ? 1 : 0);
+            StagUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
