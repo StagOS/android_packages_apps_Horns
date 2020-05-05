@@ -45,6 +45,12 @@
           android:title="@string/quick_settings_media_player"
           android:summary="@string/quick_settings_media_player_summary" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference 
+        android:key="qs_blur" 
+        android:title="@string/blur_quicksettings_title" 
+        android:summary="@string/blur_quicksettings_summary"
+        android:defaultValue="true" />
+
     <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="qs_panel_bg_use_new_tint"
         android:title="@string/qs_bg_use_new_tint"
