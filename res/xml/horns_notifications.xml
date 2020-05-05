@@ -91,4 +91,10 @@
         </Preference>
     </PreferenceCategory>
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference 
+        android:key="hide_smart_replies" 
+        android:title="@string/hide_smart_replies_title" 
+        android:summary="@string/hide_smart_replies_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>
