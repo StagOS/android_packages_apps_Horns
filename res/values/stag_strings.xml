@@ -867,6 +867,8 @@
     <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
 
     <!-- QS blur -->
+    <string name="blur_quicksettings_title">Blur behind quick settings</string>
+    <string name="blur_quicksettings_summary">Blurs the darkened background behind quick settings</string>
 
     <!-- Smart replies --> 
     <string name="hide_smart_replies_title">Hide smart replies</string>
