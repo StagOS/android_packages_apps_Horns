@@ -82,6 +82,12 @@
     </PreferenceCategory>
 
     <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="qs_datausage"
+        android:title="@string/qs_datausage_title"
+        android:summary="@string/qs_datausage_subtitle"
+        android:defaultValue="false" />
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="qs_panel_bg_use_new_tint"
         android:title="@string/qs_bg_use_new_tint"
         android:summary="@string/qs_bg_use_new_tint_summary"
