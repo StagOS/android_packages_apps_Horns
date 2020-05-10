@@ -863,9 +863,10 @@
     <string name="lockscreen_date_selection_qbeta_style">Q Beta pill</string>
     <string name="lockscreen_date_selection_str_accent">Rounded, simple and with accent</string>
     <string name="lockscreen_date_selection_str_accent_transparent">Rounded, transparent and with accent</string>
-    <string name="lockscreen_date_selection_str_gradient">Gradient</string>
     <string name="lockscreen_date_selection_str_border_accent">Dark with accented borders</string>
     <string name="lockscreen_date_selection_str_border_gradient">Dark with gradient borders</string>
+    <string name="lockscreen_date_selection_str_half_gradient">Gradient(Rounded) with transparent ending</string>
+    <string name="lockscreen_date_selection_str_half_accent">Accent(rounded) with transparent ending</string>
 
     <!-- QS blur --> 
     <string name="blur_quicksettings_title">Blur behind quick settings</string>

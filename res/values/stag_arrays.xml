@@ -735,9 +735,10 @@
         <item>@string/lockscreen_date_selection_qbeta_style</item>
         <item>@string/lockscreen_date_selection_str_accent</item>
         <item>@string/lockscreen_date_selection_str_accent_transparent</item>
-        <item>@string/lockscreen_date_selection_str_gradient</item>
         <item>@string/lockscreen_date_selection_str_border_accent</item>
         <item>@string/lockscreen_date_selection_str_border_gradient</item>
+        <item>@string/lockscreen_date_selection_str_half_gradient</item>
+        <item>@string/lockscreen_date_selection_str_half_accent</item>
     </string-array>
 
     <string-array name="lockscreen_date_selection_values" translatable="false">
@@ -750,5 +751,6 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+        <item>9</item>
     </string-array>
 </resources>
