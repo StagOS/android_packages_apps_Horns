@@ -63,6 +63,10 @@
     <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
     <string name="device_chiron_summary" translatable="false">Chiron\nLightvortex</string>
 
+    <!-- Xiaomi Redmi 7(Onclite) -->
+    <string name="device_onclite" translatable="false">Xiaomi Redmi 7</string>
+    <string name="device_onclite_summary" translatable="false">Onclite\nAbhinand A K</string>
+
     <!-- Xiaomi Redmi Note 4(Mido) -->
     <string name="device_mido" translatable="false">Xiaomi Redmi Note 4</string>
     <string name="device_mido_summary" translatable="false">Mido\nPritish Joshi</string>
