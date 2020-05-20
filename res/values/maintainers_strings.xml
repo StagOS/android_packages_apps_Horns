@@ -43,6 +43,14 @@
     <string name="device_X01BD" translatable="false">Asus Zenfone Max Pro M2</string>
     <string name="device_X01BD_summary" translatable="false">X01BD\nDhairya Tripathi</string>
 
+    <!-- Google Pixel 3a(sargo) -->
+    <string name="device_sargo" translatable="false">Google Pixel 3a</string>
+    <string name="device_sargo_summary" translatable="false">Sargo\nKSHMR</string>
+
+    <!-- Google Pixel 3a XL(bonito) -->
+    <string name="device_bonito" translatable="false">Google Pixel 3a XL</string>
+    <string name="device_bonito_summary" translatable="false">Bonito\nKSHMR</string>
+
     <!-- Lenovo ZUK Z2(plus) -->
     <string name="device_z2plus" translatable="false">Lenovo ZUK Z2 </string>
     <string name="device_z2plus_summary" translatable="false">Z2_plus\nNikhil Gohil</string>
