@@ -35,6 +35,25 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:id="@+id/device_category_google"
+        android:title="@string/device_category_google_title" >
+
+        <Preference
+            android:id="@+id/device_sargo"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_sargo_summary"
+            android:title="@string/device_sargo" >
+        </Preference>
+
+        <Preference
+            android:id="@+id/device_bonito"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_bonito_summary"
+            android:title="@string/device_bonito" >
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:id="@+id/device_category_lenovo"
         android:title="@string/device_category_lenovo_title" >
 
