@@ -430,7 +430,8 @@
     <string name="file_header_select_title">Pick image from storage</string>
     <string name="file_header_select_summary">Select an image from internal storage</string>
     <string name="status_bar_custom_header_shadow_title">Darken image</string>
-
+    <string name="status_bar_custom_header_height_title">Image height offset</string>
+    
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Gaming Mode</string>
     <string name="gaming_mode_summary">Customize gaming mode preferences</string>
@@ -882,5 +883,9 @@
     <!-- QS DataUsage Toggle -->
     <string name="qs_datausage_title">Show data usage in qs header</string>
     <string name="qs_datausage_subtitle">Shows data usage in quick settings header of sim used for data</string>
+
+    <!-- R Notification headers -->
+    <string name="notification_headers_title">Show notification headers</string>
+    <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
 
 </resources>

@@ -36,6 +36,12 @@
         android:summary="@string/vibrate_on_notifications_summary"
         android:defaultValue="true" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="notification_headers"
+        android:title="@string/notification_headers_title"
+        android:summary="@string/notification_headers_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
