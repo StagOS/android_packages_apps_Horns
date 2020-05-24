@@ -94,7 +94,7 @@
 
     <!-- Xiaomi Redmi Note 7 Pro(violet) -->
     <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
-    <string name="device_violet_summary" translatable="false">Violet\nSaalim & Tesla</string>
+    <string name="device_violet_summary" translatable="false">Violet\nSaalim and Tesla</string>
 
     <!-- YU YUREKA(TOMATO) -->
     <string name="device_tomato" translatable="false">YU YUREKA</string>

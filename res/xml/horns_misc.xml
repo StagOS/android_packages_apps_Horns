@@ -18,27 +18,22 @@
         android:title="@string/misc_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-        <com.stag.horns.preferences.GlobalSettingSwitchPreference
-            android:key="wake_when_plugged_or_unplugged"
-            android:title="@string/wakeup_when_plugged_unplugged_title"
-            android:summary="@string/wakeup_when_plugged_unplugged_summary"
-            android:defaultValue="true" />
+    <com.stag.horns.preferences.GlobalSettingSwitchPreference
+        android:key="wake_when_plugged_or_unplugged"
+        android:title="@string/wakeup_when_plugged_unplugged_title"
+        android:summary="@string/wakeup_when_plugged_unplugged_summary"
+        android:defaultValue="true" />
 
-        <com.stag.horns.preferences.SystemSettingSwitchPreference
-            android:key="show_cpu_overlay"
-            android:title="@string/show_cpu_title"
-            android:summary="@string/show_cpu_summary"
-            android:defaultValue="false" />
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="show_cpu_overlay"
+        android:title="@string/show_cpu_title"
+        android:summary="@string/show_cpu_summary"
+        android:defaultValue="false" />
 
     <PreferenceScreen
-        android:key="volume_key"
-        android:fragment="com.stag.horns.fragments.VolumeRockerSettings"
-        android:title="@string/volume_title" />
-
-            <PreferenceScreen
-                android:key="inputmethod_settings"
-                android:title="@string/keyboard_ime_title"
-                android:fragment="com.stag.horns.fragments.InputMethodsSettings" />
+        android:key="inputmethod_settings"
+        android:title="@string/keyboard_ime_title"
+        android:fragment="com.stag.horns.fragments.InputMethodsSettings" />
 
     <PreferenceCategory
         android:key="aggressive_battery"
