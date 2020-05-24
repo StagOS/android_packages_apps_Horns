@@ -146,6 +146,13 @@
             android:summary="@string/device_lavender_summary"
             android:title="@string/device_lavender" >
         </Preference>
+
+        <Preference
+            android:id="@+id/device_violet"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_violet_summary"
+            android:title="@string/device_violet" >
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory

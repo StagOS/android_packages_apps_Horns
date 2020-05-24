@@ -92,6 +92,10 @@
     <string name="device_lavender" translatable="false">Xiaomi Redmi Note 7</string>
     <string name="device_lavender_summary" translatable="false">Lavender\nSusan Dahal</string>
 
+    <!-- Xiaomi Redmi Note 7 Pro(violet) -->
+    <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
+    <string name="device_violet_summary" translatable="false">Violet\nSaalim & Tesla</string>
+
     <!-- YU YUREKA(TOMATO) -->
     <string name="device_tomato" translatable="false">YU YUREKA</string>
     <string name="device_tomato_summary" translatable="false">Tomato\nPheNoM</string>
