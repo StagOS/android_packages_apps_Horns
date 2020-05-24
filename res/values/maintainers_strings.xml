@@ -33,6 +33,7 @@
     <string name="device_category_nubia_title" translatable="false">Nubia</string>
     <string name="device_category_lyf_title" translatable="false">LYF</string>
     <string name="device_category_yu_title" translatable="false">YU</string>
+    <string name="device_category_realme_title" translatable="false">Realme</string>
 
     <!-- Devices & Maintainers -->
     <!-- Asus Zenfone Max Pro M1(X00T) -->
@@ -67,6 +68,10 @@
     <string name="device_fajita" translatable="false">OnePlus 6T</string>
     <string name="device_fajita_summary" translatable="false">Fajita\nvjs Pranav</string>
 
+    <!-- Realme 2 Pro(RMX1801) -->
+    <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
+    <string name="device_RMX1801_summary" translatable="false">RMX1801\nBaibhab</string>
+
     <!-- Xiaomi Mi Mix 2(Chiron) -->
     <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
     <string name="device_chiron_summary" translatable="false">Chiron\nLightvortex</string>
@@ -82,6 +87,14 @@
     <!-- Xiaomi Redmi Note 5 Pro(whyred) -->
     <string name="device_whyred" translatable="false">Xiaomi Redmi Note 5 Pro</string>
     <string name="device_whyred_summary" translatable="false">Whyred\nZeeshan</string>
+
+    <!-- Xiaomi Redmi Note 7(lavender) -->
+    <string name="device_lavender" translatable="false">Xiaomi Redmi Note 7</string>
+    <string name="device_lavender_summary" translatable="false">Lavender\nSusan Dahal</string>
+
+    <!-- Xiaomi Redmi Note 7 Pro(violet) -->
+    <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
+    <string name="device_violet_summary" translatable="false">Violet\nSaalim & Tesla</string>
 
     <!-- YU YUREKA(TOMATO) -->
     <string name="device_tomato" translatable="false">YU YUREKA</string>
