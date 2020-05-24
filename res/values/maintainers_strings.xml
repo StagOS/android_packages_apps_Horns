@@ -88,6 +88,10 @@
     <string name="device_whyred" translatable="false">Xiaomi Redmi Note 5 Pro</string>
     <string name="device_whyred_summary" translatable="false">Whyred\nZeeshan</string>
 
+    <!-- Xiaomi Redmi Note 7(lavender) -->
+    <string name="device_lavender" translatable="false">Xiaomi Redmi Note 7</string>
+    <string name="device_lavender_summary" translatable="false">Lavender\nSusan Dahal</string>
+
     <!-- YU YUREKA(TOMATO) -->
     <string name="device_tomato" translatable="false">YU YUREKA</string>
     <string name="device_tomato_summary" translatable="false">Tomato\nPheNoM</string>
