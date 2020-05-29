@@ -77,7 +77,7 @@
         android:icon="@drawable/dt_active_edge"
         android:title="@string/active_edge_title"
         android:summary="@string/active_edge_summary"
-        android:fragment="com.dirtyunicorns.tweaks.fragments.ActiveEdge" />
+        android:fragment="com.stag.horns.fragments.ActiveEdge" />
 
     <!-- Animations -->
     <PreferenceCategory
