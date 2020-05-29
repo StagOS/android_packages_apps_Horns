@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+
 import androidx.preference.PreferenceCategory;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -36,17 +37,16 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.stag.horns.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@SearchIndexable
 public class ActiveEdge extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String KEY_SHORT_SQUEEZE_APP_SELECTION = "short_squeeze_app_selection";
-    private static final String KEY_LONG_SQUEEZE_APP_SELECTION = "long_squeeze_app_selection";
 
     private int shortSqueezeActions;
     private int longSqueezeActions;
@@ -54,9 +54,9 @@ public class ActiveEdge extends SettingsPreferenceFragment
     private CustomSeekBarPreference mActiveEdgeSensitivity;
     private ListPreference mShortSqueezeActions;
     private ListPreference mLongSqueezeActions;
+    private SwitchPreference mActiveEdgeWake;
     private Preference mShortSqueezeAppSelection;
     private Preference mLongSqueezeAppSelection;
-    private SwitchPreference mActiveEdgeWake;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,7 +83,8 @@ public class ActiveEdge extends SettingsPreferenceFragment
 
         int sensitivity = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.ASSIST_GESTURE_SENSITIVITY, 2, UserHandle.USER_CURRENT);
-        mActiveEdgeSensitivity = (CustomSeekBarPreference) findPreference("gesture_assist_sensitivity");
+        mActiveEdgeSensitivity = (CustomSeekBarPreference) findPreference(
+                "gesture_assist_sensitivity");
         mActiveEdgeSensitivity.setValue(sensitivity);
         mActiveEdgeSensitivity.setOnPreferenceChangeListener(this);
 
@@ -93,14 +94,16 @@ public class ActiveEdge extends SettingsPreferenceFragment
                 UserHandle.USER_CURRENT) == 1));
         mActiveEdgeWake.setOnPreferenceChangeListener(this);
 
-        mShortSqueezeAppSelection = (Preference) findPreference(KEY_SHORT_SQUEEZE_APP_SELECTION);
-        mLongSqueezeAppSelection = (Preference) findPreference(KEY_LONG_SQUEEZE_APP_SELECTION);
+        mShortSqueezeAppSelection = (Preference) findPreference("short_squeeze_app_selection");
+        boolean isAppSelection = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.SHORT_SQUEEZE_SELECTION, 0, UserHandle.USER_CURRENT) == 5/*action_app_action*/;
+        mShortSqueezeAppSelection.setEnabled(isAppSelection);
 
+        mLongSqueezeAppSelection = (Preference) findPreference("long_squeeze_app_selection");
+        isAppSelection = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.LONG_SQUEEZE_SELECTION, 0, UserHandle.USER_CURRENT) == 5/*action_app_action*/;
+        mLongSqueezeAppSelection.setEnabled(isAppSelection);
         customAppCheck();
-        mShortSqueezeAppSelection.setEnabled(mShortSqueezeActions.getEntryValues()
-                [shortSqueezeActions].equals("11"));
-        mLongSqueezeAppSelection.setEnabled(mLongSqueezeActions.getEntryValues()
-                [longSqueezeActions].equals("11"));
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -112,9 +115,8 @@ public class ActiveEdge extends SettingsPreferenceFragment
             int index = mShortSqueezeActions.findIndexOfValue((String) newValue);
             mShortSqueezeActions.setSummary(
                     mShortSqueezeActions.getEntries()[index]);
+            mShortSqueezeAppSelection.setEnabled(shortSqueezeActions == 5);
             customAppCheck();
-            mShortSqueezeAppSelection.setEnabled(mShortSqueezeActions.getEntryValues()
-                    [shortSqueezeActions].equals("11"));
             return true;
         } else if (preference == mLongSqueezeActions) {
             int longSqueezeActions = Integer.valueOf((String) newValue);
@@ -124,9 +126,8 @@ public class ActiveEdge extends SettingsPreferenceFragment
             int index = mLongSqueezeActions.findIndexOfValue((String) newValue);
             mLongSqueezeActions.setSummary(
                     mLongSqueezeActions.getEntries()[index]);
+            mLongSqueezeAppSelection.setEnabled(longSqueezeActions == 5);
             customAppCheck();
-            mLongSqueezeAppSelection.setEnabled(mLongSqueezeActions.getEntryValues()
-                    [longSqueezeActions].equals("11"));
             return true;
         } else if (preference == mActiveEdgeSensitivity) {
             int val = (Integer) newValue;
@@ -147,20 +148,48 @@ public class ActiveEdge extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
+        // Ensure preferences sensible to change get updated
+        actionPreferenceReload();
         customAppCheck();
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        // Ensure preferences sensible to change gets updated
+        actionPreferenceReload();
         customAppCheck();
     }
 
+    /* Helper for reloading both short and long gesture as they might change on
+       package uninstallation */
+    private void actionPreferenceReload() {
+        int shortSqueezeActions = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.SHORT_SQUEEZE_SELECTION, 0,
+                UserHandle.USER_CURRENT);
+
+        int longSqueezeActions = Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.LONG_SQUEEZE_SELECTION, 0,
+                UserHandle.USER_CURRENT);
+
+        // Reload the action preferences
+        mShortSqueezeActions.setValue(Integer.toString(shortSqueezeActions));
+        mShortSqueezeActions.setSummary(mShortSqueezeActions.getEntry());
+
+        mLongSqueezeActions.setValue(Integer.toString(longSqueezeActions));
+        mLongSqueezeActions.setSummary(mLongSqueezeActions.getEntry());
+
+        mShortSqueezeAppSelection.setEnabled(mShortSqueezeActions.getEntryValues()
+                [shortSqueezeActions].equals("5"));
+        mLongSqueezeAppSelection.setEnabled(mLongSqueezeActions.getEntryValues()
+                [longSqueezeActions].equals("5"));
+    }
+
     private void customAppCheck() {
-        mShortSqueezeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
-                String.valueOf(Settings.Secure.SHORT_SQUEEZE_CUSTOM_APP_FR_NAME)));
-        mLongSqueezeAppSelection.setSummary(Settings.Secure.getString(getActivity().getContentResolver(),
-                String.valueOf(Settings.Secure.LONG_SQUEEZE_CUSTOM_APP_FR_NAME)));
+        mShortSqueezeAppSelection.setSummary(Settings.Secure.getStringForUser(getContentResolver(),
+                String.valueOf(Settings.Secure.SHORT_SQUEEZE_CUSTOM_APP_FR_NAME), UserHandle.USER_CURRENT));
+        mLongSqueezeAppSelection.setSummary(Settings.Secure.getStringForUser(getContentResolver(),
+                String.valueOf(Settings.Secure.LONG_SQUEEZE_CUSTOM_APP_FR_NAME), UserHandle.USER_CURRENT));
     }
 
     @Override
@@ -173,12 +202,15 @@ public class ActiveEdge extends SettingsPreferenceFragment
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
                                                                             boolean enabled) {
-                    final ArrayList<SearchIndexableResource> result = new ArrayList<>();
-                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
                     sir.xmlResId = R.xml.active_edge;
 
                     if (context.getPackageManager().hasSystemFeature(
-                            "android.hardware.sensor.assist")) {
+                            "android.hardware.sensor.assist") &&
+                            context.getResources().getBoolean(R.bool.has_active_edge)) {
                         result.add(sir);
                     }
                     return result;
@@ -186,7 +218,7 @@ public class ActiveEdge extends SettingsPreferenceFragment
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
-                    final List<String> keys = super.getNonIndexableKeys(context);
+                    List<String> keys = super.getNonIndexableKeys(context);
                     return keys;
                 }
             };
