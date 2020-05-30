@@ -52,6 +52,13 @@
             android:fragment="com.stag.horns.fragments.NavbarSettings"
             android:icon="@drawable/ic_settings_navbar"/>
 
+        <!-- Animations -->
+        <Preference
+            android:key="animations_category"
+            android:title="@string/animations_cat_title"
+            android:fragment="com.stag.horns.fragments.Animations"
+            android:icon="@drawable/ic_settings_animations"/>
+
         <!-- Gestures -->
         <Preference
             android:key="gestures_category"
