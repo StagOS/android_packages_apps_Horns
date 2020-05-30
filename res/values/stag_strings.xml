@@ -906,9 +906,11 @@
     <string name="qs_bg_use_new_tint_summary">Use accent color for qs tile icons and background</string>
 
     <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">Show data usage in qs header</string>
-    <string name="qs_datausage_subtitle">Shows data usage in quick settings header of sim used for data</string>
-
+    <string name="qs_datausage_title">Data usage in QS Header</string>
+    <string name="qs_datausage_disabled">Disabled</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
+ 
     <!-- R Notification headers -->
     <string name="notification_headers_title">Show notification headers</string>
     <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
