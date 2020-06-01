@@ -82,7 +82,7 @@
 
     <!-- Xiaomi Redmi Note 4(Mido) -->
     <string name="device_mido" translatable="false">Xiaomi Redmi Note 4</string>
-    <string name="device_mido_summary" translatable="false">Mido\nPritish Joshi</string>
+    <string name="device_mido_summary" translatable="false">Mido\nShashank Patil</string>
 
     <!-- Xiaomi Redmi Note 5 Pro(whyred) -->
     <string name="device_whyred" translatable="false">Xiaomi Redmi Note 5 Pro</string>
