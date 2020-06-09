@@ -28,7 +28,7 @@
     <bool name="has_powermenu_category">true</bool>
 
     <!-- Whether to display notifications tab -->
-    <bool name="has_notifications_category">false</bool>
+    <bool name="has_notifications_category">true</bool>
 
     <!-- Whether to display misc tab -->
     <bool name="has_misc_category">false</bool>
