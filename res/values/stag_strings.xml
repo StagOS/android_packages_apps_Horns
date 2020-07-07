@@ -15,6 +15,7 @@
     <string name="horns_title">Horns</string>
 
     <!-- Categories -->
+    <string name="aosp_themeing_title">Aosp Themeing</string>
     <string name="buttons_title">Buttons</string>
     <string name="gestures_title">Gestures</string>
     <string name="interfaces_title">Interfaces</string>
@@ -28,6 +29,7 @@
     <string name="statusbar_title">Status bar</string>
     <string name="volume_title">Volume rockers</string>
     <string name="system_title">System</string>
+    <string name="stag_themes_title">Themes</string>
     <string name="notifications_title">Notifications</string>
     <string name="keyboard_ime_title">Keyboard and IME</string>
     <string name="aware_settings_title">Motion Sense</string>
