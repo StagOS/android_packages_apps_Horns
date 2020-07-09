@@ -34,6 +34,7 @@
     <string name="device_category_lyf_title" translatable="false">LYF</string>
     <string name="device_category_yu_title" translatable="false">YU</string>
     <string name="device_category_realme_title" translatable="false">Realme</string>
+    <string name="device_category_pocophone_title" translatable="false">POCOPHONE</string>
 
     <!-- Devices & Maintainers -->
     <!-- Asus Zenfone Max Pro M1(X00T) -->
@@ -67,7 +68,11 @@
     <!-- OnePlus 6T(fajita) -->
     <string name="device_fajita" translatable="false">OnePlus 6T</string>
     <string name="device_fajita_summary" translatable="false">Fajita\nvjs Pranav</string>
-
+ 
+    <!-- POCO F1(Beryllium) -->
+    <string name="device_Beryllium" translatable="false">POCO F1</string>
+    <string name="device_Beryllium_summary" translatable="false">Beryllium\nCruzerPrtm</string>
+  
     <!-- Realme 2 Pro(RMX1801) -->
     <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
     <string name="device_RMX1801_summary" translatable="false">RMX1801\nBaibhab</string>
