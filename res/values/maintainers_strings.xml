@@ -100,6 +100,10 @@
     <!-- Xiaomi Redmi Note 7 Pro(violet) -->
     <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
     <string name="device_violet_summary" translatable="false">Violet\nSaalim and Tesla</string>
+    
+    <!-- Xiaomi Redmi Note 8 Pro(begonia)-->
+    <string name="device_begonia" translatable="false">Xiaomi Redmi Note 8 Pro</string>
+    <string name="device_begonia_summary" translatable="false">Begonia\nFlamefusion</string>
 
     <!-- YU YUREKA(TOMATO) -->
     <string name="device_tomato" translatable="false">YU YUREKA</string>
