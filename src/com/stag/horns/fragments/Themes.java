@@ -58,6 +58,8 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import android.util.Log;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 import com.stag.horns.fragments.QsTileStylePreferenceController;
 
 import java.util.List;
@@ -71,6 +73,10 @@ public class Themes extends DashboardFragment  implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String TAG = "Themes";
+    private static final String ACCENT_COLOR = "accent_color";
+    static final int DEFAULT_ACCENT_COLOR = 0xff00afb4;
+
+    private ColorPickerPreference mAccentColor;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -82,6 +88,18 @@ public class Themes extends DashboardFragment  implements
         super.onCreate(icicle);
 
         final ContentResolver resolver = getActivity().getContentResolver();
+
+        mAccentColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
+        mAccentColor.setOnPreferenceChangeListener(this);
+        int intColor = Settings.System.getIntForUser(resolver,
+                Settings.System.ACCENT_COLOR, DEFAULT_ACCENT_COLOR, UserHandle.USER_CURRENT);
+        String hexColor = String.format("#%08x", (0xff00afb4 & intColor));
+        if (hexColor.equals("#ff00afb4")) {
+            mAccentColor.setSummary(R.string.default_string);
+        } else {
+            mAccentColor.setSummary(hexColor);
+        }
+        mAccentColor.setNewPreviewColor(intColor);
     }
 
     @Override
@@ -110,6 +128,20 @@ public class Themes extends DashboardFragment  implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mAccentColor) {
+        final ContentResolver resolver = getActivity().getContentResolver();
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff00afb4")) {
+                mAccentColor.setSummary(R.string.default_string);
+            } else {
+                mAccentColor.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.ACCENT_COLOR, intHex, UserHandle.USER_CURRENT);
+            return true;
+	}
         return false;
     }
 

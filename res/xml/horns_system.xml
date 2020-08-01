@@ -22,12 +22,6 @@
        android:title="@string/stag_themes_title"
        android:fragment="com.stag.horns.fragments.Themes" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="accent_color"
-        android:title="@string/theme_accent_picker_title"
-        android:defaultValue="0xffffff"
-        android:persistent="false" />
-
     <com.stag.horns.preferences.SystemSettingMasterSwitchPreference
         android:key="gaming_mode_enabled"
         android:fragment="com.stag.horns.fragments.GamingMode"

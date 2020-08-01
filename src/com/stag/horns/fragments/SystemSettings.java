@@ -72,15 +72,12 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "System";
     private static final String AWARE_CATEGORY = "aware_settings";
-    private static final String ACCENT_COLOR = "accent_color";
-    private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String NAVIGATION_BAR_RECENTS_STYLE = "navbar_recents_style";
     private static final String ACTIVE_EDGE_CATEGORY = "active_edge_category";
 
     private Handler mHandler;
 
-    private ColorPickerPreference mThemeColor;
 //    private Fragment mCurrentFragment = this;
     private IOverlayManager mOverlayService;
     private PackageManager mPackageManager;
@@ -112,8 +109,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
                 Settings.System.GAMING_MODE_ENABLED, 0) == 1));
         mGamingMode.setOnPreferenceChangeListener(this);
 
-        setupAccentPref();
-
         mNavbarRecentsStyle = (ListPreference) findPreference(NAVIGATION_BAR_RECENTS_STYLE);
         int recentsStyle = Settings.System.getInt(resolver,
                 Settings.System.OMNI_NAVIGATION_BAR_RECENTS, 0);
@@ -139,16 +134,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.HORNS;
     }
 
-    private void setupAccentPref() {
-        mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
-        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
-        int color = "-1".equals(colorVal)
-                ? Color.WHITE
-                : Color.parseColor("#" + colorVal);
-        mThemeColor.setNewPreviewColor(color);
-        mThemeColor.setOnPreferenceChangeListener(this);
-    }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -161,18 +146,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 	ContentResolver resolver = getActivity().getContentResolver();
-	if (preference == mThemeColor) {
-            int color = (Integer) newValue;
-            String hexColor = String.format("%08X", (0xFFFFFFFF & color));
-            SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
-	    try{
-            mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
-            mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
-            mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT); 
-	    }catch(Exception ex){
-            }
-	    return true;
-        } else if (preference == mGamingMode) {
+        if (preference == mGamingMode) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
@@ -227,15 +201,4 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         return PackageUtils.isAvailableApp(StagUtils.APP_PACKAGE_NAME, getActivity());
     }
 
-    private boolean isTheme(OverlayInfo oi) {
-        if (!OverlayInfo.CATEGORY_THEME.equals(oi.category)) {
-            return false;
-        }
-        try {
-            PackageInfo pi = mPackageManager.getPackageInfo(oi.packageName, 0);
-            return pi != null && !pi.isStaticOverlayPackage();
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
-    }
 }
