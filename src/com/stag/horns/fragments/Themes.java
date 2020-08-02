@@ -61,6 +61,7 @@ import android.util.Log;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.stag.horns.fragments.QsTileStylePreferenceController;
+import com.stag.horns.fragments.AccentPickerPreferenceController;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -115,6 +116,7 @@ public class Themes extends DashboardFragment  implements
     private static List<AbstractPreferenceController> buildPreferenceControllers(
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
 	controllers.add(new ThemePreferenceController(context));
 	controllers.add(new CustomOverlayPreferenceController(context,
 		"android.theme.customization.custom_overlays"));

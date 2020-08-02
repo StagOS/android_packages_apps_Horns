@@ -17,11 +17,22 @@
     android:title="@string/stag_themes_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="accent_color"
-        android:title="@string/theme_accent_picker_title"
-        settings:defaultColorValue="0xff00afb4"
-        android:persistent="false" />
+
+    <PreferenceCategory
+        android:key="accents_title"
+        android:title="@string/accents_title">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="accent_color"
+            android:title="@string/theme_accent_picker_title"
+            settings:defaultColorValue="0xff00afb4"
+            android:persistent="false" />
+
+        <Preference
+            android:key="accent_picker"
+            android:title="@string/theme_accent_picker_presets_title" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="aosp_themeing"

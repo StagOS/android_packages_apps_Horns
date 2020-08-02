@@ -16,6 +16,7 @@
 
     <!-- Categories -->
     <string name="aosp_themeing_title">Aosp Themeing</string>
+    <string name="accents_title">Spectroscope</string>
     <string name="buttons_title">Buttons</string>
     <string name="gestures_title">Gestures</string>
     <string name="interfaces_title">Interfaces</string>
@@ -56,9 +57,12 @@
     <string name="theme_category_title">System theme</string>
     <string name="systemui_theme_style_title">Background color</string>
     <string name="accent_picker_dialog_title">Select an accent color</string>
-    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_title">Infinite Spectrum</string>
     <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_presets_title">Spectral Lines</string>
     <string name="theme_accent_picker_default">Default</string>
+    <string name="accent_picker_material_colors">Material palette</string>
+    <string name="accent_picker_custom_colors">User requested</string>
 
     <!-- Volume rocker music control -->
     <string name="volume_rocker_music_controls_title">Playback control</string>
