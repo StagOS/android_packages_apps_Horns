@@ -248,7 +248,8 @@
     <string name="network_traffic_layout">Activity layout</string>
     <string name="network_traffic_layout_h">Horizontal</string>
     <string name="network_traffic_layout_v">Verticle</string>
- 
+    <string name="net_traffic_font">Fonts</string> 
+
     <!-- Disable QS on secure Lockscreen -->
     <string name="lockscreen_qs_disabled_title">No QS when secured</string>
     <string name="lockscreen_qs_disabled_summary">Disable quick settings tiles on secured lockscreen</string>
