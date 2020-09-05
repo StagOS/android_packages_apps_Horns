@@ -36,6 +36,13 @@
         android:title="@string/screenshot_type_title"
         android:defaultValue="0" />
 
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference 
+        android:key="powermenu_blur" 
+        android:title="@string/blur_powermenu_title" 
+        android:summary="@string/blur_powermenu_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory 
             android:key="dashboard_category" 
             android:title="@string/dashboard_category">

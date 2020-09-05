@@ -1037,4 +1037,8 @@
     <string name="volume_panel_oreo_val">co.potatoproject.plugin.volume.oreo</string>
     <string name="volume_panel_tiled_val">co.potatoproject.plugin.volume.tiled</string>
 
+    <!-- QS blur --> 
+    <string name="blur_powermenu_title">Blur behind powermenu</string>
+    <string name="blur_powermenu_summary">Blurs the darkened background behind powermenu</string>
+
 </resources>
