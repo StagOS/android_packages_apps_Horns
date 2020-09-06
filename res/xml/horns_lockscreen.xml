@@ -143,6 +143,12 @@
        android:summary="@string/show_qs_on_secure_keyguard_summary"
        android:defaultValue="true"/>
 
+   <com.stag.horns.preferences.SystemSettingSwitchPreference
+       android:key="lockscreen_show_status_bar"
+       android:title="@string/lockscreen_show_status_bar_title"
+       android:summary="@string/lockscreen_show_status_bar_summary"
+       android:defaultValue="true" />
+
     <Preference
             android:title="@string/lockscreen_tuner_title" >
             <intent android:action="android.intent.action.MAIN"
