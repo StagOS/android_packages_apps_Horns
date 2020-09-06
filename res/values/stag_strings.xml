@@ -1041,4 +1041,9 @@
     <string name="blur_powermenu_title">Blur behind powermenu</string>
     <string name="blur_powermenu_summary">Blurs the darkened background behind powermenu</string>
 
+    <!-- QS Battery Location -->
+    <string name="qs_battery_header_title">QS Battery Location</string>
+    <string name="qs_battery_off">Off</string>
+    <string name="qs_battery_on_signal">Qs Signal Group</string>
+    <string name="qs_battery_on_header">Qs Header</string>
 </resources>
