@@ -158,4 +158,9 @@
     <string name="fod_icon_picker_summary">Choose your favorite fingerprint icon</string>
     <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
 
+    <!-- Double Tap gestures -->
+    <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lockscreen</string>
+    <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lockscreen to put phone to sleep</string>
+    <string name="double_tap_sleep_gesture_title">Double tap to sleep on statusbar</string>
+    <string name="double_tap_sleep_gesture_summary">Double tap on the status bar to put the device to sleep</string>
 </resources>
