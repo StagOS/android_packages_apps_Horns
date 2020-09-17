@@ -112,5 +112,9 @@
     <!-- Yu Yureka Black(garlic) -->
     <string name="device_garlic" translatable="false">Yu Yureka Black</string>
     <string name="device_garlic_summary" translatable="false">Garlic\nvjs Pranav</string>
+    
+    <!-- Xiaomi Redmi Note 9 S/Pro(miatoll) -->
+    <string name="device_miatoll" translatable="false">Xiaomi Redmi Note 9 S/Pro</string>
+    <string name="device_miatoll_summary" translatable="false">Miatoll\nPriQue</string>
 
 </resources> 
