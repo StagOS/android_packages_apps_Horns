@@ -173,4 +173,7 @@
     <string name="volume_rocker_music_controls_title">Music control</string>
     <string name="volume_rocker_music_controls_summary">Long press volume buttons to switch tracks while screen off</string>
 
+    <!-- P style network bar -->
+    <string name="use_old_mobiletype_title">Old mobiletype</string>
+    <string name="use_old_mobiletype_summary">Use pre-p mobiletype icons for signal (Reboot required)</string>
 </resources>

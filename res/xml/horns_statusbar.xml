@@ -32,9 +32,15 @@
             android:defaultValue="true" />
 
         <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_gesture"
-        android:title="@string/double_tap_sleep_gesture_title"
-        android:summary="@string/double_tap_sleep_gesture_summary"
-        android:defaultValue="false" />
+             android:key="double_tap_sleep_gesture"
+             android:title="@string/double_tap_sleep_gesture_title"
+             android:summary="@string/double_tap_sleep_gesture_summary"
+             android:defaultValue="false" />
+
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="use_old_mobiletype"
+            android:title="@string/use_old_mobiletype_title"
+            android:summary="@string/use_old_mobiletype_summary"
+            android:defaultValue="true" />
 
 </PreferenceScreen>
