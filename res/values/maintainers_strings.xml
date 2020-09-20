@@ -117,4 +117,8 @@
     <string name="device_miatoll" translatable="false">Xiaomi Redmi Note 9 S/Pro</string>
     <string name="device_miatoll_summary" translatable="false">Miatoll\nPriQue</string>
 
+    <!-- Xiaomi Redmi K20 Pro(raphael) -->
+    <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
+    <string name="device_raphael_summary" translatable="false">Raphael\nIronGFly</string>
+
 </resources> 
