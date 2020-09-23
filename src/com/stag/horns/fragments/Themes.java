@@ -47,12 +47,11 @@ import android.view.View;
 
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.development.OverlayCategoryPreferenceController;
-import com.android.settings.display.CustomOverlayPreferenceController;
 import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
+import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -60,7 +59,6 @@ import android.util.Log;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-import com.stag.horns.fragments.QsTileStylePreferenceController;
 import com.stag.horns.fragments.AccentPickerPreferenceController;
 
 import java.util.List;
@@ -78,7 +76,6 @@ public class Themes extends DashboardFragment  implements
     static final int DEFAULT_ACCENT_COLOR = 0xff00afb4;
 
     private ColorPickerPreference mAccentColor;
-
     @Override
     protected int getPreferenceScreenResId() {
         return R.xml.horns_themes;
@@ -117,14 +114,6 @@ public class Themes extends DashboardFragment  implements
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
-	controllers.add(new ThemePreferenceController(context));
-	controllers.add(new CustomOverlayPreferenceController(context,
-		"android.theme.customization.custom_overlays"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.font"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.adaptive_icon_shape"));
-        controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 

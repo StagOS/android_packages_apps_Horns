@@ -1,8 +1,28 @@
- package com.stag.horns.fragments;
+/*
+ *  Copyright (C) 2015 The OmniROM Project
+ *	Copyright (C) 2020 StagOS
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.stag.horns.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
 
 import android.os.Bundle;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.provider.SearchIndexableResource;
 import com.android.settings.R;
 import android.provider.Settings;
 
@@ -12,64 +32,31 @@ import androidx.preference.PreferenceScreen;
 
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.stag.horns.preferences.Utils;
 import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
 public class NotificationSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
-
-    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
-    private static final String LIGHTS_CATEGORY = "notification_lights";
-    private static final String BATTERY_LIGHT_ENABLED = "battery_light_enabled";
-    private static final String PULSE_AMBIENT_LIGHT = "pulse_ambient_light";
-
-    private PreferenceCategory mLightsCategory;
-    private SystemSettingMasterSwitchPreference mBatteryLightEnabled;
-    private SystemSettingMasterSwitchPreference mEdgePulse;
+        implements Preference.OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_notifications);
-
-        PreferenceScreen prefScreen = getPreferenceScreen();
-
-        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
-        if (!Utils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(incallVibCategory);
-        }
-        mBatteryLightEnabled = (SystemSettingMasterSwitchPreference) findPreference(BATTERY_LIGHT_ENABLED);
-        mBatteryLightEnabled.setOnPreferenceChangeListener(this);
-        int batteryLightEnabled = Settings.System.getInt(getContentResolver(),
-                BATTERY_LIGHT_ENABLED, 1);
-        mBatteryLightEnabled.setChecked(batteryLightEnabled != 0);
-
-        mLightsCategory = (PreferenceCategory) findPreference(LIGHTS_CATEGORY);
-        if (!getResources().getBoolean(com.android.internal.R.bool.config_hasNotificationLed)) {
-            getPreferenceScreen().removePreference(mLightsCategory);
-        }
-
-        mEdgePulse = (SystemSettingMasterSwitchPreference) findPreference(PULSE_AMBIENT_LIGHT);
-        mEdgePulse.setOnPreferenceChangeListener(this);
-        int edgePulse = Settings.System.getInt(getContentResolver(),
-                PULSE_AMBIENT_LIGHT, 0);
-        mEdgePulse.setChecked(edgePulse != 0);
-    }
+	ContentResolver resolver = getActivity().getContentResolver();
+	}
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mBatteryLightEnabled) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
-		            BATTERY_LIGHT_ENABLED, value ? 1 : 0);
-            return true;
-        } else if (preference == mEdgePulse) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getContentResolver(),
-		            PULSE_AMBIENT_LIGHT, value ? 1 : 0);
-            return true;
-	}
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 
@@ -77,4 +64,25 @@ public class NotificationSettings extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HORNS;
     }
+	
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+		new BaseSearchIndexProvider() {
+			@Override
+			public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+					boolean enabled) {
+				ArrayList<SearchIndexableResource> result =
+						new ArrayList<SearchIndexableResource>();
+
+				SearchIndexableResource sir = new SearchIndexableResource(context);
+				sir.xmlResId = R.xml.horns_notifications;
+				result.add(sir);
+				return result;
+			}
+
+			@Override
+			public List<String> getNonIndexableKeys(Context context) {
+				List<String> keys = super.getNonIndexableKeys(context);
+				return keys;
+			}
+    };
 }

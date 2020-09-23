@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2014 TeamEos
+ *  Copyright (C) 2015 The OmniROM Project
+ *	Copyright (C) 2020 StagOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +30,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import androidx.preference.ListPreference;
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
@@ -37,42 +39,32 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
+
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
 public class NavbarSettings extends SettingsPreferenceFragment
-        implements OnPreferenceChangeListener {
-
-    private static final String NAV_BAR_LAYOUT = "nav_bar_layout";
-    private static final String SYSUI_NAV_BAR = "sysui_nav_bar";
-
-    private ListPreference mNavBarLayout;
-    private ContentResolver mResolver;
+        implements OnPreferenceChangeListener, Indexable {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_navigation);
-        mResolver = getActivity().getContentResolver();
-
-        mNavBarLayout = (ListPreference) findPreference(NAV_BAR_LAYOUT);
-        mNavBarLayout.setOnPreferenceChangeListener(this);
-        String navBarLayoutValue = Settings.Secure.getString(mResolver, SYSUI_NAV_BAR);
-        if (navBarLayoutValue != null) {
-            mNavBarLayout.setValue(navBarLayoutValue);
-        } else {
-            mNavBarLayout.setValueIndex(0);
-        }
+        ContentResolver resolver = getActivity().getContentResolver();
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNavBarLayout) {
-            Settings.Secure.putString(mResolver, SYSUI_NAV_BAR, (String) newValue);
-            return true;
-        }
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 
@@ -80,4 +72,25 @@ public class NavbarSettings extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HORNS;
     }
+
+	public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+		new BaseSearchIndexProvider() {
+			@Override
+			public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+					boolean enabled) {
+				ArrayList<SearchIndexableResource> result =
+						new ArrayList<SearchIndexableResource>();
+
+				SearchIndexableResource sir = new SearchIndexableResource(context);
+				sir.xmlResId = R.xml.horns_navigation;
+				result.add(sir);
+				return result;
+			}
+
+			@Override
+			public List<String> getNonIndexableKeys(Context context) {
+				List<String> keys = super.getNonIndexableKeys(context);
+				return keys;
+			}
+	};
 }

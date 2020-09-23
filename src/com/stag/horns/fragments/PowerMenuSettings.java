@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2014-2015 The CyanogenMod Project
+ *  Copyright (C) 2015 The OmniROM Project
+ *	Copyright (C) 2020 StagOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +24,7 @@ import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.provider.SearchIndexableResource;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -33,6 +35,10 @@ import android.provider.Settings;
 import com.android.settings.R;
 import androidx.annotation.NonNull;
 
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
+
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.stag.horns.preferences.Utils;
@@ -41,9 +47,9 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@SearchIndexable
 public class PowerMenuSettings extends SettingsPreferenceFragment
-                implements Preference.OnPreferenceChangeListener {
+                implements Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
 
@@ -52,30 +58,13 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
         addPreferencesFromResource(R.xml.horns_power);
-
-        final ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
-        mPowermenuTorch.setOnPreferenceChangeListener(this);
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
-            prefScreen.removePreference(mPowermenuTorch);
-        } else {
-        mPowermenuTorch.setChecked((Settings.System.getInt(resolver,
-                Settings.System.POWERMENU_TORCH, 0) == 1));
-        }
+		ContentResolver resolver = getActivity().getContentResolver();
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mPowermenuTorch) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWERMENU_TORCH, value ? 1 : 0);
-            return true;
-        }
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 
@@ -84,5 +73,25 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HORNS;
     }
+	
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
 
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.horns_power;
+                    result.add(sir);
+                    return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+    };
 }

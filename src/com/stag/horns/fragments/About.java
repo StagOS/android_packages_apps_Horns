@@ -22,6 +22,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
 import android.preference.ListPreference;
 import android.preference.SwitchPreference;
 import android.preference.Preference;

@@ -20,24 +20,4 @@
     android:title="@string/navbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
-    <Preference
-        android:key="gesture_system_navigation_input_summary"
-        android:title="@string/system_navigation_title"
-        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
-        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
-
-    <ListPreference
-        android:key="nav_bar_layout"
-        android:title="@string/nav_bar_layout"
-        android:summary="%s"
-        android:defaultValue="default"
-        android:persistent="false"
-        android:entries="@array/nav_bar_layouts"
-        android:entryValues="@array/nav_bar_layouts_values" />
-
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
-        android:key="sysui_nav_bar_inverse"
-        android:title="@string/navbar_invert_layout_title"
-        android:defaultValue="false" />
-
 </PreferenceScreen>

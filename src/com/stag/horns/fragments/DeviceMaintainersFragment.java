@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Stag-OS
+ * Copyright (C) 2020 StagOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,23 @@
 package com.stag.horns.fragments;
 
 import android.os.Bundle;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.provider.SearchIndexableResource;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-public class DeviceMaintainersFragment extends SettingsPreferenceFragment {
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@SearchIndexable
+public class DeviceMaintainersFragment extends SettingsPreferenceFragment implements
+		Indexable{
 
     public static final String TAG = "DeviceMaintainersFragment";
 
@@ -35,4 +47,25 @@ public class DeviceMaintainersFragment extends SettingsPreferenceFragment {
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HORNS;
     }
+
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+		new BaseSearchIndexProvider() {
+			@Override
+			public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+					boolean enabled) {
+				ArrayList<SearchIndexableResource> result =
+						new ArrayList<SearchIndexableResource>();
+
+				SearchIndexableResource sir = new SearchIndexableResource(context);
+				sir.xmlResId = R.xml.device_maintainers_fragment;
+				result.add(sir);
+				return result;
+			}
+
+			@Override
+			public List<String> getNonIndexableKeys(Context context) {
+				List<String> keys = super.getNonIndexableKeys(context);
+				return keys;
+			}
+		};
 }

@@ -34,16 +34,9 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+<!--    <PreferenceCategory
         android:key="aosp_themeing"
         android:title="@string/aosp_themeing_title">
-
-        <ListPreference
-            android:key="qs_tile_style"
-            android:title="@string/qs_tile_style_title"
-            android:persistent="false"
-            android:entries="@array/qs_selector_entries"
-            android:entryValues="@array/qs_selector_values" />
 
         <ListPreference
             android:key="theme"
@@ -61,5 +54,6 @@
             android:title="@string/theme_customization_icon_shape_title"/>
 
     </PreferenceCategory>
+-->
 
 </PreferenceScreen>
