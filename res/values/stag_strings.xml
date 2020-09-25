@@ -183,4 +183,8 @@
 
     <!-- Translucent lockscreen notifications background -->
     <string name="translucent_lockscreen_notifications_bg_title">Translucent notifications background</string>
+
+    <!-- Media art -->
+    <string name="lockscreen_media_art_title">Media art</string>
+    <string name="lockscreen_media_art_summary">Toggle visibility of media art</string>
 </resources>
