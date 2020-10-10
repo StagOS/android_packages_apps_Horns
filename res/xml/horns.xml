@@ -76,18 +76,11 @@
 
         <!-- Power Menu -->
         <Preference
-            android:key="powermenu__category"
+            android:key="powermenu_category"
             android:title="@string/powermenu_title" 
             android:fragment="com.stag.horns.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/>
 
-        <!-- Recents 
-        <Preference
-            android:key="recents_category"
-            android:title="@string/recents_title"
-            android:fragment="com.stag.horns.fragments.RecentsSettings"
-            android:icon="@drawable/ic_settings_recents"/>
-	-->
         <!-- Notifications -->
         <Preference
             android:key="notifications_category"
