@@ -22,7 +22,7 @@
     <bool name="has_gestures_category">false</bool>
 
     <!-- Whether to display lockscreen tab -->
-    <bool name="has_lockscreen_category">false</bool>
+    <bool name="has_lockscreen_category">true</bool>
 
     <!-- Whether to display powermenu tab -->
     <bool name="has_powermenu_category">true</bool>
