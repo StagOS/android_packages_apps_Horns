@@ -26,6 +26,12 @@
         android:entryValues="@array/qs_battery_mode_values"
         android:defaultValue="1" />
 
+     <!-- QS Tile Visibility -->
+     <com.stag.horns.preferences.SystemSettingSwitchPreference
+         android:key="qs_tile_title_visibility"
+         android:title="@string/qs_tile_title_visibility_title"
+         android:defaultValue="true" />
+
      <PreferenceCategory
         android:key="qs_columns_rows_category"
         android:title="@string/qs_columns_rows_category_title" >
