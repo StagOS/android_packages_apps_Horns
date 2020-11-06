@@ -25,6 +25,13 @@
          android:summary="@string/clock_style_category_summary"
          android:fragment="com.stag.horns.fragments.ClockSettings" />
 
+         <!--Network traffic -->
+         <Preference 
+          android:key="network_traffic" 
+          android:fragment="com.stag.horns.fragments.NetworkTraffic" 
+          android:title="@string/traffic_title"
+          android:summary="@string/traffic_summary" />
+
         <Preference
             android:key="battery_bar_category"
             android:title="@string/battery_bar_title"
