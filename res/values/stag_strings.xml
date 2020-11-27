@@ -1,4 +1,4 @@
-	<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2020 StagOS
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -174,4 +174,8 @@
     <!-- Colored icons -->
     <string name="statusbar_icons_style">Colored Statusbar Icons</string>
     <string name="statusbar_icons_style_summary">Choose the style of your statusbar icons (requires SystemUI restart)</string>
+
+    <!-- FOD Tweaks -->
+    <string name="fod_tweaks_title">FOD Tweaks</string>
+    <string name="fod_tweaks_summary">FOD related customization</string>
 </resources>
