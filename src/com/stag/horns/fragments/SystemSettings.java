@@ -39,6 +39,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.custom.udfps.UdfpsUtils;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.stag.horns.preferences.Utils;
 
@@ -52,6 +54,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 	private static final String TAG = "SystemSettings";
 
 	// private ListPreference mCustomTheme;
+        private static final String FOD_TWEAKS = "fod_tweaks";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,9 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		// mCustomTheme.setValue(String.valueOf(currentTheme));
 		// mCustomTheme.setOnPreferenceChangeListener(this);
 		// Log.d(TAG, "Current theme: " + String.valueOf(currentTheme));
+         if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
+             prefScreen.removePreference(findPreference(FOD_TWEAKS));
+         }
     }
 
     @Override

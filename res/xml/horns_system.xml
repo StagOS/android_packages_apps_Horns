@@ -16,7 +16,6 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-         <!-- Add a list preference for screen resolution -->
      <com.stag.horns.preferences.SecureSettingListPreference
          android:key="system_custom_theme"
          android:title="@string/custom_theme_title"
@@ -30,6 +29,15 @@
          android:title="@string/toast_icon_title"
          android:summary="@string/toast_icon_summary"
          android:defaultValue="false" />
+
+    <!-- Udfps -->
+    <Preference
+        android:fragment="com.stag.horns.fragments.FodTweaks"
+        android:icon="@drawable/ic_fod"
+        android:key="fod_tweaks"
+        android:summary="@string/fod_tweaks_summary"
+        android:title="@string/fod_tweaks_title"
+        settings:searchable="false" />
 
     <!-- Font style -->
     <Preference
