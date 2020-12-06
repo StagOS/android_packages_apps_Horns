@@ -47,6 +47,7 @@ import android.view.View;
 
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.development.OverlayCategoryPreferenceController;
+import com.android.settings.display.darkmode.CustomOverlayPreferenceController;
 import com.android.settings.display.ThemePreferenceController;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -114,6 +115,8 @@ public class Themes extends DashboardFragment  implements
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
+	controllers.add(new CustomOverlayPreferenceController(context,
+		"android.theme.customization.custom_overlays"));
         return controllers;
     }
 

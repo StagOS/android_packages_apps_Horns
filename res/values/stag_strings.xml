@@ -108,4 +108,6 @@
     <string name="global_actions_max_columns_title">Max actions to show</string>
     <string name="global_actions_max_columns_summary">Set how many actions to show before buttons move to overflow menu</string>
 
+    <!-- Themes customisation -->
+    <string name="theme_customization_systemui_title">Color bucket</string>
 </resources>
