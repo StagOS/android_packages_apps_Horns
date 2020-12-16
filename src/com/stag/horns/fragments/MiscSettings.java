@@ -52,11 +52,19 @@ import java.util.List;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
+import com.stag.horns.preferences.CustomSeekBarPreference;
 
 @SearchIndexable
 public class MiscSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
+
+    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
+    private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
     private static final String SMART_PIXELS = "smart_pixels";
+
+    private CustomSeekBarPreference mPulseBrightness;
+    private CustomSeekBarPreference mDozeBrightness;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -65,6 +73,26 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
         ContentResolver resolver = getActivity().getContentResolver();
+
+        int defaultDoze = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessDoze);
+        int defaultPulse = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessPulse);
+        if (defaultPulse == -1) {
+            defaultPulse = defaultDoze;
+        }
+
+        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
+        int value = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
+        mPulseBrightness.setValue(value);
+        mPulseBrightness.setOnPreferenceChangeListener(this);
+
+        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
+        mDozeBrightness.setValue(value);
+        mDozeBrightness.setOnPreferenceChangeListener(this);
     }
 
     private void updateSmartPixelsPreference() {
@@ -78,8 +106,19 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         }
     }
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+	if (preference == mPulseBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mDozeBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOZE_BRIGHTNESS, value);
+            return true;
+        }
         return false;
     }
 
