@@ -104,5 +104,16 @@
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
     </PreferenceCategory>     
-        
+
+    <!-- Pulse music visualizer -->
+    <PreferenceCategory
+         android:title="@string/pulse_music_visualizer_title" >        
+         
+         <Preference
+             android:key="pulse_settings"
+             android:title="@string/pulse_settings"
+             android:summary="@string/pulse_settings_summary"
+             android:fragment="com.stag.horns.fragments.PulseSettings" />
+     </PreferenceCategory>
+
 </PreferenceScreen>
