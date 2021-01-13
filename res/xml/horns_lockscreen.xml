@@ -54,4 +54,10 @@
         android:summary="@string/lockscreen_battery_info_summary"
         android:defaultValue="true" />
 
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
+        android:key="fod_on_doze"
+        android:title="@string/fod_on_doze_title"
+        android:summary="@string/fod_on_doze_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

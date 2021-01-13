@@ -51,6 +51,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.stag.horns.preferences.SecureSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,6 +65,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
+
+        final boolean hasFOD = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportsInDisplayFingerprint);
+        if (!hasFOD) {
+            SecureSettingSwitchPreference fodOnDozePref =
+                    (SecureSettingSwitchPreference) findPreference("fod_on_doze");
+            getPreferenceScreen().removePreference(fodOnDozePref);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {

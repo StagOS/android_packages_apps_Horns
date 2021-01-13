@@ -718,4 +718,9 @@
 
     <!-- Custom Wi-Fi bar icons -->
     <string name="custom_wifi_bar_title">Wi-Fi icon</string>
+
+    <!-- FOD on doze -->
+    <string name="fod_on_doze_title">FOD on doze</string>
+    <string name="fod_on_doze_summary">Show fingerprint in display on ambient display and AOD. This only hides the icon and will not disable functionality</string>
+
 </resources>
