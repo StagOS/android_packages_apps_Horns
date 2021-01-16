@@ -47,18 +47,24 @@ import java.util.List;
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+
+    private PreferenceCategory mFODIconPickerCategory;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.horns_system);
         ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getContext();
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mFODIconPicker = (Preference) findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPicker != null
-                && !getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint)) {
-            prefScreen.removePreference(mFODIconPicker);
+        boolean hasFod = mContext.getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint);
+
+        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null && !hasFod ) {
+            prefScreen.removePreference(mFODIconPickerCategory);
         }
     }
 

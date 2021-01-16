@@ -22,6 +22,11 @@
        android:title="@string/stag_themes_title"
        android:fragment="com.stag.horns.fragments.Themes" />
 
+
+    <PreferenceCategory
+        android:key="fod_icon_picker"
+        android:title="@string/fod_icon_picker_category_title" >
+
     <!-- FOD icon picker -->
     <Preference
         android:key="fod_icon_picker_category"
@@ -44,5 +49,8 @@
        android:entryValues="@array/fod_recognizing_animation_values" 
        android:defaultValue="0"
        android:dependency="fod_recognizing_animation" />
+
+    </PreferenceCategory>
+
 
 </PreferenceScreen>
