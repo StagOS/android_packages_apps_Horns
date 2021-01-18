@@ -60,16 +60,31 @@ import com.stag.horns.preferences.SystemSettingEditTextPreference;
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String SHOW_QS_MEDIA_PLAYER ="quick_settings_media_player";
+
+    private SwitchPreference mShowQSMediaPlayer;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_quicksettings);
         ContentResolver resolver = getActivity().getContentResolver();
+
+	mShowQSMediaPlayer = (SwitchPreference) findPreference(SHOW_QS_MEDIA_PLAYER);
+        mShowQSMediaPlayer.setChecked((Settings.Global.getInt(resolver,
+  	      Settings.Global.SHOW_MEDIA_ON_QUICK_SETTINGS, 1) == 1));
+        mShowQSMediaPlayer.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+	if (preference == mShowQSMediaPlayer){
+	        final boolean isEnabled = (Boolean) newValue;
+	        Settings.Global.putInt(getActivity().getContentResolver(),
+			Settings.Global.SHOW_MEDIA_ON_QUICK_SETTINGS, isEnabled ? 1 : 0);
+	        return true;
+	}
         return false;
     }
 

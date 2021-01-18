@@ -32,6 +32,12 @@
          android:title="@string/qs_tile_title_visibility_title"
          android:defaultValue="true" />
 
+     <!-- QS Media Player Toggle -->
+     <SwitchPreference
+          android:key="quick_settings_media_player"
+          android:title="@string/quick_settings_media_player"
+          android:summary="@string/quick_settings_media_player_summary" />
+
      <PreferenceCategory
         android:key="qs_columns_rows_category"
         android:title="@string/qs_columns_rows_category_title" >
