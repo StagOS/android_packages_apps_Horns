@@ -76,8 +76,12 @@
     <string name="phenom_description">Founder | Lead Developer | Maintainer</string>
     <string name="vjs_name">VJS Pranavasri</string>
     <string name="vjs_description">Founder | Lead Developer | Maintainer</string>
+    <string name="rishi_name">Rishi Shukla</string>
+    <string name="rishi_description">Developer | WebDeveloper | Maintainer</string>
+    <string name="rahul_name">Rahul Ahuja</string>
+    <string name="rahul_description">Moderaor | Lead Designer | UX</string>
     <string name="ravi_name">Ravi Pingat</string>
-    <string name="ravi_description">Co-Lead | Developer | Moderator</string>
+    <string name="ravi_description">Developer | Moderator</string>
     <string name="pritish_name">Pritish Joshi</string>
     <string name="pritish_description">Designer | UX | Tester</string>
     <string name="shekhawat_name">Anand Shekhawat</string>
