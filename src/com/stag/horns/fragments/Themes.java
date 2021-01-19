@@ -115,6 +115,7 @@ public class Themes extends DashboardFragment  implements
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new AccentPickerPreferenceController(context, lifecycle, fragment));
+	controllers.add(new ThemePreferenceController(context));
 	controllers.add(new CustomOverlayPreferenceController(context,
 		"android.theme.customization.custom_overlays"));
         controllers.add(new OverlayCategoryPreferenceController(context,
