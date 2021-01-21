@@ -121,4 +121,8 @@
     <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
     <string name="device_raphael_summary" translatable="false">Raphael\nIronGFly</string>
 
-</resources> 
+    <!-- POCO X3(surya) -->
+    <string name="device_surya" translatable="false">POCO X3</string>
+    <string name="device_surya_summary" translatable="false">Surya\nSambit</string> 
+
+</resources>

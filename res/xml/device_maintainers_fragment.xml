@@ -188,6 +188,13 @@
             android:summary="@string/device_Beryllium_summary"
             android:title="@string/device_Beryllium" >
          </Preference>
+
+         <Preference
+            android:id="@+id/device_surya"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_surya_summary"
+            android:title="@string/device_surya" >
+         </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
