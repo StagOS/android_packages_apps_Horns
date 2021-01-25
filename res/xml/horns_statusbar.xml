@@ -18,6 +18,13 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Clock Customizations -->
+    <Preference
+	android:key="clock_settings"
+        android:title="@string/clocksettings_title"
+        android:summary="@string/clocksettings_summary"
+        android:fragment="com.stag.horns.fragments.ClockSettings" />
+
     <com.stag.horns.preferences.SystemSettingSwitchPreference
          android:key="statusbar_icons_style"
          android:title="@string/statusbar_icons_style"
