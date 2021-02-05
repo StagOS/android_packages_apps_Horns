@@ -105,8 +105,8 @@
             ledPreview="true"
             settings:defaultColorValue="0xFF1A73E8" />
 
-        <com.stag.horns.preferences.SystemSettingSeekBarPreference
-            android:key="ambient_light_duration"
+        <com.stag.horns.preferences.CustomSeekBarPreference
+            android:key="notification_pulse_duration"
             android:title="@string/pulse_ambient_light_duration_title"
             android:summary="@string/pulse_ambient_light_duration_summary"
             android:persistent="false"
@@ -117,8 +117,8 @@
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
 
-        <com.stag.horns.preferences.SystemSettingSeekBarPreference
-            android:key="ambient_light_repeat_count"
+        <com.stag.horns.preferences.CustomSeekBarPreference
+            android:key="notification_pulse_repeats"
             android:title="@string/pulse_ambient_light_repeat_count_title"
             android:summary="@string/pulse_ambient_light_repeat_count_summary"
             android:persistent="false"
