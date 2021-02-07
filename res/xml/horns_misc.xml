@@ -25,4 +25,10 @@
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="smart_pixels"
+        android:fragment="com.stag.horns.fragments.SmartPixels"
+        android:title="@string/smart_pixels_title"
+        android:summary="@string/smart_pixels_summary" />
+
 </PreferenceScreen>

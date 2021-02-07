@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
- 
+
 package com.stag.horns.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -56,14 +56,27 @@ import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 @SearchIndexable
 public class MiscSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
-
+    private static final String SMART_PIXELS = "smart_pixels";
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_misc);
+        updateSmartPixelsPreference();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
         ContentResolver resolver = getActivity().getContentResolver();
     }
 
+    private void updateSmartPixelsPreference() {
+        PreferenceScreen prefSet = getPreferenceScreen();
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference smartPixels = findPreference(SMART_PIXELS);
+
+        if (!enableSmartPixels){
+            prefSet.removePreference(smartPixels);
+        }
+    }
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
@@ -74,7 +87,6 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HORNS;
     }
-	
 	public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
 		new BaseSearchIndexProvider() {
 			@Override
@@ -92,6 +104,11 @@ public class MiscSettings extends SettingsPreferenceFragment implements
 			@Override
 			public List<String> getNonIndexableKeys(Context context) {
 				List<String> keys = super.getNonIndexableKeys(context);
+                                final Resources res = context.getResources();
+				boolean mSmartPixelsSupported = res.getBoolean(
+                        com.android.internal.R.bool.config_enableSmartPixels);
+                if (!mSmartPixelsSupported)
+                    keys.add(SMART_PIXELS);
 				return keys;
 			}
 	};
