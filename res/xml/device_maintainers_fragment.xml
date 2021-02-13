@@ -26,12 +26,6 @@
             android:title="@string/device_X000T" >
         </Preference>
 
-        <Preference
-            android:id="@+id/device_X01BD"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_X01BD_summary"
-            android:title="@string/device_X01BD" >
-        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -58,10 +52,10 @@
         android:title="@string/device_category_lenovo_title" >
 
         <Preference
-            android:id="@+id/device_z2plus"
+            android:id="@+id/device_z2_plus"
             android:icon="@drawable/stag_device"
-            android:summary="@string/device_z2plus_summary"
-            android:title="@string/device_z2plus" >
+            android:summary="@string/device_z2_plus_summary"
+            android:title="@string/device_z2_plus" >
         </Preference>
      </PreferenceCategory>
 
@@ -190,10 +184,10 @@
         android:title="@string/device_category_pocophone_title" >
 
         <Preference
-            android:id="@+id/device_Beryllium"
+            android:id="@+id/device_beryllium"
             android:icon="@drawable/stag_device"
-            android:summary="@string/device_Beryllium_summary"
-            android:title="@string/device_Beryllium" >
+            android:summary="@string/device_beryllium_summary"
+            android:title="@string/device_beryllium" >
          </Preference>
 
          <Preference
