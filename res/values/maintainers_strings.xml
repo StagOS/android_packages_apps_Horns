@@ -77,6 +77,10 @@
     <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
     <string name="device_RMX1801_summary" translatable="false">RMX1801\nBaibhab</string>
 
+    <!-- Realme U1(RMX1831) -->
+    <string name="device_RMX1831" translatable="false">Realme U1</string>
+    <string name="device_RMX1831_summary" translatable="false">RMX1831\nLokesh Vazirani</string>
+
     <!-- Xiaomi Mi Mix 2(Chiron) -->
     <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
     <string name="device_chiron_summary" translatable="false">Chiron\nLightvortex</string>
