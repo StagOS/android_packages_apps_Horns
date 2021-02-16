@@ -100,6 +100,14 @@
             android:summary="@string/device_RMX1801_summary"
             android:title="@string/device_RMX1801" >
         </Preference>
+        
+        <Preference
+            android:id="@+id/device_RMX1831"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_RMX1831_summary"
+            android:title="@string/device_RMX1831" >
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
