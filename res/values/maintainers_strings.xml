@@ -68,6 +68,10 @@
     <!-- POCO F1(Beryllium) -->
     <string name="device_beryllium" translatable="false">POCO F1</string>
     <string name="device_beryllium_summary" translatable="false">Beryllium\nCruzerPrtm</string>
+
+    <!-- POCO X2(Phoenixin) -->
+    <string name="device_phoenixin" translatable="false">POCO X2</string>
+    <string name="device_phoenixin_summary" translatable="false">Phoenixin\nYashodhan Sawardekar</string>
   
     <!-- Realme 2 Pro(RMX1801) -->
     <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
@@ -120,6 +124,10 @@
     <!-- Xiaomi Redmi K20 Pro(raphael) -->
     <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
     <string name="device_raphael_summary" translatable="false">Raphael\nIronGFly</string>
+
+    <!-- Xiaomi Redmi K30(Phoenix) -->
+    <string name="device_phoenix" translatable="false">Xiaomi Redmi K30</string>
+    <string name="device_phoenix_summary" translatable="false">Phoenix\nYashodhan Sawardekar</string>
 
     <!-- POCO X3(surya) -->
     <string name="device_surya" translatable="false">POCO X3</string>

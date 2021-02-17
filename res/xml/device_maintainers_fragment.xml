@@ -178,6 +178,13 @@
         </Preference>
 
         <Preference
+            android:id="@+id/device_phoenix"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_phoenix_summary"
+            android:title="@string/device_phoenix" >
+        </Preference>
+
+        <Preference
             android:id="@+id/device_ginkgo"
             android:icon="@drawable/stag_device"
             android:summary="@string/device_ginkgo_summary"
@@ -203,6 +210,13 @@
             android:icon="@drawable/stag_device"
             android:summary="@string/device_surya_summary"
             android:title="@string/device_surya" >
+         </Preference>
+
+        <Preference
+            android:id="@+id/device_phoenixin"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_phoenixin_summary"
+            android:title="@string/device_phoenixin" >
          </Preference>
     </PreferenceCategory>
 
