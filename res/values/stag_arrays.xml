@@ -648,6 +648,9 @@
         <item>@string/switch_retro</item>
         <item>@string/switch_stockish</item>
         <item>@string/switch_gradient</item>
+        <item>@string/switch_oos</item>
+        <item>@string/switch_fluid</item>
+        <item>@string/switch_android_s</item>
     </string-array>
     <string-array name="switch_style_values" translatable="false">
         <item>0</item>
@@ -659,6 +662,9 @@
         <item>6</item>
         <item>7</item>
         <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
     </string-array>
 
     <!--  Volume Panel  -->

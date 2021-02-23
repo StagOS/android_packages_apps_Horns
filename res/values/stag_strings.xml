@@ -629,6 +629,9 @@
     <string name="switch_telegram">Telegram</string>
     <string name="switch_stockish">Stockish</string>
     <string name="switch_gradient">Gradient</string>
+    <string name="switch_oos">OxygenOS 11</string>
+    <string name="switch_fluid">Fluid</string>
+    <string name="switch_android_s">Android S</string>
 
     <!--  Volume Panel Plugin   -->
     <string name="volume_panel">Volume Panel Style</string>
