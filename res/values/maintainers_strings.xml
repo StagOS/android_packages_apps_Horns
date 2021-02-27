@@ -136,5 +136,13 @@
     <!-- Xiaomi Redmi Note 8/8T(ginkgo/willow) -->
     <string name="device_ginkgo" translatable="false">Xiaomi Redmi Note 8/8T</string>
     <string name="device_ginkgo_summary" translatable="false">Ginkgo\nTheWeaver786</string>
+    
+    <!-- Oneplus 5 (cheeseburger) -->
+    <string name="device_cheeseburger" translatable="false">Oneplus 5</string>
+    <string name="device_cheeseburger_summary" translatable="false">cheeseburger\nlolapola</string>
+    
+    <!-- Oneplus 5T (dumpling) -->
+    <string name="device_dumpling" translatable="false">Oneplus 5T</string>
+    <string name="device_dumpling_summary" translatable="false">dumpling\nlolapola</string>
 
 </resources>
