@@ -59,11 +59,11 @@
 
     <!-- OnePlus 6(enchilada) -->
     <string name="device_enchilada" translatable="false">OnePlus 6</string>
-    <string name="device_enchilada_summary" translatable="false">Enchilada\nvjs Pranav</string>
+    <string name="device_enchilada_summary" translatable="false">Enchilada\nAyanC1</string>
 
     <!-- OnePlus 6T(fajita) -->
     <string name="device_fajita" translatable="false">OnePlus 6T</string>
-    <string name="device_fajita_summary" translatable="false">Fajita\nvjs Pranav</string>
+    <string name="device_fajita_summary" translatable="false">Fajita\nAyanC1</string>
  
     <!-- POCO F1(Beryllium) -->
     <string name="device_beryllium" translatable="false">POCO F1</string>
