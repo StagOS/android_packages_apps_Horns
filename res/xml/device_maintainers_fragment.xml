@@ -88,6 +88,20 @@
             android:summary="@string/device_fajita_summary"
             android:title="@string/device_fajita" >
         </Preference>
+	    
+	<Preference
+            android:id="@+id/device_cheeseburger"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_cheeseburger_summary"
+            android:title="@string/device_cheeseburger" >
+        </Preference>
+	
+	<Preference
+            android:id="@+id/device_dumpling"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_dumpling_summary"
+            android:title="@string/device_dumpling" >
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
