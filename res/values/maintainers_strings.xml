@@ -72,7 +72,11 @@
     <!-- POCO X2(Phoenixin) -->
     <string name="device_phoenixin" translatable="false">POCO X2</string>
     <string name="device_phoenixin_summary" translatable="false">Phoenixin\nYashodhan Sawardekar</string>
-  
+    
+    <!-- Realme 1(CPH1859) -->
+    <string name="device_CPH1859" translatable="false">Realme 1</string>
+    <string name="device_CPH1859_summary" translatable="false">CPH1859\nDebayan Kar</string> 
+ 
     <!-- Realme 2 Pro(RMX1801) -->
     <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
     <string name="device_RMX1801_summary" translatable="false">RMX1801\nBaibhab</string>
