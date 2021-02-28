@@ -109,6 +109,13 @@
         android:title="@string/device_category_realme_title" >
 
         <Preference
+            android:id="@+id/device_CPH1859"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_CPH1859_summary"
+            android:title="@string/device_CPH1859" >
+        </Preference>
+
+        <Preference
             android:id="@+id/device_RMX1801"
             android:icon="@drawable/stag_device"
             android:summary="@string/device_RMX1801_summary"
