@@ -38,115 +38,113 @@
 
     <!-- Devices & Maintainers -->
     <!-- Asus Zenfone Max Pro M1(X00T) -->
-    <string name="device_X000T" translatable="false">Asus Zenfone Max Pro M1</string>
-    <string name="device_X000T_summary" translatable="false">X00T\nRafi KN</string>
-
-    <!-- Google Pixel 3a(sargo) -->
-    <string name="device_sargo" translatable="false">Google Pixel 3a</string>
-    <string name="device_sargo_summary" translatable="false">Sargo\nKSHMR</string>
-
-    <!-- Google Pixel 3a XL(bonito) -->
-    <string name="device_bonito" translatable="false">Google Pixel 3a XL</string>
-    <string name="device_bonito_summary" translatable="false">Bonito\nKSHMR</string>
+    <string name="device_X00T" translatable="false">Asus Zenfone Max Pro M1</string>
+    <string name="device_X00T_summary" translatable="false">X00T\nRafi KN</string>
+    <string name="device_X00T_maintainer" translatable="false">Rafi KN</string>
 
     <!-- Lenovo ZUK Z2(plus) -->
     <string name="device_z2_plus" translatable="false">Lenovo ZUK Z2 </string>
     <string name="device_z2_plus_summary" translatable="false">Z2_plus\nNikhil Gohil</string>
-
-    <!-- Lyf Water 8(mobee01a) -->
-    <string name="device_mobee01a" translatable="false">Lyf Water 8</string>
-    <string name="device_mobee01a_summary" translatable="false">Mobee01a\nInderpreet Singh</string>
+    <string name="device_z2_maintainer" translatable="false">Nikhil Gohil</string>
 
     <!-- OnePlus 6(enchilada) -->
     <string name="device_enchilada" translatable="false">OnePlus 6</string>
     <string name="device_enchilada_summary" translatable="false">Enchilada\nAyanC1</string>
+    <string name="device_enchilada_maintainer" translatable="false">AyanC1</string>
 
     <!-- OnePlus 6T(fajita) -->
     <string name="device_fajita" translatable="false">OnePlus 6T</string>
     <string name="device_fajita_summary" translatable="false">Fajita\nAyanC1</string>
+    <string name="device_fajita_maintainer" translatable="false">AyanC1</string>
  
     <!-- POCO F1(Beryllium) -->
     <string name="device_beryllium" translatable="false">POCO F1</string>
     <string name="device_beryllium_summary" translatable="false">Beryllium\nCruzerPrtm</string>
+    <string name="device_beryllium_maintainer" translatable="false">CruzerPrtm</string>
 
     <!-- POCO X2(Phoenixin) -->
     <string name="device_phoenixin" translatable="false">POCO X2</string>
     <string name="device_phoenixin_summary" translatable="false">Phoenixin\nYashodhan Sawardekar</string>
+    <string name="device_phoenixin_maintainer" translatable="false">Yashodhan Sawardekar</string>
     
     <!-- Realme 1(CPH1859) -->
     <string name="device_CPH1859" translatable="false">Realme 1</string>
     <string name="device_CPH1859_summary" translatable="false">CPH1859\nDebayan Kar</string> 
+    <string name="device_CPH1859_maintainer" translatable="false">Debayan Kar</string>
  
     <!-- Realme 2 Pro(RMX1801) -->
     <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
     <string name="device_RMX1801_summary" translatable="false">RMX1801\nBaibhab</string>
+    <string name="device_RMX1801_maintainer" translatable="false">Baibhab</string>
 
     <!-- Realme U1(RMX1831) -->
     <string name="device_RMX1831" translatable="false">Realme U1</string>
     <string name="device_RMX1831_summary" translatable="false">RMX1831\nLokesh Vazirani</string>
+    <string name="device_RMX1831_maintainer" translatable="false">Lokesh Vazirani</string>
 
     <!-- Xiaomi Mi Mix 2(Chiron) -->
     <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
     <string name="device_chiron_summary" translatable="false">Chiron\nLightvortex</string>
-
-    <!-- Xiaomi Redmi 7(Onclite) -->
-    <string name="device_onclite" translatable="false">Xiaomi Redmi 7</string>
-    <string name="device_onclite_summary" translatable="false">Onclite\nAbhinand A K</string>
+    <string name="device_chiron_maintainer" translatable="false">Lightvortex</string>
 
     <!-- Xiaomi Redmi Note 4(Mido) -->
     <string name="device_mido" translatable="false">Xiaomi Redmi Note 4</string>
     <string name="device_mido_summary" translatable="false">Mido\nShashank Patil</string>
+    <string name="device_mido_maintainer" translatable="false">Shashank Patil</string>
 
     <!-- Xiaomi Redmi Note 5 Pro(whyred) -->
     <string name="device_whyred" translatable="false">Xiaomi Redmi Note 5 Pro</string>
     <string name="device_whyred_summary" translatable="false">Whyred\nZeeshan</string>
+    <string name="device_whyred_maintainer" translatable="false">Zeeshan</string>
 
     <!-- Xiaomi Redmi Note 7(lavender) -->
     <string name="device_lavender" translatable="false">Xiaomi Redmi Note 7</string>
     <string name="device_lavender_summary" translatable="false">Lavender\nSusan Dahal</string>
+    <string name="device_lavender_maintainer" translatable="false">Susan Dahal</string>
 
     <!-- Xiaomi Redmi Note 7 Pro(violet) -->
     <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
     <string name="device_violet_summary" translatable="false">Violet\nSaalim and Tesla</string>
+    <string name="device_violet_maintainer" translatable="false">Saalim and Tesla</string>
     
     <!-- Xiaomi Redmi Note 8 Pro(begonia)-->
     <string name="device_begonia" translatable="false">Xiaomi Redmi Note 8 Pro</string>
     <string name="device_begonia_summary" translatable="false">Begonia\nFlamefusion</string>
-
-    <!-- YU YUREKA(TOMATO) -->
-    <string name="device_tomato" translatable="false">YU YUREKA</string>
-    <string name="device_tomato_summary" translatable="false">Tomato\nPheNoM</string>
+    <string name="device_begonia_maintainer" translatable="false">Flamefusion</string>
 
     <!-- Yu Yureka Black(garlic) -->
     <string name="device_garlic" translatable="false">Yu Yureka Black</string>
     <string name="device_garlic_summary" translatable="false">Garlic\nvjs Pranav</string>
+    <string name="device_garlic_maintainer" translatable="false">vjs Pranav</string>
     
-    <!-- Xiaomi Redmi Note 9 S/Pro(miatoll) -->
-    <string name="device_miatoll" translatable="false">Xiaomi Redmi Note 9 S/Pro</string>
-    <string name="device_miatoll_summary" translatable="false">Miatoll\nPriQue</string>
-
     <!-- Xiaomi Redmi K20 Pro(raphael) -->
     <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
     <string name="device_raphael_summary" translatable="false">Raphael\nIronGFly</string>
+    <string name="device_raphael_maintainer" translatable="false">IronGFly</string>
 
     <!-- Xiaomi Redmi K30(Phoenix) -->
     <string name="device_phoenix" translatable="false">Xiaomi Redmi K30</string>
     <string name="device_phoenix_summary" translatable="false">Phoenix\nYashodhan Sawardekar</string>
+    <string name="device_phoenix_maintainer" translatable="false">Yashodhan Sawardekar</string>
 
     <!-- POCO X3(surya) -->
     <string name="device_surya" translatable="false">POCO X3</string>
     <string name="device_surya_summary" translatable="false">Surya\nSambit</string> 
+    <string name="device_surya_maintainer" translatable="false">Sambit</string>
 
     <!-- Xiaomi Redmi Note 8/8T(ginkgo/willow) -->
     <string name="device_ginkgo" translatable="false">Xiaomi Redmi Note 8/8T</string>
     <string name="device_ginkgo_summary" translatable="false">Ginkgo\nTheWeaver786</string>
+    <string name="device_ginkgo_maintainer" translatable="false">TheWeaver786</string>
     
     <!-- Oneplus 5 (cheeseburger) -->
     <string name="device_cheeseburger" translatable="false">Oneplus 5</string>
     <string name="device_cheeseburger_summary" translatable="false">cheeseburger\nlolapola</string>
+    <string name="device_cheeseburger_maintainer" translatable="false">lolapola</string>
     
     <!-- Oneplus 5T (dumpling) -->
     <string name="device_dumpling" translatable="false">Oneplus 5T</string>
     <string name="device_dumpling_summary" translatable="false">dumpling\nlolapola</string>
+    <string name="device_dumpling_maintainer" translatable="false">lolapola</string>
 
 </resources>

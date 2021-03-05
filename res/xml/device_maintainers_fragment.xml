@@ -20,31 +20,12 @@
         android:title="@string/device_category_asus_title" >
 
         <Preference
-            android:id="@+id/device_X000T"
+            android:id="@+id/device_X00T"
             android:icon="@drawable/stag_device"
-            android:summary="@string/device_X000T_summary"
-            android:title="@string/device_X000T" >
+            android:summary="@string/device_X00T_summary"
+            android:title="@string/device_X00T" >
         </Preference>
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:id="@+id/device_category_google"
-        android:title="@string/device_category_google_title" >
-
-        <Preference
-            android:id="@+id/device_sargo"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_sargo_summary"
-            android:title="@string/device_sargo" >
-        </Preference>
-
-        <Preference
-            android:id="@+id/device_bonito"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_bonito_summary"
-            android:title="@string/device_bonito" >
-        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -58,18 +39,6 @@
             android:title="@string/device_z2_plus" >
         </Preference>
      </PreferenceCategory>
-
-     <PreferenceCategory
-        android:id="@+id/device_category_lyf"
-        android:title="@string/device_category_lyf_title" >
-
-        <Preference
-            android:id="@+id/device_mobee01a"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_mobee01a_summary"
-            android:title="@string/device_mobee01a" >
-        </Preference>
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:id="@+id/device_category_oneplus"
@@ -142,13 +111,6 @@
             android:title="@string/device_chiron" >
         </Preference>
 
-	<Preference
-            android:id="@+id/device_onclite"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_onclite_summary"
-            android:title="@string/device_onclite" >
-        </Preference>
-
         <Preference
             android:id="@+id/device_mido"
             android:icon="@drawable/stag_device"
@@ -184,13 +146,6 @@
             android:title="@string/device_begonia" >
         </Preference>
 	    
-	<Preference
-            android:id="@+id/device_miatoll"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_miatoll_summary"
-            android:title="@string/device_miatoll" >
-        </Preference>
-
         <Preference
             android:id="@+id/device_raphael"
             android:icon="@drawable/stag_device"
@@ -245,14 +200,7 @@
         android:id="@+id/device_category_yu"
         android:title="@string/device_category_yu_title" >        
 
-        <Preference
-            android:id="@+id/device_tomato"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_tomato_summary"
-            android:title="@string/device_tomato" >
-        </Preference>
-
-        <Preference
+         <Preference
             android:id="@+id/device_garlic"
             android:icon="@drawable/stag_device"
             android:summary="@string/device_garlic_summary"
