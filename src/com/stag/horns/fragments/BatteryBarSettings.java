@@ -38,7 +38,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.stag.hornss.preferences.CustomSeekBarPreference;
+import com.stag.horns.preferences.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
