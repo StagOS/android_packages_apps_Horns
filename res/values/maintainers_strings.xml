@@ -34,6 +34,7 @@
     <string name="device_category_lyf_title" translatable="false">LYF</string>
     <string name="device_category_yu_title" translatable="false">YU</string>
     <string name="device_category_realme_title" translatable="false">Realme</string>
+    <string name="device_category_nokia_title" translatable="false">Nokia</string>
     <string name="device_category_pocophone_title" translatable="false">POCOPHONE</string>
 
     <!-- Devices & Maintainers -->
@@ -146,5 +147,10 @@
     <string name="device_dumpling" translatable="false">Oneplus 5T</string>
     <string name="device_dumpling_summary" translatable="false">dumpling\nlolapola</string>
     <string name="device_dumpling_maintainer" translatable="false">lolapola</string>
+
+    <!-- Nokia 6.1 (PL2) -->
+    <string name="device_PL2" translatable="false">Nokia 6.1</string>
+    <string name="device_PL2_summary" translatable="false">PL2\nvjs Pranav</string>
+    <string name="device_PL2_maintainer" translatable="false">vjs Pranav</string>
 
 </resources>
