@@ -46,7 +46,7 @@
     <!-- Lenovo ZUK Z2(plus) -->
     <string name="device_z2_plus" translatable="false">Lenovo ZUK Z2 </string>
     <string name="device_z2_plus_summary" translatable="false">Z2_plus\nNikhil Gohil</string>
-    <string name="device_z2_maintainer" translatable="false">Nikhil Gohil</string>
+    <string name="device_z2_plus_maintainer" translatable="false">Nikhil Gohil</string>
 
     <!-- OnePlus 6(enchilada) -->
     <string name="device_enchilada" translatable="false">OnePlus 6</string>
