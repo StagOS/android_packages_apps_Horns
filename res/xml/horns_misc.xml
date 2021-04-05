@@ -30,6 +30,14 @@
         android:fragment="com.stag.horns.fragments.SmartPixels"
         android:title="@string/smart_pixels_title"
         android:summary="@string/smart_pixels_summary" />
+        
+    <!-- Gaming mode -->
+    <Preference
+        android:key="gaming_category"
+        android:title="@string/gaming_title"
+        android:fragment="com.stag.horns.fragments.GamingModeSettings"
+        android:icon="@drawable/ic_settings_gaming"
+        android:summary="@string/gaming_title_summary" />	
 
     <Preference
         android:key="ps_cat"
