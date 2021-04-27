@@ -44,12 +44,6 @@
             android:defaultValue="false" />
 
         <com.stag.horns.preferences.SystemSettingSwitchPreference
-            android:key="show_volte_icon"
-            android:title="@string/show_volte_title"
-            android:summary="@string/show_volte_summary"
-            android:defaultValue="true" />
-
-        <com.stag.horns.preferences.SystemSettingSwitchPreference
              android:key="double_tap_sleep_gesture"
              android:title="@string/double_tap_sleep_gesture_title"
              android:summary="@string/double_tap_sleep_gesture_summary"
