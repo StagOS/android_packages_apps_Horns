@@ -55,6 +55,12 @@ public class PowerMenuSettings extends SettingsPreferenceFragment
 
     private SwitchPreference mPowermenuTorch;
 
+    private static final String LAYOUT_SETTINGS = "navbar_layout_views";
+    private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
+
+    private Preference mLayoutSettings;
+    private SwitchPreference mSwapNavButtons;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);

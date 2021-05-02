@@ -51,15 +51,33 @@ import com.android.settings.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.android.internal.util.stag.StagUtils;
+
 @SearchIndexable
 public class NavbarSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener, Indexable {
+
+    private static final String LAYOUT_SETTINGS = "navbar_layout_views";
+    private static final String NAVIGATION_BAR_INVERSE = "sysui_nav_bar_inverse";
+
+    private Preference mLayoutSettings;
+    private SwitchPreference mSwapNavButtons;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_navigation);
         ContentResolver resolver = getActivity().getContentResolver();
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mLayoutSettings = findPreference(LAYOUT_SETTINGS);
+        mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
+
+        if (!StagUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            prefScreen.removePreference(mLayoutSettings);
+        }
+        prefScreen.removePreference(mSwapNavButtons);
     }
 
     @Override
