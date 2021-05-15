@@ -153,4 +153,9 @@
     <string name="device_PL2_summary" translatable="false">PL2\nvjs Pranav</string>
     <string name="device_PL2_maintainer" translatable="false">vjs Pranav</string>
 
+    <!-- OnePlus Nord (avicii) -->
+    <string name="device_avicii" translatable="false">OnePlus Nord</string>
+    <string name="device_avicii_summary" translatable="false">avicii\nvjs Pranav</string>
+    <string name="device_avicii_maintainer" translatable="false">vjs Pranav</string>
+
 </resources>
