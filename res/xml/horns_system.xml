@@ -30,11 +30,6 @@
        android:fragment="com.stag.horns.fragments.Themes" />
 
 
-    <PreferenceCategory
-        android:key="fod_icon_picker"
-        android:title="@string/fod_icon_picker_category_title" >
-
-    <!-- FOD recognizing animation -->
     <com.stag.horns.preferences.SystemSettingSwitchPreference
        android:key="fod_recognizing_animation"
        android:title="@string/fod_recog_animation"
