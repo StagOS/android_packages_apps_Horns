@@ -128,6 +128,11 @@
     <string name="device_phoenix_summary" translatable="false">Phoenix\nYashodhan Sawardekar</string>
     <string name="device_phoenix_maintainer" translatable="false">Yashodhan Sawardekar</string>
 
+    <!-- Xiaomi Redmi Note 10 Pro (sweet) -->
+    <string name="device_sweet" translatable="false">Redmi Note 10 Pro</string>
+    <string name="device_sweet_summary" translatable="false">sweet\nAli Hasan</string>
+    <string name="device_sweet_maintainer" translatable="false">Ali Hasan</string>
+
     <!-- POCO X3(surya) -->
     <string name="device_surya" translatable="false">POCO X3</string>
     <string name="device_surya_summary" translatable="false">Surya\nSambit</string> 
