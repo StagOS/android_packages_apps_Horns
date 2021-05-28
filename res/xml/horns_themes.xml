@@ -37,6 +37,7 @@
     <PreferenceCategory
         android:key="aosp_themeing"
         android:title="@string/aosp_themeing_title">
+
         <ListPreference
             android:key="qs_tile_style"
             android:title="@string/qs_tile_style_title"
@@ -45,16 +46,15 @@
             android:entryValues="@array/qs_selector_values" />
 
         <ListPreference
-            android:key="theme"
-            android:title="@string/device_theme"
-            android:summary="@string/summary_placeholder" />
-        <ListPreference
             android:key="android.theme.customization.custom_overlays"
             android:title="@string/theme_customization_systemui_title"
             settings:keywords="@string/keywords_dark_ui_mode"/>
-        <ListPreference
-            android:key="android.theme.customization.font"
-            android:title="@string/theme_customization_font_title"/>
+
+        <com.android.settings.display.FontDialogPreference
+            android:key="custom_font"
+            android:title="@string/font_picker_title"
+            android:persistent="false" />
+
         <ListPreference
             android:key="android.theme.customization.adaptive_icon_shape"
             android:title="@string/theme_customization_icon_shape_title"/>
