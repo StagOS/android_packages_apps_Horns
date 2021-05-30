@@ -115,8 +115,8 @@
 
     <!-- Yu Yureka Black(garlic) -->
     <string name="device_garlic" translatable="false">Yu Yureka Black</string>
-    <string name="device_garlic_summary" translatable="false">Garlic\nvjs Pranav</string>
-    <string name="device_garlic_maintainer" translatable="false">vjs Pranav</string>
+    <string name="device_garlic_summary" translatable="false">Garlic\nPritish</string>
+    <string name="device_garlic_maintainer" translatable="false">Pritish Joshi</string>
     
     <!-- Xiaomi Redmi K20 Pro(raphael) -->
     <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
