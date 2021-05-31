@@ -78,6 +78,11 @@
     <string name="device_RMX1801_summary" translatable="false">RMX1801\nBaibhab</string>
     <string name="device_RMX1801_maintainer" translatable="false">Baibhab</string>
 
+    <!-- Realme 2(RMX1805) -->
+    <string name="device_RMX1805" translatable="false">Realme 2</string>
+    <string name="device_RMX1805_summary" translatable="false">RMX1805\nBaibhab</string>
+    <string name="device_RMX1805_maintainer" translatable="false">Baibhab</string>
+
     <!-- Realme U1(RMX1831) -->
     <string name="device_RMX1831" translatable="false">Realme U1</string>
     <string name="device_RMX1831_summary" translatable="false">RMX1831\nLokesh Vazirani</string>
