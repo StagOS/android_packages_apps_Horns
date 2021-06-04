@@ -168,4 +168,9 @@
     <string name="device_avicii_summary" translatable="false">avicii\nvjs Pranav</string>
     <string name="device_avicii_maintainer" translatable="false">vjs Pranav</string>
 
+    <!-- OnePlus 9 Pro (lemonadep) -->
+    <string name="device_lemonadep" translatable="false">OnePlus 9 Pro</string>
+    <string name="device_lemonadep_summary" translatable="false">lemonadep\nvjs Pranav</string>
+    <string name="device_lemonadep_maintainer" translatable="false">vjs Pranav</string>
+
 </resources>
