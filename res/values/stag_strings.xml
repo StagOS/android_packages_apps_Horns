@@ -147,9 +147,6 @@
     <string name="data_disabled_icon_title">Data disabled icon</string>
     <string name="data_disabled_icon_summary">Display a cross sign next to signal bar when data is disabled</string>
 
-    <!-- Translucent lockscreen notifications background -->
-    <string name="translucent_lockscreen_notifications_bg_title">Translucent notifications background</string>
-
     <!-- Media art -->
     <string name="lockscreen_media_art_title">Media art</string>
     <string name="lockscreen_media_art_summary">Toggle visibility of media art</string>
@@ -194,29 +191,6 @@
     <string name="text_charging_symbol_default">Disabled</string>
     <string name="text_charging_symbol_flash">Flash</string>
     <string name="text_charging_symbol_tilde">Tilde</string>
-
-    <!-- Statusbar net monitor -->
-    <string name="traffic_title">Traffic indicators</string>
-    <string name="network_traffic">Network traffic</string>
-    <string name="network_traffic_state_title">Network traffic display</string>
-    <string name="network_traffic_location">Traffic indicator placement</string>
-    <string name="traffic_disabled">Disabled</string>
-    <string name="traffic_statusbar">Statusbar</string>
-    <string name="traffic_expanded_statusbar">Expanded Header</string>
-    <string name="network_traffic_autohide_threshold_title">Net activity autohide threshold (KB/s)</string>
-    <string name="network_traffic_arrow">Show arrows</string>
-    <string name="network_traffic_arrow_summary">Show the network traffic indicator arrows</string>
-    <string name="network_traffic_type">Select net activity type</string>
-    <string name="show_network_traffic_combined">Combined (Upload + Download)</string>
-    <string name="show_network_traffic_dynamic">Dynamic</string>
-    <string name="show_network_traffic_up">Upload</string>
-    <string name="show_network_traffic_down">Download</string>
-    <string name="show_network_traffic_all">Both</string>
-    <string name="nettraf_font_size">Single net font size</string>
-    <string name="network_traffic_layout">Activity layout</string>
-    <string name="network_traffic_layout_h">Horizontal</string>
-    <string name="network_traffic_layout_v">Verticle</string>
-    <string name="net_traffic_font">Fonts</string> 
 
     <!-- Disable QS on secure Lockscreen -->
     <string name="lockscreen_qs_disabled_title">No QS when secured</string>
@@ -630,29 +604,6 @@
     <string name="ambient_pulse_brightness_summary">Set brightness to use when notifcations are shown</string>
     <string name="ambient_doze_brightness_title">Ambient display brightness</string>
     <string name="ambient_doze_brightness_summary">Set brightness to use during ambient display on</string>
-
-    <!-- Custom header -->
-    <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
-    <string name="custom_header_browse_summary_new">Browse all available header collections</string>
-    <string name="custom_header_browse_title">Browse installed headers</string>
-    <string name="custom_header_pick_summary">Select an image to use for static mode</string>
-    <string name="custom_header_pick_title">Select header image</string>
-    <string name="custom_header_provider_title">Header provider</string>
-    <string name="custom_header_summary">Display image at top of the notification panel</string>
-    <string name="custom_header_title">Custom header</string>
-    <string name="daylight_header_pack_title">Header image collection</string>
-    <string name="daylight_header_provider" translatable="false">daylight</string>
-    <string name="daylight_header_provider_title">Image collection</string>
-    <string name="file_header_provider" translatable="false">file</string>
-    <string name="file_header_provider_title">Custom image</string>
-    <string name="file_header_select_summary">Select custom image</string>
-    <string name="file_header_select_title">Select image</string>
-    <string name="header_provider_disabled">Disabled</string>
-    <string name="static_header_provider" translatable="false">static</string>
-    <string name="static_header_provider_title">Static image</string>
-    <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
-    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
-    <string name="unit_percent">\u0025</string>
 
     <!-- Battery light -->
     <string name="notification_led_pref">Notification LED</string>
