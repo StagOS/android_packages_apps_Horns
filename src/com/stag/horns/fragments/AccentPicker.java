@@ -27,13 +27,22 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+
+import com.android.settings.overlay.FeatureFactory;
+import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -42,6 +51,9 @@ import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class AccentPicker extends InstrumentedDialogFragment implements OnClickListener {
 
@@ -49,6 +61,10 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
     private View mView;
 
+    private static final String KEY_THEME = "theme";
+
+    private MetricsFeatureProvider mMetricsFeatureProvider;
+    private PackageManager mPackageManager;
     private IOverlayManager mOverlayManager;
     private int mCurrentUserId;
 
@@ -117,6 +133,7 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
         mOverlayManager = IOverlayManager.Stub.asInterface(
                 ServiceManager.getService(Context.OVERLAY_SERVICE));
         mCurrentUserId = ActivityManager.getCurrentUser();
+		mPackageManager = getContext().getPackageManager();
     }
 
     @Override
@@ -317,6 +334,78 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
         Button jadegreenAccent = mView.findViewById(R.id.jadegreenAccent);
         setAccent("56", jadegreenAccent);
+		
+		Button bluesky = mView.findViewById(R.id.bluesky);
+    	setGradient("com.revengeos.gradient.bluesky", bluesky);
+
+		Button cherry = mView.findViewById(R.id.cherry);
+    	setGradient("com.revengeos.gradient.cherry", cherry);
+
+		Button deepskyline = mView.findViewById(R.id.deepskyline);
+    	setGradient("com.revengeos.gradient.deepskyline", deepskyline);
+
+		Button deepsunset = mView.findViewById(R.id.deepsunset);
+    	setGradient("com.revengeos.gradient.deepsunset", deepsunset);
+
+		Button gradientcolor_default = mView.findViewById(R.id.gradientcolor_default);
+    	setGradient("com.revengeos.gradient.default", gradientcolor_default);
+
+		Button flare = mView.findViewById(R.id.flare);
+    	setGradient("com.revengeos.gradient.flare", flare);
+
+		Button grapevine = mView.findViewById(R.id.grapevine);
+    	setGradient("com.revengeos.gradient.grapevine", grapevine);
+
+		Button hyakkimaru = mView.findViewById(R.id.hyakkimaru);
+    	setGradient("com.revengeos.gradient.hyakkimaru", hyakkimaru);
+
+		Button kyemeh = mView.findViewById(R.id.kyemeh);
+    	setGradient("com.revengeos.gradient.kyemeh", kyemeh);
+
+		Button lavender = mView.findViewById(R.id.lavender);
+    	setGradient("com.revengeos.gradient.lavender", lavender);
+
+		Button lightseastorm = mView.findViewById(R.id.lightseastorm);
+    	setGradient("com.revengeos.gradient.lightss", lightseastorm);
+
+		Button orangecoral = mView.findViewById(R.id.orangecoral);
+    	setGradient("com.revengeos.gradient.orangecoral", orangecoral);
+
+		Button peachy = mView.findViewById(R.id.peachy);
+    	setGradient("com.revengeos.gradient.peachy", peachy);
+
+		Button polargreen = mView.findViewById(R.id.polargreen);
+    	setGradient("com.revengeos.gradient.polargreen", polargreen);
+
+		Button purelust = mView.findViewById(R.id.purelust);
+    	setGradient("com.revengeos.gradient.purelust", purelust);
+
+		Button quepal = mView.findViewById(R.id.quepal);
+    	setGradient("com.revengeos.gradient.quepal", quepal);
+
+		Button rea = mView.findViewById(R.id.rea);
+    	setGradient("com.revengeos.gradient.rea", rea);
+
+		Button seastorm = mView.findViewById(R.id.seastorm);
+    	setGradient("com.revengeos.gradient.seastorm", seastorm);
+
+		Button shadesofgrey = mView.findViewById(R.id.shadesofgrey);
+    	setGradient("com.revengeos.gradient.shadesofgrey", shadesofgrey);
+
+		Button sincityred = mView.findViewById(R.id.sincityred);
+    	setGradient("com.revengeos.gradient.sincityred", sincityred);
+
+		Button skyline = mView.findViewById(R.id.skyline);
+    	setGradient("com.revengeos.gradient.skyline", skyline);
+
+		Button sublime = mView.findViewById(R.id.sublime);
+    	setGradient("com.revengeos.gradient.sublime", sublime);
+
+		Button timber = mView.findViewById(R.id.timber);
+    	setGradient("com.revengeos.gradient.timber", timber);
+
+		Button yoda = mView.findViewById(R.id.yoda);
+    	setGradient("com.revengeos.gradient.yoda", yoda);
     }
 
     @Override
@@ -384,5 +473,69 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
                 }
             });
         }
+    }
+	
+	private void setGradient(final String gradient, final Button buttonGradient) {
+        final ContentResolver resolver = getActivity().getContentResolver();
+		if (buttonGradient != null) {
+            buttonGradient.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+					String current = getCurrentTheme();
+					if (Objects.equals(gradient, current)) {
+						dismiss();
+					}
+					try {
+						mOverlayManager.setEnabledExclusiveInCategory((String) gradient, UserHandle.myUserId());
+					} catch (RemoteException re) {
+						throw re.rethrowFromSystemServer();
+					}
+					dismiss();
+				}
+			});
+		}
+	}
+
+    private boolean isTheme(OverlayInfo oi) {
+        if (!OverlayInfo.CATEGORY_THEME.equals(oi.category)) {
+            return false;
+        }
+        try {
+            PackageInfo pi = mPackageManager.getPackageInfo(oi.packageName, 0);
+            return pi != null && !pi.isStaticOverlayPackage();
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+	
+    String getCurrentTheme() {
+        String[] themePackages = getAvailableThemes(true /* currentThemeOnly */);
+        return themePackages.length < 1 ? null : themePackages[0];
+    }
+
+	String[] getAvailableThemes(boolean currentThemeOnly) {
+        List<OverlayInfo> infos;
+        List<String> pkgs;
+        try {
+            infos = mOverlayManager.getOverlayInfosForTarget("android", UserHandle.myUserId());
+            pkgs = new ArrayList<>(infos.size());
+            for (int i = 0, size = infos.size(); i < size; i++) {
+                if (isTheme(infos.get(i))) {
+                    if (infos.get(i).isEnabled() && currentThemeOnly) {
+                        return new String[] {infos.get(i).packageName};
+                    } else {
+                        pkgs.add(infos.get(i).packageName);
+                    }
+                }
+            }
+        } catch (RemoteException re) {
+            throw re.rethrowFromSystemServer();
+        }
+
+        // Current enabled theme is not found.
+        if (currentThemeOnly) {
+            return new String[0];
+        }
+        return pkgs.toArray(new String[pkgs.size()]);
     }
 }

@@ -64,9 +64,10 @@
     <string name="theme_accent_picker_summary">Select system theme accent color</string>
     <string name="theme_accent_picker_presets_title">Spectral Lines</string>
     <string name="theme_accent_picker_default">Default</string>
-    <string name="accent_picker_material_colors">Material palette</string>
-    <string name="accent_picker_custom_colors">User requested</string>
-    
+    <string name="accent_picker_material_colors">Material Palette</string>
+    <string name="accent_picker_custom_colors">User Requested</string>
+    <string name="accent_picker_gradient_colors">Gradient Palette</string>
+
     <!-- About categorie -->
     <string name="about_category">About</string>
     <string name="about_category_summary">A little (Coz who\'d read this anyway) info abt our team :P</string>
