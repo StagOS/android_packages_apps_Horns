@@ -723,4 +723,10 @@
     <string name="fod_on_doze_title">FOD on doze</string>
     <string name="fod_on_doze_summary">Show fingerprint in display on ambient display and AOD. This only hides the icon and will not disable functionality</string>
 
+    <!-- Hide Apps from Recents -->
+    <string name="hide_apps_from_recents_title">Hide apps from recents</string>
+    <string name="hide_apps_from_recents_summary">Prevent apps from appearing in recents</string>
+    <string name="hide_from_recents_add_app">Add app</string>
+    <string name="title_activity_carbon_recents_settings">Recents</string>
+
 </resources>
