@@ -27,6 +27,7 @@
     <string name="about_title">About</string>
     <string name="navbar_title">Navigation bar</string>
     <string name="powermenu_title">Power menu</string>
+    <string name="powersave_title">Power Saving</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="recents_title">Recents</string>
     <string name="statusbar_title">Status bar</string>
@@ -729,4 +730,12 @@
     <string name="hide_from_recents_add_app">Add app</string>
     <string name="title_activity_carbon_recents_settings">Recents</string>
 
+    <!-- Power Profiles -->
+    <string name="power_profile">Battery saver profile</string>
+    <string name="power_profile_default">Default</string>
+    <string name="power_profile_light">Light</string>
+    <string name="power_profile_med">Moderate</string>
+    <string name="power_profile_high">High</string>
+    <string name="power_profile_ext">Extreme</string>
+    <string name="powersave_summary">Options to extend your battery life</string>
 </resources>
