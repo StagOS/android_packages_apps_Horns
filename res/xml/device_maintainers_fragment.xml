@@ -144,7 +144,14 @@
             android:title="@string/device_chiron" >
         </Preference>
 
-        <Preference
+       <Preference
+            android:id="@+id/device_alioth"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_alioth_summary"
+            android:title="@string/device_alioth" >
+        </Preference> 
+
+       <Preference
             android:id="@+id/device_mido"
             android:icon="@drawable/stag_device"
             android:summary="@string/device_mido_summary"

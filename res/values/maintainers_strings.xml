@@ -93,6 +93,11 @@
     <string name="device_chiron_summary" translatable="false">Chiron\nLightvortex</string>
     <string name="device_chiron_maintainer" translatable="false">Lightvortex</string>
 
+    <!-- Poco F3/ Mi11x / K40  -->
+    <string name="device_alioth" translatable="false">Poco F3/ Mi11x / K40</string>
+    <string name="device_alioth_summary" translatable="false">SukeeratSG\nIrongfly</string>
+    <string name="device_alioth_maintainer" translatable="false">Irongfly</string>
+
     <!-- Xiaomi Redmi Note 4(Mido) -->
     <string name="device_mido" translatable="false">Xiaomi Redmi Note 4</string>
     <string name="device_mido_summary" translatable="false">Mido\nShashank Patil</string>
