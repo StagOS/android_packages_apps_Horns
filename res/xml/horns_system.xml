@@ -29,18 +29,6 @@
        android:title="@string/stag_themes_title"
        android:fragment="com.stag.horns.fragments.Themes" />
 
-    <PreferenceCategory
-        android:key="fod_icon_picker"
-        android:title="@string/fod_icon_picker_category_title" >
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="fod_gesture"
-        android:title="@string/fod_gesture_title"
-        android:summary="@string/fod_gesture_summary"
-        android:defaultValue="false" />
-    </PreferenceCategory>
-
-
     <PreferenceCategory 
             android:key="dashboard_category" 
             android:title="@string/dashboard_category">
