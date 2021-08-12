@@ -30,7 +30,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
 
-import com.derpquest.settings.preferences.PackageListPreference;
+import com.stag.horns.preferences.PackageListPreference;
 
 public class GamingModeSettings extends SettingsPreferenceFragment {
 
