@@ -248,9 +248,8 @@ public class GamingMode extends SettingsPreferenceFragment
 
     };
 
-
     private boolean hasHWkeys() {
-        /*final int deviceKeys = getContext().getResources().getInteger(
+        final int deviceKeys = getContext().getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
 
         // read bits for present hardware keys
@@ -260,8 +259,6 @@ public class GamingMode extends SettingsPreferenceFragment
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
 
         return (hasHomeKey || hasBackKey || hasMenuKey || hasAppSwitchKey);
-	*/
-	return false;
     }
 
     private void refreshCustomApplicationPrefs() {
