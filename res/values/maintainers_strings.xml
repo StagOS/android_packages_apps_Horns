@@ -110,8 +110,8 @@
 
     <!-- Xiaomi Redmi Note 7 Pro(violet) -->
     <string name="device_violet" translatable="false">Xiaomi Redmi Note 7 Pro</string>
-    <string name="device_violet_summary" translatable="false">Violet\nSaalim and Tesla</string>
-    <string name="device_violet_maintainer" translatable="false">Saalim and Tesla</string>
+    <string name="device_violet_summary" translatable="false">Violet\nNitesh</string>
+    <string name="device_violet_maintainer" translatable="false">Nitesh</string>
     
     <!-- Xiaomi Redmi Note 8 Pro(begonia)-->
     <string name="device_begonia" translatable="false">Xiaomi Redmi Note 8 Pro</string>
