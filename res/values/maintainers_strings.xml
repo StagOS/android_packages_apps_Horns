@@ -88,6 +88,11 @@
     <string name="device_RMX1831_summary" translatable="false">RMX1831\nLokesh Vazirani</string>
     <string name="device_RMX1831_maintainer" translatable="false">Lokesh Vazirani</string>
 
+    <!-- Realme 3(RMX1821) -->
+    <string name="device_RMX1821" translatable="false">Realme 3</string>
+    <string name="device_RMX1821_summary" translatable="false">RMX1821\nPritish and Sandip</string>
+    <string name="device_RMX1821_maintainer" translatable="false">Pritish and Sandip<string>
+    
     <!-- Xiaomi Mi Mix 2(Chiron) -->
     <string name="device_chiron" translatable="false">Xiaomi Mi Mix 2</string>
     <string name="device_chiron_summary" translatable="false">Chiron\nLightvortex</string>
