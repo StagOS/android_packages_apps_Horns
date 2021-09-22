@@ -79,11 +79,6 @@ public class NavbarSettings extends SettingsPreferenceFragment
         mLayoutSettings = findPreference(LAYOUT_SETTINGS);
         mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
 
-        if (!StagUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
-            prefScreen.removePreference(mLayoutSettings);
-            prefScreen.removePreference(mSwapNavButtons);
-        }
-
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
         boolean defaultToNavigationBar = StagUtils.deviceSupportNavigationBar(getActivity());
         boolean showing = Settings.System.getInt(getContentResolver(),
