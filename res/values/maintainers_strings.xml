@@ -123,6 +123,11 @@
     <string name="device_begonia_summary" translatable="false">Begonia\nFlamefusion</string>
     <string name="device_begonia_maintainer" translatable="false">Flamefusion</string>
 
+    <!-- Xiaomi Mi 10T/ 10T Pro(apollo)-->
+    <string name="device_apollo" translatable="false">Xiaomi Mi 10T/ 10T Pro</string>
+    <string name="device_apollo_summary" translatable="false">apollo\nRafi KN</string>
+    <string name="device_apollo_maintainer" translatable="false">Rafi KN</string>
+
     <!-- Yu Yureka Black(garlic) -->
     <string name="device_garlic" translatable="false">Yu Yureka Black</string>
     <string name="device_garlic_summary" translatable="false">Garlic\nPritish</string>

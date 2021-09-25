@@ -214,6 +214,13 @@
             android:title="@string/device_sweet" >
         </Preference>        
 
+        <Preference
+            android:id="@+id/device_apollo"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_apollo_summary"
+            android:title="@string/device_apollo" >
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
