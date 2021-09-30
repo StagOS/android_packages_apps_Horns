@@ -17,11 +17,29 @@
 package com.stag.horns.preferences;
 
 import android.content.Context;
+import android.content.Intent;
 import android.provider.Settings;
+import android.app.Activity;
+import androidx.preference.AndroidResources;
 import androidx.preference.SwitchPreference;
+import androidx.preference.PreferenceViewHolder;
+
+import android.widget.Switch;
+import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.util.AttributeSet;
+import android.net.Uri;
+
+import android.util.Log;
+
+import com.android.settings.R;
 
 public class SystemSettingSwitchPreference extends SwitchPreference {
+
+    static final String TAG = "SystemSettingSwitchPreference";
+    private final Listener mListener = new Listener();
+
+
     public SystemSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
@@ -60,5 +78,25 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
         setChecked(Settings.System.getString(getContext().getContentResolver(), getKey()) != null ? getPersistedBoolean(isChecked())
                 : (Boolean) defaultValue);
+    }
+
+    @Override
+    public void onBindViewHolder(PreferenceViewHolder holder) {
+        super.onBindViewHolder(holder);
+	View itemView = holder.itemView;
+        itemView.setOnLongClickListener(mListener);
+    }
+
+    private class Listener implements OnLongClickListener {
+        Listener() {}
+
+        @Override
+	public boolean onLongClick(View v) {
+	    String id = SystemSettingSwitchPreference.this.getKey();
+	    String url = "https://raw.githubusercontent.com/vjspranav/StagOS_Features/main/gif/" + id + ".gif";
+	    Log.w(TAG, "Preference with key " + id + " LongClicked");
+	    v.getContext().startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
+	    return true;
+	}
     }
 }
