@@ -201,6 +201,13 @@
         </Preference>
 
         <Preference
+            android:id="@+id/device_miatoll"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_miatoll_summary"
+            android:title="@string/device_miatoll" >
+        </Preference>
+
+        <Preference
             android:id="@+id/device_ginkgo"
             android:icon="@drawable/stag_device"
             android:summary="@string/device_ginkgo_summary"
