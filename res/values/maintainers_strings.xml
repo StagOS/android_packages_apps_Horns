@@ -68,6 +68,11 @@
     <string name="device_phoenixin_summary" translatable="false">Phoenixin\nYashodhan Sawardekar</string>
     <string name="device_phoenixin_maintainer" translatable="false">Yashodhan Sawardekar</string>
     
+    <!-- POCO M2 Pro/Redmi Note 9S/Redmi Note 9 Pro/Redmi Note 9 Pro Max (miatoll) -->
+    <string name="device_miatoll" translatable="false">POCO M2 Pro/Redmi Note 9S/Redmi Note 9 Pro/Redmi Note 9 Pro Max</string>
+    <string name="device_miatoll_summary" translatable="false">miatoll\nDebayan Kar</string>
+    <string name="device_miatoll_maintainer" translatable="false">Debayan Kar</string>
+
     <!-- Realme 1(CPH1859) -->
     <string name="device_CPH1859" translatable="false">Realme 1</string>
     <string name="device_CPH1859_summary" translatable="false">CPH1859\nDebayan Kar</string> 
