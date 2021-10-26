@@ -30,7 +30,6 @@ import android.content.res.Resources.NotFoundException;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
-import android.net.ConnectivityManager;
 import android.os.UserManager;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
@@ -59,9 +58,7 @@ public final class Utils {
     }
 
     public static boolean isWifiOnly(Context context) {
-        ConnectivityManager cm = (ConnectivityManager)context.getSystemService(
-                Context.CONNECTIVITY_SERVICE);
-        return (cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE) == false);
+	return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
     }
 
     public static boolean hasMultipleUsers(Context context) {
