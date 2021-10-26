@@ -42,10 +42,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.stag.horns.preferences.SystemSettingListPreference;
 import com.stag.horns.preferences.Utils;
-import com.stag.horns.preferences.SecureSettingMasterSwitchPreference;
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
 import com.stag.horns.preferences.SystemSettingSeekBarPreference;
-import com.stag.horns.preferences.SecureSettingMasterSwitchPreference;
 
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
@@ -65,14 +63,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_lockscreen);
         ContentResolver resolver = getActivity().getContentResolver();
-
-        final boolean hasFOD = getResources().getBoolean(
-                com.android.internal.R.bool.config_supportsInDisplayFingerprint);
-        if (!hasFOD) {
-            SecureSettingSwitchPreference fodOnDozePref =
-                    (SecureSettingSwitchPreference) findPreference("fod_on_doze");
-            getPreferenceScreen().removePreference(fodOnDozePref);
-        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {

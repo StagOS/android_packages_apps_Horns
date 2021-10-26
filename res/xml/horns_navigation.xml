@@ -20,22 +20,4 @@
     android:title="@string/navbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
-    <SwitchPreference
-            android:key="navigation_bar_show_new"
-            android:title="@string/navbar_visibility"
-            android:summary="@string/navbar_summary" />
-
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
-            android:key="sysui_nav_bar_inverse"
-            android:title="@string/navbar_invert_layout_title"
-            android:defaultValue="true" />
-
-    <com.stag.horns.preferences.SecureSettingListPreference
-            android:key="navbar_layout_views"
-            android:title="@string/navbar_layout_title"
-            android:summary="%s"
-            android:entries="@array/navbar_layout_entries"
-            android:entryValues="@array/navbar_layout_values"
-            android:defaultValue="default" />
-
 </PreferenceScreen>

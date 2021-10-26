@@ -10,27 +10,27 @@
     <bool name="has_qs_category">true</bool>
 
     <!-- Whether to display buttons tab -->
-    <bool name="has_buttons_category">true</bool>
+    <bool name="has_buttons_category">false</bool>
 
     <!-- Whether to display navbar tab -->
-    <bool name="has_navbar_category">true</bool>
+    <bool name="has_navbar_category">false</bool>
 
     <!-- Whether to display animations tab -->
-    <bool name="has_animations_category">true</bool>
+    <bool name="has_animations_category">false</bool>
 
     <!-- Whether to display gestures tab -->
-    <bool name="has_gestures_category">true</bool>
+    <bool name="has_gestures_category">false</bool>
 
     <!-- Whether to display lockscreen tab -->
-    <bool name="has_lockscreen_category">true</bool>
+    <bool name="has_lockscreen_category">false</bool>
 
     <!-- Whether to display powermenu tab -->
-    <bool name="has_powermenu_category">true</bool>
+    <bool name="has_powermenu_category">false</bool>
 
     <!-- Whether to display notifications tab -->
-    <bool name="has_notifications_category">true</bool>
+    <bool name="has_notifications_category">false</bool>
 
     <!-- Whether to display misc tab -->
-    <bool name="has_misc_category">true</bool>
+    <bool name="has_misc_category">false</bool>
 
 </resources>
