@@ -18,46 +18,4 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_lockscreen"
-        android:title="@string/double_tap_sleep_lockscreen_title"
-        android:summary="@string/double_tap_sleep_lockscreen_summary"
-        android:defaultValue="false" />
-
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
-        android:key="hide_lockicon"
-        android:title="@string/hide_lockicon_title"
-        android:summary="@string/hide_lockicon_summary"
-        android:defaultValue="true" />
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="lockscreen_media_art"
-        android:title="@string/lockscreen_media_art_title"
-        android:summary="@string/lockscreen_media_art_summary"
-        android:defaultValue="true" />
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="lockscreen_qs_disabled"
-        android:title="@string/lockscreen_qs_disabled_title"
-        android:summary="@string/lockscreen_qs_disabled_summary"
-        android:defaultValue="false" />
-
-    <Preference
-        android:key="lockscreen_visualizer"
-        android:fragment="com.stag.horns.fragments.Visualizer"
-        android:title="@string/lockscreen_visualizer_enable"
-        android:summary="@string/lockscreen_visualizer_enable_summary" />
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="lockscreen_battery_info"
-        android:title="@string/lockscreen_battery_info_title"
-        android:summary="@string/lockscreen_battery_info_summary"
-        android:defaultValue="true" />
-
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
-        android:key="fod_on_doze"
-        android:title="@string/fod_on_doze_title"
-        android:summary="@string/fod_on_doze_summary"
-        android:defaultValue="true" />
-
 </PreferenceScreen>
