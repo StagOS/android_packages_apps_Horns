@@ -38,7 +38,6 @@ import com.android.settingslib.search.SearchIndexable;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.stag.horns.preferences.Utils;
-import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,10 +45,6 @@ import java.util.List;
 @SearchIndexable
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
-
-    private PreferenceCategory mFODIconPickerCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,12 +55,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        boolean hasFod = mContext.getResources().getBoolean(com.android.internal.R.bool.config_supportsInDisplayFingerprint);
-
-        mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPickerCategory != null && !hasFod ) {
-            prefScreen.removePreference(mFODIconPickerCategory);
-        }
     }
 
     @Override

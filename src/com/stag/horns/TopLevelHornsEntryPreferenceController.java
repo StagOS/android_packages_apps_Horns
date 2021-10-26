@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 STAG OS
+ * Copyright (C) 2018 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,21 @@
  * limitations under the License.
  */
 
-package com.stag.horns.fragments;
+package com.stag.horns;
 
-import android.os.Bundle;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.R;
+import android.content.Context;
 
-public class StatusbarIcons extends SettingsPreferenceFragment {
+import com.android.settings.core.BasePreferenceController;
 
-    private static final String TAG = "Statusbar Icons";
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.statusbar_icons);
+public class TopLevelHornsEntryPreferenceController extends BasePreferenceController {
+
+    public TopLevelHornsEntryPreferenceController(Context context, String preferenceKey) {
+        super(context, preferenceKey);
     }
 
     @Override
-    public int getMetricsCategory() {
-        return -1;
+    public int getAvailabilityStatus() {
+        return AVAILABLE;
     }
 }

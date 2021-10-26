@@ -38,13 +38,6 @@
             android:fragment="com.stag.horns.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
-        <!-- Buttons -->
-        <Preference
-            android:key="buttonsettings_category"
-            android:title="@string/buttons_title"
-            android:fragment="com.stag.horns.fragments.ButtonsSettings"
-            android:icon="@drawable/ic_settings_buttons"/>
-
         <!-- Navigation Bar -->
         <Preference
             android:key="navigationbar_category"

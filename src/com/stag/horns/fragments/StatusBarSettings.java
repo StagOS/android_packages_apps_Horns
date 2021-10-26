@@ -62,9 +62,6 @@ import java.util.Collections;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-    private static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
-
     private SwitchPreference mShowLteFourGee;
     private ListPreference mQuickPulldown;
 

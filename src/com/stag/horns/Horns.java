@@ -48,10 +48,6 @@ public class Horns extends SettingsPreferenceFragment {
         if (!getResources().getBoolean(R.bool.has_qs_category))
             getPreferenceScreen().removePreference(QSCategory);
 
-        Preference ButtonsCategory = findPreference("buttonsettings_category");
-        if (!getResources().getBoolean(R.bool.has_buttons_category))
-            getPreferenceScreen().removePreference(ButtonsCategory);
-
         Preference NavbarCategory = findPreference("navigationbar_category");
         if (!getResources().getBoolean(R.bool.has_navbar_category))
             getPreferenceScreen().removePreference(NavbarCategory);
