@@ -18,5 +18,10 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="use_old_mobiletype"
+        android:title="@string/use_old_mobiletype_title"
+        android:summary="@string/use_old_mobiletype_summary"
+        android:defaultValue="true" />
 
 </PreferenceScreen>
