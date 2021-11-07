@@ -25,18 +25,6 @@
         android:summary="@string/clocksettings_summary"
         android:fragment="com.stag.horns.fragments.ClockSettings" />
 
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-         android:key="statusbar_icons_style"
-         android:title="@string/statusbar_icons_style"
-         android:summary="@string/statusbar_icons_style_summary"
-         android:defaultValue="true" />
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="double_tap_sleep_gesture"
-        android:title="@string/double_tap_to_sleep_title"
-        android:summary="@string/double_tap_to_sleep_summary"
-        android:defaultValue="true" />
-
     <PreferenceCategory
         android:key="battery_style_category"
         android:title="@string/battery_style_category_title" >
@@ -64,17 +52,35 @@
         android:key="misc_icons_category"
         android:title="@string/icons_category">
 
-         <com.stag.horns.preferences.SystemSettingSwitchPreference
-             android:key="show_fourg_icon"
-             android:title="@string/show_fourg_icon_title"
-             android:summary="@string/show_fourg_icon_summary"
-             android:defaultValue="false"/>
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+         android:key="statusbar_icons_style"
+         android:title="@string/statusbar_icons_style"
+         android:summary="@string/statusbar_icons_style_summary"
+         android:defaultValue="true" />
 
-        <com.stag.horns.preferences.SystemSettingSwitchPreference
-            android:key="use_old_mobiletype"
-            android:title="@string/use_old_mobiletype_title"
-            android:summary="@string/use_old_mobiletype_summary"
-            android:defaultValue="true" />
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_to_sleep_title"
+        android:summary="@string/double_tap_to_sleep_summary"
+        android:defaultValue="true" />
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="data_disabled_icon"
+        android:title="@string/data_disabled_icon_title"
+        android:summary="@string/data_disabled_icon_summary"
+        android:defaultValue="true"/>
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="show_fourg_icon"
+        android:title="@string/show_fourg_icon_title"
+        android:summary="@string/show_fourg_icon_summary" 
+        android:defaultValue="false"/>
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="use_old_mobiletype"
+        android:title="@string/use_old_mobiletype_title"
+        android:summary="@string/use_old_mobiletype_summary"
+        android:defaultValue="true" />
     </PreferenceCategory>
 
 </PreferenceScreen>
