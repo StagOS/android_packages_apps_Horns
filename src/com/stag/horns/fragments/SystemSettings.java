@@ -25,6 +25,7 @@ import android.content.Context;
 import android.provider.SearchIndexableResource;
 import com.android.settings.R;
 import android.provider.Settings;
+import android.os.UserHandle;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -62,6 +63,18 @@ public class SystemSettings extends SettingsPreferenceFragment implements
          if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
              prefScreen.removePreference(findPreference(UDFPS_SETTINGS));
          }
+    }
+    
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_AMBIENT_LIGHT_DURATION, 2, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_AMBIENT_LIGHT_LAYOUT, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
