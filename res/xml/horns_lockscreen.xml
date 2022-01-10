@@ -18,6 +18,12 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+     <Preference
+        android:key="edge_light_preference"
+        android:title="@string/edge_light_title"
+        android:persistent="false"
+        android:fragment="com.stag.horns.fragments.EdgeLightSettings" />
+
     <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="enable_ripple_effect"
         android:title="@string/enable_fingerprint_ripple_effect_title"
