@@ -36,7 +36,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.android.internal.util.custom.udfps.UdfpsUtils;
+import com.android.internal.util.stag.udfps.UdfpsUtils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.stag.horns.preferences.Utils;
@@ -48,7 +48,7 @@ import java.util.List;
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-    private static final String FOD_TWEAKS = "fod_tweaks";
+    private static final String UDFPS_SETTINGS = "udfps_settings";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
          if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
-             prefScreen.removePreference(findPreference(FOD_TWEAKS));
+             prefScreen.removePreference(findPreference(UDFPS_SETTINGS));
          }
     }
 

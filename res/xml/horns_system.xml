@@ -18,11 +18,10 @@
 
 
       <Preference
-         android:fragment="com.stag.horns.fragments.FodTweaks"
+         android:fragment="com.stag.horns.fragments.UdfpsSettings"
          android:icon="@drawable/ic_fod"
-         android:key="fod_tweaks"
-         android:summary="@string/fod_tweaks_summary"
-         android:title="@string/fod_tweaks_title"
-         settings:searchable="false" />
+         android:key="udfps_settings"
+         android:summary="@string/udfps_settings_summary"
+         android:title="@string/udfps_settings_title" />
 
 </PreferenceScreen>

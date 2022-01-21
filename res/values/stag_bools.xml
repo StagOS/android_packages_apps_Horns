@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Whether to display system tab -->
-    <bool name="has_system_category">false</bool>
+    <bool name="has_system_category">true</bool>
 
     <!-- Whether to display statusbar tab -->
     <bool name="has_statusbar_category">true</bool>
