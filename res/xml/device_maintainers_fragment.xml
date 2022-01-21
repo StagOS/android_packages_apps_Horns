@@ -5,4 +5,7 @@
     <Preference android:id="@+id/device_lemonade" android:icon="@drawable/stag_device" android:summary="@string/device_lemonade_summary" android:title="@string/device_lemonade"/>
     <Preference android:id="@+id/device_lemonadep" android:icon="@drawable/stag_device" android:summary="@string/device_lemonadep_summary" android:title="@string/device_lemonadep"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_nokia" android:title="@string/device_category_nokia_title">
+    <Preference android:id="@+id/device_PL2" android:icon="@drawable/stag_device" android:summary="@string/device_PL2_summary" android:title="@string/device_PL2"/>
+  </PreferenceCategory>
 </PreferenceScreen>
