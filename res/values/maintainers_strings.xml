@@ -11,4 +11,8 @@
   <string name="device_lemonadep" translatable="false">OnePlus 9 Pro</string>
   <string name="device_lemonadep_summary" translatable="false">lemonadep\nvjspranav</string>
   <string name="device_lemonadep_maintainer" translatable="false">vjspranav</string>
+  <string name="device_category_nokia_title" translatable="false">Nokia</string>
+  <string name="device_PL2" translatable="false">Nokia 6.1</string>
+  <string name="device_PL2_maintainer" translatable="false">vjspranav</string>
+  <string name="device_PL2_summary" translatable="false">PL2\nvjspranav</string>
 </resources>
