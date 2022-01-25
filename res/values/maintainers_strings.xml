@@ -15,4 +15,8 @@
   <string name="device_PL2" translatable="false">Nokia 6.1</string>
   <string name="device_PL2_maintainer" translatable="false">vjspranav</string>
   <string name="device_PL2_summary" translatable="false">PL2\nvjspranav</string>
+  <string name="device_category_realme_title" translatable="false">Realme</string>
+  <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
+  <string name="device_RMX1801_maintainer" translatable="false">ryan_ryz</string>
+  <string name="device_RMX1801_summary" translatable="false">RMX1801\nryan_ryz</string>
 </resources>
