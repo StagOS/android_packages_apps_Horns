@@ -19,4 +19,8 @@
   <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
   <string name="device_RMX1801_maintainer" translatable="false">ryan_ryz</string>
   <string name="device_RMX1801_summary" translatable="false">RMX1801\nryan_ryz</string>
+  <string name="device_category_xiaomi_title" translatable="false">xiaomi</string>
+  <string name="device_alioth" translatable="false">POCO F3/K40/Mi 11x </string>
+  <string name="device_alioth_maintainer" translatable="false">irongfly</string>
+  <string name="device_alioth_summary" translatable="false">alioth\nirongfly</string>
 </resources>
