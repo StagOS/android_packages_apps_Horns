@@ -24,6 +24,6 @@
   <string name="device_alioth_maintainer" translatable="false">irongfly</string>
   <string name="device_alioth_summary" translatable="false">alioth\nirongfly</string>
   <string name="device_sweet" translatable="false">Redmi note 10 pro</string>
-  <string name="device_sweet_maintainer" translatable="false">t.me/shashank1439</string>
-  <string name="device_sweet_summary" translatable="false">sweet\nt.me/shashank1439</string>
+  <string name="device_sweet_maintainer" translatable="false">shashank1439</string>
+  <string name="device_sweet_summary" translatable="false">sweet\nshashank1439</string>
 </resources>
