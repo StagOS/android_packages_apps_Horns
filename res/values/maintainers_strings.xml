@@ -19,4 +19,8 @@
   <string name="device_RMX1801" translatable="false">Realme 2 Pro</string>
   <string name="device_RMX1801_maintainer" translatable="false">ryan_ryz</string>
   <string name="device_RMX1801_summary" translatable="false">RMX1801\nryan_ryz</string>
+  <string name="device_category_x_title" translatable="false">x</string>
+  <string name="device_sweetin " translatable="false">Redmi note 10 pro</string>
+  <string name="device_sweetin _maintainer" translatable="false">t.me/shashank1439</string>
+  <string name="device_sweetin _summary" translatable="false">sweetin \nt.me/shashank1439</string>
 </resources>

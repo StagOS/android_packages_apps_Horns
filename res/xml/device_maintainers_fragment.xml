@@ -11,4 +11,7 @@
   <PreferenceCategory android:id="@+id/device_category_realme" android:title="@string/device_category_realme_title">
     <Preference android:id="@+id/device_RMX1801" android:icon="@drawable/stag_device" android:summary="@string/device_RMX1801_summary" android:title="@string/device_RMX1801"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_x" android:title="@string/device_category_x_title">
+    <Preference android:id="@+id/device_sweetin " android:icon="@drawable/stag_device" android:summary="@string/device_sweetin _summary" android:title="@string/device_sweetin "/>
+  </PreferenceCategory>
 </PreferenceScreen>
