@@ -27,6 +27,12 @@
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
     </Preference>
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+         android:key="statusbar_icons_style"
+         android:title="@string/statusbar_icons_style"
+         android:summary="@string/statusbar_icons_style_summary"
+         android:defaultValue="true" />
+
     <PreferenceCategory
         android:key="battery_style_category"
         android:title="@string/battery_style_category_title" >
