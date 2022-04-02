@@ -18,10 +18,4 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="smart_space"
-        android:title="@string/smart_space_title"
-        android:summary="@string/smart_space_summary"
-        android:defaultValue="true" />
-
 </PreferenceScreen>
