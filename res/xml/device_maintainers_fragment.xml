@@ -16,4 +16,7 @@
     <Preference android:id="@+id/device_sweet" android:icon="@drawable/stag_device" android:summary="@string/device_sweet_summary" android:title="@string/device_sweet"/>
     <Preference android:id="@+id/device_phoenix" android:icon="@drawable/stag_device" android:summary="@string/device_phoenix_summary" android:title="@string/device_phoenix"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_xiaomi " android:title="@string/device_category_xiaomi _title">
+    <Preference android:id="@+id/device_Vayu" android:icon="@drawable/stag_device" android:summary="@string/device_Vayu_summary" android:title="@string/device_Vayu"/>
+  </PreferenceCategory>
 </PreferenceScreen>
