@@ -29,7 +29,7 @@
   <string name="device_phoenix" translatable="false">Poco x2</string>
   <string name="device_phoenix_maintainer" translatable="false">Thomasdada</string>
   <string name="device_phoenix_summary" translatable="false">phoenix\nThomasdada</string>
-  <string name="device_Vayu" translatable="false">Poco X3 Pro</string>
-  <string name="device_Vayu_maintainer" translatable="false">@thepsambit</string>
-  <string name="device_Vayu_summary" translatable="false">Vayu\n@thepsambit</string>
+  <string name="device_vayu" translatable="false">Poco X3 Pro</string>
+  <string name="device_vayu_maintainer" translatable="false">@thepsambit</string>
+  <string name="device_vayu_summary" translatable="false">vayu\n@thepsambit</string>
 </resources>
