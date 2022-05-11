@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 StagOS
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="horns_title">附加设置</string>
+
+    <!-- Categories -->
+    <string name="aosp_themeing_title">Aosp主题</string>
+    <string name="animations_cat_title">动画</string>
+    <string name="accents_title">色光</string>
+    <string name="buttons_title">按键</string>
+    <string name="gestures_title">手势</string>
+    <string name="interfaces_title">界面</string>
+    <string name="lockscreen_title">锁屏</string>
+    <string name="misc_title">杂项</string>
+    <string name="about_title">关于</string>
+    <string name="navbar_title">导航栏</string>
+    <string name="powermenu_title">电源菜单</string>
+    <string name="powersave_title">节能</string>
+    <string name="quicksettings_title">快速设置</string>
+    <string name="statusbar_title">状态栏</string>
+    <string name="volume_title">音量调节</string>
+    <string name="stag_themes_title">主题</string>
+    <string name="system_title">系统</string>
+    <string name="notifications_title">通知</string>
+
+    <string name="animations_cat_summary">调整系统动画</string>
+    <string name="gaming_title">游戏模式</string>
+    <string name="gaming_title_summary">沉浸式游戏体验的额外功能</string>
+
+    <!-- General strings -->
+    <string name="ok">确定</string>
+    <string name="general_title">一般</string>
+    <string name="reset">重置</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="attention">注意</string>
+    <string name="default_string">默认</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">拾色器</string>
+    <string name="press_color_to_apply">选择下面的颜色以应用</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">十六进制:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">设置</string>
+    <string name="color_default">默认</string>
+
+    <!-- About categorie -->
+    <string name="about_category">关于</string>
+    <string name="about_category_summary">一些 (因为用户\会读到这个) 关于我们团队的信息 :P</string>
+    <string name="about_stag">StagOS</string>
+    <string name="about_stag_description">Stag??? \n我们是 StagOS，我们追求优雅，Material Design 是我们的核心. \n单纯的AOSP 是最好的选择 因为\比直接来自谷歌的更好. \n接下来我们需要那些微小的自定义, \n比如时钟可能在右边而不是其他 \n以及\显示下载速度是多少......等等. 那么，为什么要把这些留空呢. \n我们的目标是通过 Stag 提供纯粹的安卓体验来满足心中的那些小地方。 \n别\忘记, 你需要自己面对，开个玩笑，尽情享受吧. \nSic Parvis Magna</string>
+    <string name="device_maintainers_title">维护者</string>
+    <string name="phenom_name">Phenom</string>
+    <string name="phenom_description">创始人 | 首席开发人员 | 维护者</string>
+    <string name="vjs_name">VJS Pranavasri</string>
+    <string name="vjs_description">创始人 | 首席开发人员 | 维护者</string>
+    <string name="rishi_name">Rishi Shukla</string>
+    <string name="rishi_description">开发人员 | Web开发者 | 维护者</string>
+    <string name="rahul_name">Rahul Ahuja</string>
+    <string name="rahul_description">主持人 | 首席设计师 | 用户体验</string>
+    <string name="ravi_name">Ravi Pingat</string>
+    <string name="ravi_description">开发人员 | 版主</string>
+    <string name="pritish_name">Pritish Joshi</string>
+    <string name="pritish_description">设计师 | 用户体验 | 测试人员</string>
+    <string name="shekhawat_name">Anand Shekhawat</string>
+    <string name="shekhawat_description">主要贡献者</string>
+    <string name="abhimanyu_name">Abhimanyu Shekhawat</string>
+    <string name="abhimanyu_description">团队成员 | 贡献者</string>
+    <string name="vinoth_name">Vinoth Raja</string>
+    <string name="vinoth_description">团队成员 | 贡献者</string>
+    <string name="debjit_name">Debjit Chakraborty</string>
+    <string name="debjit_description">团队成员 | 主要贡献者</string>
+
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">通话中振动选项</string>
+    <string name="incall_vibrate_connect_title">接通时振动</string>
+    <string name="incall_vibrate_call_wait_title">呼叫等待时振动</string>
+    <string name="incall_vibrate_disconnect_title">断开时振动</string>
+
+    <!-- Rington vibration -->
+    <string name="ringtone_vibration_pattern">铃声振动模式</string>
+    <string name="pattern_dzzz_dzzz" translatable="false">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da" translatable="false">dzzz-da</string>
+    <string name="pattern_mm_mm_mm" translatable="false">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz" translatable="false">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da" translatable="false">da-dzzz-da</string>
+
+
+    <!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">亮度控制</string>
+    <string name="status_bar_toggle_brightness_summary">通过在状态栏上滑动来调整亮度</string>
+
+    <!-- Show old style mobile data icon -->
+    <string name="use_old_mobiletype_title">使用旧式移动数据图标</string>
+    <string name="use_old_mobiletype_summary">在信号指示器顶部显示移动图标</string>
+
+    <!-- Show LTE/4G switch -->
+    <string name="icons_category">图标</string>
+    <string name="show_fourg_icon_title">显示 4G 而不是 LTE</string>
+    <string name="show_fourg_icon_summary">用4G代替LTE指示灯</string>
+
+    <!-- Battery Settings -->
+    <string name="battery_settings_title">电池设置</string>   
+
+    <!-- Battery Styles -->
+    <string name="battery_style_category_title">电池样式</string>
+    <string name="battery_percent_title">电池百分比</string>
+
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">电池样式</string>
+    <string name="status_bar_battery_style_icon_portrait">纵向图标 (默认)</string>
+    <string name="status_bar_battery_style_circle">环形</string>
+    <string name="status_bar_battery_style_dotted_circle">环形(虚线)</string>
+    <string name="status_bar_battery_style_filled_circle">环形 (填充)</string>
+    <string name="status_bar_battery_style_big_circle">大环形</string>
+    <string name="status_bar_battery_style_big_dotted_circle">大环形虚线</string>
+    <string name="status_bar_battery_style_text">文本</string>
+    <string name="status_bar_battery_style_hidden">隐藏</string>
+
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">电池百分比</string>
+    <string name="status_bar_battery_percentage_default">隐藏 (默认)</string>
+    <string name="status_bar_battery_percentage_text_inside">图标内部</string>
+    <string name="status_bar_battery_percentage_text_next">图标旁边</string> 
+
+    <!-- Notification headers -->
+    <string name="notification_headers_title">通知标题</string>
+    <string name="notification_headers_summary">在通知栏显示标题</string>
+
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">亮度条</string>
+    <string name="qs_brightness_slider_title">显示亮度条</string>
+    <string name="qs_brightness_slider_summary">在快速设置面板中显示亮度条</string>
+    <string name="qs_brightness_position_bottom_title">在底部显示亮度条</string>
+    <string name="qs_brightness_position_bottom_summary">在底部快速设置上显示亮度条</string>
+
+    <!-- Quick Settings brightness icon -->
+    <string name="brightness_icon_title">自适应亮度按钮</string>
+    <string name="brightness_icon_summary">显示自适应亮度按钮</string>
+
+    <!-- Statusbar tuner -->
+    <string name="statusbar_tuner_title">状态栏调节器</string>
+
+    <!-- Annoying Notifications -->
+    <string name="notification_sound_vib_screen_on_title">通知打扰</string>
+    <string name="notification_sound_vib_screen_on_summary">屏幕开启时播放通知的声音和振动</string>
+
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">抬头</string>
+    <string name="less_boring_heads_up_summary">快速禁用所有应用程序的提示，但保持为拨号器和消息应用程序启用它们</string>
+
+    <!-- Colored icons -->
+    <string name="statusbar_icons_style">彩色状态栏图标</string>
+    <string name="statusbar_icons_style_summary">选择状态栏图标的样式（需要重新启动系统界面）</string>
+
+    <!-- FOD Tweaks -->
+    <string name="fod_tweaks_title">FOD 调整</string>
+    <string name="fod_tweaks_summary">FOD 相关定制</string>
+
+    <!-- Screen off UDFPS -->
+    <string name="screen_off_udfps_title">息屏指纹</string>
+    <string name="screen_off_udfps_summary">屏幕关闭时保持指纹启用</string>
+
+    <!-- UDFPS settings -->
+    <string name="udfps_category">屏幕指纹</string>
+    <string name="udfps_customization">屏幕指纹定制</string>
+    <string name="udfps_recog_animation">指纹动画</string>
+    <string name="udfps_recog_animation_summary">识别指纹时显示动画</string>
+    <string name="udfps_recog_animation_effect_title">指纹动画效果</string>
+    <string name="udfps_recog_animation_effect_summary">选择动画效果</string>
+    <string name="udfps_settings_title">指纹设置</string>
+    <string name="udfps_settings_summary">自定义屏下指纹的设置</string>
+
+    <!-- UDFPS icon picker -->
+    <string name="udfps_icon_picker_title">屏幕指纹图标</string>
+    <string name="udfps_icon_picker_summary">选择您最喜欢的指纹图标</string>
+</resources>
