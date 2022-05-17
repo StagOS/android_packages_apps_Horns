@@ -2,9 +2,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="device_category_generic_title" translatable="false">Generic</string>
   <string name="device_category_oneplus_title" translatable="false">OnePlus</string>
-  <string name="device_avicii" translatable="false">OnePlus Nord</string>
-  <string name="device_avicii_summary" translatable="false">avicii\nvjspranav</string>
-  <string name="device_avicii_maintainer" translatable="false">vjspranav</string>
   <string name="device_lemonade" translatable="false">OnePlus 9</string>
   <string name="device_lemonade_summary" translatable="false">lemonade\nvjspranav</string>
   <string name="device_lemonade_maintainer" translatable="false">vjspranav</string>
@@ -32,4 +29,7 @@
   <string name="device_vayu" translatable="false">Poco X3 Pro</string>
   <string name="device_vayu_maintainer" translatable="false">@thepsambit</string>
   <string name="device_vayu_summary" translatable="false">vayu\n@thepsambit</string>
+  <string name="device_avicii" translatable="false">OnePlus Nord</string>
+  <string name="device_avicii_maintainer" translatable="false">Alwaysangry</string>
+  <string name="device_avicii_summary" translatable="false">avicii\nAlwaysangry</string>
 </resources>

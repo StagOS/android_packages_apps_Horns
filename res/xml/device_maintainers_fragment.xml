@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" android:title="@string/device_maintainers_title">
   <PreferenceCategory android:id="@+id/device_category_oneplus" android:title="@string/device_category_oneplus_title">
-    <Preference android:id="@+id/device_avicii" android:icon="@drawable/stag_device" android:summary="@string/device_avicii_summary" android:title="@string/device_avicii"/>
     <Preference android:id="@+id/device_lemonade" android:icon="@drawable/stag_device" android:summary="@string/device_lemonade_summary" android:title="@string/device_lemonade"/>
     <Preference android:id="@+id/device_lemonadep" android:icon="@drawable/stag_device" android:summary="@string/device_lemonadep_summary" android:title="@string/device_lemonadep"/>
+    <Preference android:id="@+id/device_avicii" android:icon="@drawable/stag_device" android:summary="@string/device_avicii_summary" android:title="@string/device_avicii"/>
   </PreferenceCategory>
   <PreferenceCategory android:id="@+id/device_category_nokia" android:title="@string/device_category_nokia_title">
     <Preference android:id="@+id/device_PL2" android:icon="@drawable/stag_device" android:summary="@string/device_PL2_summary" android:title="@string/device_PL2"/>
