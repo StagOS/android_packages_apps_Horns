@@ -32,4 +32,7 @@
   <string name="device_vayu" translatable="false">Poco X3 Pro</string>
   <string name="device_vayu_maintainer" translatable="false">@thepsambit</string>
   <string name="device_vayu_summary" translatable="false">vayu\n@thepsambit</string>
+  <string name="device_Avicii" translatable="false">Nord</string>
+  <string name="device_Avicii_maintainer" translatable="false">Alwaysangry</string>
+  <string name="device_Avicii_summary" translatable="false">Avicii\nAlwaysangry</string>
 </resources>
