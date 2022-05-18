@@ -30,6 +30,7 @@ import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
@@ -68,6 +69,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         return false;
+    }
+
+    public static void reset(Context mContext) {
+         ContentResolver resolver = mContext.getContentResolver();
+         Settings.System.putIntForUser(resolver,
+                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
     }
 
     @Override

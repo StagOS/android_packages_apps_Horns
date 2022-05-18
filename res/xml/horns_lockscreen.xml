@@ -24,4 +24,17 @@
          android:summary="@string/dt2s_lockscreen_summary"
          android:defaultValue="true" />
 
+    <PreferenceCategory
+         android:key="lockscreen_interface_category"
+         android:title="@string/lockscreen_interface_category">
+
+         <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info" 
+            android:icon="@drawable/ic_battery_charging"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
