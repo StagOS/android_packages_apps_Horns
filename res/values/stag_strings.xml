@@ -162,4 +162,9 @@
     <string name="custom_theme_black">Black</string>
     <string name="custom_theme_clear">Clear</string>
     <string name="custom_theme_vivid">Vivid(Monet)</string>
+
+    <!-- Double tap lock screen to sleep -->
+    <string name="dt2s_lockscreen_title">DT2S on lock screen</string>
+    <string name="dt2s_lockscreen_summary">Double-tap on the top third or bottom shortcut area of the lock screen to put the device to sleep</string>
+
 </resources>
