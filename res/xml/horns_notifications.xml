@@ -36,6 +36,17 @@
          android:summary="@string/notification_sound_vib_screen_on_summary"
          android:defaultValue="true" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="reticker_status"
+        android:title="@string/reticker_title"
+        android:summary="@string/reticker_summary" />
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="reticker_colored"
+        android:title="@string/reticker_colored_title"
+        android:summary="@string/reticker_colored_summary"
+        android:dependency="reticker_status" />
+
     <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
