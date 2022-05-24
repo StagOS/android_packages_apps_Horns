@@ -225,4 +225,30 @@
     <string name="reticker_summary">Replace heads-up notification with slim and less invasive version of redesigned ticker</string>
     <string name="reticker_colored_title">Use app colored background</string>
     <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
+
+    <!-- Home key customization -->
+    <string name="home_answer_call_title">Answer call</string>
+    <string name="home_answer_call_summary">Answer incoming calls by pressing the home button</string>
+
+    <!-- Power menu key customization -->
+    <string name="power_end_call_title">End call</string>
+    <string name="power_end_call_summary">End the current call by pressing the power button</string>
+    <string name="torch_long_press_power_gesture_title">Long press for torch</string>
+    <string name="torch_long_press_power_gesture_desc">Activate the torch by long pressing the power button while the display is off</string>
+    <string name="torch_long_press_power_timeout_title">Automatically turn torch off</string>
+    <string name="torch_long_press_power_timeout_never">Never</string>
+    <string name="torch_long_press_power_timeout_1min">1 minute</string>
+    <string name="torch_long_press_power_timeout_2min">2 minutes</string>
+    <string name="torch_long_press_power_timeout_5min">5 minutes</string>
+    <string name="torch_long_press_power_timeout_10min">10 minutes</string>
+
+
+    <!-- Buttons -->
+    <string name="button_pref_title">Buttons</string>
+    <string name="hardware_keys_home_key_title">Home button</string>
+
+    <!-- Volume keys customization -->
+    <string name="volume_answer_call_title">Answer call</string>
+    <string name="volume_answer_call_summary">Answer incoming calls by pressing the volume buttons</string>
+
 </resources>

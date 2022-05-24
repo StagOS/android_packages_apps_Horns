@@ -31,4 +31,44 @@
         android:defaultValue="false"
         android:disableDependentsState="true" />
 
+   <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="volume_answer_call"
+        android:title="@string/volume_answer_call_title"
+        android:summary="@string/volume_answer_call_summary"
+        android:defaultValue="false" />
+
+   <SwitchPreference
+        android:key="power_end_call"
+        android:title="@string/power_end_call_title"
+        android:summary="@string/power_end_call_summary"
+        android:persistent="false"/>
+
+   <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="torch_long_press_power_gesture"
+        android:title="@string/torch_long_press_power_gesture_title"
+        android:summary="@string/torch_long_press_power_gesture_desc"
+        android:defaultValue="false" />
+
+   <com.stag.horns.preferences.SystemSettingListPreference
+        android:key="torch_long_press_power_timeout"
+        android:dialogTitle="@string/torch_long_press_power_timeout_title"
+        android:title="@string/torch_long_press_power_timeout_title"
+        android:summary="%s"
+        android:entries="@array/torch_long_press_power_timeout_entries"
+        android:entryValues="@array/torch_long_press_power_timeout_values"
+        android:defaultValue="0"
+        android:dependency="torch_long_press_power_gesture" />
+
+   <PreferenceCategory
+        android:key="home_key"
+        android:title="@string/hardware_keys_home_key_title" >
+
+        <SwitchPreference
+            android:key="home_answer_call"
+            android:title="@string/home_answer_call_title"
+            android:summary="@string/home_answer_call_summary"
+            android:persistent="false"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
