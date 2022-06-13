@@ -17,4 +17,7 @@
     <Preference android:id="@+id/device_phoenix" android:icon="@drawable/stag_device" android:summary="@string/device_phoenix_summary" android:title="@string/device_phoenix"/>
     <Preference android:id="@+id/device_vayu" android:icon="@drawable/stag_device" android:summary="@string/device_vayu_summary" android:title="@string/device_vayu"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_poco" android:title="@string/device_category_poco_title">
+    <Preference android:id="@+id/device_beryllium" android:icon="@drawable/stag_device" android:summary="@string/device_beryllium_summary" android:title="@string/device_beryllium"/>
+  </PreferenceCategory>
 </PreferenceScreen>
