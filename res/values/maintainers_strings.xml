@@ -32,4 +32,8 @@
   <string name="device_avicii" translatable="false">OnePlus Nord</string>
   <string name="device_avicii_maintainer" translatable="false">Alwaysangry</string>
   <string name="device_avicii_summary" translatable="false">avicii\nAlwaysangry</string>
+  <string name="device_category_poco_title" translatable="false">POCO</string>
+  <string name="device_beryllium" translatable="false">POCO F1</string>
+  <string name="device_beryllium_maintainer" translatable="false">@u_r_fckn_awsm</string>
+  <string name="device_beryllium_summary" translatable="false">beryllium\n@u_r_fckn_awsm</string>
 </resources>
