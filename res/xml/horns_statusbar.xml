@@ -28,6 +28,12 @@
     </Preference>
 
     <Preference
+	android:key="clock_settings"
+        android:title="@string/clocksettings_title"
+        android:summary="@string/clocksettings_summary"
+        android:fragment="com.stag.horns.fragments.ClockSettings" />
+
+    <Preference
         android:key="traffic"
         android:fragment="com.stag.horns.fragments.Traffic"
         android:title="@string/traffic_title" />
