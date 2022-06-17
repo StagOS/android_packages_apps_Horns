@@ -36,4 +36,8 @@
   <string name="device_beryllium" translatable="false">POCO F1</string>
   <string name="device_beryllium_maintainer" translatable="false">@u_r_fckn_awsm</string>
   <string name="device_beryllium_summary" translatable="false">beryllium\n@u_r_fckn_awsm</string>
+  <string name="device_category_lenovo_title" translatable="false">Lenovo</string>
+  <string name="device_z2_plus" translatable="false">Lenovo Zuk Z2</string>
+  <string name="device_z2_plus_maintainer" translatable="false">nikhilgohil3</string>
+  <string name="device_z2_plus_summary" translatable="false">z2_plus\nnikhilgohil3</string>
 </resources>
