@@ -20,4 +20,7 @@
   <PreferenceCategory android:id="@+id/device_category_poco" android:title="@string/device_category_poco_title">
     <Preference android:id="@+id/device_beryllium" android:icon="@drawable/stag_device" android:summary="@string/device_beryllium_summary" android:title="@string/device_beryllium"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_lenovo" android:title="@string/device_category_lenovo_title">
+    <Preference android:id="@+id/device_z2_plus" android:icon="@drawable/stag_device" android:summary="@string/device_z2_plus_summary" android:title="@string/device_z2_plus"/>
+  </PreferenceCategory>
 </PreferenceScreen>
