@@ -19,7 +19,6 @@
 
     <Preference
         android:fragment="com.stag.horns.fragments.UdfpsSettings"
-        android:icon="@drawable/ic_fod"
         android:key="udfps_settings"
         android:summary="@string/udfps_settings_summary"
         android:title="@string/udfps_settings_title" />
