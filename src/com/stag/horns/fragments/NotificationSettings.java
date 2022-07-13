@@ -54,6 +54,8 @@ public class NotificationSettings extends SettingsPreferenceFragment
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -65,6 +67,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
+
+         boolean alertSliderAvailable = getActivity().getResources().getBoolean(
+                 com.android.internal.R.bool.config_hasAlertSlider);
+         if (!alertSliderAvailable)
+             getPreferenceScreen().removePreference(findPreference(ALERT_SLIDER_PREF));
     }
 
     @Override
