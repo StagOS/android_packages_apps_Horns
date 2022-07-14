@@ -23,4 +23,7 @@
   <PreferenceCategory android:id="@+id/device_category_lenovo" android:title="@string/device_category_lenovo_title">
     <Preference android:id="@+id/device_z2_plus" android:icon="@drawable/stag_device" android:summary="@string/device_z2_plus_summary" android:title="@string/device_z2_plus"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_xiaomi " android:title="@string/device_category_xiaomi _title">
+    <Preference android:id="@+id/device_miatoll" android:icon="@drawable/stag_device" android:summary="@string/device_miatoll_summary" android:title="@string/device_miatoll"/>
+  </PreferenceCategory>
 </PreferenceScreen>
