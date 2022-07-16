@@ -40,7 +40,7 @@
   <string name="device_z2_plus" translatable="false">Lenovo Zuk Z2</string>
   <string name="device_z2_plus_maintainer" translatable="false">nikhilgohil3</string>
   <string name="device_z2_plus_summary" translatable="false">z2_plus\nnikhilgohil3</string>
-  <string name="device_laurel_sprout " translatable="false">Mi A3</string>
-  <string name="device_laurel_sprout _maintainer" translatable="false">@Universeworldbekind</string>
-  <string name="device_laurel_sprout _summary" translatable="false">laurel_sprout \n@Universeworldbekind</string>
+  <string name="device_laurel_sprout" translatable="false">Mi A3</string>
+  <string name="device_laurel_sprout_maintainer" translatable="false">BASUBHAJANTRI</string>
+  <string name="device_laurel_sprout_summary" translatable="false">laurel_sprout\nBASUBHAJANTRI</string>
 </resources>
