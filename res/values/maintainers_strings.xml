@@ -40,8 +40,10 @@
   <string name="device_z2_plus" translatable="false">Lenovo Zuk Z2</string>
   <string name="device_z2_plus_maintainer" translatable="false">nikhilgohil3</string>
   <string name="device_z2_plus_summary" translatable="false">z2_plus\nnikhilgohil3</string>
-  <string name="device_category_xiaomi _title" translatable="false">Xiaomi </string>
-  <string name="device_miatoll" translatable="false">MiAtoll 720G aka Redmi Note 9S / Pro/ Pro max / Poco M2</string>
-  <string name="device_miatoll_maintainer" translatable="false">@cirulis_edgars</string>
-  <string name="device_miatoll_summary" translatable="false">miatoll\n@cirulis_edgars</string>
+  <string name="device_laurel_sprout" translatable="false">Mi A3</string>
+  <string name="device_laurel_sprout_maintainer" translatable="false">BASUBHAJANTRI</string>
+  <string name="device_laurel_sprout_summary" translatable="false">laurel_sprout\nBASUBHAJANTRI</string>
+  <string name="device_miatoll" translatable="false">Redmi Note 9S / Pro/ Pro max / Poco M2</string>
+  <string name="device_miatoll_maintainer" translatable="false">cirulis_edgars</string>
+  <string name="device_miatoll_summary" translatable="false">miatoll\ncirulis_edgars</string>
 </resources>

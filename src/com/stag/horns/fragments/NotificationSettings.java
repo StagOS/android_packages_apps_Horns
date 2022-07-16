@@ -61,6 +61,8 @@ public class NotificationSettings extends SettingsPreferenceFragment
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+
     private Context mContext;
     private Vibrator mVibrator;
 
@@ -183,6 +185,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
         final int currentPattern = Settings.System.getIntForUser(resolver, RINGTONE_VIBRATION_PATTERN, 0, UserHandle.USER_CURRENT);
 
         updateVibrationPattern(currentPattern);
+
+        boolean alertSliderAvailable = getActivity().getResources().getBoolean(
+                 com.android.internal.R.bool.config_hasAlertSlider);
+         if (!alertSliderAvailable)
+             getPreferenceScreen().removePreference(findPreference(ALERT_SLIDER_PREF));
     }
 
     private void updateVibrationPattern(int val) {
