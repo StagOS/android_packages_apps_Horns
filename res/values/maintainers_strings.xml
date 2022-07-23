@@ -43,7 +43,7 @@
   <string name="device_laurel_sprout" translatable="false">Mi A3</string>
   <string name="device_laurel_sprout_maintainer" translatable="false">BASUBHAJANTRI</string>
   <string name="device_laurel_sprout_summary" translatable="false">laurel_sprout\nBASUBHAJANTRI</string>
-  <string name="device_miatoll" translatable="false">Redmi Note 9S / Pro/ Pro max / Poco M2</string>
+  <string name="device_miatoll" translatable="false">Redmi Note 9S / Pro / Pro max / Poco M2</string>
   <string name="device_miatoll_maintainer" translatable="false">cirulis_edgars</string>
   <string name="device_miatoll_summary" translatable="false">miatoll\ncirulis_edgars</string>
 </resources>
