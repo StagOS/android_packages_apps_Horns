@@ -46,4 +46,7 @@
   <string name="device_miatoll" translatable="false">Redmi Note 9S / Pro/ Pro max / Poco M2</string>
   <string name="device_miatoll_maintainer" translatable="false">cirulis_edgars</string>
   <string name="device_miatoll_summary" translatable="false">miatoll\ncirulis_edgars</string>
+  <string name="device_vayu" translatable="false">POCO X3 Pro</string>
+  <string name="device_vayu_maintainer" translatable="false">thepsambit</string>
+  <string name="device_vayu_summary" translatable="false">vayu\nthepsambit</string>
 </resources>
