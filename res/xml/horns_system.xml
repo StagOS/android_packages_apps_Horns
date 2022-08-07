@@ -69,53 +69,6 @@
         android:summary="@string/theme_customization_icon_shape_summary"
         android:fragment="com.stag.horns.fragments.IconShapes"/>
         
-   <PreferenceCategory
-        android:key="edge_lighting"
-        android:title="@string/pulse_ambient_light_title" >
-
-        <com.stag.horns.preferences.SecureSettingSwitchPreference
-            android:key="pulse_ambient_light"
-            android:title="@string/pulse_ambient_light_title"
-            android:summary="@string/pulse_ambient_light_summary"
-            android:dependency="doze_enabled" />
-
-        <com.stag.horns.preferences.SecureSettingListPreference
-            android:key="pulse_ambient_light_layout"
-            android:title="@string/pulse_ambient_light_layout_title"
-            android:entries="@array/pulse_ambient_light_layout_entries"
-            android:entryValues="@array/pulse_ambient_light_layout_values"
-            android:defaultValue="0"
-            android:dependency="pulse_ambient_light" />
-
-        <net.margaritov.preference.colorpicker.SecureSettingColorPickerPreference
-            android:key="pulse_ambient_light_color"
-            android:title="@string/pulse_ambient_light_color_title"
-            android:dependency="pulse_ambient_light"
-            android:defaultValue="0xFF3980FF" />
-
-        <com.stag.horns.preferences.SecureSettingSeekBarPreference
-            android:key="pulse_ambient_light_duration"
-            android:title="@string/pulse_ambient_light_duration_title"
-            android:summary="@string/pulse_ambient_light_duration_summary"
-            android:defaultValue="2"
-            android:max="10"
-            settings:min="1"
-            settings:units="s"
-            settings:interval="1"
-            android:dependency="pulse_ambient_light" />
-    </PreferenceCategory>     
-
-    <!-- Pulse music visualizer -->
-    <PreferenceCategory
-         android:title="@string/pulse_music_visualizer_title" >        
-         
-         <Preference
-             android:key="pulse_settings"
-             android:title="@string/pulse_settings"
-             android:summary="@string/pulse_settings_summary"
-             android:fragment="com.stag.horns.fragments.PulseSettings" />
-     </PreferenceCategory>
-
      <!-- Ambient Display -->
      <PreferenceScreen
          android:key="doze_fragment"

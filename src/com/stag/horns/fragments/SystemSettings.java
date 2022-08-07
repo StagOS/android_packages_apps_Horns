@@ -65,19 +65,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements
              prefScreen.removePreference(findPreference(UDFPS_SETTINGS));
          }
     }
-    
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        DozeSettings.reset(mContext);
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF, UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.PULSE_AMBIENT_LIGHT_DURATION, 2, UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.PULSE_AMBIENT_LIGHT_LAYOUT, 0, UserHandle.USER_CURRENT);
-    }
 
     @Override
     public int getMetricsCategory() {
