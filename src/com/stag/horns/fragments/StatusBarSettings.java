@@ -58,15 +58,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-import com.stag.horns.preferences.SystemSettingSeekBarPreference;
-
 @SearchIndexable
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String PREF_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String PREF_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -75,7 +72,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mBatteryPercent;
     private ListPreference mBatteryStyle;
-    private SystemSettingSeekBarPreference mVolteIconStyle;
     private int mBatteryPercentValue;
 
     @Override
@@ -101,8 +97,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         mBatteryPercent.setEnabled(
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
-
-        mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
     }
 
     @Override
