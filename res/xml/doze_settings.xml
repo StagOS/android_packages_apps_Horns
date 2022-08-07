@@ -28,13 +28,13 @@
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary" />
 
-    <lineageos.preference.RemotePreference
+    <com.android.settings.custom.preference.RemotePreference
         android:key="doze_device_settings"
         android:title="@string/doze_additional_settings_title"
         android:summary="@string/doze_additional_settings_summary">
         <intent
             android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
-    </lineageos.preference.RemotePreference>
+    </com.android.settings.custom.preference.RemotePreference>
 
     <PreferenceCategory
         android:key="doze_sensor"
@@ -74,6 +74,11 @@
             settings:interval="10"
             settings:units="ms" />
     </PreferenceCategory>
+
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
+        android:key="pulse_on_new_tracks"
+        android:title="@string/pulse_on_new_tracks_title"
+        android:summary="@string/pulse_on_new_tracks_summary" />
 
    <PreferenceCategory
         android:key="edge_lighting"
