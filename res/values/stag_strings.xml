@@ -331,4 +331,7 @@
     <string name="volte_icon_title">VoLTE icon</string>
     <string name="volte_icon_summary">Display VoLTE icon when available</string>
 
+    <!-- Repainter -->
+    <string name="repainter_title">Repainter</string>
+    <string name="repainter_summary">Enhance your theming experience</string>
 </resources>

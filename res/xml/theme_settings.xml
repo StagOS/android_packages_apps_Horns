@@ -21,6 +21,14 @@
         android:key="monel_category"
         android:title="Monet">
 
+    <Preference
+         android:key="repainter_settings"
+         android:title="@string/repainter_title"
+         android:summary="@string/repainter_summary" >
+         <intent
+             android:targetPackage="dev.kdrag0n.dyntheme"
+             android:targetClass="dev.kdrag0n.dyntheme.MainActivity" />
+    </Preference>
 
     <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="monet_engine_custom_color"
