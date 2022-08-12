@@ -204,4 +204,47 @@
       <item>1</item>
       <item>2</item>
     </string-array>
+
+    <!-- Screen resolution entries and values
+        Add wqhd, qhd, fhd+ and fhd
+     -->
+    <string-array name="screen_resolution_entries_wqhd" translatable="false">
+        <item>@string/screen_resolution_hd</item>
+        <item>@string/screen_resolution_fhd</item>
+        <item>@string/screen_resolution_qhd</item>
+        <item>@string/screen_resolution_wqhd</item>
+    </string-array>
+    <string-array name="screen_resolution_values_wqhd" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="screen_resolution_entries_qhd" translatable="false">
+        <item>@string/screen_resolution_hd</item>
+        <item>@string/screen_resolution_fhd</item>
+        <item>@string/screen_resolution_qhd</item>
+    </string-array>
+    <string-array name="screen_resolution_values_qhd" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="screen_resolution_entries_fhd" translatable="false">
+        <item>@string/screen_resolution_hd</item>
+        <item>@string/screen_resolution_fhd</item>
+    </string-array>
+    <string-array name="screen_resolution_values_fhd" translatable="false">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="screen_resolution_entries_hd" translatable="false">
+        <item>@string/screen_resolution_hd</item>
+    </string-array>
+    <string-array name="screen_resolution_values_hd" translatable="false">
+        <item>1</item>
+    </string-array>
 </resources>

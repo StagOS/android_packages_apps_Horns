@@ -18,4 +18,19 @@
 
     <!-- Custom pickup sensor for doze customization -->
     <string name="pickup_sensor" translatable="false"></string>
+
+    <!-- Diagonal Screen length provided -->
+    <string name="config_screen_diagonal_length" translatable="false"></string>
+
+    <!-- Whether screen resolution changing is supported -->
+    <bool name="config_screen_resolution_changing_supported">false</bool>
+
+    <!-- Maximum supported screen resolution
+          1: hd
+          2: fhd 
+          3: fhd+    
+          4: qhd
+          5: wqhd
+     -->
+     <integer name="config_screen_resolution_max">2</integer>
 </resources>

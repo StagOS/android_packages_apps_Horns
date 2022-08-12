@@ -402,4 +402,16 @@
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Music ticker</string>
     <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+
+    <!-- Screen resolution entries and values
+        Add wqhd, qhd, fhd+, fhd, hd, auto
+     -->
+     <string name="screen_resolution_wqhd">WQHD</string>
+     <string name="screen_resolution_qhd">QHD</string>
+     <string name="screen_resolution_fhd">FHD</string>
+     <string name="screen_resolution_hd">HD</string>
+     <string name="screen_resolution_auto">Auto</string>
+     <string name="screen_resolution_title">Screen resolution</string>
+     <string name="screen_resolution_summary">Change your screen resolution (Requires SystemUI Restart)</string>
+     <string name="screen_resolution_not_supported">Screen resolution not supported</string>
 </resources>
