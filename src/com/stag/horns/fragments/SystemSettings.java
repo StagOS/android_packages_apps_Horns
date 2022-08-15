@@ -171,19 +171,14 @@ public class SystemSettings extends SettingsPreferenceFragment implements
             if (screenDiagonalLength != null) {
                 float screenDiagonalLengthFloat = Float.parseFloat(screenDiagonalLength);
                 Log.d(TAG, "Calling changeScreenResolution with screenDiagonalLengthFloat: " + screenDiagonalLengthFloat);
-                StagUtils.changeScreenResolution(SCREEN_RESOLUTION_VALUES[value], screenDiagonalLengthFloat, ratio);
+                StagUtils.changeScreenResolution(getContext(), SCREEN_RESOLUTION_VALUES[value], screenDiagonalLengthFloat, ratio);
             }else{
                 Log.d(TAG, "Calling changeScreenResolution with value: " + value);
-                StagUtils.changeScreenResolution(SCREEN_RESOLUTION_VALUES[value], SCREEN_RESOLUTION_DPIS[value], ratio);
+                StagUtils.changeScreenResolution(getContext(), SCREEN_RESOLUTION_VALUES[value], SCREEN_RESOLUTION_DPIS[value], ratio);
             }
-	    restartSystemUI(getContext());
             return true;
         }
         return false;
-    }
-
-    public static void restartSystemUI(Context ctx) {
-        Process.killProcess(Process.myPid());
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
