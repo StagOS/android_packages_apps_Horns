@@ -20,12 +20,15 @@ package com.stag.horns.fragments;
 import com.android.internal.logging.nano.MetricsProto;
 
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.util.Log;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.provider.SearchIndexableResource;
 import com.android.settings.R;
 import android.provider.Settings;
 
+// import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
@@ -46,6 +49,10 @@ import java.util.List;
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+	private static final String TAG = "SystemSettings";
+
+	// private ListPreference mCustomTheme;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +62,12 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+		// mCustomTheme = (ListPreference) findPreference("system_custom_theme");
+		// final int currentTheme = Settings.Secure.getIntForUser(resolver,
+		// 		Settings.Secure.SYSTEM_CUSTOM_THEME, 0, UserHandle.USER_CURRENT);
+		// mCustomTheme.setValue(String.valueOf(currentTheme));
+		// mCustomTheme.setOnPreferenceChangeListener(this);
+		// Log.d(TAG, "Current theme: " + String.valueOf(currentTheme));
     }
 
     @Override
@@ -62,8 +75,16 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         return MetricsProto.MetricsEvent.HORNS;
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
 		ContentResolver resolver = getActivity().getContentResolver();
+		// if(preference == mCustomTheme) {
+		// 	Log.d(TAG, "Custom theme changed");
+		// 	int value = Integer.parseInt((String) newValue);
+		// 	Log.d(TAG, "New theme: " + String.valueOf(value));
+		// 	Settings.Secure.putIntForUser(resolver,
+		// 			Settings.Secure.SYSTEM_CUSTOM_THEME, value, UserHandle.USER_CURRENT);
+		// 	return true;
+		// }
         return false;
     }
 

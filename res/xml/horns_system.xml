@@ -16,10 +16,19 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+         <!-- Add a list preference for screen resolution -->
+     <com.stag.horns.preferences.SecureSettingListPreference
+         android:key="system_custom_theme"
+         android:title="@string/custom_theme_title"
+         android:summary="@string/custom_theme_summary"
+         android:defaultValue="0"
+         android:entries="@array/custom_theme_entries"
+         android:entryValues="@array/custom_theme_values" />
+
     <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="toast_icon"
-        android:title="@string/toast_icon_title"
-        android:summary="@string/toast_icon_summary"
-        android:defaultValue="false" />
+         android:key="toast_icon"
+         android:title="@string/toast_icon_title"
+         android:summary="@string/toast_icon_summary"
+         android:defaultValue="false" />
 
 </PreferenceScreen>
