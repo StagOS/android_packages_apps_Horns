@@ -7,7 +7,7 @@
     <bool name="has_statusbar_category">true</bool>
 
     <!-- Whether to display qs tab -->
-    <bool name="has_qs_category">false</bool>
+    <bool name="has_qs_category">true</bool>
 
     <!-- Whether to display navbar tab -->
     <bool name="has_navbar_category">false</bool>
