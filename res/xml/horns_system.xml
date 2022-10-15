@@ -24,6 +24,11 @@
          android:entries="@array/custom_theme_entries"
          android:entryValues="@array/custom_theme_values" />
 
+    <Preference
+        android:key="pulse_settings"
+        android:fragment="com.stag.horns.fragments.PulseSettings"
+        android:title="@string/pulse_settings" />
+
     <com.stag.horns.preferences.SystemSettingSwitchPreference
          android:key="toast_icon"
          android:title="@string/toast_icon_title"
