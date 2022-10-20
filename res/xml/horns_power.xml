@@ -28,8 +28,8 @@
             android:title="@string/powermenu_restart"
             android:defaultValue="true" />
 
-         <com.stag.horns.preferences.SecureSettingSwitchPreference
-            android:key="advanced_reboot"
+         <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="powermenu_advanced"
             android:title="@string/powermenu_advanced"
             android:defaultValue="true" />
 
