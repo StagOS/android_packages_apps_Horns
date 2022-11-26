@@ -35,4 +35,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:id="@+id/device_category_redmi"
+        android:title="@string/device_category_redmi_title" >
+
+        <Preference
+            android:id="@+id/device_miatoll"
+            android:icon="@drawable/stag_device"
+            android:summary="@string/device_miatoll_summary"
+            android:title="@string/device_miatoll" >
+        </Preference>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

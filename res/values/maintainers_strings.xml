@@ -22,8 +22,14 @@
     <!-- Device Categories -->
     <string name="device_category_generic_title" translatable="false">Generic</string>
     <string name="device_category_oneplus_title" translatable="false">OnePlus</string>
+    <string name="device_category_redmi_title" translatable="false">Redmi</string>
 
     <!-- Devices & Maintainers -->
+
+    <!-- Redmi Note 9s/9 Pro/10 Lite (miatoll) -->
+    <string name="device_miatoll" translatable="false">Redmi Note 9s/9 Pro/10 Lite</string>
+    <string name="device_miatoll_summary" translatable="false">miatoll\nvjspranav</string>
+    <string name="device_miatoll_maintainer" translatable="false">vjspranav</string>
 
     <!-- OnePlus 9 (lemonadep) -->
     <string name="device_lemonade" translatable="false">OnePlus 9</string>
