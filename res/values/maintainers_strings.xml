@@ -1,44 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright (C) 2019 Stag-OS
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
--->
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- Device Categories -->
-    <string name="device_category_generic_title" translatable="false">Generic</string>
-    <string name="device_category_oneplus_title" translatable="false">OnePlus</string>
-    <string name="device_category_redmi_title" translatable="false">Redmi</string>
-
-    <!-- Devices & Maintainers -->
-
-    <!-- Redmi Note 9s/9 Pro/10 Lite (miatoll) -->
-    <string name="device_miatoll" translatable="false">Redmi Note 9s/9 Pro/10 Lite</string>
-    <string name="device_miatoll_summary" translatable="false">miatoll\nvjspranav</string>
-    <string name="device_miatoll_maintainer" translatable="false">vjspranav</string>
-
-    <!-- OnePlus 9 (lemonadep) -->
-    <string name="device_lemonade" translatable="false">OnePlus 9</string>
-    <string name="device_lemonade_summary" translatable="false">lemonade\nvjspranav</string>
-    <string name="device_lemonade_maintainer" translatable="false">vjspranav</string>
-
-    <!-- OnePlus 9 Pro (lemonadep) -->
-    <string name="device_lemonadep" translatable="false">OnePlus 9 Pro</string>
-    <string name="device_lemonadep_summary" translatable="false">lemonadep\nvjspranav</string>
-    <string name="device_lemonadep_maintainer" translatable="false">vjspranav</string>
-
+  <string name="device_category_generic_title" translatable="false">Generic</string>
+  <string name="device_category_oneplus_title" translatable="false">OnePlus</string>
+  <string name="device_category_redmi_title" translatable="false">Redmi</string>
+  <string name="device_miatoll" translatable="false">Redmi Note 9s/9 Pro/10 Lite</string>
+  <string name="device_miatoll_summary" translatable="false">miatoll\nvjspranav</string>
+  <string name="device_miatoll_maintainer" translatable="false">vjspranav</string>
+  <string name="device_lemonade" translatable="false">OnePlus 9</string>
+  <string name="device_lemonade_summary" translatable="false">lemonade\nvjspranav</string>
+  <string name="device_lemonade_maintainer" translatable="false">vjspranav</string>
+  <string name="device_lemonadep" translatable="false">OnePlus 9 Pro</string>
+  <string name="device_lemonadep_summary" translatable="false">lemonadep\nvjspranav</string>
+  <string name="device_lemonadep_maintainer" translatable="false">vjspranav</string>
+  <string name="device_category_xiaomi_title" translatable="false">Xiaomi</string>
+  <string name="device_beryllium" translatable="false">POCOPHONE F1</string>
+  <string name="device_beryllium_maintainer" translatable="false">u_r_fckn_awsm</string>
+  <string name="device_beryllium_summary" translatable="false">beryllium\nu_r_fckn_awsm</string>
 </resources>
