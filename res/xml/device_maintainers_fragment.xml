@@ -9,5 +9,6 @@
   </PreferenceCategory>
   <PreferenceCategory android:id="@+id/device_category_xiaomi" android:title="@string/device_category_xiaomi_title">
     <Preference android:id="@+id/device_beryllium" android:icon="@drawable/stag_device" android:summary="@string/device_beryllium_summary" android:title="@string/device_beryllium"/>
+    <Preference android:id="@+id/device_sweet" android:icon="@drawable/stag_device" android:summary="@string/device_sweet_summary" android:title="@string/device_sweet"/>
   </PreferenceCategory>
 </PreferenceScreen>
