@@ -16,4 +16,7 @@
   <string name="device_beryllium" translatable="false">POCOPHONE F1</string>
   <string name="device_beryllium_maintainer" translatable="false">u_r_fckn_awsm</string>
   <string name="device_beryllium_summary" translatable="false">beryllium\nu_r_fckn_awsm</string>
+  <string name="device_Sweet " translatable="false">Redmi note 10 pro / pro max</string>
+  <string name="device_Sweet _maintainer" translatable="false">@Itsshashanksp </string>
+  <string name="device_Sweet _summary" translatable="false">Sweet \n@Itsshashanksp </string>
 </resources>
