@@ -19,4 +19,8 @@
   <string name="device_sweet" translatable="false">Redmi note 10 pro / pro max</string>
   <string name="device_sweet_maintainer" translatable="false">@Itsshashanksp </string>
   <string name="device_sweet_summary" translatable="false">sweet\n@Itsshashanksp </string>
+  <string name="device_category_x_title" translatable="false">X</string>
+  <string name="device_violet" translatable="false">Redmi Note 7 Pro</string>
+  <string name="device_violet_maintainer" translatable="false">thomasdada</string>
+  <string name="device_violet_summary" translatable="false">violet\nthomasdada</string>
 </resources>
