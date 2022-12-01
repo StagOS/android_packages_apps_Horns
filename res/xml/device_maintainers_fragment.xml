@@ -12,4 +12,7 @@
     <Preference android:id="@+id/device_sweet" android:icon="@drawable/stag_device" android:summary="@string/device_sweet_summary" android:title="@string/device_sweet"/>
     <Preference android:id="@+id/device_violet" android:icon="@drawable/stag_device" android:summary="@string/device_violet_summary" android:title="@string/device_violet"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_samsung" android:title="@string/device_category_samsung_title">
+    <Preference android:id="@+id/device_a20" android:icon="@drawable/stag_device" android:summary="@string/device_a20_summary" android:title="@string/device_a20"/>
+  </PreferenceCategory>
 </PreferenceScreen>

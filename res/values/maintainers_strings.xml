@@ -22,4 +22,8 @@
   <string name="device_violet" translatable="false">Redmi Note 7 Pro</string>
   <string name="device_violet_maintainer" translatable="false">thomasdada</string>
   <string name="device_violet_summary" translatable="false">violet\nthomasdada</string>
+  <string name="device_category_samsung_title" translatable="false">Samsung</string>
+  <string name="device_a20" translatable="false">Galaxy A20</string>
+  <string name="device_a20_maintainer" translatable="false">FPSensor</string>
+  <string name="device_a20_summary" translatable="false">a20\nFPSensor</string>
 </resources>
