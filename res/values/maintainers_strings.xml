@@ -29,4 +29,8 @@
   <string name="device_alioth" translatable="false">POCO F3 / MI 11X / Redmi K40</string>
   <string name="device_alioth_maintainer" translatable="false">Reaper0x0</string>
   <string name="device_alioth_summary" translatable="false">alioth\nReaper0x0</string>
+  <string name="device_category_google_title" translatable="false">Google</string>
+  <string name="device_panther" translatable="false">Pixel 7</string>
+  <string name="device_panther_maintainer" translatable="false">vjspranav</string>
+  <string name="device_panther_summary" translatable="false">panther\nvjspranav</string>
 </resources>

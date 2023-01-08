@@ -16,4 +16,7 @@
   <PreferenceCategory android:id="@+id/device_category_samsung" android:title="@string/device_category_samsung_title">
     <Preference android:id="@+id/device_a20" android:icon="@drawable/stag_device" android:summary="@string/device_a20_summary" android:title="@string/device_a20"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_google" android:title="@string/device_category_google_title">
+    <Preference android:id="@+id/device_panther" android:icon="@drawable/stag_device" android:summary="@string/device_panther_summary" android:title="@string/device_panther"/>
+  </PreferenceCategory>
 </PreferenceScreen>
