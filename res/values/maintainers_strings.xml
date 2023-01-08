@@ -33,4 +33,7 @@
   <string name="device_panther" translatable="false">Pixel 7</string>
   <string name="device_panther_maintainer" translatable="false">vjspranav</string>
   <string name="device_panther_summary" translatable="false">panther\nvjspranav</string>
+  <string name="device_cheetah" translatable="false">Pixel 7 Pro</string>
+  <string name="device_cheetah_maintainer" translatable="false">vjspranav</string>
+  <string name="device_cheetah_summary" translatable="false">cheetah\nvjspranav</string>
 </resources>
