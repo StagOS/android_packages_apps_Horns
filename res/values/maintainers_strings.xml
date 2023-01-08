@@ -26,4 +26,7 @@
   <string name="device_a20" translatable="false">Galaxy A20</string>
   <string name="device_a20_maintainer" translatable="false">FPSensor</string>
   <string name="device_a20_summary" translatable="false">a20\nFPSensor</string>
+  <string name="device_alioth" translatable="false">POCO F3 / MI 11X / Redmi K40</string>
+  <string name="device_alioth_maintainer" translatable="false">Reaper0x0</string>
+  <string name="device_alioth_summary" translatable="false">alioth\nReaper0x0</string>
 </resources>
