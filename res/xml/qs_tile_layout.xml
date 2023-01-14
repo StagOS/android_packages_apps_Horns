@@ -40,7 +40,13 @@
         android:max="6"
         settings:min="1" />
 
-    <com.stag.horns.preferences.SystemSettingSeekBarPreference
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="qs_tile_label_hide"
+        android:title="@string/qs_tile_hide_label_title"
+        android:summary="@string/qs_tile_hide_label_summary"
+        android:defaultValue="false" />
+		
+    <com.stag.horns.preferences.SystemSettingSeekBarPreference        
         android:key="qs_tile_vertical_layout"
         android:title="@string/qs_tile_vertical_layout_title"
         android:summary="@string/qs_tile_vertical_layout_summary"
