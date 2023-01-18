@@ -19,5 +19,6 @@
   <PreferenceCategory android:id="@+id/device_category_google" android:title="@string/device_category_google_title">
     <Preference android:id="@+id/device_panther" android:icon="@drawable/stag_device" android:summary="@string/device_panther_summary" android:title="@string/device_panther"/>
     <Preference android:id="@+id/device_cheetah" android:icon="@drawable/stag_device" android:summary="@string/device_cheetah_summary" android:title="@string/device_cheetah"/>
+    <Preference android:id="@+id/device_bluejay" android:icon="@drawable/stag_device" android:summary="@string/device_bluejay_summary" android:title="@string/device_bluejay"/>
   </PreferenceCategory>
 </PreferenceScreen>
