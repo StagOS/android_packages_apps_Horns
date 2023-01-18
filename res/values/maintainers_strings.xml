@@ -37,6 +37,6 @@
   <string name="device_cheetah_maintainer" translatable="false">vjspranav</string>
   <string name="device_cheetah_summary" translatable="false">cheetah\nvjspranav</string>
   <string name="device_bluejay" translatable="false">6a</string>
-  <string name="device_bluejay_maintainer" translatable="false">@kanstmablason</string>
-  <string name="device_bluejay_summary" translatable="false">bluejay\n@kanstmablason</string>
+  <string name="device_bluejay_maintainer" translatable="false">kanstmablason</string>
+  <string name="device_bluejay_summary" translatable="false">bluejay\nkanstmablason</string>
 </resources>
