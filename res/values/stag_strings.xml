@@ -199,6 +199,13 @@
     <string name="alert_slider_notifications_title">Alert slider notifications</string>
     <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
 
+    <!-- Alert Slider category (OnePlus devices) -->
+    <string name="alert_slider_cat_title">Alert slider</string>
+
+    <!-- Alert Slider Pulse (OnePlus devices) -->
+    <string name="alert_slider_pulse_title">Alert slider pulse</string>
+    <string name="alert_slider_pulse_summary">Pulse ambient display when changing alert slider position</string>    
+
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
     <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>

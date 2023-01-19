@@ -54,7 +54,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
-    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+    private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
     
     private static final String KEY_BATTERY_CHARGING_LIGHT = "battery_charging_light";
 
@@ -73,10 +73,11 @@ public class NotificationSettings extends SettingsPreferenceFragment
             prefScreen.removePreference(incallVibCategory);
         }
 
+	final PreferenceCategory alertSliderCat = (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
          boolean alertSliderAvailable = getActivity().getResources().getBoolean(
                  com.android.internal.R.bool.config_hasAlertSlider);
-         if (!alertSliderAvailable)
-             getPreferenceScreen().removePreference(findPreference(ALERT_SLIDER_PREF));
+        if (!alertSliderAvailable)
+            prefScreen.removePreference(alertSliderCat);
 
         mBatteryLightPref = (Preference) findPreference(KEY_BATTERY_CHARGING_LIGHT);
         if (!getResources()
