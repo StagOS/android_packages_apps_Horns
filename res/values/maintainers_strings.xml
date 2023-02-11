@@ -39,4 +39,7 @@
   <string name="device_bluejay" translatable="false">6a</string>
   <string name="device_bluejay_maintainer" translatable="false">kanstmablason</string>
   <string name="device_bluejay_summary" translatable="false">bluejay\nkanstmablason</string>
+  <string name="device_lavender" translatable="false">Redmi Note 7</string>
+  <string name="device_lavender_maintainer" translatable="false">FPSensor</string>
+  <string name="device_lavender_summary" translatable="false">lavender\nFPSensor</string>
 </resources>
