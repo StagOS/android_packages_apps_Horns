@@ -35,9 +35,12 @@ import com.stag.horns.about.DiagonalView;
 import com.android.settings.R;
 
 public class FancyAboutPage extends RelativeLayout {
-    private TextView l1,l2,phenomname,vjsname,rishiname,rahulname,raviname,pritishname,shekhawatname,abhimanyuname,vinothname,debjitname,phenomdescription,vjsdescription,pritishdescription,shekhawatdescription,abhimanyudescription,vinothdescription,debjitdescription,rishidescription,rahuldescription,ravidescription;
+    private TextView l1,l2;
+    private TextView vjsname,phenomname,raviname,pritishname,cruzername;
+    private TextView vjsdescription,phenomdescription,ravidescription,pritishdescription,cruzerdescription;
+
     DiagonalView diagonalView;
-    ImageView phenom,vjs,rishi,rahul,ravi,pritish,shekhawat,abhimanyu,vinoth,debjit,gg,tl,tw,git;
+    ImageView vjs,phenom,ravi,pritish,cruzer,gg,tl,tw,git;
     String twitterurl,ggurl,tlurl,githuburl;
     private void init(Context context) {
         //do stuff that was in your original constructor...
@@ -46,41 +49,30 @@ public class FancyAboutPage extends RelativeLayout {
         inflater.inflate(R.layout.activity_fancy_about_page, this, true);
         l1=(TextView) findViewById(R.id.name);
         l2=(TextView) findViewById(R.id.description);
-        phenomname=(TextView) findViewById(R.id.phenomname);
         vjsname=(TextView) findViewById(R.id.vjsname);
-        rishiname=(TextView) findViewById(R.id.rishiname);
-        rahulname=(TextView) findViewById(R.id.rahulname);
+        phenomname=(TextView) findViewById(R.id.phenomname);
         raviname=(TextView) findViewById(R.id.raviname);
         pritishname=(TextView) findViewById(R.id.pritishname);
-        shekhawatname=(TextView) findViewById(R.id.shekhawatname);
-        abhimanyuname=(TextView) findViewById(R.id.abhimanyuname);
-        vinothname=(TextView) findViewById(R.id.vinothname);
-        debjitname=(TextView) findViewById(R.id.debjitname);
-	phenomdescription=(TextView) findViewById(R.id.phenomdescription);
+        cruzername=(TextView) findViewById(R.id.cruzername);
+
         vjsdescription=(TextView) findViewById(R.id.vjsdescription);
-        rishidescription=(TextView) findViewById(R.id.rishidescription);
-        rahuldescription=(TextView) findViewById(R.id.rahuldescription);
+        phenomdescription=(TextView) findViewById(R.id.phenomdescription);
         ravidescription=(TextView) findViewById(R.id.ravidescription);
         pritishdescription=(TextView) findViewById(R.id.pritishdescription);
-        shekhawatdescription=(TextView) findViewById(R.id.shekhawatdescription);
-        abhimanyudescription=(TextView) findViewById(R.id.abhimanyudescription);
-        vinothdescription=(TextView) findViewById(R.id.vinothdescription);
-        debjitdescription=(TextView) findViewById(R.id.debjitdescription);
-        phenom=(ImageView) findViewById(R.id.phenom);
+        cruzerdescription=(TextView) findViewById(R.id.cruzerdescription);
+
         vjs=(ImageView) findViewById(R.id.vjs);
-	rishi=(ImageView) findViewById(R.id.rishi);
-	rahul=(ImageView) findViewById(R.id.rahul);
-	ravi=(ImageView) findViewById(R.id.ravi);
+        phenom=(ImageView) findViewById(R.id.phenom);
+    	ravi=(ImageView) findViewById(R.id.ravi);
         pritish=(ImageView) findViewById(R.id.pritish);
-        shekhawat=(ImageView) findViewById(R.id.shekhawat);
-        abhimanyu=(ImageView) findViewById(R.id.abhimanyu);
-        vinoth=(ImageView) findViewById(R.id.vinoth);
-	debjit=(ImageView) findViewById(R.id.debjit);
+    	cruzer=(ImageView) findViewById(R.id.cruzer);
+
         tw=(ImageView) findViewById(R.id.twitter);
         gg=(ImageView) findViewById(R.id.google);
         tl=(ImageView) findViewById(R.id.telegram);
         git=(ImageView) findViewById(R.id.github);
         diagonalView = (DiagonalView) findViewById(R.id.background);
+
     }
     public FancyAboutPage(Context context) {
         super(context);
@@ -165,40 +157,26 @@ public class FancyAboutPage extends RelativeLayout {
 
     }
     public void setAppIcon(int Icon){
-       phenom.setImageResource(Icon);
-       vjs.setImageResource(Icon);
-       rishi.setImageResource(Icon);
-       rahul.setImageResource(Icon);
-       ravi.setImageResource(Icon);
-       pritish.setImageResource(Icon);
-       shekhawat.setImageResource(Icon);
-       abhimanyu.setImageResource(Icon);
-       vinoth.setImageResource(Icon);
-       debjit.setImageResource(Icon);
+        vjs.setImageResource(Icon);
+        phenom.setImageResource(Icon);
+        ravi.setImageResource(Icon);
+        pritish.setImageResource(Icon);
+        cruzer.setImageResource(Icon);
     }
     public void setAppName(String AppName){
-       phenomname.setText(AppName);
-       vjsname.setText(AppName);
-       rishiname.setText(AppName);
-       rahulname.setText(AppName);
-       raviname.setText(AppName);
-       pritishname.setText(AppName);
-       shekhawatname.setText(AppName);
-       abhimanyuname.setText(AppName);
-       vinothname.setText(AppName);
-       debjitname.setText(AppName);
+        vjsname.setText(AppName);
+        phenomname.setText(AppName);
+        raviname.setText(AppName);
+        pritishname.setText(AppName);
+        cruzername.setText(AppName);
     }
+
     public void setAppDescription(String AppDescription){
-        phenomdescription.setText(AppDescription);
         vjsdescription.setText(AppDescription);
-        rishidescription.setText(AppDescription);
-        rahuldescription.setText(AppDescription);
+        phenomdescription.setText(AppDescription);
         ravidescription.setText(AppDescription);
         pritishdescription.setText(AppDescription);
-        shekhawatdescription.setText(AppDescription);
-        abhimanyudescription.setText(AppDescription);
-        vinothdescription.setText(AppDescription);
-        debjitdescription.setText(AppDescription);
+        cruzerdescription.setText(AppDescription);
     }
 
 }

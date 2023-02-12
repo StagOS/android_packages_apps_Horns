@@ -16,23 +16,16 @@
     android:title="@string/device_maintainers_title" >
 
     <PreferenceCategory
-        android:id="@+id/device_category_oneplus"
-        android:title="@string/device_category_oneplus_title" >
+        android:id="@+id/device_category_realme"
+        android:title="@string/device_category_realme_title" >
         
         <Preference
-            android:id="@+id/device_lemonade"
+            android:id="@+id/device_porsche"
             android:icon="@drawable/stag_device"
-            android:summary="@string/device_lemonade_summary"
-            android:title="@string/device_lemonade" >
+            android:summary="@string/device_porsche_summary"
+            android:title="@string/device_porsche" >
         </Preference>
-
-        <Preference
-            android:id="@+id/device_lemonadep"
-            android:icon="@drawable/stag_device"
-            android:summary="@string/device_lemonadep_summary"
-            android:title="@string/device_lemonadep" >
-        </Preference>
-
+        
     </PreferenceCategory>
 
 </PreferenceScreen>

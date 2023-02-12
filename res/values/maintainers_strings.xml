@@ -21,7 +21,7 @@
 
     <!-- Device Categories -->
     <string name="device_category_generic_title" translatable="false">Generic</string>
-    <string name="device_category_oneplus_title" translatable="false">Realme</string>
+    <string name="device_category_realme_title" translatable="false">Realme</string>
 
     <!-- Devices & Maintainers -->
 

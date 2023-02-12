@@ -84,66 +84,13 @@
         android:visibility="gone"
         android:src="@drawable/github" />
 
-    <!-- Phenomenal1 -->
+    <!-- Vjs Pranav -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/twitter"
-        android:layout_marginTop="16dp"
-        android:padding="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/linearLayout">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/phenom"
-                    android:src="@drawable/phenom"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/phenomname"
-                        android:text="@string/phenom_name"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
-                        android:layout_marginLeft="16dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/phenomdescription"
-                        android:textSize="14dp"
-                        android:layout_marginLeft="16dp"
-                        android:text="@string/phenom_description"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Vjs Pranav -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/card1"
         android:layout_marginTop="8dp"
         android:padding="4dp"
         app:cardElevation="4dp"
@@ -191,13 +138,13 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Rahul -->
+    <!-- Phenomenal1 -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card3"
+        android:id="@+id/card2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/card2"
+        android:layout_below="@+id/card1"
         android:layout_marginTop="16dp"
         android:padding="4dp"
         app:cardElevation="4dp"
@@ -216,8 +163,8 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:id="@+id/rahul"
-                    android:src="@drawable/rahul"
+                    android:id="@+id/phenom"
+                    android:src="@drawable/phenom"
                     />
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -226,84 +173,31 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rahulname"
-                        android:text="@string/rahul_name"
+                        android:id="@+id/phenomname"
+                        android:text="@string/phenom_name"
                         android:textStyle="bold"
                         android:textSize="22dp"
                         android:layout_marginLeft="16dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/rahuldescription"
+                        android:id="@+id/phenomdescription"
                         android:textSize="14dp"
                         android:layout_marginLeft="16dp"
-                        android:text="@string/rahul_description"
+                        android:text="@string/phenom_description"
                         />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Rishi -->
+    <!-- Ravi -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card4"
+        android:id="@+id/card3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/card3"
-        android:layout_marginTop="16dp"
-        android:padding="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/linearLayout">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/rishi"
-                    android:src="@drawable/rishi"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/rishiname"
-                        android:text="@string/rishi_name"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
-                        android:layout_marginLeft="16dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/rishidescription"
-                        android:textSize="14dp"
-                        android:layout_marginLeft="16dp"
-                        android:text="@string/rishi_description"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    
-        <!-- Ravi -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/card4"
+        android:layout_below="@+id/card2"
         android:layout_marginTop="16dp"
         android:padding="4dp"
         app:cardElevation="4dp"
@@ -353,11 +247,11 @@
 
     <!-- Pritish Joshi -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card6"
+        android:id="@+id/card4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/card5"
+        android:layout_below="@+id/card3"
         android:layout_marginTop="8dp"
         android:padding="4dp"
         app:cardElevation="4dp"
@@ -405,13 +299,13 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Anand Shekhawat -->
+    <!-- Pritish Joshi -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card7"
+        android:id="@+id/card5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/card6"
+        android:layout_below="@+id/card4"
         android:layout_marginTop="8dp"
         android:padding="4dp"
         app:cardElevation="4dp"
@@ -430,8 +324,8 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:id="@+id/shekhawat"
-                    android:src="@drawable/shekhawat"
+                    android:id="@+id/cruzer"
+                    android:src="@drawable/cruzer"
                     />
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -440,8 +334,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/shekhawatname"
-                        android:text="@string/shekhawat_name"
+                        android:id="@+id/cruzername"
+                        android:text="@string/cruzer_name"
                         android:textStyle="bold"
                         android:textSize="22dp"
                         android:layout_marginLeft="16dp"
@@ -449,172 +343,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/shekhawatdescription"
+                        android:id="@+id/cruzerdescription"
                         android:textSize="14dp"
                         android:layout_marginLeft="16dp"
-                        android:text="@string/shekhawat_description"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Abhimanyu Shekhawat -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/card7"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/linearLayout">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/abhimanyu"
-                    android:src="@drawable/abhimanyu"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/abhimanyuname"
-                        android:text="@string/abhimanyu_name"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
-                        android:layout_marginLeft="16dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/abhimanyudescription"
-                        android:textSize="14dp"
-                        android:layout_marginLeft="16dp"
-                        android:text="@string/abhimanyu_description"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Vinoth Raja -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/card8"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/linearLayout">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/vinoth"
-                    android:src="@drawable/vinoth"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/vinothname"
-                        android:text="@string/vinoth_name"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
-                        android:layout_marginLeft="16dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/vinothdescription"
-                        android:textSize="14dp"
-                        android:layout_marginLeft="16dp"
-                        android:text="@string/vinoth_description"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    
-    <!-- Debjit Chakraborty -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/card9"
-        android:layout_marginTop="16dp"
-        android:padding="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/linearLayout">
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/debjit"
-                    android:src="@drawable/debjit"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/debjitname"
-                        android:text="@string/debjit_name"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
-                        android:layout_marginLeft="16dp"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/debjitdescription"
-                        android:textSize="14dp"
-                        android:layout_marginLeft="16dp"
-                        android:text="@string/debjit_description"
+                        android:text="@string/cruzer_description"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -623,24 +355,88 @@
 
     <!-- Maintainers -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/card11"
+        android:id="@+id/maintainers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/card10"
+        android:layout_below="@+id/card5"
         android:layout_marginTop="8dp"
         android:padding="4dp"
         app:cardElevation="4dp"
         app:cardCornerRadius="12dp"
         app:cardUseCompatPadding="true">
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:id="@+id/maintainers"
-            android:textSize="30dp"
-            android:text="Maintainers">
-        </TextView>     
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maintainertitle"
+                    android:text="@string/maintainers_title"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maintainerdescription"
+                    android:textSize="14dp"
+                    android:text="@string/maintainers_description"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maintainerdescriptiondummy"
+                    android:textSize="14dp"
+                    android:text=""
+                    />
+            </LinearLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
     
+    <!-- Maintainers -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/maintainersd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/maintainers"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maintainertitle"
+                    android:text="@string/maintainers_title"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/maintainerdescription"
+                    android:textSize="14dp"
+                    android:text="@string/maintainers_description"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

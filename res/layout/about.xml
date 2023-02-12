@@ -14,43 +14,49 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout 
+<androidx.constraintlayout.widget.ConstraintLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.stag.horns.about.About">
+    android:layout_height="match_parent">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-		
-    <com.stag.horns.about.FancyAboutPage
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fancyaboutpage" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.stag.horns.about.CircularImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="180dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/logo_dark"
-            app:civ_background_color="@*android:color/accent_device_default_light"
-            app:civ_border_color="@color/about_civ_border_color"
-            app:civ_border_width="10dp"
-            android:id="@+id/circularImageView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </com.stag.horns.about.FancyAboutPage>
+            <com.stag.horns.about.FancyAboutPage
+                android:id="@+id/fancyaboutpage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+            <com.stag.horns.about.CircularImageView
+                android:id="@+id/circularImageView"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="180dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/logo_dark"
+                app:civ_background_color="@*android:color/accent_device_default_light"
+                app:civ_border_color="@color/about_civ_border_color"
+                app:civ_border_width="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-  </ScrollView>
+            <!-- Add other views and constraints here -->
 
-</RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
