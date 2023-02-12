@@ -32,17 +32,20 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.graphics.Color;
 import android.os.Build;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.stag.horns.about.CircularImageView;
 import com.stag.horns.about.FancyAboutPage;
@@ -83,10 +86,12 @@ public class About extends SettingsPreferenceFragment implements
         fancyAboutPage.addGitHubLink("https://github.com/StagOS");
         
         
-        TextView textView = (TextView)view.findViewById(R.id.maintainers);
-        textView.setOnClickListener(new View.OnClickListener() {
+        // TextView textView = (TextView) view.findViewById(R.id.maintainers);
+        CardView cardView = (CardView) view.findViewById(R.id.maintainers);
+        cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getActivity(), "Meet the maintainers", Toast.LENGTH_SHORT).show();
                 DeviceMaintainersFragment nextFrag = new DeviceMaintainersFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(((ViewGroup)getView().getParent()).getId(), nextFrag, "findThisFragment")
@@ -94,7 +99,6 @@ public class About extends SettingsPreferenceFragment implements
                         .commit();
             }
         });
-
         return view;
     }
 
