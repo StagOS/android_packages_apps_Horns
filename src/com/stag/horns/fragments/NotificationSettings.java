@@ -56,7 +56,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
 
     private static final String ALERT_SLIDER_CAT = "alert_slider_cat";
     
-    private static final String KEY_BATTERY_CHARGING_LIGHT = "battery_charging_light";
+    private static final String KEY_BATTERY_CHARGING_LIGHT = "battery_light_options";
 
     private Preference mBatteryLightPref;
     private SystemSettingSwitchPreference mLowBatteryBlinking; 
@@ -65,34 +65,35 @@ public class NotificationSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_notifications);
-	ContentResolver resolver = getActivity().getContentResolver();
-	final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
 
-	final PreferenceCategory alertSliderCat = (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
-         boolean alertSliderAvailable = getActivity().getResources().getBoolean(
-                 com.android.internal.R.bool.config_hasAlertSlider);
+        final PreferenceCategory alertSliderCat = (PreferenceCategory) findPreference(ALERT_SLIDER_CAT);
+        boolean alertSliderAvailable = getActivity().getResources().getBoolean(
+                    com.android.internal.R.bool.config_hasAlertSlider);
         if (!alertSliderAvailable)
             prefScreen.removePreference(alertSliderCat);
 
-        mBatteryLightPref = (Preference) findPreference(KEY_BATTERY_CHARGING_LIGHT);
-        if (!getResources()
-                .getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed))
-        {
-                prefScreen.removePreference(mBatteryLightPref);
-        }
-        mLowBatteryBlinking = (SystemSettingSwitchPreference)prefScreen.findPreference("battery_light_low_blinking");
-        if (getResources().getBoolean(
-                        com.android.internal.R.bool.config_ledCanPulse)) {
-            mLowBatteryBlinking.setChecked(Settings.System.getIntForUser(getContentResolver(),
-                            Settings.System.BATTERY_LIGHT_LOW_BLINKING, 0, UserHandle.USER_CURRENT) == 1);
-            mLowBatteryBlinking.setOnPreferenceChangeListener(this);
-        } else {
-            prefScreen.removePreference(mLowBatteryBlinking);
+        final PreferenceCategory mBatteryLightCat = (PreferenceCategory) findPreference(KEY_BATTERY_CHARGING_LIGHT);
+        boolean mBatteryLightAvailable = getActivity().getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveBatteryLed);
+        if (!mBatteryLightAvailable) {
+            prefScreen.removePreference(mBatteryLightCat);
+        }else{
+            mLowBatteryBlinking = (SystemSettingSwitchPreference)prefScreen.findPreference("battery_light_low_blinking");
+            if (getResources().getBoolean(
+                            com.android.internal.R.bool.config_ledCanPulse)) {
+                mLowBatteryBlinking.setChecked(Settings.System.getIntForUser(getContentResolver(),
+                                Settings.System.BATTERY_LIGHT_LOW_BLINKING, 0, UserHandle.USER_CURRENT) == 1);
+                mLowBatteryBlinking.setOnPreferenceChangeListener(this);
+            } else {
+                prefScreen.removePreference(mLowBatteryBlinking);
+            }
         }
     }
 
