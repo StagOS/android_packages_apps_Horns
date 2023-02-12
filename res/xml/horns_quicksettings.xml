@@ -37,5 +37,11 @@
        android:title="@string/qs_tile_layout_title"
        android:summary="@string/qs_tile_layout_summary"
        android:fragment="com.stag.horns.fragments.QsTileLayoutSettings" />
-        
+
+    <com.stag.horns.preferences.SecureSettingSwitchPreference
+       android:key="qs_show_data_usage"
+       android:title="@string/qs_show_data_usage_title"
+       android:summary="@string/qs_show_data_usage_summary"
+       android:defaultValue="true" />
+
 </PreferenceScreen>
