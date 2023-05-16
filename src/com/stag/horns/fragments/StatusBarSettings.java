@@ -58,15 +58,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
-import com.stag.horns.preferences.SystemSettingMasterSwitchPreference;
-
 @SearchIndexable
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
-    private static final String KEY_NETWORK_TRAFFIC = "network_traffic_state";
-
-    private SystemSettingMasterSwitchPreference mNetworkTraffic;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -74,22 +69,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 		addPreferencesFromResource(R.xml.horns_statusbar);
         ContentResolver resolver = getActivity().getContentResolver();
 
-	mNetworkTraffic = (SystemSettingMasterSwitchPreference) findPreference(KEY_NETWORK_TRAFFIC);
-        boolean enabled = Settings.System.getIntForUser(resolver,
-                KEY_NETWORK_TRAFFIC, 0, UserHandle.USER_CURRENT) == 1;
-        mNetworkTraffic.setChecked(enabled);
-        mNetworkTraffic.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mNetworkTraffic) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putIntForUser(resolver, KEY_NETWORK_TRAFFIC,
-                    value ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
-        }
+	ContentResolver resolver = getActivity().getContentResolver();
         return false;
     }
 
