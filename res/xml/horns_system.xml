@@ -24,6 +24,58 @@
          android:entries="@array/custom_theme_entries"
          android:entryValues="@array/custom_theme_values" />
 
+    <PreferenceCategory
+        android:key="monel_category"
+        android:title="Monet">
+
+        <com.stag.horns.preferences.SecureSettingSwitchPreference
+            android:key="monet_engine_custom_color"
+            android:title="@string/monet_engine_custom_color_title"
+            android:summary="@string/monet_engine_custom_color_summary"
+            android:defaultValue="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="monet_engine_color_override"
+            android:title="@string/monet_engine_color_override_title"
+            android:dependency="monet_engine_custom_color"
+            android:defaultValue="0xFF1b6ef3" />
+
+        <com.stag.horns.preferences.SecureSettingSwitchPreference
+            android:key="monet_engine_custom_bgcolor"
+            android:title="@string/monet_engine_custom_bgcolor_title"
+            android:summary="@string/monet_engine_custom_bgcolor_summary"
+            android:defaultValue="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="monet_engine_bgcolor_override"
+            android:title="@string/monet_engine_color_background_override_title"
+            android:dependency="monet_engine_custom_bgcolor"
+            android:defaultValue="0xFF1b6ef3" />
+
+        <com.stag.horns.preferences.SecureSettingSeekBarPreference
+            android:key="monet_engine_luminance_factor"
+            android:title="@string/monet_engine_luminance_factor_title"
+            android:defaultValue="100"
+            android:max="225"
+            settings:min="25"
+            settings:interval="5"/>
+
+        <com.stag.horns.preferences.SecureSettingSeekBarPreference
+            android:key="monet_engine_chroma_factor"
+            android:title="@string/monet_engine_chroma_factor_title"
+            android:defaultValue="100"
+            android:max="225"
+            settings:min="25"
+            settings:interval="5"/>
+
+        <com.stag.horns.preferences.SecureSettingSwitchPreference
+            android:key="monet_engine_tint_background"
+            android:title="@string/monet_engine_tint_background_title"
+            android:summary="@string/monet_engine_tint_background_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
     <Preference
         android:key="pulse_settings"
         android:fragment="com.stag.horns.fragments.PulseSettings"

@@ -51,10 +51,15 @@ import java.util.List;
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
-	private static final String TAG = "SystemSettings";
+    private static final String TAG = "SystemSettings";
 
-	// private ListPreference mCustomTheme;
-        private static final String UDFPS_SETTINGS = "udfps_settings";
+    private static final String UDFPS_SETTINGS = "udfps_settings";
+
+    private String MONET_ENGINE_COLOR_OVERRIDE = "monet_engine_color_override";
+    private String MONET_ENGINE_BGCOLOR_OVERRIDE = "monet_engine_bgcolor_override";
+
+    private ColorPickerPreference mMonetColor;
+    private ColorPickerPreference mMonetBgColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,9 +76,24 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		// mCustomTheme.setValue(String.valueOf(currentTheme));
 		// mCustomTheme.setOnPreferenceChangeListener(this);
 		// Log.d(TAG, "Current theme: " + String.valueOf(currentTheme));
-         if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
-             prefScreen.removePreference(findPreference(UDFPS_SETTINGS));
-         }
+        if (!UdfpsUtils.hasUdfpsSupport(getContext())) {
+            prefScreen.removePreference(findPreference(UDFPS_SETTINGS));
+        }
+
+        mMonetColor = (ColorPickerPreference) prefScreen.findPreference(MONET_ENGINE_COLOR_OVERRIDE);
+        int intColor = Settings.Secure.getInt(resolver, MONET_ENGINE_COLOR_OVERRIDE, 0xFF1B6EF3);
+        String hexColor = String.format("#%08x", (0xffffff & intColor));
+        mMonetColor.setNewPreviewColor(intColor);
+        mMonetColor.setSummary(hexColor);
+        mMonetColor.setOnPreferenceChangeListener(this);
+
+
+        mMonetBgColor = (ColorPickerPreference) prefScreen.findPreference(MONET_ENGINE_BGCOLOR_OVERRIDE);
+        int intBgColor = Settings.Secure.getInt(resolver, MONET_ENGINE_BGCOLOR_OVERRIDE, 0xFF1B6EF3);
+        String hexBgColor = String.format("#%08x", (0xffffff & intColor));
+        mMonetBgColor.setNewPreviewColor(intBgColor);
+        mMonetBgColor.setSummary(hexBgColor);
+        mMonetBgColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -82,7 +102,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		ContentResolver resolver = getActivity().getContentResolver();
+	ContentResolver resolver = getActivity().getContentResolver();
 		// if(preference == mCustomTheme) {
 		// 	Log.d(TAG, "Custom theme changed");
 		// 	int value = Integer.parseInt((String) newValue);
@@ -91,6 +111,24 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		// 			Settings.Secure.SYSTEM_CUSTOM_THEME, value, UserHandle.USER_CURRENT);
 		// 	return true;
 		// }
+        if (preference == mMonetColor) {
+            String hex = ColorPickerPreference.convertToARGB(Integer
+                .parseInt(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.Secure.putInt(resolver,
+                MONET_ENGINE_COLOR_OVERRIDE, intHex);
+            return true;
+        }
+        if (preference == mMonetBgColor) {
+            String hexbg = ColorPickerPreference.convertToARGB(Integer
+                .parseInt(String.valueOf(newValue)));
+            preference.setSummary(hexbg);
+            int intBgHex = ColorPickerPreference.convertToColorInt(hexbg);
+            Settings.Secure.putInt(resolver,
+                MONET_ENGINE_BGCOLOR_OVERRIDE, intBgHex);
+            return true;
+        }
         return false;
     }
 
