@@ -62,7 +62,7 @@
     <string name="about_category">About</string>
     <string name="about_category_summary">A little (Coz who\'d read this anyway) info about our team :P</string>
     <string name="about_stag">StagOS</string>
-    <string name="about_stag_description">StagOS - The epitome of elegance.\nAt the heart of StagOS lies Material Design, offering a visually stunning interface.\nTo achieve the perfect balance of simplicity and customization,we chose to base StagOS on Pure AOSP - the purest form of Android straight from Google.\nWe believe in fulfilling those small, yet important, desires and customizations.\nWith StagOS, you can enjoy a pure Android experience with just the right amount of customization, such as moving the clock to the right, or monitoring download speed.\nJoin us in our journey to make the Android experience even better. \nRemember, great endings come from small beginnings.\nEmbrace the elegance of StagOS and experience Android like never before.\nSic Parvis Magna</string>
+    <string name="about_stag_description">StagOS: Where elegance meets pure Android. Experience the perfect blend of simplicity and customization. Enjoy thoughtful customizations and a seamless experience, all while staying true to Android\'s core. \nRemember, great endings come from small beginnings.\nSic Parvis Magna</string>
     <string name="device_maintainers_title">Maintainers</string>
     <string name="vjs_name">VJS Pranavasri</string>
     <string name="vjs_description">Founder | Lead Developer | Maintainer</string>

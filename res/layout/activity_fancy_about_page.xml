@@ -399,44 +399,4 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-    
-    <!-- Maintainers -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/maintainersd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/maintainers"
-        android:layout_marginTop="8dp"
-        android:padding="4dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/maintainertitle"
-                    android:text="@string/maintainers_title"
-                    android:textStyle="bold"
-                    android:textSize="22dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/maintainerdescription"
-                    android:textSize="14dp"
-                    android:text="@string/maintainers_description"
-                    />
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 </RelativeLayout>

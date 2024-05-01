@@ -60,6 +60,7 @@ public class About extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        getActivity().setTitle(R.string.about_title); // Replace R.string.about_title with your actual string resource
     }
 
     @Override
