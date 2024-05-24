@@ -18,12 +18,13 @@
 package com.stag.horns.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.stag.StagUtils;
+import com.android.settings.R;
 
 import android.os.Bundle;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.provider.SearchIndexableResource;
-import com.android.settings.R;
 import android.provider.Settings;
 
 import androidx.preference.Preference;
@@ -36,7 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.stag.horns.preferences.SystemSettingSwitchPreference;
 import com.stag.horns.preferences.Utils;
 
 import java.util.ArrayList;
@@ -46,6 +47,9 @@ import java.util.List;
 public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
+    private static final String CUSTOM_UI_TOGGLE = "custom_ui_toggle";
+
+	private SystemSettingSwitchPreference mCustomUIToggle;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +59,10 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+		mCustomUIToggle = (SystemSettingSwitchPreference) findPreference(CUSTOM_UI_TOGGLE);
+		mCustomUIToggle.setChecked((Settings.System.getInt(resolver,
+				Settings.System.CUSTOM_UI_TOGGLE, 0) == 1));
+		mCustomUIToggle.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -64,8 +72,12 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
 		ContentResolver resolver = getActivity().getContentResolver();
-        return false;
-    }
+		if (preference == mCustomUIToggle) {
+			StagUtils.showSystemUiRestartDialog(getContext());
+			return true;
+		}
+		return false;
+	}
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
 		new BaseSearchIndexProvider() {

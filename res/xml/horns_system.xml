@@ -16,4 +16,11 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="custom_ui_toggle"
+        android:title="@string/custom_ui_toggle_title"
+        android:summary="@string/custom_ui_toggle_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

@@ -77,4 +77,7 @@
     <string name="maintainers_title">Maintainers</string>
     <string name="maintainers_description">Bringing Elegance to your device</string>
 
+    <!-- Custom Settings UI -->
+    <string name="custom_ui_toggle_title">Use AOSP settings UI</string>
+    <string name="custom_ui_toggle_summary">Use AOSP settings UI instead of new UI</string>
 </resources>
