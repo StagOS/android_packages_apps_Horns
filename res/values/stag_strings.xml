@@ -80,4 +80,9 @@
     <!-- Custom Settings UI -->
     <string name="custom_ui_toggle_title">Use AOSP settings UI</string>
     <string name="custom_ui_toggle_summary">Use AOSP settings UI instead of new UI</string>
+
+    <!-- Global Actions -->
+    <string name="global_actions_advanced_reboot_title">Advanced restart</string>
+    <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
+
 </resources>
