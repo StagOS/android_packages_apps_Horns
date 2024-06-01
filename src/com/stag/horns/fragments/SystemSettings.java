@@ -73,7 +73,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
 		ContentResolver resolver = getActivity().getContentResolver();
 		if (preference == mCustomUIToggle) {
-			StagUtils.showSystemUiRestartDialog(getContext());
+			StagUtils.showPackageRestartDialog(getContext(), "com.android.settings");
 			return true;
 		}
 		return false;
