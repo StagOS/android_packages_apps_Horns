@@ -85,4 +85,13 @@
     <string name="global_actions_advanced_reboot_title">Advanced restart</string>
     <string name="global_actions_advanced_reboot_summary">Show options for recovery and bootloader in power menu</string>
 
+    <!-- Play Integrity -->
+    <string name="play_integrity_dashboard_title">Play integrity Spoofs</string>
+    <string name="play_integrity_summary">Methods to pass CTS/Play integrity</string>
+    <string name="play_integrity_update_title">Update Play Integrity Patch</string>
+    <string name="play_integrity_update_summary">Download and apply latest fingerprint to spoof</string>
+    <string name="play_update_title">Update fingerprint</string>
+    <string name="play_fingerprint">Current spoofed values</string>
+    <string name="play_integrity_certification_url">https://gitlab.com/StagOS/vendor_certification/-/raw/main/CertificationOverlay/res/values/config.xml</string>
+
 </resources>

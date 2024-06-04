@@ -16,11 +16,16 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <Preference
+        android:key="pintegrity_category"
+        android:title="@string/play_integrity_dashboard_title"
+        android:summary="@string/play_integrity_summary"
+        android:fragment="com.stag.horns.fragments.playintegrity.PlayIntegrity"/>
 
     <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="custom_ui_toggle"
         android:title="@string/custom_ui_toggle_title"
         android:summary="@string/custom_ui_toggle_summary"
         android:defaultValue="false" />
-
+        
 </PreferenceScreen>

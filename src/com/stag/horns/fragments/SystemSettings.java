@@ -48,8 +48,10 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
     private static final String CUSTOM_UI_TOGGLE = "custom_ui_toggle";
+	private static final String PI_PREF = "pintegrity_category";
 
 	private SystemSettingSwitchPreference mCustomUIToggle;
+	private Preference mPIPref;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,12 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		mCustomUIToggle.setChecked((Settings.System.getInt(resolver,
 				Settings.System.CUSTOM_UI_TOGGLE, 0) == 1));
 		mCustomUIToggle.setOnPreferenceChangeListener(this);
+
+		mPIPref = (Preference) findPreference(PI_PREF);
+		if (!StagUtils.isPackageInstalled(mContext, "com.google.android.gms")) {
+			prefScreen.removePreference(mPIPref);
+		}
+				
     }
 
     @Override
