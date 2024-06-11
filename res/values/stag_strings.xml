@@ -101,4 +101,8 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Unlock higher FPS in games</string>
     <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
+
+     <!-- Toggle for volume panel on left -->
+     <string name="volume_panel_on_left_title">Volume panel on left</string>
+     <string name="volume_panel_on_left_summary">Show volume panel on left side of the screen</string>
 </resources>

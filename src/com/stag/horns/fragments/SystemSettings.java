@@ -38,6 +38,7 @@ import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.stag.horns.preferences.SystemSettingSwitchPreference;
+import com.stag.horns.preferences.SecureSettingSwitchPreference;
 import com.stag.horns.preferences.Utils;
 
 import java.util.ArrayList;
@@ -49,10 +50,13 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
     private static final String CUSTOM_UI_TOGGLE = "custom_ui_toggle";
 	private static final String PI_PREF = "pintegrity_category";
+	private static final String VOLUME_PANEL_ON_LEFT = "volume_panel_on_left";
 
 	private SystemSettingSwitchPreference mCustomUIToggle;
+	private SecureSettingSwitchPreference mVolumePanelOnLeft;
 	private Preference mPIPref;
-    @Override
+
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.horns_system);
@@ -70,8 +74,12 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 		if (!StagUtils.isPackageInstalled(mContext, "com.google.android.gms")) {
 			prefScreen.removePreference(mPIPref);
 		}
-				
-    }
+
+		mVolumePanelOnLeft = (SecureSettingSwitchPreference) findPreference(VOLUME_PANEL_ON_LEFT);
+		// check SystemUI R.bool config value for volume panel position
+		mVolumePanelOnLeft.setChecked(Settings.System.getInt(resolver,
+				Settings.Secure.VOLUME_PANEL_ON_LEFT,  0) == 1);
+	}
 
     @Override
     public int getMetricsCategory() {
