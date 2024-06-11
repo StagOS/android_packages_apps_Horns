@@ -19,7 +19,7 @@
     <bool name="has_animations_category">false</bool>
 
     <!-- Whether to display gestures tab -->
-    <bool name="has_gestures_category">false</bool>
+    <bool name="has_gestures_category">true</bool>
 
     <!-- Whether to display lockscreen tab -->
     <bool name="has_lockscreen_category">false</bool>
