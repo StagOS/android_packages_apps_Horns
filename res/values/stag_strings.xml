@@ -105,4 +105,9 @@
      <!-- Toggle for volume panel on left -->
      <string name="volume_panel_on_left_title">Volume panel on left</string>
      <string name="volume_panel_on_left_summary">Show volume panel on left side of the screen</string>
+
+     <!-- Brightness control -->
+    <string name="status_bar_brightness_control_title">Brightness control</string>
+    <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across the status bar</string>
+
 </resources>
