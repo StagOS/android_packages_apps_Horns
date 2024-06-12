@@ -110,4 +110,8 @@
     <string name="status_bar_brightness_control_title">Brightness control</string>
     <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across the status bar</string>
 
+    <!-- Doze on charge --> 
+    <string name="doze_on_charge_title">Always on when charging</string>
+    <string name="doze_on_charge_summary">Always show time and info only when the device is plugged in</string>
+
 </resources>

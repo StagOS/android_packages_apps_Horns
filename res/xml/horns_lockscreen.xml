@@ -18,4 +18,9 @@
     android:title="@string/lockscreen_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <com.stag.horns.preferences.SecureSettingSwitchPreference
+            android:key="doze_on_charge"
+            android:title="@string/doze_on_charge_title"
+            android:summary="@string/doze_on_charge_summary" />
+
 </PreferenceScreen>
