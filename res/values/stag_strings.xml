@@ -39,6 +39,12 @@
     <string name="gaming_title">Gaming mode</string>
     <string name="gaming_title_summary">Extra features for immersive gaming experience</string>
 
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="general_title">General</string>
