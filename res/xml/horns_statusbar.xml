@@ -24,4 +24,10 @@
             android:summary="@string/status_bar_brightness_control_summary"
             android:defaultValue="false" />
 
+          <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="notification_material_dismiss"
+            android:title="@string/notification_material_dismiss_title"
+            android:summary="@string/notification_material_dismiss_summary" 
+            android:defaultValue="true" />
+
 </PreferenceScreen>
