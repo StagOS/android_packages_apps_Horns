@@ -28,6 +28,11 @@
         android:summary="@string/custom_ui_toggle_summary"
         android:defaultValue="false" />
 
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="pocket_judge"
+        android:title="@string/proximity_wake_title"
+        android:summary="@string/proximity_wake_summary" />
+
     <com.stag.horns.preferences.SecureSettingSwitchPreference
         android:key="volume_panel_on_left"
         android:title="@string/volume_panel_on_left_title"
