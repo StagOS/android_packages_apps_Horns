@@ -6,6 +6,9 @@
   <string name="device_porsche_summary" translatable="false">porsche\nvjspranav</string>
   <string name="device_porsche_maintainer" translatable="false">vjspranav</string>
   <string name="device_category_xiaomi_title" translatable="false">Xiaomi</string>
+  <string name="device_zeus" translatable="false">Xiaomi 12 Pro</string>
+  <string name="device_zeus_maintainer" translatable="false">CaptainKomaru</string>
+  <string name="device_zeus_summary" translatable="false">zeus\nCaptainKomaru</string>
   <string name="device_sweet" translatable="false">Redmi Note 10 Pro</string>
   <string name="device_sweet_maintainer" translatable="false">itsshashanksp</string>
   <string name="device_sweet_summary" translatable="false">sweet\nitsshashanksp</string>
