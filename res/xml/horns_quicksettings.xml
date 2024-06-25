@@ -17,5 +17,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.stag.horns.preferences.CustomSystemSeekBarPreference
+        android:key="qs_transparency"
+        android:title="@string/qs_transparency_title"
+        android:summary="@string/qs_transparency_summary"
+        android:defaultValue="100"
+        settings:interval="1"
+        settings:units="%"
+        android:max="100"
+        android:min="1" />
+
     
 </PreferenceScreen>
