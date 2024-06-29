@@ -189,6 +189,14 @@
     <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
     <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
 
+    <!-- System slider haptics -->
+    <string name="brightness_slider_haptics_title">Haptic feedback</string>
+    <string name="brightness_slider_haptics_summary">Whether to enable haptic feedbacks when changing the brightness</string>
+    <!-- Volume slider haptics -->
+    <string name="volume_slider_haptics_title">Haptic feedback</string>
+    <string name="volume_slider_haptics_summary">Whether to enable haptic feedbacks when changing the volume</string>
+    
+
     <!-- Power Menu -->
     <string name="power_menu_title">Power menu</string>
     <string name="global_actions_screenshot">Screenshot</string>

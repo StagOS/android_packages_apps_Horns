@@ -29,6 +29,13 @@
         android:summary="@string/monet_settings_summary"
         android:fragment="com.stag.horns.fragments.MonetSettings" />
 
+    <!-- Volume Slider Haptics -->
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="volume_slider_haptic"
+        android:title="@string/volume_slider_haptics_title"
+        android:summary="@string/volume_slider_haptics_summary"
+        android:defaultValue="false" />
+
     <com.stag.horns.preferences.SystemSettingSwitchPreference
         android:key="custom_ui_toggle"
         android:title="@string/custom_ui_toggle_title"

@@ -53,6 +53,12 @@
             android:summary="@string/qs_show_auto_brightness_summary"
             android:defaultValue="true" />
 
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="qs_brightness_slider_haptic"
+            android:title="@string/brightness_slider_haptics_title"
+            android:summary="@string/brightness_slider_haptics_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
     
 </PreferenceScreen>
