@@ -18,4 +18,12 @@
     android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <!-- Kill app button -->
+    <com.stag.horns.preferences.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:title="@string/notifications_kill_app_button_title"
+        android:summary="@string/notifications_kill_app_button_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
