@@ -205,4 +205,8 @@
     <string name="global_actions_device_controls">Device controls</string>
     <string name="global_actions_bugreport">Bug report</string>
 
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications at the bottom right corner of status bar notification icon</string>
+
 </resources>
