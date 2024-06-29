@@ -31,6 +31,11 @@
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </Preference>
 
+        <com.stag.horns.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_colored_icons"
+            android:title="@string/statusbar_colored_icons_title"
+            android:summary="@string/statusbar_colored_icons_summary"
+            android:defaultValue="false" />
 
         <!-- Notification Counter -->
         <com.stag.horns.preferences.SystemSettingSwitchPreference
