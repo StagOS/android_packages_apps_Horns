@@ -7,4 +7,7 @@
     <Preference android:id="@+id/device_sweet" android:icon="@drawable/stag_device" android:summary="@string/device_sweet_summary" android:title="@string/device_sweet"/>
     <Preference android:id="@+id/device_zeus" android:icon="@drawable/stag_device" android:summary="@string/device_zeus_summary" android:title="@string/device_zeus"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_poco" android:title="@string/device_category_poco_title">
+    <Preference android:id="@+id/device_sky" android:icon="@drawable/stag_device" android:summary="@string/device_sky_summary" android:title="@string/device_sky"/>
+  </PreferenceCategory>
 </PreferenceScreen>

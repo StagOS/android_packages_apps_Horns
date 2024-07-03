@@ -12,4 +12,8 @@
   <string name="device_sweet" translatable="false">Redmi Note 10 Pro</string>
   <string name="device_sweet_maintainer" translatable="false">itsshashanksp</string>
   <string name="device_sweet_summary" translatable="false">sweet\nitsshashanksp</string>
+  <string name="device_category_poco_title" translatable="false">POCO</string>
+  <string name="device_sky" translatable="false">POCO M6 pro 5g</string>
+  <string name="device_sky_maintainer" translatable="false">solocaptainblaze</string>
+  <string name="device_sky_summary" translatable="false">sky\nsolocaptainblaze</string>
 </resources>
