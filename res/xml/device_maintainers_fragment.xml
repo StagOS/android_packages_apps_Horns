@@ -10,4 +10,7 @@
   <PreferenceCategory android:id="@+id/device_category_poco" android:title="@string/device_category_poco_title">
     <Preference android:id="@+id/device_sky" android:icon="@drawable/stag_device" android:summary="@string/device_sky_summary" android:title="@string/device_sky"/>
   </PreferenceCategory>
+  <PreferenceCategory android:id="@+id/device_category_nothing" android:title="@string/device_category_nothing_title">
+    <Preference android:id="@+id/device_Pong" android:icon="@drawable/stag_device" android:summary="@string/device_Pong_summary" android:title="@string/device_Pong"/>
+  </PreferenceCategory>
 </PreferenceScreen>

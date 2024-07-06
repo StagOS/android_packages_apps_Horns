@@ -16,4 +16,8 @@
   <string name="device_sky" translatable="false">POCO M6 pro 5g</string>
   <string name="device_sky_maintainer" translatable="false">solocaptainblaze</string>
   <string name="device_sky_summary" translatable="false">sky\nsolocaptainblaze</string>
+  <string name="device_category_nothing_title" translatable="false">Nothing</string>
+  <string name="device_Pong" translatable="false">Nothing Phone 2</string>
+  <string name="device_Pong_maintainer" translatable="false">AgBKartikey</string>
+  <string name="device_Pong_summary" translatable="false">Pong\nAgBKartikey</string>
 </resources>
