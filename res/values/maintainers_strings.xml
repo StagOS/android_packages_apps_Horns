@@ -20,4 +20,7 @@
   <string name="device_Pong" translatable="false">Nothing Phone 2</string>
   <string name="device_Pong_maintainer" translatable="false">AgBKartikey</string>
   <string name="device_Pong_summary" translatable="false">Pong\nAgBKartikey</string>
+  <string name="device_miatoll" translatable="false">Redmi Note 9s/Pro/Pro Max/POCO M2 Pro</string>
+  <string name="device_miatoll_maintainer" translatable="false">RiteshSahany</string>
+  <string name="device_miatoll_summary" translatable="false">miatoll\nRiteshSahany</string>
 </resources>
