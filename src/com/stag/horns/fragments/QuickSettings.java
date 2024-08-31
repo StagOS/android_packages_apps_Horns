@@ -35,7 +35,6 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.TwoStatePreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
@@ -48,60 +47,28 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.stag.horns.preferences.CustomSeekBarPreference;
+import com.stag.horns.preferences.SystemSettingSwitchPreference;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import com.stag.horns.preferences.SystemSettingEditTextPreference;
-import com.stag.horns.preferences.SystemSettingListPreference;
 
 @SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-
-    private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
-    private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
-    private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
-
-    private ListPreference mShowBrightnessSlider;
-    private ListPreference mBrightnessSliderPosition;
-    private TwoStatePreference mShowAutoBrightness;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horns_quicksettings);
         ContentResolver resolver = getActivity().getContentResolver();
-        Context mContext = getContext();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mShowBrightnessSlider = findPreference(KEY_SHOW_BRIGHTNESS_SLIDER);
-        mShowBrightnessSlider.setOnPreferenceChangeListener(this);
-        boolean showSlider = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT) > 0;
-
-        mBrightnessSliderPosition = findPreference(KEY_BRIGHTNESS_SLIDER_POSITION);
-        mBrightnessSliderPosition.setEnabled(showSlider);
-
-        mShowAutoBrightness = findPreference(KEY_SHOW_AUTO_BRIGHTNESS);
-        boolean automaticAvailable = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_automatic_brightness_available);
-        if (automaticAvailable) {
-            mShowAutoBrightness.setEnabled(showSlider);
-        } else {
-            prefScreen.removePreference(mShowAutoBrightness);
-        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mShowBrightnessSlider) {
-            int value = Integer.parseInt((String) newValue);
-            mBrightnessSliderPosition.setEnabled(value > 0);
-            if (mShowAutoBrightness != null)
-                mShowAutoBrightness.setEnabled(value > 0);
-            return true;
-        }
         return false;
     }
 

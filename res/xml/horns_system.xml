@@ -16,41 +16,4 @@
     android:title="@string/system_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
-        android:key="pintegrity_category"
-        android:title="@string/play_integrity_dashboard_title"
-        android:summary="@string/play_integrity_summary"
-        android:fragment="com.stag.horns.fragments.playintegrity.PlayIntegrity"/>
-
-    <!-- Monet -->
-    <Preference
-        android:key="monet_settings"
-        android:title="@string/monet_settings_title"
-        android:summary="@string/monet_settings_summary"
-        android:fragment="com.stag.horns.fragments.MonetSettings" />
-
-    <!-- Volume Slider Haptics -->
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="volume_slider_haptic"
-        android:title="@string/volume_slider_haptics_title"
-        android:summary="@string/volume_slider_haptics_summary"
-        android:defaultValue="false" />
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="custom_ui_toggle"
-        android:title="@string/custom_ui_toggle_title"
-        android:summary="@string/custom_ui_toggle_summary"
-        android:defaultValue="false" />
-
-    <com.stag.horns.preferences.SystemSettingSwitchPreference
-        android:key="pocket_judge"
-        android:title="@string/proximity_wake_title"
-        android:summary="@string/proximity_wake_summary" />
-
-    <com.stag.horns.preferences.SecureSettingSwitchPreference
-        android:key="volume_panel_on_left"
-        android:title="@string/volume_panel_on_left_title"
-        android:summary="@string/volume_panel_on_left_summary"
-        android:defaultValue="false" />
-        
 </PreferenceScreen>
